@@ -4,7 +4,8 @@ import { Icon } from '../components/Icon';
 import { Ipa, Notice, PageHeader, PosChip, pct } from '../components/ui';
 import { formatDuration } from '../domain/dates';
 import { attemptsFor, currentWordId, sessionProgress, wordOutcome } from '../domain/queue';
-import { dailyPlan } from '../domain/selection';
+import { planNextSession, type SessionPlan } from '../domain/selection';
+import { groupLabel } from '../data/themes';
 import type { Grade, ReviewSession, Word } from '../domain/types';
 import { navigate } from '../router';
 import { describeVoice, playWord, prefetchNative, speechSupported } from '../services/speech';
@@ -19,64 +20,118 @@ export function ReviewPage() {
 
 // ---------------------------------------------------------------- départ
 
+/** Prochaine liste proposée par le bouton « Réviser » (révisions d'abord, puis nouveaux mots). */
+export function useNextPlan(ignoreNewLimit = false): SessionPlan {
+  const { words, now, settings } = useApp();
+  return useMemo(
+    () => planNextSession(words, now, { size: settings.sessionSize, newPerDay: settings.newPerDay, ignoreNewLimit }),
+    [words, now, settings.sessionSize, settings.newPerDay, ignoreNewLimit],
+  );
+}
+
+const timeFmt = new Intl.DateTimeFormat('fr-FR', { hour: '2-digit', minute: '2-digit' });
+
+export function ThemeChips({ groups }: { groups: string[] }) {
+  if (!groups.length) return null;
+  return (
+    <ul className="flex flex-wrap gap-1.5" aria-label="Thèmes de la liste">
+      {groups.map((g) => (
+        <li key={g} className="rounded-full bg-ocean-soft px-2.5 py-1 text-xs font-bold text-ocean">
+          {groupLabel(g)}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function ReviewStart() {
-  const { words, now, settings, startDailySession, toast } = useApp();
-  const plan = useMemo(() => dailyPlan(words, now, settings.newPerDay), [words, now, settings.newPerDay]);
-  const fromDue = Math.min(plan.due.length, settings.sessionSize);
-  const fromNew = Math.min(settings.sessionSize - fromDue, plan.newAllowance, plan.newAvailable.length);
-  const size = fromDue + fromNew;
+  const { words, settings, startDailySession, toast } = useApp();
+  const firstTime = useMemo(() => !words.some((w) => w.srs.reps > 0), [words]);
+  const plan = useNextPlan();
+  const extra = useNextPlan(true);
 
   const start = (opts?: { ignoreNewLimit?: boolean; ahead?: boolean }) => {
     const s = startDailySession(opts);
     if (!s) toast('Aucun mot disponible pour cette session.', 'error');
   };
+  const laterNote =
+    plan.laterToday > 0 && plan.nextDueAt ? (
+      <p className="mt-3 text-sm text-ink-2 tabular">
+        {plan.laterToday} mot{plan.laterToday > 1 ? 's' : ''} raté{plan.laterToday > 1 ? 's' : ''} récemment reviendr{plan.laterToday > 1 ? 'ont' : 'a'} à partir de{' '}
+        {timeFmt.format(plan.nextDueAt)}.
+      </p>
+    ) : null;
 
   return (
     <div className="mx-auto max-w-2xl">
-      <PageHeader eyebrow="Réviser" title="Session du jour" />
+      <PageHeader eyebrow="Réviser" title={plan.kind === 'review' ? 'À revoir' : plan.kind === 'new' ? 'Nouvelle liste' : 'Tout est à jour'} />
       <div className="card p-5 sm:p-6">
-        {size > 0 ? (
+        {plan.kind === 'review' && (
           <>
             <p className="text-lg">
-              <strong className="tabular">{size} mots</strong> t’attendent
-              {fromDue > 0 && fromNew > 0 && (
+              <strong className="tabular">{plan.ids.length} mot{plan.ids.length > 1 ? 's' : ''}</strong> des listes précédentes à revoir.
+            </p>
+            {plan.dueNow > plan.ids.length && (
+              <p className="mt-1 text-sm text-ink-2 tabular">
+                Encore {plan.dueNow - plan.ids.length} après cette révision, puis de nouveaux mots.
+              </p>
+            )}
+            {plan.dueNow <= plan.ids.length && <p className="mt-1 text-sm text-ink-2">Ensuite, « Réviser » te proposera une nouvelle liste.</p>}
+          </>
+        )}
+        {plan.kind === 'new' && (
+          <>
+            <p className="text-lg">
+              {firstTime ? (
                 <>
-                  {' '}: <span className="tabular">{fromDue}</span> à revoir et <span className="tabular">{fromNew}</span> nouveaux.
+                  Voici tes <strong className="tabular">{plan.ids.length} premiers mots</strong>, parmi les plus fréquents, regroupés par thème.
+                </>
+              ) : (
+                <>
+                  Tes révisions sont faites : voici <strong className="tabular">{plan.ids.length} nouveaux mots</strong>, les suivants par ordre de
+                  fréquence, regroupés par thème.
                 </>
               )}
-              {fromDue > 0 && fromNew === 0 && ', tous à revoir.'}
-              {fromDue === 0 && fromNew > 0 && ', tous nouveaux.'}
             </p>
-            <p className="mt-1 text-sm text-ink-2">
-              Les mots que tu ne connais pas reviennent à la fin de la liste jusqu’à ce que tu les reconnaisses.
-            </p>
-            <button type="button" className="btn btn-primary mt-5 h-14 w-full text-lg sm:w-auto sm:px-8" onClick={() => start()}>
-              <Icon name="play" size={20} /> Commencer
-            </button>
-            {plan.due.length > settings.sessionSize && (
-              <p className="mt-3 text-sm text-muted tabular">
-                Encore {plan.due.length - settings.sessionSize} mots à revoir après cette session.
+            {settings.newPerDay > 0 && (
+              <p className="mt-1 text-sm text-ink-2 tabular">
+                {plan.newStartedToday} / {settings.newPerDay} nouveaux mots aujourd’hui.
               </p>
             )}
           </>
-        ) : (
+        )}
+        {plan.kind === 'done' && (
           <>
-            <p className="text-lg font-bold">Tout est à jour pour aujourd’hui.</p>
-            <p className="mt-1 text-ink-2">
-              {plan.newAvailable.length > 0
-                ? `Tu as atteint ta limite de ${settings.newPerDay} nouveaux mots par jour (modifiable dans les paramètres).`
-                : 'Tu as déjà vu tous les mots de ta collection.'}
-            </p>
+            {plan.newAvailable > 0 ? (
+              <p className="text-lg">
+                Tu as atteint ton objectif de <strong className="tabular">{settings.newPerDay} nouveaux mots</strong> aujourd’hui.
+              </p>
+            ) : (
+              <p className="text-lg">Tu as déjà commencé tous les mots de ta collection. Bravo !</p>
+            )}
+            {laterNote}
             <div className="mt-5 flex flex-wrap gap-2">
-              {plan.newAvailable.length > 0 && (
+              {plan.newAvailable > 0 && (
                 <button type="button" className="btn btn-primary" onClick={() => start({ ignoreNewLimit: true })}>
-                  <Icon name="plus" size={20} /> Apprendre {Math.min(settings.sessionSize, plan.newAvailable.length)} mots de plus
+                  <Icon name="plus" size={20} /> Nouvelle liste quand même ({extra.ids.length} mots)
                 </button>
               )}
               <button type="button" className="btn btn-ghost" onClick={() => start({ ahead: true })}>
                 <Icon name="refresh" size={20} /> Réviser en avance
               </button>
             </div>
+          </>
+        )}
+        {plan.kind !== 'done' && (
+          <>
+            <div className="mt-4">
+              <ThemeChips groups={plan.groups} />
+            </div>
+            <button type="button" className="btn btn-primary mt-5 h-14 w-full text-lg sm:w-auto sm:px-8" onClick={() => start()}>
+              <Icon name="play" size={20} /> {plan.kind === 'review' ? 'Commencer la révision' : 'Commencer la liste'}
+            </button>
+            {plan.kind === 'new' && laterNote}
+            <p className="mt-3 text-sm text-muted">Les mots que tu ne connais pas reviennent à la fin de la liste jusqu’à ce que tu les reconnaisses.</p>
           </>
         )}
       </div>
@@ -365,6 +420,7 @@ function SessionView({ session }: { session: ReviewSession }) {
 
 function SessionSummary({ session }: { session: ReviewSession }) {
   const { wordsById, dismissFinished, startDailySession, continueSelection } = useApp();
+  const next = useNextPlan();
   const p = sessionProgress(session);
   const answered = p.correct + p.incorrect;
   const remaining = session.selection?.remainingIds.length ?? 0;
@@ -415,9 +471,16 @@ function SessionSummary({ session }: { session: ReviewSession }) {
             <Icon name="play" size={20} /> Continuer la sélection ({remaining} restants)
           </button>
         ) : (
-          <button type="button" className="btn btn-primary" onClick={() => startDailySession()}>
-            <Icon name="play" size={20} /> Nouvelle session
-          </button>
+          next.kind !== 'done' ? (
+            <button type="button" className="btn btn-primary" onClick={() => startDailySession()}>
+              <Icon name="play" size={20} />{' '}
+              {next.kind === 'review' ? `Réviser ${next.ids.length} mot${next.ids.length > 1 ? 's' : ''}` : `Liste suivante (${next.ids.length} nouveaux mots)`}
+            </button>
+          ) : (
+            <button type="button" className="btn btn-primary" onClick={() => dismissFinished()}>
+              <Icon name="play" size={20} /> Voir la suite
+            </button>
+          )
         )}
         <button
           type="button"

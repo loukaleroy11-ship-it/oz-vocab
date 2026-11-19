@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { EMPTY_FILTER, applyFilter, matchesQuery } from '../src/domain/filters';
-import { dailyPlan, pickDailySession, pickFromSelection } from '../src/domain/selection';
+import { MAX_OVERFLOW, THEME_WINDOW, coherentPick, pickFromSelection, planNextSession } from '../src/domain/selection';
+import { groupKey, groupLabel } from '../src/data/themes';
+import { normalizeSettings } from '../src/domain/types';
 import { DAY_MS, schedule } from '../src/domain/srs';
 import { statusTags } from '../src/domain/status';
 import type { Word } from '../src/domain/types';
@@ -67,36 +69,105 @@ describe('filtres de l’explorateur', () => {
   });
 });
 
-describe('sélection des mots d’une session', () => {
-  it('nouvel utilisateur : les 10 mots les plus fréquents', () => {
-    const ids = pickDailySession(allCore(), NOW, { size: 10, newPerDay: 20 });
-    expect(ids).toEqual(allCore().slice(0, 10).map((w) => w.id));
+describe('bouton « Réviser » : révisions puis nouvelles listes cohérentes', () => {
+  const plan = (ws: Word[], now = NOW, newPerDay = 0, ignoreNewLimit = false) =>
+    planNextSession(ws, now, { size: 10, newPerDay, ignoreNewLimit });
+  const ens = (ws: Word[], ids: string[]) => ids.map((id) => ws.find((w) => w.id === id)!.en);
+
+  it('première liste : verbes essentiels puis la famille des pronoms au complet', () => {
+    const ws = allCore();
+    const p = plan(ws);
+    expect(p.kind).toBe('new');
+    expect(ens(ws, p.ids)).toEqual(['be', 'have', 'do', 'get', 'you', 'it', 'they', 'we', 'he', 'I', 'she']);
+    expect(p.groups.map(groupLabel)).toEqual(['verbes essentiels', 'pronoms']);
   });
 
-  it('les mots à revoir passent avant les nouveaux, les plus en retard d’abord', () => {
+  it('les mots d’un même thème se suivent dans la liste', () => {
+    const ws = allCore();
+    const p = plan(ws);
+    const keys = p.ids.map((id) => groupKey(ws.find((w) => w.id === id)!));
+    const changes = keys.filter((k, i) => i > 0 && k !== keys[i - 1]).length;
+    expect(changes).toBe(p.groups.length - 1);
+  });
+
+  it('les listes successives suivent à peu près la fréquence, sans perdre ni répéter de mot', () => {
+    let pool = allCore();
+    const seen = new Set<string>();
+    let lists = 0;
+    while (pool.length) {
+      const p = coherentPick(pool, 10);
+      expect(p.ids.length).toBeGreaterThan(0);
+      expect(p.ids.length).toBeLessThanOrEqual(10 + MAX_OVERFLOW);
+      const firstRank = pool[0].rank!;
+      expect(p.ids[0]).toBe(pool[0].id); // le mot le plus fréquent restant est toujours pris
+      for (const id of p.ids) {
+        expect(seen.has(id)).toBe(false);
+        seen.add(id);
+        const w = pool.find((x) => x.id === id)!;
+        expect(w.rank! - firstRank).toBeLessThan(THEME_WINDOW + 40);
+      }
+      const set = new Set(p.ids);
+      pool = pool.filter((w) => !set.has(w.id));
+      lists++;
+    }
+    expect(seen.size).toBe(500);
+    expect(lists).toBeGreaterThanOrEqual(42);
+    expect(lists).toBeLessThanOrEqual(50);
+  });
+
+  it('les mots à revoir passent avant les nouveaux, sans mélange', () => {
     const ws = allCore();
     const a = ws[300];
     const b = ws[200];
-    a.srs = { ...schedule(a.srs, 'good', NOW - 5 * DAY_MS) }; // dû il y a 4 jours
-    b.srs = { ...schedule(b.srs, 'good', NOW - 2 * DAY_MS) }; // dû hier
-    const ids = pickDailySession(ws, NOW, { size: 10, newPerDay: 20 });
-    expect(ids.slice(0, 2)).toEqual([a.id, b.id]);
-    expect(ids).toHaveLength(10);
+    a.srs = schedule(a.srs, 'good', NOW - 5 * DAY_MS); // dû il y a 4 jours
+    b.srs = schedule(b.srs, 'good', NOW - 2 * DAY_MS); // dû hier
+    const p = plan(ws);
+    expect(p.kind).toBe('review');
+    expect(p.ids.sort()).toEqual([a.id, b.id].sort());
   });
 
-  it('limite quotidienne de nouveaux mots', () => {
+  it('tout est révisé : une nouvelle liste est proposée automatiquement (pas de limite par défaut)', () => {
     const ws = allCore();
-    for (const w of ws.slice(0, 18)) w.srs = schedule(w.srs, 'good', NOW - 3600_000); // vus aujourd'hui, dus demain
-    const plan = dailyPlan(ws, NOW, 20);
-    expect(plan.newStartedToday).toBe(18);
-    expect(plan.newAllowance).toBe(2);
-    expect(pickDailySession(ws, NOW, { size: 10, newPerDay: 20 })).toHaveLength(2);
-    expect(pickDailySession(ws, NOW, { size: 10, newPerDay: 20, ignoreNewLimit: true })).toHaveLength(10);
+    // 40 mots appris aujourd'hui, à revoir demain
+    for (const w of ws.slice(0, 40)) w.srs = schedule(w.srs, 'good', NOW - 3600_000);
+    const p = plan(ws);
+    expect(p.kind).toBe('new');
+    expect(p.ids.every((id) => ws.find((w) => w.id === id)!.srs.reps === 0)).toBe(true);
+    expect(p.newStartedToday).toBe(40);
+  });
+
+  it('un mot raté revient 10 minutes plus tard, pas avant', () => {
+    const ws = allCore();
+    ws[0].srs = schedule(ws[0].srs, 'again', NOW);
+    expect(plan(ws, NOW + 60_000).kind).toBe('new');
+    expect(plan(ws, NOW + 60_000).laterToday).toBe(1);
+    const later = plan(ws, NOW + 11 * 60_000);
+    expect(later.kind).toBe('review');
+    expect(later.ids).toEqual([ws[0].id]);
+  });
+
+  it('avec une limite réglée : on demande avant de la dépasser', () => {
+    const ws = allCore();
+    for (const w of ws.slice(0, 20)) w.srs = schedule(w.srs, 'good', NOW - 3600_000);
+    expect(plan(ws, NOW, 20).kind).toBe('done');
+    expect(plan(ws, NOW, 20).newLimitReached).toBe(true);
+    expect(plan(ws, NOW, 20, true).kind).toBe('new');
+    // limite presque atteinte : la liste est raccourcie
+    const ws2 = allCore();
+    for (const w of ws2.slice(0, 15)) w.srs = schedule(w.srs, 'good', NOW - 3600_000);
+    expect(plan(ws2, NOW, 20).ids.length).toBeLessThanOrEqual(5 + MAX_OVERFLOW);
   });
 
   it('les mots ajoutés par l’utilisateur passent en premier parmi les nouveaux', () => {
-    const ws = [...allCore(), makeWord('u1', { en: 'brave' })];
-    expect(pickDailySession(ws, NOW, { size: 3, newPerDay: 20 })[0]).toBe('u1');
+    const ws = [...allCore(), makeWord('u1', { en: 'brave', pos: 'adjective' })];
+    expect(plan(ws).ids[0]).toBe('u1');
+  });
+
+  it('migration des réglages : l’ancienne limite de 20 par défaut devient « sans limite »', () => {
+    expect(normalizeSettings({ newPerDay: 20, updatedAt: 5 }).newPerDay).toBe(0);
+    expect(normalizeSettings({ newPerDay: 30, updatedAt: 5 }).newPerDay).toBe(30);
+    expect(normalizeSettings({ schema: 2, newPerDay: 20 }).newPerDay).toBe(20);
+    expect(normalizeSettings(null).newPerDay).toBe(0);
   });
 
   it('sélection de moins de 10 mots : session plus courte', () => {

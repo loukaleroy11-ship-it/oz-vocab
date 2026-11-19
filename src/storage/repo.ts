@@ -3,7 +3,7 @@
  * sérialisées, suivi des paquets modifiés pour la synchronisation.
  */
 import { CORE_ENTRIES, CORE_VERSION, coreContent, coreWord } from '../data/core';
-import { DEFAULT_SETTINGS, type DailySnapshot, type ReviewSession, type Settings, type Word } from '../domain/types';
+import { normalizeSettings, type DailySnapshot, type ReviewSession, type Settings, type Word } from '../domain/types';
 import { SETTINGS_BUCKET, dailyBucket, sessionBucket, wordBucket } from './buckets';
 import type { Batch, Store } from './store';
 
@@ -72,7 +72,7 @@ export class Repo {
       words: [...byId.values()],
       sessions,
       daily,
-      settings: { ...DEFAULT_SETTINGS, ...(settings ?? {}) },
+      settings: normalizeSettings(settings),
     };
   }
 
@@ -145,7 +145,7 @@ export class Repo {
         this.store.getMeta<Settings>('settings'),
       ]);
       return {
-        local: { words, sessions, daily, settings: { ...DEFAULT_SETTINGS, ...(settings ?? {}) } },
+        local: { words, sessions, daily, settings: normalizeSettings(settings) },
         dirty: new Map(this.dirty),
       };
     };

@@ -1,7 +1,7 @@
 /** Statistiques calculées à partir des données réellement enregistrées. */
 import { addDays, dayKey, startOfDay } from './dates';
 import { isMastered } from './srs';
-import { isDueToday, statusTags } from './status';
+import { isDueNow, isDueToday, statusTags } from './status';
 import type { DailySnapshot, Pos, ReviewSession, Word } from './types';
 
 export interface Overview {
@@ -11,6 +11,8 @@ export interface Overview {
   mastered: number;
   difficult: number;
   dueToday: number;
+  /** À revoir maintenant (les mots ratés récemment reviennent 10 min plus tard). */
+  dueNow: number;
   /** Mots déjà présentés au moins une fois. */
   seen: number;
   /** Mots reconnus au moins une fois (≠ maîtrisés durablement). */
@@ -40,6 +42,7 @@ export function computeOverview(words: Word[], sessions: ReviewSession[], now: n
   let mastered = 0;
   let difficult = 0;
   let dueToday = 0;
+  let dueNow = 0;
   let recognized = 0;
   for (const w of active) {
     const tags = statusTags(w, now);
@@ -48,6 +51,7 @@ export function computeOverview(words: Word[], sessions: ReviewSession[], now: n
     if (tags.includes('mastered')) mastered++;
     if (tags.includes('difficult')) difficult++;
     if (isDueToday(w, now)) dueToday++;
+    if (isDueNow(w, now)) dueNow++;
     if (w.srs.correct > 0) recognized++;
   }
   const today = startOfDay(now);
@@ -65,6 +69,7 @@ export function computeOverview(words: Word[], sessions: ReviewSession[], now: n
     mastered,
     difficult,
     dueToday,
+    dueNow,
     seen,
     recognized,
     reviewedToday: new Set(todays.map((a) => a.wordId)).size,

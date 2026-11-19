@@ -126,7 +126,7 @@ def run():
         a.goto(BASE + '/index.html#accueil')
         expect(a.get_by_role('heading', name='Tableau de bord')).to_be_visible(timeout=15000)
         a.get_by_role('button', name='Commencer ma révision').click()
-        for i in range(11):
+        for i in range(12):
             a.get_by_role('button', name='Révéler la réponse').click()
             a.get_by_role('button', name='Je ne connais pas' if i == 4 else 'Je connais').click()
         expect(a.get_by_text('Session terminée')).to_be_visible()
@@ -178,10 +178,10 @@ def run():
         b.wait_for_timeout(1500)
         total = b.locator('dt:has-text("Dans la collection") + dd').inner_text().strip()
         new = b.locator('dt:has-text("Nouveaux") + dd').first.inner_text().strip()
-        check('appareil 2 : progression et mot ajouté récupérés', total == '501' and new == '491', f'collection {total}, nouveaux {new}')
+        check('appareil 2 : progression et mot ajouté récupérés', total == '501' and new == '490', f'collection {total}, nouveaux {new}')
         b.goto(BASE + '/index.html#stats')
         b.wait_for_timeout(500)
-        check('appareil 2 : historique de la session récupéré', b.get_by_text('Révision du jour').first.is_visible())
+        check('appareil 2 : historique de la session récupéré', b.get_by_text('Nouvelle liste').first.is_visible())
         b.screenshot(path=str(OUT / 'artifact-ordinateur-stats.png'), full_page=True)
 
         check('aucune erreur JavaScript', not errors, '; '.join(errors[:3]))

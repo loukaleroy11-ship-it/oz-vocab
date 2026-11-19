@@ -217,11 +217,15 @@ export function SettingsPage() {
             ))}
           </select>
         </Row>
-        <Row label="Nouveaux mots par jour" htmlFor="set-new" hint="Au-delà, la session du jour ne propose que des révisions.">
-          <select id="set-new" className="field w-28" value={settings.newPerDay} onChange={(e) => updateSettings({ newPerDay: Number(e.target.value) })}>
-            {[0, 5, 10, 15, 20, 30, 40, 50].map((n) => (
+        <Row
+          label="Nouveaux mots par jour"
+          htmlFor="set-new"
+          hint="Une fois tes révisions faites, « Réviser » propose une nouvelle liste. Avec une limite, il te demande avant de la dépasser."
+        >
+          <select id="set-new" className="field w-36" value={settings.newPerDay} onChange={(e) => updateSettings({ newPerDay: Number(e.target.value) })}>
+            {[0, 10, 20, 30, 50, 80].map((n) => (
               <option key={n} value={n}>
-                {n}
+                {n === 0 ? 'Sans limite' : n}
               </option>
             ))}
           </select>

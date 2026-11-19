@@ -2,7 +2,7 @@
 import { newSrsState } from '../domain/srs';
 import { englishKey } from '../domain/text';
 import {
-  DEFAULT_SETTINGS,
+  normalizeSettings,
   POS_LIST,
   type DailySnapshot,
   type Grade,
@@ -246,7 +246,7 @@ export function analyzeImport(text: string, current: AppData): ImportAnalysis {
   }
   const daily = (Array.isArray(o.daily) ? o.daily : []).map(cleanDaily).filter((d): d is DailySnapshot => !!d);
   const settings =
-    o.settings && typeof o.settings === 'object' ? { ...DEFAULT_SETTINGS, ...(o.settings as Partial<Settings>) } : null;
+    o.settings && typeof o.settings === 'object' ? normalizeSettings(o.settings as Partial<Settings>) : null;
 
   const localById = new Map(current.words.map((w) => [w.id, w]));
   const localEnglish = new Map(

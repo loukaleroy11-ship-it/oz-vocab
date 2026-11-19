@@ -145,7 +145,10 @@ export type AnswerMode = 'two' | 'three';
 export type AudioPreference = 'tts' | 'native-first';
 
 export interface Settings {
+  /** Version du format des réglages (migrations). */
+  schema: number;
   sessionSize: number;
+  /** Limite de nouveaux mots par jour ; 0 = sans limite. */
   newPerDay: number;
   answerMode: AnswerMode;
   theme: ThemeSetting;
@@ -159,9 +162,12 @@ export interface Settings {
   updatedAt: number;
 }
 
+export const SETTINGS_SCHEMA = 2;
+
 export const DEFAULT_SETTINGS: Settings = {
+  schema: SETTINGS_SCHEMA,
   sessionSize: 10,
-  newPerDay: 20,
+  newPerDay: 0,
   answerMode: 'two',
   theme: 'light',
   voiceURI: null,
@@ -172,5 +178,19 @@ export const DEFAULT_SETTINGS: Settings = {
   lookupAccessCode: '',
   updatedAt: 0,
 };
+
+/**
+ * Complète et met à jour des réglages enregistrés.
+ * Version 1 : limite de 20 nouveaux mots par jour par défaut → désormais sans limite
+ * (le bouton « Réviser » enchaîne les nouvelles listes une fois les révisions faites).
+ */
+export function normalizeSettings(s: Partial<Settings> | null | undefined): Settings {
+  const merged: Settings = { ...DEFAULT_SETTINGS, ...(s ?? {}) };
+  if ((s?.schema ?? 1) < 2) {
+    if (merged.newPerDay === 20) merged.newPerDay = 0;
+    merged.schema = SETTINGS_SCHEMA;
+  }
+  return merged;
+}
 
 export type LearningStatus = 'new' | 'learning' | 'due' | 'difficult' | 'mastered';

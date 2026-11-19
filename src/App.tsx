@@ -66,9 +66,9 @@ export function App() {
 
   const inSession = route === 'reviser' && !!activeSession;
   const badge = (r: Route) =>
-    r === 'reviser' && due && due.dueToday > 0 ? (
+    r === 'reviser' && due && due.dueNow > 0 ? (
       <span className="tabular absolute -right-2 -top-1.5 min-w-5 rounded-full bg-wattle px-1 text-center text-[11px] font-bold leading-5 text-ink">
-        {due.dueToday > 99 ? '99+' : due.dueToday}
+        {due.dueNow > 99 ? '99+' : due.dueNow}
       </span>
     ) : null;
 
@@ -99,7 +99,7 @@ export function App() {
           {due && (
             <>
               <p>
-                <strong className="tabular">{due.dueToday}</strong> à revoir aujourd’hui
+                <strong className="tabular">{due.dueNow}</strong> à revoir maintenant
               </p>
               <p className="flex items-center gap-1.5">
                 <Icon name="flame" size={16} className="text-wattle-ink" />

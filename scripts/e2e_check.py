@@ -50,50 +50,59 @@ def run():
         check('mobile : pas de défilement horizontal (accueil)', no_horizontal_scroll(page))
         page.screenshot(path=str(OUT / 'mobile-accueil.png'), full_page=True)
 
-        # ---------- 2. session de 10 mots, retour en fin de liste
+        # ---------- 2. première liste (thèmes cohérents), retour en fin de liste
         page.get_by_role('button', name='Commencer ma révision').click()
         expect(page.get_by_role('button', name='Révéler la réponse')).to_be_visible()
         page.wait_for_timeout(350)
         page.screenshot(path=str(OUT / 'mobile-carte.png'))
         seen = []
-        for i in range(10):
+        for i in range(11):
             word = page.locator('article h2').inner_text()
             seen.append(word)
             page.get_by_role('button', name='Révéler la réponse').click()
             if i == 0:
                 page.wait_for_timeout(350)
                 page.screenshot(path=str(OUT / 'mobile-carte-revelee.png'))
-            # 3e mot (« you ») inconnu, les autres connus
+            # 3e mot (« do ») inconnu, les autres connus
             name = 'Je ne connais pas' if i == 2 else 'Je connais'
             page.get_by_role('button', name=name).click()
-        check('session : 10 mots distincts dans l’ordre de fréquence', seen[:3] == ['be', 'the', 'you'], ', '.join(seen))
-        word11 = page.locator('article h2').inner_text()
-        check('mot inconnu revenu en fin de liste', word11 == 'you', f'11e carte = {word11}')
+        check('première liste cohérente : verbes essentiels puis pronoms', seen == ['be', 'have', 'do', 'get', 'you', 'it', 'they', 'we', 'he', 'I', 'she'], ', '.join(seen))
+        word12 = page.locator('article h2').inner_text()
+        check('mot inconnu revenu en fin de liste', word12 == 'do', f'12e carte = {word12}')
         badge = page.get_by_text('Revient · 2e passage')
         check('indication de répétition affichée', badge.is_visible())
         counter = page.locator('p[aria-live="polite"]').first.inner_text()
-        check('compteur mots distincts / répétitions', '10' in counter and 'répétition' not in counter, counter)
+        check('compteur mots distincts / répétitions', '11' in counter and 'répétition' not in counter, counter)
 
         # ---------- 3. interruption puis reprise après rechargement
         page.reload()
         expect(page.get_by_role('button', name='Révéler la réponse')).to_be_visible(timeout=10000)
-        check('session reprise après rechargement', page.locator('article h2').inner_text() == 'you')
+        check('session reprise après rechargement', page.locator('article h2').inner_text() == 'do')
         page.get_by_role('button', name='Révéler la réponse').click()
         page.get_by_role('button', name='Je connais').click()
         expect(page.get_by_text('Session terminée')).to_be_visible()
         page.screenshot(path=str(OUT / 'mobile-bilan.png'), full_page=True)
         summary = page.locator('main').inner_text().lower()
         import re
-        check('bilan : 10 mots distincts, 1 répétition', bool(re.search(r'mots distincts\s+10\b', summary)) and bool(re.search(r'répétitions\s+1\b', summary)))
+        check('bilan : 11 mots distincts, 1 répétition', bool(re.search(r'mots distincts\s+11\b', summary)) and bool(re.search(r'répétitions\s+1\b', summary)))
+        nxt = page.get_by_role('button', name='Liste suivante')
+        check('après la liste : nouvelle liste proposée', nxt.is_visible(), nxt.inner_text() if nxt.count() else '')
+        page.get_by_role('button', name='Tableau de bord').click()
+        page.goto(BASE + '/#reviser')
+        expect(page.get_by_role('heading', name='Nouvelle liste')).to_be_visible()
+        chips = page.get_by_label('Thèmes de la liste').inner_text()
+        check('liste suivante : déterminants et prépositions', 'déterminants' in chips and 'prépositions' in chips, chips.replace('\n', ', '))
+        page.screenshot(path=str(OUT / 'mobile-liste-suivante.png'), full_page=True)
 
         # ---------- 4. sauvegarde après rechargement + statistiques
         page.goto(BASE + '/#accueil')
         page.reload()
         expect(page.get_by_role('heading', name='Tableau de bord')).to_be_visible()
         new_count = page.locator('dt:has-text("Nouveaux") + dd').first.inner_text()
-        check('progrès conservés après rechargement', new_count.strip() == '490', f'nouveaux = {new_count}')
+        check('progrès conservés après rechargement', new_count.strip() == '489', f'nouveaux = {new_count}')
         txt = page.locator('main').inner_text()
-        check('statistiques du jour', 'Révisés aujourd’hui : 10 mots' in txt and '10 bonnes réponses sur 11' in txt)
+        check('statistiques du jour', 'Révisés aujourd’hui : 11 mots' in txt and '11 bonnes réponses sur 12' in txt)
+        check('accueil : prochaine liste annoncée', 'prochaine liste' in txt.lower() and 'nouveaux mots' in txt)
 
         # ---------- 5. explorer : filtres combinés et recherche
         page.goto(BASE + '/#explorer')
@@ -235,7 +244,7 @@ def run():
         p3.get_by_role('button', name='Importer', exact=True).click()
         expect(p3.get_by_text('Import terminé')).to_be_visible()
         p3.goto(BASE + '/#accueil')
-        check('import : progression retrouvée sur un autre navigateur', p3.locator('dt:has-text("Nouveaux") + dd').first.inner_text().strip() == '491')
+        check('import : progression retrouvée sur un autre navigateur', p3.locator('dt:has-text("Nouveaux") + dd').first.inner_text().strip() == '490')
         p3.screenshot(path=str(OUT / 'desktop-accueil.png'), full_page=True)
         for r in ['explorer', 'stats', 'parametres', 'ajouter']:
             p3.goto(BASE + f'/#{r}')

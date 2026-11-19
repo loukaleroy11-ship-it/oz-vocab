@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { CORE_ENTRIES, CORE_META } from '../src/data/core';
 import { POS_LIST } from '../src/domain/types';
+import { THEMES } from '../src/data/themes';
 
 const COGNATES = [
   'point', 'question', 'long', 'six', 'minute', 'important', 'couple', 'service', 'parent', 'moment', 'train',
@@ -70,5 +71,11 @@ describe('base des 500 mots', () => {
     const en = new Set(CORE_ENTRIES.map((e) => e.en));
     expect(en.has('went')).toBe(false);
     expect(en.has('is')).toBe(false);
+  });
+
+  it('chaque mot appartient à exactement un thème', () => {
+    const all = Object.values(THEMES).flatMap((t) => t.words);
+    expect(new Set(all).size).toBe(all.length);
+    expect(new Set(all)).toEqual(new Set(CORE_ENTRIES.map((e) => e.en)));
   });
 });

@@ -4,13 +4,15 @@
  */
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { answerCurrent, createSession, currentWordId, endSession, resumeSession } from '../domain/queue';
-import { pickAhead, pickDailySession, pickFromSelection } from '../domain/selection';
+import { pickAhead, pickFromSelection, planNextSession } from '../domain/selection';
+import { groupLabel } from '../data/themes';
 import { makeSnapshot } from '../domain/stats';
 import { newSrsState, schedule } from '../domain/srs';
 import { uid } from '../domain/text';
 import { buildLangIndex, type LangIndex } from '../domain/lang';
 import {
   DEFAULT_SETTINGS,
+  normalizeSettings,
   type DailySnapshot,
   type Grade,
   type ReviewSession,
@@ -102,6 +104,12 @@ function normalizeActive(sessions: ReviewSession[], now: number): { sessions: Re
   return { sessions: upsert(sessions, closed), closed };
 }
 
+/** Titre d'une session : « Nouvelle liste · pronoms, verbes essentiels ». */
+export function sessionTitle(kind: 'review' | 'new', groups: string[]): string {
+  const themes = groups.slice(0, 3).map(groupLabel).join(', ');
+  return `${kind === 'review' ? 'Révision' : 'Nouvelle liste'}${themes ? ' · ' + themes : ''}`;
+}
+
 export function AppProvider({ children }: { children: ReactNode }) {
   const repoRef = useRef<Repo | null>(null);
   const syncTargetRef = useRef<SyncTarget | null>(null);
@@ -172,7 +180,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
           });
         }
         if (pd.length) setDaily((cur) => upsert(cur, pd));
-        if (pset) setSettings((cur) => (pset.updatedAt > cur.updatedAt ? { ...DEFAULT_SETTINGS, ...pset } : cur));
+        if (pset) setSettings((cur) => (pset.updatedAt > cur.updatedAt ? normalizeSettings(pset) : cur));
         setSync({ state: 'idle', lastAt: out.at, message: null });
         if (manual) toast('Synchronisation terminée.', 'success');
       } catch (e) {
@@ -303,15 +311,14 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const startDailySession = useCallback(
     (opts: { ignoreNewLimit?: boolean; ahead?: boolean } = {}) => {
       const t = Date.now();
-      const ids = opts.ahead
-        ? pickAhead(words, t, settings.sessionSize)
-        : pickDailySession(words, t, {
-            size: settings.sessionSize,
-            newPerDay: settings.newPerDay,
-            ignoreNewLimit: opts.ignoreNewLimit,
-          });
-      const label = opts.ahead ? 'Révision anticipée' : opts.ignoreNewLimit ? 'Nouveaux mots en plus' : 'Révision du jour';
-      return startSession(ids, label);
+      if (opts.ahead) return startSession(pickAhead(words, t, settings.sessionSize), 'Révision anticipée');
+      const plan = planNextSession(words, t, {
+        size: settings.sessionSize,
+        newPerDay: settings.newPerDay,
+        ignoreNewLimit: opts.ignoreNewLimit,
+      });
+      if (plan.kind === 'done') return null;
+      return startSession(plan.ids, sessionTitle(plan.kind, plan.groups));
     },
     [words, settings.sessionSize, settings.newPerDay, startSession],
   );
@@ -452,7 +459,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       if (changes.words?.length) setWords((cur) => upsert(cur, changes.words!));
       if (changes.sessions?.length) setSessions((cur) => upsert(cur, changes.sessions!));
       if (changes.daily?.length) setDaily((cur) => upsert(cur, changes.daily!));
-      if (changes.settings) setSettings(changes.settings);
+      if (changes.settings) setSettings(normalizeSettings(changes.settings));
       scheduleSync();
     },
     [scheduleSync],

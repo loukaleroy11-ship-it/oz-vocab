@@ -7,6 +7,15 @@ export function isDueToday(w: Word, now: number): boolean {
   return w.srs.reps > 0 && w.srs.due != null && w.srs.due <= endOfDay(now);
 }
 
+/**
+ * À réviser maintenant : un mot en cours d'apprentissage (raté récemment) revient
+ * à l'heure prévue (10 min plus tard) ; un mot appris peut être revu à tout moment de la journée.
+ */
+export function isDueNow(w: Word, now: number): boolean {
+  if (w.srs.reps === 0 || w.srs.due == null) return false;
+  return w.srs.interval === 0 ? w.srs.due <= now : w.srs.due <= endOfDay(now);
+}
+
 /** Les états se recoupent : un mot peut être à la fois « difficile » et « à revoir ». */
 export function statusTags(w: Word, now: number): LearningStatus[] {
   const tags: LearningStatus[] = [];

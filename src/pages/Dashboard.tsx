@@ -3,20 +3,19 @@ import { AreaChart } from '../components/Charts';
 import { Icon } from '../components/Icon';
 import { Notice, pct } from '../components/ui';
 import { sessionProgress } from '../domain/queue';
-import { dailyPlan } from '../domain/selection';
 import { computeOverview, dailyRows, posBreakdown } from '../domain/stats';
 import { POS_PLURAL } from '../domain/status';
 import { navigate } from '../router';
 import { useApp } from '../state/AppContext';
+import { ThemeChips, useNextPlan } from './Review';
 
 export function Dashboard() {
-  const { words, sessions, daily, now, settings, activeSession, startDailySession, toast } = useApp();
+  const { words, sessions, daily, now, activeSession, startDailySession, toast } = useApp();
   const o = useMemo(() => computeOverview(words, sessions, now), [words, sessions, now]);
-  const plan = useMemo(() => dailyPlan(words, now, settings.newPerDay), [words, now, settings.newPerDay]);
+  const plan = useNextPlan();
   const rows = useMemo(() => dailyRows(sessions, daily, now, 30), [sessions, daily, now]);
   const pos = useMemo(() => posBreakdown(words, now), [words, now]);
   const today = new Intl.DateTimeFormat('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' }).format(now);
-  const newToday = Math.min(plan.newAllowance, plan.newAvailable.length);
   const progress = activeSession ? sessionProgress(activeSession) : null;
 
   const start = () => {
@@ -52,17 +51,21 @@ export function Dashboard() {
               </>
             ) : (
               <>
-                <p className="eyebrow">Aujourd’hui</p>
-                <p className="mt-1 flex flex-wrap items-baseline gap-x-6 gap-y-1">
-                  <span>
-                    <span className="font-display text-5xl font-extrabold tabular">{o.dueToday}</span>
-                    <span className="ml-2 text-ink-2">à revoir</span>
-                  </span>
-                  <span>
-                    <span className="font-display text-5xl font-extrabold tabular text-ink-2">{newToday}</span>
-                    <span className="ml-2 text-ink-2">nouveaux possibles</span>
-                  </span>
-                </p>
+                <p className="eyebrow">Prochaine liste</p>
+                {plan.kind === 'done' ? (
+                  <p className="mt-1 text-lg font-bold">Tout est à jour pour l’instant.</p>
+                ) : (
+                  <>
+                    <p className="mt-1 flex flex-wrap items-baseline gap-x-3">
+                      <span className="font-display text-5xl font-extrabold tabular">{plan.ids.length}</span>
+                      <span className="text-ink-2">{plan.kind === 'review' ? 'mots à revoir' : 'nouveaux mots'}</span>
+                    </p>
+                    <div className="mt-2">
+                      <ThemeChips groups={plan.groups} />
+                    </div>
+                    {plan.kind === 'review' && <p className="mt-2 text-sm text-ink-2">Ensuite, de nouveaux mots par ordre de fréquence.</p>}
+                  </>
+                )}
               </>
             )}
           </div>
