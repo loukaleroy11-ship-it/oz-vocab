@@ -1,0 +1,9 @@
+node_modules
+dist
+dist-single
+dist-artifact
+captures
+.vercel
+.netlify
+*.log
+livrables

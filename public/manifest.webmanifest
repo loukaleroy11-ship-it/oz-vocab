@@ -1,0 +1,17 @@
+{
+  "name": "Oz Vocab — anglais australien",
+  "short_name": "Oz Vocab",
+  "description": "Les 500 mots anglais les plus fréquents à l’oral, avec prononciation australienne et répétition espacée.",
+  "lang": "fr",
+  "start_url": "./#accueil",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f3f6f7",
+  "theme_color": "#0b6a87",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
