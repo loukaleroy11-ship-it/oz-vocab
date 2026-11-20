@@ -4,6 +4,7 @@ import { newSrsState } from '../domain/srs';
 import { englishKey } from '../domain/text';
 import {
   CEFR_LEVELS,
+  PACK_LABEL,
   normalizeSettings,
   POS_LIST,
   type Cefr,
@@ -66,7 +67,7 @@ export function buildCsv(words: Word[], now: number): string {
     .map((w) =>
       [
         w.en, w.fr, w.frAlt.join(' ; '), POS_LABEL[w.pos], w.ipa ?? '', w.exampleEn, w.exampleFr,
-        w.rank ?? '', w.source === 'core' ? '500 mots' : 'ajouté', STATUS_LABEL[statusTags(w, now)[0]],
+        w.rank ?? '', w.source === 'user' ? 'ajouté' : w.pack ? PACK_LABEL[w.pack] : '500 mots de base', STATUS_LABEL[statusTags(w, now)[0]],
         w.srs.reps, w.srs.correct, w.srs.incorrect, w.srs.interval, iso(w.srs.due), iso(w.srs.lastReviewed),
         w.cefr ?? '', w.prod.reps === 0 ? 'Pas commencé' : w.prod.phase === 'review' ? 'Productible' : 'En cours',
         w.prod.reps, w.prod.interval, iso(w.prod.due),

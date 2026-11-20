@@ -5,6 +5,8 @@ import { Notice, PageHeader, PosChip, pct } from '../components/ui';
 import {
   BAND_SIZE,
   LETTERS,
+  bandLabel,
+  placementBands,
   NONE_OPTION,
   PER_BAND,
   buildPlacement,
@@ -30,7 +32,10 @@ export function PlacementPage() {
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, [stage, answers.length]);
-  const untouched = useMemo(() => words.filter((w) => w.source === 'core' && !w.deleted && !isStarted(w.srs)).length, [words]);
+  const untouched = useMemo(() => {
+    const bands = placementBands(words);
+    return words.filter((w) => bands.has(w.id) && !isStarted(w.srs)).length;
+  }, [words]);
 
   const begin = () => {
     const q = buildPlacement(words);
@@ -64,14 +69,14 @@ export function PlacementPage() {
             <li>Pour chaque mot anglais, choisis sa traduction parmi A à E.</li>
             <li>Si tu ne sais pas, appuie sur « Je ne sais pas » : deviner fausserait le résultat.</li>
             <li>
-              {PER_BAND} mots par tranche de {BAND_SIZE} (du plus fréquent au moins fréquent). Le test s’arrête tout seul quand les mots deviennent
-              trop difficiles.
+              {PER_BAND} mots par tranche : les 500 mots de base par tranches de {BAND_SIZE}, puis les niveaux B1, B2 et C1 par tranches de 100. Le
+              test s’arrête tout seul quand les mots deviennent trop difficiles.
             </li>
             <li>Les mots jugés connus ne te seront pas présentés comme nouveaux : ils reviendront en révision d’ici 1 à 4 semaines pour vérifier, et passeront aux cartes « dire en anglais ».</li>
           </ul>
           <Notice>
-            Le test porte pour l’instant sur les 500 mots les plus fréquents (surtout A1–A2). Il s’étendra aux niveaux B1 à C1 avec les prochains
-            paquets de vocabulaire. Ta progression actuelle est conservée : seuls les {untouched} mots jamais commencés sont concernés.
+            Ta progression actuelle est conservée : seuls les mots jamais commencés sont concernés ({untouched}). Les phrasal verbs, expressions,
+            australianismes et le vocabulaire pro ne sont pas testés : ils restent à découvrir dans tes listes.
           </Notice>
           <div className="mt-2 flex flex-wrap gap-2">
             <button type="button" className="btn btn-primary h-14 px-8 text-lg" onClick={begin} disabled={untouched < 2}>
@@ -105,7 +110,7 @@ export function PlacementPage() {
       <div className="mx-auto max-w-2xl">
         <div className="mb-3 flex items-center justify-between gap-3 pt-2 text-sm text-ink-2">
           <span className="tabular">
-            Question {i + 1} / {questions.length} · mots {band * BAND_SIZE + 1} à {(band + 1) * BAND_SIZE}
+            Question {i + 1} / {questions.length} · {bandLabel(band)}
           </span>
           <button type="button" className="btn btn-quiet min-h-10 text-sm" onClick={() => finish(answers)}>
             Arrêter ici
@@ -156,7 +161,7 @@ export function PlacementPage() {
             <p className="text-lg">
               <strong className="tabular">{placed} mot{placed > 1 ? 's' : ''}</strong> jugé{placed > 1 ? 's' : ''} connu{placed > 1 ? 's' : ''} : ils
               ne te seront pas présentés comme nouveaux. Estimation : tu connais environ <strong className="tabular">{outcome.knownEstimate}</strong>{' '}
-              des 500 mots les plus fréquents.
+              mots parmi les 500 de base et les niveaux B1 à C1.
             </p>
             {outcome.byLevel.length > 0 && (
               <ul className="flex flex-wrap gap-2 text-sm">
@@ -178,9 +183,7 @@ export function PlacementPage() {
               <tbody className="tabular">
                 {outcome.bands.map((b) => (
                   <tr key={b.band} className="border-t border-line">
-                    <td className="py-1.5">
-                      {b.from}–{b.to}
-                    </td>
+                    <td className="py-1.5 first-letter:uppercase">{b.label}</td>
                     <td className="py-1.5 text-right">
                       {b.correct} / {b.asked}
                     </td>

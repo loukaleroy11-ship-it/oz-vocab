@@ -1,3 +1,4 @@
+import { PACK_ENTRIES } from '../src/data/packs';
 import 'fake-indexeddb/auto';
 import { describe, expect, it } from 'vitest';
 import { answerCurrent, createSession } from '../src/domain/queue';
@@ -15,7 +16,8 @@ describe('stockage IndexedDB', () => {
   it('installe les 500 mots à la première ouverture', async () => {
     const repo = new Repo(await openIndexedDbStore(freshName()));
     const data = await repo.load(NOW);
-    expect(data.words).toHaveLength(500);
+    expect(data.words).toHaveLength(500 + PACK_ENTRIES.length);
+    expect(data.words.filter((w) => !w.pack && w.source === 'core')).toHaveLength(500);
     expect(data.sessions).toHaveLength(0);
     expect(data.settings.sessionSize).toBe(10);
     expect(data.settings.theme).toBe('light');
@@ -38,7 +40,7 @@ describe('stockage IndexedDB', () => {
 
     const repo2 = new Repo(await openIndexedDbStore(name));
     const again = await repo2.load(NOW + 1000);
-    expect(again.words).toHaveLength(501);
+    expect(again.words).toHaveLength(501 + PACK_ENTRIES.length);
     expect(again.words.find((x) => x.en === 'house')!.srs.reps).toBe(1);
     expect(again.words.find((x) => x.id === 'u-brave')!.fr).toBe('courageux');
     expect(again.sessions[0].answers).toHaveLength(1);

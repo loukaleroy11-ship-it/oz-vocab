@@ -63,6 +63,7 @@ export const POS_LABEL: Record<Pos, string> = {
   auxiliary: 'auxiliaire / modal',
   interjection: 'interjection',
   number: 'nombre',
+  expression: 'expression',
   other: 'autre',
 };
 
@@ -78,5 +79,6 @@ export const POS_PLURAL: Record<Pos, string> = {
   auxiliary: 'Auxiliaires',
   interjection: 'Interjections',
   number: 'Nombres',
+  expression: 'Expressions',
   other: 'Autres',
 };

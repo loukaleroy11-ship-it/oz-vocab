@@ -110,7 +110,8 @@ const THEME_OF = new Map<string, string>();
 for (const [id, t] of Object.entries(THEMES)) for (const w of t.words) THEME_OF.set(w, id);
 
 /** Clé de regroupement d'un mot : son thème, ou sa catégorie grammaticale s'il n'en a pas. */
-export function groupKey(w: Pick<Word, 'en' | 'pos' | 'source'>): string {
+export function groupKey(w: Pick<Word, 'en' | 'pos' | 'source' | 'group'>): string {
+  if (w.group) return w.group;
   if (w.source === 'core') {
     const t = THEME_OF.get(w.en);
     if (t) return t;
@@ -121,6 +122,7 @@ export function groupKey(w: Pick<Word, 'en' | 'pos' | 'source'>): string {
 
 export function groupLabel(key: string): string {
   if (key.startsWith('pos:')) return (POS_PLURAL[key.slice(4) as Word['pos']] ?? 'autres').toLowerCase();
+  if (key.startsWith('t:')) return key.slice(2);
   if (key.startsWith('user:')) return `mes mots : ${(POS_PLURAL[key.slice(5) as Word['pos']] ?? 'autres').toLowerCase()}`;
   return THEMES[key]?.label ?? key;
 }

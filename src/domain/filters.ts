@@ -5,7 +5,9 @@ import type { LearningStatus, Pos, Word } from './types';
 
 export type FreqPreset = 'all' | 'top100' | 'top250' | 'top500' | 'range';
 export type SortKey = 'rank-asc' | 'rank-desc' | 'alpha' | 'recent' | 'due';
-export type SourceFilter = 'all' | 'core' | 'user';
+import { PACK_LABEL, type PackId } from './types';
+/** 'core' = les 500 mots de base ; un identifiant de paquet ; 'user' = mots ajoutés. */
+export type SourceFilter = 'all' | 'core' | 'user' | PackId;
 
 export interface WordFilter {
   query: string;
@@ -71,7 +73,9 @@ export function applyFilter(words: Word[], f: WordFilter, now: number): Word[] {
   const limit = rankLimit(f);
   const out = words.filter((w) => {
     if (w.deleted) return false;
-    if (f.source !== 'all' && w.source !== f.source) return false;
+    if (f.source === 'user' && w.source !== 'user') return false;
+    if (f.source === 'core' && (w.source !== 'core' || w.pack)) return false;
+    if (f.source !== 'all' && f.source !== 'user' && f.source !== 'core' && w.pack !== f.source) return false;
     if (limit) {
       if (w.rank == null || w.rank < limit[0] || w.rank > limit[1]) return false;
     }
@@ -116,7 +120,8 @@ export function describeFilter(f: WordFilter, posLabel: (p: Pos) => string, stat
   if (f.pos.length) parts.push(f.pos.map(posLabel).join(', '));
   if (f.status.length) parts.push(f.status.map(statusLabel).join(', '));
   if (f.source === 'user') parts.push('Mes mots');
-  if (f.source === 'core') parts.push('500 mots');
+  if (f.source === 'core') parts.push('500 mots de base');
+  if (f.source !== 'all' && f.source !== 'user' && f.source !== 'core') parts.push(PACK_LABEL[f.source]);
   if (f.query.trim()) parts.push(`« ${f.query.trim()} »`);
   return parts.length ? parts.join(' · ') : 'Tous les mots';
 }

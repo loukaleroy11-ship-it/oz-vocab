@@ -1,0 +1,569 @@
+# Paquet B2 : CEFR-J B2 (sélection utile, par fréquence orale) + mots utiles pour s'exprimer au travail. anglais|catégorie|traduction|autres sens
+achieve|v|accomplir|réussir;atteindre (un objectif)
+approach|n|approche|démarche
+argue|v|se disputer|soutenir (un argument)
+attitude|n|attitude|état d'esprit
+available|adj|disponible
+avoid|v|éviter
+benefit|n|avantage|bénéfice;allocation
+budget|n|budget
+commit|v|s'engager|commettre
+complain|v|se plaindre
+concern|n|inquiétude|préoccupation
+confident|adj|sûr de soi|confiant
+consequence|n|conséquence
+deadline|n|date limite|échéance
+decrease|v|diminuer|baisser
+demand|n|demande|exigence
+efficient|adj|efficace|performant
+effort|n|effort
+encourage|v|encourager
+estimate|n|estimation|devis
+expand|v|développer|agrandir;s'étendre
+expectation|n|attente (ce qu'on espère)
+feature|n|caractéristique|fonctionnalité
+flexible|adj|flexible|souple
+fund|n|fonds
+generate|v|générer|produire
+goal|n|objectif|but
+guarantee|n|garantie
+impact|n|impact|effet
+impression|n|impression
+income|n|revenu(s)
+increase|v|augmenter
+influence|n|influence
+issue|n|problème|question;sujet
+maintain|v|entretenir|maintenir
+negotiate|v|négocier
+obvious|adj|évident
+occur|v|se produire|arriver
+option|n|option|choix
+outcome|n|résultat|issue
+overcome|v|surmonter
+permanent|adj|permanent|fixe (emploi)
+persuade|v|persuader
+potential|n|potentiel
+precise|adj|précis
+previous|adj|précédent|antérieur
+range|n|gamme|éventail;portée
+rate|n|taux|tarif;rythme
+reduce|v|réduire
+refund|n|remboursement
+reliable|adj|fiable
+rely|v|compter sur (rely on)|dépendre de
+replace|v|remplacer
+require|v|exiger|nécessiter
+resource|n|ressource
+rough|adj|rugueux|approximatif;difficile (a rough day)
+shortage|n|pénurie|manque
+significant|adj|important|significatif
+solve|v|résoudre
+struggle|v|avoir du mal|lutter
+suggest|v|suggérer|proposer
+supply|n|approvisionnement|fourniture
+temporary|adj|temporaire|provisoire
+tend|v|avoir tendance à
+threat|n|menace
+tool|n|outil
+update|n|mise à jour|nouvelles
+vary|v|varier
+workload|n|charge de travail
+tough|adj|dur|difficile;résistant
+neither|adv|non plus|aucun des deux (neither… nor : ni… ni)
+mate|n|pote|ami (Australie : très courant)
+client|n|client (d'un service)
+energy|n|énergie
+throat|n|gorge
+faith|n|foi|confiance
+trial|n|procès|essai
+project|n|projet
+crew|n|équipe|équipage
+divorce|n|divorce
+freak out|v|paniquer|flipper
+crack|n|fissure|fente
+dumb|adj|bête|idiot
+spare|adj|de rechange|libre (spare time)
+contract|n|contrat
+fate|n|destin|sort
+odd|adj|bizarre|impair;dépareillé
+cheat|v|tricher|tromper
+hook|n|crochet|hameçon
+genius|n|génie
+punch|n|coup de poing
+nut|n|noix|écrou
+ban|n|interdiction
+fixed|adj|fixe|réparé
+data|n|données
+sue|v|poursuivre en justice
+threaten|v|menacer
+dawn|n|aube
+prime|adj|principal|de premier ordre
+media|n|médias
+literally|adv|littéralement|carrément
+theme|n|thème
+tail|n|queue (d'animal)
+decent|adj|correct|convenable;honnête
+nightmare|n|cauchemar
+route|n|itinéraire|trajet;tournée
+stock|n|stock|actions (bourse)
+seal|n|joint|sceau;phoque
+convinced|adj|convaincu
+campaign|n|campagne
+confess|v|avouer
+assure|v|assurer|garantir
+mask|n|masque
+swing|n|balançoire|rotation (Australie, mines : période de travail)
+wipe|v|essuyer
+chip|n|frite (Australie)|puce;éclat
+buzz|n|bourdonnement|ambiance
+investigate|v|enquêter|examiner
+billion|n|milliard
+friendly|adj|sympathique|amical
+estate|n|domaine|biens;lotissement
+charming|adj|charmant
+nerve|n|nerf|culot
+loan|n|prêt
+conference|n|conférence|congrès
+betray|v|trahir
+alert|v|alerter|prévenir
+previously|adv|auparavant|précédemment
+actual|adj|réel|véritable (≠ actuel)
+tunnel|n|tunnel
+coincidence|n|coïncidence
+legend|n|légende|crack (Australie : « you're a legend » = t'es génial)
+gear|n|équipement|matériel;vitesse
+insult|n|insulte
+reaction|n|réaction
+species|n|espèce
+costume|n|costume (déguisement)
+version|n|version
+impressed|adj|impressionné
+sensitive|adj|sensible|délicat
+tattoo|n|tatouage
+colleague|n|collègue
+suspicious|adj|suspect|méfiant
+rip|v|déchirer
+deck|n|terrasse en bois|pont (bateau);jeu de cartes
+reckon|v|penser (familier, Australie : I reckon)|estimer
+sneak|v|se faufiler
+considering|conj|étant donné que|vu que
+smash|v|fracasser|briser
+lifetime|n|vie (durée)
+gross|adj|dégoûtant|brut (salaire)
+identify|v|identifier
+employee|n|employé|salarié
+therapy|n|thérapie
+outfit|n|tenue
+practically|adv|pratiquement
+abuse|n|abus|maltraitance
+pitch|n|terrain (sport)|argumentaire;hauteur (son)
+snap|v|craquer|casser net
+ton|n|tonne|plein (tons of)
+trunk|n|tronc|coffre (voiture, US)
+leak|n|fuite
+frankly|adv|franchement
+explode|v|exploser
+landing|n|atterrissage|palier
+starve|v|mourir de faim
+underground|adj|souterrain
+territory|n|territoire
+environment|n|environnement|milieu
+skip|v|sauter (une étape, un repas)
+headquarters|n|siège (social)|quartier général
+related|adj|lié|apparenté
+profit|n|bénéfice|profit
+injured|adj|blessé
+procedure|n|procédure
+flame|n|flamme
+determined|adj|déterminé
+spin|v|tourner|faire tourner
+packed|adj|bondé|plein à craquer
+blade|n|lame|pale
+profile|n|profil
+hood|n|capuche|capot (US)
+slap|n|gifle|claque
+laundry|n|linge (à laver)|laverie
+lousy|adj|nul|minable
+precisely|adv|précisément
+underwear|n|sous-vêtements
+squeeze|v|serrer|presser
+shed|n|abri de jardin|cabane;hangar
+relief|n|soulagement|aide
+payment|n|paiement|versement
+stroke|n|AVC|coup;caresse
+sack|v|virer (licencier)
+crawl|v|ramper|marcher à quatre pattes
+circumstance|n|circonstance
+interfere|v|se mêler de|interférer
+cable|n|câble
+patch|n|pièce (tissu)|parcelle;correctif
+wreck|n|épave|ruine
+polish|v|polir|cirer;peaufiner
+creepy|adj|flippant|qui fait froid dans le dos
+weed|n|mauvaise herbe|herbe (cannabis)
+core|n|cœur|noyau;trognon
+grief|n|chagrin|deuil
+invisible|adj|invisible
+candidate|n|candidat
+badge|n|badge|insigne
+fraud|n|fraude|escroc
+fabulous|adj|fabuleux
+naughty|adj|vilain|coquin
+nicely|adv|gentiment|joliment
+plot|n|intrigue|complot;parcelle
+reverse|v|reculer (en voiture)|inverser
+bid|n|offre (enchère)|tentative
+rub|v|frotter
+medication|n|médicaments|traitement
+flip|v|retourner|feuilleter
+thrill|n|frisson|sensation forte
+beam|n|poutre|rayon
+multiple|adj|multiple|plusieurs
+investment|n|investissement
+ultimate|adj|ultime|suprême
+paperwork|n|paperasse|formalités
+tag|n|étiquette
+priority|n|priorité
+executive|n|cadre (dirigeant)
+massage|n|massage
+phase|n|phase|étape
+quote|n|devis|citation
+instinct|n|instinct
+bothered|adj|embêté (can't be bothered : pas le courage)
+sniff|v|renifler
+distract|v|distraire
+necessarily|adv|forcément|nécessairement
+privilege|n|privilège
+rehearsal|n|répétition (spectacle)
+vital|adj|vital|essentiel
+lick|v|lécher
+sweep|v|balayer
+solar|adj|solaire
+drain|n|égout|canalisation
+lame|adj|nul (familier)|boiteux
+roommate|n|colocataire
+chew|v|mâcher
+gently|adv|doucement
+backwards|adv|en arrière|à l'envers
+dock|n|quai|dock
+petty|adj|mesquin|insignifiant
+humble|adj|humble|modeste
+cooperate|v|coopérer
+absurd|adj|absurde
+scandal|n|scandale
+fulfil|v|remplir (une condition)|réaliser (un rêve)
+bully|v|harceler|brutaliser
+exhaust|n|pot d'échappement
+foul|adj|infect|fétide;faute (sport)
+operator|n|opérateur|conducteur (d'engin)
+unconscious|adj|inconscient|évanoui
+specifically|adv|spécifiquement|précisément
+spray|n|spray|bombe;embruns
+pose|v|poser (un problème, pour une photo)
+scheme|n|plan|programme;combine
+gum|n|chewing-gum|gencive;eucalyptus (gum tree)
+rear|adj|arrière
+clothing|n|vêtements (en général)
+acid|n|acide
+offend|v|offenser|vexer
+dignity|n|dignité
+cabinet|n|placard|meuble de rangement;gouvernement
+certificate|n|certificat|diplôme
+relieve|v|soulager|relever (de ses fonctions)
+penalty|n|pénalité|amende;sanction
+relieved|adj|soulagé
+grip|n|prise|adhérence
+reference|n|référence|lettre de recommandation
+label|n|étiquette
+personnel|n|personnel
+decade|n|décennie
+dismiss|v|écarter|renvoyer
+vanish|v|disparaître
+remaining|adj|restant
+anonymous|adj|anonyme
+addict|n|accro|toxicomane
+keen|adj|enthousiaste|motivé (keen on : passionné de)
+aircraft|n|avion|appareil
+primary|adj|principal|primaire
+discipline|n|discipline
+prior|adj|préalable|antérieur (prior to : avant)
+corporate|adj|d'entreprise
+ceiling|n|plafond
+recipe|n|recette
+perspective|n|point de vue|perspective
+purchase|n|achat
+worthless|adj|sans valeur
+consent|n|consentement
+resign|v|démissionner
+tender|adj|tendre|sensible;appel d'offres (n)
+neat|adj|soigné|net;super (US)
+copper|n|cuivre
+stiff|adj|raide|courbaturé
+risky|adj|risqué
+draft|n|brouillon|ébauche
+genuine|adj|authentique|sincère
+somewhat|adv|quelque peu|plutôt
+opponent|n|adversaire
+hint|n|indice|allusion;astuce
+stain|n|tache
+strictly|adv|strictement
+mature|adj|mûr|adulte
+technical|adj|technique
+sector|n|secteur
+exception|n|exception
+flee|v|fuir
+factor|n|facteur
+concrete|n|béton
+cellar|n|cave
+detect|v|détecter
+spark|n|étincelle
+respected|adj|respecté
+laptop|n|ordinateur portable
+sketch|n|croquis|sketch
+rag|n|chiffon
+adore|v|adorer
+originally|adv|à l'origine
+furious|adj|furieux
+circuit|n|circuit
+recruit|v|recruter
+consult|v|consulter
+tricky|adj|délicat|compliqué
+tolerate|v|tolérer
+withdraw|v|retirer (de l'argent)|se retirer
+convention|n|convention|salon;usage
+bolt|n|boulon|verrou;éclair
+corporation|n|entreprise|société
+retirement|n|retraite
+dash|v|se précipiter|filer
+fatal|adj|mortel|fatal
+cease|v|cesser
+corrupt|adj|corrompu
+scheduled|adj|prévu|programmé
+panel|n|panneau|jury;tableau de bord
+wealthy|adj|riche|aisé
+lawn|n|pelouse
+unlock|v|déverrouiller
+bruise|n|bleu (ecchymose)
+rib|n|côte
+domestic|adj|domestique|national (vol intérieur)
+confront|v|affronter|confronter
+spite|n|dépit (in spite of : malgré)
+shatter|v|briser|voler en éclats
+trophy|n|trophée
+resume|v|reprendre|recommencer
+glow|n|lueur|éclat
+straighten|v|redresser|défriser
+tan|n|bronzage
+hilarious|adj|hilarant
+steer|v|diriger|piloter
+deceive|v|tromper
+wage|n|salaire (horaire)|paie
+publicity|n|publicité|médiatisation
+intimate|adj|intime
+stack|n|pile|tas
+ultimately|adv|finalement|en fin de compte
+passionate|adj|passionné
+institution|n|institution|établissement
+versus|prep|contre
+peak|n|sommet|pic (peak hour : heure de pointe)
+stitch|n|point de suture|point (couture)
+vomit|v|vomir
+jaw|n|mâchoire
+rival|n|rival|concurrent
+thread|n|fil|fil de discussion
+harmless|adj|inoffensif
+creek|n|ruisseau|crique
+rally|n|rassemblement|rallye
+cope|v|faire face|s'en sortir
+disorder|n|trouble|désordre
+alter|v|modifier
+manual|adj|manuel
+arrogant|adj|arrogant
+corridor|n|couloir
+dimension|n|dimension
+substance|n|substance
+educated|adj|instruit|cultivé
+memorial|n|mémorial
+terrifying|adj|terrifiant
+dose|n|dose
+grain|n|grain|céréale
+carbon|n|carbone
+bartender|n|barman, barmaid
+translation|n|traduction
+discharge|v|faire sortir (de l'hôpital)|décharger;licencier
+obsess|v|obséder|être obsédé
+dip|v|tremper|plonger;baisser
+sophisticated|adj|sophistiqué|élaboré
+elegant|adj|élégant
+suspend|v|suspendre
+replacement|n|remplacement|remplaçant
+cottage|n|petite maison de campagne
+evacuate|v|évacuer
+crucial|adj|crucial|essentiel
+peel|v|éplucher|peler
+rack|n|étagère|porte-bagages
+rash|n|éruption cutanée|irréfléchi (adj)
+welfare|n|bien-être|aide sociale
+devoted|adj|dévoué
+courtesy|n|courtoisie|politesse
+database|n|base de données
+amuse|v|amuser
+backyard|n|jardin (derrière la maison)
+evolution|n|évolution
+inherit|v|hériter
+fabric|n|tissu
+pursuit|n|poursuite|recherche (pursuit of happiness)
+anchor|n|ancre
+knot|n|nœud
+donate|v|faire un don|donner
+pension|n|retraite (pension)
+toxic|adj|toxique
+peg|n|pince à linge|cheville
+sensible|adj|raisonnable|sensé (≠ sensible)
+regardless|adv|quand même|malgré tout (regardless of : quel que soit)
+deliberately|adv|délibérément|exprès
+mortgage|n|prêt immobilier
+lease|n|bail
+sincere|adj|sincère
+axe|n|hache
+parliament|n|parlement
+stew|n|ragoût
+bizarre|adj|bizarre
+underestimate|v|sous-estimer
+barrier|n|barrière|obstacle
+blink|v|cligner des yeux
+relevant|adj|pertinent
+identical|adj|identique
+consistent|adj|cohérent|constant;régulier
+legitimate|adj|légitime|légal
+manipulate|v|manipuler
+supervisor|n|superviseur|chef d'équipe
+ridge|n|crête
+pumpkin|n|citrouille|courge (Australie)
+desperately|adv|désespérément
+employ|v|employer
+hollow|adj|creux
+obligation|n|obligation
+herb|n|herbe aromatique
+rug|n|tapis
+toll|n|péage|bilan (des victimes)
+venture|n|entreprise (projet risqué)
+ignorant|adj|ignorant
+reform|n|réforme
+modest|adj|modeste
+essentially|adv|essentiellement|en gros
+subtle|adj|subtil
+snore|v|ronfler
+intent|n|intention
+corruption|n|corruption
+obsession|n|obsession
+interior|n|intérieur
+assembly|n|assemblée|montage
+tray|n|plateau
+virtue|n|vertu
+submit|v|soumettre|remettre (un dossier)
+soak|v|tremper
+carve|v|sculpter|découper (la viande)
+sustain|v|soutenir|subir;maintenir
+condemn|v|condamner
+fierce|adj|féroce|acharné
+anxious|adj|anxieux|impatient
+assess|v|évaluer
+assist|v|aider (≠ assister à)
+attempt|n|tentative
+authority|n|autorité
+aware of|adj|conscient de
+brief|adj|bref
+capable|adj|capable
+cautious|adj|prudent
+claim|n|réclamation|affirmation
+commute|v|faire le trajet domicile-travail
+complaint|n|plainte|réclamation
+conduct|v|mener (une enquête, un entretien)
+contribute|v|contribuer
+convenient|adj|pratique|commode
+cover|v|couvrir|remplacer (cover a shift)
+crisis|n|crise
+debt|n|dette
+delay|n|retard
+deny|v|nier|refuser
+desperate|adj|désespéré|prêt à tout
+determine|v|déterminer
+display|n|affichage|exposition
+distribute|v|distribuer
+efficiently|adv|efficacement
+eliminate|v|éliminer
+emerge|v|apparaître|émerger
+emphasise|v|souligner|insister sur
+enable|v|permettre
+ensure|v|s'assurer|garantir
+equipment|n|équipement|matériel
+eventually|adv|finalement (≠ éventuellement)
+exhausted|adj|épuisé
+extend|v|prolonger|étendre
+facility|n|installation|équipement
+frustrated|adj|frustré
+gradually|adv|progressivement
+handle|v|gérer|s'occuper de
+highlight|v|souligner|mettre en avant
+ignore|v|ignorer
+implement|v|mettre en œuvre
+injury|n|blessure
+inspect|v|inspecter
+install|v|installer
+insurance|n|assurance
+judgement|n|jugement
+lack|n|manque
+licence|n|permis|licence
+measure|n|mesure
+mention|n|mention
+method|n|méthode
+minor|adj|mineur|léger
+monitor|v|surveiller|contrôler
+obtain|v|obtenir
+occasionally|adv|de temps en temps
+order|v|commander|ordonner
+organise|v|organiser
+overtime|n|heures supplémentaires
+participate|v|participer
+patience|n|patience
+perform|v|effectuer|jouer (un rôle)
+pickup|n|retrait (d'une commande)|enlèvement
+politely|adv|poliment
+positive|adj|positif
+prevent|v|empêcher|prévenir
+process|n|processus|démarche
+promote|v|promouvoir
+proper|adj|correct|vrai;convenable
+provide|v|fournir
+punctual|adj|ponctuel
+qualification|n|diplôme|qualification
+recommend|v|recommander
+reduce|v|réduire
+reject|v|rejeter|refuser
+remove|v|enlever|retirer
+repair|n|réparation
+report|v|signaler|faire un rapport
+request|v|demander
+resolve|v|résoudre
+respond|v|répondre|réagir
+reward|n|récompense
+roster|n|planning (des services)
+satisfied|adj|satisfait
+secure|adj|sûr|stable (emploi)
+select|v|sélectionner
+shortly|adv|bientôt|sous peu
+skilled|adj|qualifié|compétent
+strategy|n|stratégie
+stressful|adj|stressant
+suitable|adj|adapté|approprié
+summary|n|résumé
+surface|n|surface
+task|n|tâche
+tip|n|pourboire|conseil;bout
+transfer|n|virement|transfert
+trial period|n|période d'essai
+unemployed|adj|au chômage
+urgent|adj|urgent
+valid|adj|valable|valide
+willing|adj|prêt à|disposé à

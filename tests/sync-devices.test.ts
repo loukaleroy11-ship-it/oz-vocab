@@ -1,3 +1,4 @@
+import { PACK_ENTRIES } from '../src/data/packs';
 import { describe, expect, it } from 'vitest';
 import { answerCurrent, createSession } from '../src/domain/queue';
 import { schedule } from '../src/domain/srs';
@@ -92,7 +93,7 @@ describe('synchronisation entre deux appareils', () => {
     expect(r2.pulled.sessions.map((x) => x.id)).toEqual(['sess-phone']);
     const laptopWords = await laptop.repo.store.getAllWords();
     expect(laptopWords.find((x) => x.id === w.id)!.srs.reps).toBe(1);
-    expect(laptopWords).toHaveLength(501);
+    expect(laptopWords).toHaveLength(501 + PACK_ENTRIES.length);
   });
 
   it('conflit : la modification la plus récente l’emporte, sans perte de l’autre appareil', async () => {

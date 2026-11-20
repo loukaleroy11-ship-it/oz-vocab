@@ -12,6 +12,7 @@ export type Pos =
   | 'auxiliary'
   | 'interjection'
   | 'number'
+  | 'expression'
   | 'other';
 
 export const POS_LIST: Pos[] = [
@@ -26,8 +27,22 @@ export const POS_LIST: Pos[] = [
   'auxiliary',
   'interjection',
   'number',
+  'expression',
   'other',
 ];
+
+/** Paquets de vocabulaire intégrés (en plus des 500 mots de base). */
+export type PackId = 'b1' | 'b2' | 'c1' | 'phrasal' | 'idioms' | 'aussie' | 'work';
+export const PACK_IDS: PackId[] = ['b1', 'b2', 'c1', 'phrasal', 'idioms', 'aussie', 'work'];
+export const PACK_LABEL: Record<PackId, string> = {
+  b1: 'Mots B1',
+  b2: 'Mots B2',
+  c1: 'Mots C1',
+  phrasal: 'Phrasal verbs',
+  idioms: 'Expressions',
+  aussie: 'Anglais australien',
+  work: 'Travail et mines',
+};
 
 /** Réponses possibles. L'interface simple n'utilise que `again` et `good`. */
 export type Grade = 'again' | 'hard' | 'good' | 'easy';
@@ -105,6 +120,12 @@ export interface Word extends WordContent {
   deleted: boolean;
   /** Niveau CECRL du sens principal (CEFR-J / Octanove), null si inconnu. */
   cefr: Cefr | null;
+  /** Paquet intégré (absent pour les 500 mots de base et les mots ajoutés). */
+  pack?: PackId;
+  /** Thème de regroupement des listes (paquets). */
+  group?: string;
+  /** Remarque d'usage (registre, australien…). */
+  note?: string;
   /** Suivi « reconnaître » (anglais → français). */
   srs: SrsState;
   /** Suivi « produire » (français → anglais). */
@@ -179,6 +200,8 @@ export interface Settings {
   prodMode: ProdMode;
   /** Test de placement fait (ou ignoré). */
   placementDone: boolean;
+  /** Paquets désactivés : leurs mots ne sont pas proposés comme nouveaux. */
+  disabledPacks: PackId[];
   syncEnabled: boolean;
   /** Code d'accès facultatif pour la fonction serveur de traduction. */
   lookupAccessCode: string;
@@ -199,6 +222,7 @@ export const DEFAULT_SETTINGS: Settings = {
   audioPreference: 'tts',
   prodMode: 'oral',
   placementDone: false,
+  disabledPacks: [],
   syncEnabled: true,
   lookupAccessCode: '',
   updatedAt: 0,
@@ -215,6 +239,7 @@ export function normalizeSettings(s: Partial<Settings> | null | undefined): Sett
   if ((s?.schema ?? 1) < 2 && merged.newPerDay === 20) merged.newPerDay = 0;
   if (merged.prodMode !== 'oral' && merged.prodMode !== 'written') merged.prodMode = 'oral';
   merged.placementDone = merged.placementDone === true;
+  merged.disabledPacks = Array.isArray(merged.disabledPacks) ? merged.disabledPacks.filter((p) => PACK_IDS.includes(p)) : [];
   merged.schema = SETTINGS_SCHEMA;
   return merged;
 }

@@ -1,0 +1,103 @@
+# Anglais australien : mots et expressions de tous les jours (rédigés pour l'application). anglais|catégorie|niveau|traduction|exemple|traduction de l'exemple|remarque
+## saluer et réagir
+g'day|interj|A2|bonjour|G'day mate, how's it going?|Salut mon pote, comment ça va ?|un peu cliché, mais encore utilisé
+how are you going|expression|A2|comment ça va ?|"How are you going?" "Good thanks, you?"|« Comment ça va ? » « Bien, merci, et toi ? »|≠ « où vas-tu »
+mate|n|A2|pote|copain|Thanks, mate!|Merci, mon pote !|s'emploie même avec des inconnus
+no worries|expression|A2|pas de souci|de rien|"Sorry I'm late." "No worries."|« Désolé, je suis en retard. » « Pas de souci. »
+no dramas|expression|B1|pas de problème|"Can you swap shifts?" "No dramas."|« Tu peux échanger ton service ? » « Pas de problème. »
+too easy|expression|B1|pas de souci (c'est facile)|"Can you drop it at the door?" "Too easy."|« Vous pouvez le déposer à la porte ? » « Aucun souci. »
+cheers|interj|A2|merci|santé;salut|Cheers for that!|Merci pour ça !
+ta|interj|B1|merci|Ta, mate.|Merci, mon pote.|familier
+she'll be right|expression|B2|ça va s'arranger|Don't stress, she'll be right.|Ne stresse pas, ça va s'arranger.
+yeah nah|expression|B1|non (poliment)|"Want another beer?" "Yeah nah, I'm driving."|« Une autre bière ? » « Non merci, je conduis. »|le dernier mot compte
+nah yeah|expression|B1|oui|"Was it good?" "Nah yeah, it was great."|« C'était bien ? » « Ouais, c'était super. »|le dernier mot compte
+good on ya|expression|B1|bravo|bien joué|You finished the course? Good on ya!|Tu as fini la formation ? Bravo !
+reckon|v|B1|penser|croire|I reckon it'll rain later.|Je pense qu'il va pleuvoir plus tard.
+heaps|adv|B1|plein|vachement|Thanks heaps! There were heaps of people.|Merci beaucoup ! Il y avait plein de monde.
+keen|adj|B1|partant|motivé|Are you keen for a swim?|Tu es partant pour une baignade ?
+stoked|adj|B1|ravi|super content|I'm stoked with my new bike.|Je suis super content de mon nouveau vélo.
+sweet as|expression|B2|parfait|super|"I'll be there at five." "Sweet as."|« J'y serai à cinq heures. » « Parfait. »
+not bad|expression|A2|pas mal (souvent : bien)|"How was work?" "Not bad."|« C'était comment le travail ? » « Pas mal. »
+how good is that|expression|B2|c'est génial, non ?|Free coffee! How good is that?|Café gratuit ! C'est pas génial ?
+## manger et boire
+arvo|n|A2|après-midi|See you this arvo.|À cet aprèm.
+brekkie|n|A2|petit-déjeuner|Let's grab brekkie at the café.|Allons prendre le petit-déj au café.
+avo|n|A2|avocat (fruit)|Smashed avo on toast, please.|Un avocat écrasé sur toast, s'il vous plaît.
+snag|n|B1|saucisse|Grab a snag off the barbie.|Prends une saucisse sur le barbecue.
+sanga|n|B1|sandwich|I'll just have a sanga for lunch.|Je vais juste prendre un sandwich ce midi.
+barbie|n|A2|barbecue|We're having a barbie on Sunday.|On fait un barbecue dimanche.
+maccas|n|A2|McDo|I've got three Maccas orders in a row.|J'ai trois commandes McDo à la suite.
+bottle-o|n|B1|magasin d'alcool|Can you stop at the bottle-o?|Tu peux t'arrêter au magasin d'alcool ?
+cuppa|n|B1|tasse de thé ou de café|Fancy a cuppa?|Un petit thé ?
+bikkie|n|B1|biscuit|Have a bikkie with your tea.|Prends un biscuit avec ton thé.
+lollies|n|B1|bonbons|The kids want lollies.|Les enfants veulent des bonbons.
+chook|n|B1|poulet|poule|We bought a roast chook.|On a acheté un poulet rôti.
+tucker|n|B2|bouffe|The tucker at the camp is good.|La bouffe au camp est bonne.
+esky|n|B1|glacière|Put the drinks in the esky.|Mets les boissons dans la glacière.
+BYO|expression|B1|apportez votre boisson|It's a BYO restaurant.|C'est un restaurant où on apporte son vin.
+shout|n|B1|tournée (payer pour les autres)|It's my shout.|C'est ma tournée.
+schooner|n|B2|grand verre de bière (425 ml)|A schooner of lager, please.|Une grande blonde, s'il vous plaît.|à Perth on dit aussi « pot » pour 285 ml
+## au quotidien
+servo|n|B1|station-service|Fill up at the servo.|Fais le plein à la station.
+thongs|n|A2|tongs|Don't ride in thongs.|Ne roule pas en tongs.|≠ string
+sunnies|n|A2|lunettes de soleil|Don't forget your sunnies.|N'oublie pas tes lunettes de soleil.
+togs|n|B1|maillot de bain|Bring your togs to the beach.|Prends ton maillot pour la plage.|ailleurs : swimmers, cozzie
+ute|n|A2|pick-up|He's got a white ute.|Il a un pick-up blanc.
+rego|n|B1|immatriculation (et taxe du véhicule)|My rego is due next month.|L'immatriculation de mon véhicule expire le mois prochain.
+servo coffee|n|B2|café de station-service|I survived on servo coffee.|J'ai tenu au café de station-service.
+doona|n|B1|couette|It's cold, grab a doona.|Il fait froid, prends une couette.
+trackies|n|B1|pantalon de survêtement|I'm just wearing trackies.|Je suis juste en jogging.
+footy|n|A2|football australien (ou rugby)|Are you watching the footy tonight?|Tu regardes le foot ce soir ?
+uni|n|A2|fac|She studies at uni.|Elle étudie à la fac.
+devo|adj|B2|dévasté|I was devo when I missed the bus.|J'étais dégoûté d'avoir raté le bus.
+servo pie|n|B2|tourte de station-service|A servo pie at 2 am. Classic.|Une tourte de station-service à 2 h. Un classique.
+mozzie|n|B1|moustique|The mozzies are bad tonight.|Les moustiques sont terribles ce soir.
+bush|n|B1|la brousse|la campagne sauvage|We camped in the bush.|On a campé dans la brousse.
+outback|n|B1|l'outback (intérieur désertique)|He works on a station in the outback.|Il travaille dans un élevage de l'outback.
+station|n|B2|grand élevage (ranch)|She did her farm work on a cattle station.|Elle a fait son travail en ferme dans un élevage de bovins.
+woop woop|n|B2|perpète (endroit paumé)|The farm is out in woop woop.|La ferme est au fin fond de nulle part.
+the city|n|A2|le centre-ville|I'm heading into the city.|Je vais en ville.
+shops|n|A2|centre commercial|les magasins|I'm going to the shops.|Je vais faire les courses.
+## personnes
+bloke|n|B1|mec|type|He's a good bloke.|C'est un bon gars.
+sheila|n|C1|femme (vieilli)|Old blokes still say sheila.|Les vieux disent encore « sheila ».|vieilli, à éviter
+tradie|n|B1|artisan (électricien, plombier…)|The tradie is coming at eight.|L'artisan vient à huit heures.
+rellies|n|B2|la famille (les proches)|The rellies are visiting for Christmas.|La famille vient pour Noël.
+larrikin|n|C1|joyeux fêtard (irrévérencieux)|He's a bit of a larrikin.|C'est un joyeux drille.
+bogan|n|B2|beauf|plouc|Don't be such a bogan.|Ne sois pas si beauf.|péjoratif
+legend|n|B1|génial (pour une personne)|You fixed my bike? You're a legend!|Tu as réparé mon vélo ? T'es génial !
+battler|n|C1|personne qui se bat pour s'en sortir|He's a real battler.|C'est un vrai battant.
+## décrire
+arvo|n|A2|après-midi|See you Saturday arvo.|À samedi après-midi.
+crook|adj|B1|malade|I'm feeling crook today.|Je suis malade aujourd'hui.
+knackered|adj|B1|crevé|After ten hours of deliveries I'm knackered.|Après dix heures de livraisons, je suis crevé.
+stuffed|adj|B2|crevé|fichu (cassé)|I'm stuffed. / My phone's stuffed.|Je suis crevé. / Mon téléphone est fichu.
+dodgy|adj|B1|louche|pas fiable|That's a dodgy deal.|C'est une affaire louche.
+sus|adj|B1|suspect|louche|That guy is a bit sus.|Ce type est un peu louche.
+daggy|adj|B2|ringard|My dad's clothes are so daggy.|Les vêtements de mon père sont tellement ringards.
+ripper|adj|B2|super|génial|It was a ripper of a day.|C'était une journée géniale.
+full-on|adj|B2|intense|Work was full-on today.|Le travail était intense aujourd'hui.
+flat out|adj|B2|débordé|à fond|We've been flat out all week.|On a été débordés toute la semaine.
+chockers|adj|B2|bondé|The train was chockers.|Le train était bondé.
+fair dinkum|adj|C1|authentique|vraiment ?|He's a fair dinkum Aussie.|C'est un vrai Australien.
+mad|adj|B1|génial (familier)|That wave was mad!|Cette vague était dingue !
+hectic|adj|B2|mouvementé|It's been a hectic week.|La semaine a été mouvementée.
+## expressions
+chuck a sickie|expression|B2|se faire porter pâle|He chucked a sickie on Monday.|Il s'est fait porter pâle lundi.
+spit the dummy|expression|C1|piquer une crise|He spat the dummy when he lost.|Il a piqué une crise quand il a perdu.
+hard yakka|expression|C1|travail dur|Fruit picking is hard yakka.|La cueillette, c'est du travail dur.
+have a whinge|expression|B2|râler|Stop whingeing!|Arrête de râler !
+suss out|v|B2|cerner|se renseigner sur|I'll suss out the area first.|Je vais d'abord repérer le coin.
+chuck|v|B1|lancer|jeter|Chuck it in the bin.|Balance-le à la poubelle.
+reckon so|expression|B1|je pense que oui|"Will it rain?" "Reckon so."|« Il va pleuvoir ? » « Je pense que oui. »
+have a crack|expression|B2|essayer|tenter le coup|Have a crack, you've got nothing to lose.|Tente le coup, tu n'as rien à perdre.
+fair crack of the whip|expression|C1|laisse-moi une chance|Fair crack of the whip, mate!|Laisse-moi une chance, mon pote !
+bring a plate|expression|B2|apporter un plat à partager|It's a party, bring a plate.|C'est une fête, apporte un plat à partager.|≠ apporter une assiette vide !
+the Big Smoke|n|C1|la grande ville|He moved to the Big Smoke.|Il est parti vivre en ville.
+how's it going|expression|A2|comment ça va ?|Hey, how's it going?|Salut, comment ça va ?
+catch you later|expression|A2|à plus tard|Catch you later, mate.|À plus, mon pote.
+see ya|expression|A2|à plus|See ya tomorrow!|À demain !
+not a chance|expression|B1|aucune chance|pas question|"Will they hire me?" "Not a chance."|« Ils vont m'embaucher ? » « Aucune chance. »
+I'm easy|expression|B2|ça m'est égal|"Pizza or burgers?" "I'm easy."|« Pizza ou burgers ? » « Ça m'est égal. »
+fully|adv|B2|carrément|totalement|"Was it good?" "Fully!"|« C'était bien ? » « Carrément ! »|jeunes
+straya|n|C1|l'Australie (prononciation relâchée)|Happy Straya Day!|Joyeuse fête nationale !|humoristique

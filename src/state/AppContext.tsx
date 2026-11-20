@@ -323,11 +323,12 @@ export function AppProvider({ children }: { children: ReactNode }) {
         size: settings.sessionSize,
         newPerDay: settings.newPerDay,
         ignoreNewLimit: opts.ignoreNewLimit,
+        disabledPacks: settings.disabledPacks,
       });
       if (plan.kind === 'done') return null;
       return startSession(plan.ids, sessionTitle(plan.kind, plan.groups));
     },
-    [words, settings.sessionSize, settings.newPerDay, startSession],
+    [words, settings.sessionSize, settings.newPerDay, settings.disabledPacks, startSession],
   );
 
   const startFromWords = useCallback(

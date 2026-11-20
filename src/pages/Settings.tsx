@@ -4,7 +4,8 @@ import { ConfirmButton, Notice, PageHeader, Segmented } from '../components/ui';
 import { CORE_META } from '../data/core';
 import { formatDateTime } from '../domain/dates';
 import { SRS } from '../domain/srs';
-import type { AnswerMode, AudioPreference, ProdMode, ThemeSetting } from '../domain/types';
+import { PACK_IDS, PACK_LABEL, type AnswerMode, type AudioPreference, type ProdMode, type ThemeSetting } from '../domain/types';
+import { PACK_META } from '../data/packs';
 import { analyzeImport, buildCsv, buildExport, planImport, type DuplicateStrategy, type ImportAnalysis } from '../storage/importExport';
 import { saveTextFile } from '../services/download';
 import { providerStatus, type ProviderStatus } from '../services/lookup';
@@ -256,6 +257,26 @@ export function SettingsPage() {
           <a href="#placement" className="btn btn-ghost min-h-10 text-sm">
             <Icon name="target" size={18} /> {settings.placementDone ? 'Refaire le test' : 'Faire le test'}
           </a>
+        </Row>
+        <Row label="Paquets de vocabulaire" hint="Un paquet décoché n’est plus proposé en nouveaux mots (les mots déjà commencés restent en révision).">
+          <div className="flex flex-wrap gap-1.5">
+            {PACK_IDS.map((p) => {
+              const on = !settings.disabledPacks.includes(p);
+              return (
+                <button
+                  key={p}
+                  type="button"
+                  className="chip"
+                  aria-pressed={on}
+                  onClick={() =>
+                    updateSettings({ disabledPacks: on ? [...settings.disabledPacks, p] : settings.disabledPacks.filter((x) => x !== p) })
+                  }
+                >
+                  {PACK_LABEL[p]} <span className="tabular text-muted">· {PACK_META.counts[p]}</span>
+                </button>
+              );
+            })}
+          </div>
         </Row>
       </Section>
 

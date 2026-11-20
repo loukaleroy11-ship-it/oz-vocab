@@ -26,8 +26,14 @@ export function ReviewPage() {
 export function useNextPlan(ignoreNewLimit = false): SessionPlan {
   const { words, now, settings } = useApp();
   return useMemo(
-    () => planNextSession(words, now, { size: settings.sessionSize, newPerDay: settings.newPerDay, ignoreNewLimit }),
-    [words, now, settings.sessionSize, settings.newPerDay, ignoreNewLimit],
+    () =>
+      planNextSession(words, now, {
+        size: settings.sessionSize,
+        newPerDay: settings.newPerDay,
+        ignoreNewLimit,
+        disabledPacks: settings.disabledPacks,
+      }),
+    [words, now, settings.sessionSize, settings.newPerDay, settings.disabledPacks, ignoreNewLimit],
   );
 }
 
@@ -62,8 +68,8 @@ export function PlacementInvite() {
   return (
     <div className="card mt-4 flex flex-wrap items-center justify-between gap-3 border-ocean/30 bg-ocean-soft/40 p-4">
       <p className="min-w-0 flex-1 text-sm">
-        <strong>Tu connais déjà une partie des 500 mots ?</strong> Le test de placement (5 min) t’évite de les apprendre comme des mots
-        nouveaux.
+        <strong>Tu connais déjà une partie de ces mots ?</strong> Le test de placement (5 à 10 min) t’évite de les apprendre comme des
+        mots nouveaux.
       </p>
       <a href="#placement" className="btn btn-ghost min-h-10 text-sm">
         <Icon name="target" size={18} /> Faire le test
@@ -477,6 +483,7 @@ function SessionView({ session }: { session: ReviewSession }) {
                 <div className="anim-reveal mt-1 flex w-full flex-col items-center gap-3 border-t border-line pt-5">
                   <PosChip pos={word.pos} />
                   <p className="text-xl font-bold">{word.fr}</p>
+                  {word.note && <p className="text-sm text-wattle-ink">{word.note}</p>}
                   {example}
                 </div>
               </>
@@ -556,6 +563,7 @@ function SessionView({ session }: { session: ReviewSession }) {
                   <PosChip pos={word.pos} />
                   <p className="text-2xl font-bold">{word.fr}</p>
                   {word.frAlt.length > 0 && <p className="max-w-md text-ink-2">{word.frAlt.join(' · ')}</p>}
+                  {word.note && <p className="text-sm text-wattle-ink">{word.note}</p>}
                   {example}
                 </div>
               ) : (

@@ -5,7 +5,7 @@ import { Ipa, PageHeader, PosChip, StatusChip } from '../components/ui';
 import { WordDetail } from '../components/WordDetail';
 import { EMPTY_FILTER, applyFilter, describeFilter, type FreqPreset, type SortKey, type SourceFilter, type WordFilter } from '../domain/filters';
 import { POS_PLURAL, STATUS_FILTER_LABEL, STATUS_LABEL, primaryStatus } from '../domain/status';
-import { POS_LIST, type LearningStatus, type Pos } from '../domain/types';
+import { PACK_IDS, PACK_LABEL, POS_LIST, type LearningStatus, type Pos } from '../domain/types';
 import { navigate } from '../router';
 import { useApp } from '../state/AppContext';
 
@@ -162,7 +162,8 @@ export function Explore() {
               {(
                 [
                   ['all', 'Tous'],
-                  ['core', '500 mots'],
+                  ['core', '500 de base'],
+                  ...PACK_IDS.map((p) => [p, PACK_LABEL[p]]),
                   ['user', `Mes mots (${userCount})`],
                 ] as [SourceFilter, string][]
               ).map(([v, l]) => (

@@ -1,0 +1,464 @@
+# Paquet C1 : vocabulaire précis pour nuancer, argumenter et adapter son registre (sélection rédigée pour l'application). anglais|catégorie|traduction|autres sens
+arguably|adv|sans doute|on peut soutenir que
+albeit|conj|bien que|quoique
+nevertheless|adv|néanmoins
+nonetheless|adv|pourtant|néanmoins
+consequently|adv|par conséquent
+furthermore|adv|de plus|en outre
+moreover|adv|en outre|qui plus est
+whereas|conj|tandis que|alors que
+thereby|adv|ainsi|de ce fait
+hence|adv|d'où|c'est pourquoi
+notwithstanding|prep|malgré|nonobstant
+predominantly|adv|principalement|majoritairement
+presumably|adv|vraisemblablement|je suppose que
+inevitably|adv|inévitablement
+admittedly|adv|il est vrai que|certes
+undoubtedly|adv|indubitablement|sans aucun doute
+virtually|adv|pratiquement|quasiment
+seemingly|adv|apparemment|en apparence
+merely|adv|simplement|ne… que
+solely|adv|uniquement|seulement
+substantially|adv|considérablement
+considerably|adv|considérablement|nettement
+marginally|adv|légèrement|à peine
+relatively|adv|relativement
+initially|adv|au départ|initialement
+subsequently|adv|par la suite
+simultaneously|adv|simultanément
+explicitly|adv|explicitement
+implicitly|adv|implicitement
+to some extent|adv|dans une certaine mesure
+on the whole|adv|dans l'ensemble
+in hindsight|adv|avec le recul
+substantial|adj|considérable|important
+considerable|adj|considérable
+comprehensive|adj|complet|exhaustif (≠ compréhensif)
+thorough|adj|minutieux|approfondi
+meticulous|adj|méticuleux
+concise|adj|concis
+coherent|adj|cohérent
+ambiguous|adj|ambigu
+explicit|adj|explicite
+implicit|adj|implicite
+feasible|adj|faisable|réalisable
+viable|adj|viable
+sustainable|adj|durable
+reluctant|adj|réticent
+eager|adj|désireux|impatient
+hesitant|adj|hésitant
+versatile|adj|polyvalent
+resilient|adj|résilient|résistant
+adaptable|adj|adaptable
+reliable|adj|fiable
+diligent|adj|consciencieux|appliqué
+conscientious|adj|consciencieux
+proactive|adj|proactif
+assertive|adj|qui s'affirme|sûr de soi
+tactful|adj|plein de tact|diplomate
+blunt|adj|direct|franc;émoussé
+candid|adj|franc|sincère
+modest|adj|modeste
+arrogant|adj|arrogant
+stubborn|adj|têtu|obstiné
+naive|adj|naïf
+cynical|adj|cynique
+sceptical|adj|sceptique
+biased|adj|partial|de parti pris
+objective|adj|objectif|impartial
+subjective|adj|subjectif
+plausible|adj|plausible|vraisemblable
+credible|adj|crédible
+far-fetched|adj|tiré par les cheveux
+inherent|adj|inhérent
+intrinsic|adj|intrinsèque
+crucial|adj|crucial
+vital|adj|vital|essentiel
+paramount|adj|primordial
+pivotal|adj|déterminant|central
+marginal|adj|marginal|minime
+negligible|adj|négligeable
+profound|adj|profond
+superficial|adj|superficiel
+tedious|adj|fastidieux|ennuyeux
+daunting|adj|intimidant|décourageant
+overwhelming|adj|écrasant|accablant
+rewarding|adj|gratifiant
+demanding|adj|exigeant
+challenging|adj|difficile (stimulant)
+straightforward|adj|simple|direct
+cumbersome|adj|encombrant|lourd (procédure)
+redundant|adj|superflu|licencié (made redundant)
+obsolete|adj|obsolète|dépassé
+cutting-edge|adj|de pointe
+state-of-the-art|adj|dernier cri|ultramoderne
+hazardous|adj|dangereux (risque)
+precarious|adj|précaire
+unprecedented|adj|sans précédent
+widespread|adj|répandu|généralisé
+prevalent|adj|répandu|courant
+scarce|adj|rare|peu abondant
+abundant|adj|abondant
+adequate|adj|suffisant|adéquat
+appropriate|adj|approprié
+inappropriate|adj|déplacé|inapproprié
+legitimate|adj|légitime
+arbitrary|adj|arbitraire
+consistent|adj|cohérent|régulier
+inconsistent|adj|incohérent|irrégulier
+contradictory|adj|contradictoire
+controversial|adj|controversé
+sensitive|adj|délicat (sujet)|sensible
+tentative|adj|provisoire|hésitant (≠ tentative)
+preliminary|adj|préliminaire
+subsequent|adj|ultérieur
+prior|adj|préalable
+ongoing|adj|en cours|continu
+temporary|adj|temporaire
+lengthy|adj|long|interminable
+brief|adj|bref
+acknowledge|v|reconnaître|accuser réception de
+emphasise|v|souligner|mettre l'accent sur
+highlight|v|mettre en évidence
+underline|v|souligner
+clarify|v|clarifier|préciser
+elaborate|v|développer (une idée)|donner des détails
+illustrate|v|illustrer
+demonstrate|v|démontrer|montrer
+justify|v|justifier
+outline|v|exposer dans les grandes lignes
+summarise|v|résumer
+imply|v|sous-entendre|impliquer
+infer|v|déduire
+assume|v|supposer|partir du principe que
+presume|v|présumer
+anticipate|v|anticiper|prévoir
+foresee|v|prévoir
+envisage|v|envisager
+undermine|v|saper|affaiblir
+enhance|v|améliorer|renforcer
+boost|v|stimuler|booster
+strengthen|v|renforcer
+mitigate|v|atténuer|limiter
+alleviate|v|soulager|atténuer
+exacerbate|v|aggraver|exacerber
+tackle|v|s'attaquer à (un problème)
+address|v|traiter (un problème)|s'adresser à
+overcome|v|surmonter
+cope with|v|faire face à
+deal with|v|gérer|s'occuper de
+prioritise|v|prioriser
+streamline|v|simplifier|rationaliser
+implement|v|mettre en œuvre
+allocate|v|allouer|attribuer
+delegate|v|déléguer
+coordinate|v|coordonner
+collaborate|v|collaborer
+compromise|v|faire des compromis|compromettre
+negotiate|v|négocier
+persuade|v|persuader
+convince|v|convaincre
+reassure|v|rassurer
+encourage|v|encourager
+discourage|v|décourager|dissuader
+hesitate|v|hésiter
+endure|v|endurer|supporter
+thrive|v|s'épanouir|prospérer
+flourish|v|s'épanouir|prospérer
+deteriorate|v|se détériorer
+fluctuate|v|fluctuer|varier
+diminish|v|diminuer
+escalate|v|s'intensifier|dégénérer
+expand|v|développer|s'étendre
+emerge|v|apparaître|ressortir
+evolve|v|évoluer
+adapt|v|s'adapter|adapter
+adjust|v|ajuster|s'adapter
+comply|v|se conformer (comply with)
+enforce|v|faire respecter|appliquer (une règle)
+violate|v|enfreindre|violer
+breach|v|enfreindre|rompre (un contrat)
+assess|v|évaluer
+evaluate|v|évaluer
+scrutinise|v|examiner de près
+monitor|v|surveiller|suivre
+verify|v|vérifier
+confirm|v|confirmer
+ensure|v|s'assurer que|garantir
+guarantee|v|garantir
+sustain|v|maintenir|soutenir
+retain|v|garder|retenir
+obtain|v|obtenir
+acquire|v|acquérir
+pursue|v|poursuivre (un objectif)
+seek|v|chercher|solliciter
+strive|v|s'efforcer
+attain|v|atteindre
+accomplish|v|accomplir
+fulfil|v|remplir|réaliser
+exceed|v|dépasser|excéder
+surpass|v|surpasser
+contribute|v|contribuer
+facilitate|v|faciliter
+hinder|v|entraver|gêner
+impede|v|entraver|faire obstacle à
+restrict|v|restreindre|limiter
+constrain|v|contraindre|limiter
+deprive|v|priver
+neglect|v|négliger
+overlook|v|négliger|ne pas remarquer;donner sur
+dismiss|v|rejeter|écarter
+disregard|v|ne pas tenir compte de
+refute|v|réfuter
+contradict|v|contredire
+concede|v|concéder|admettre
+reconcile|v|réconcilier|concilier
+resolve|v|résoudre
+settle|v|régler (un différend)
+complain|v|se plaindre
+criticise|v|critiquer
+condemn|v|condamner
+praise|v|féliciter|louer
+commend|v|féliciter|recommander
+appreciate|v|apprécier|être reconnaissant
+resent|v|en vouloir à|mal supporter
+regret|v|regretter
+dread|v|redouter
+cherish|v|chérir|tenir à
+crave|v|avoir très envie de
+yearn|v|aspirer à|languir
+contemplate|v|envisager|méditer
+ponder|v|réfléchir à
+speculate|v|spéculer|faire des hypothèses
+deduce|v|déduire
+distinguish|v|distinguer
+discern|v|discerner
+perceive|v|percevoir
+interpret|v|interpréter
+convey|v|transmettre|exprimer
+articulate|v|formuler|exprimer clairement
+phrase|v|formuler
+rephrase|v|reformuler
+paraphrase|v|paraphraser
+digress|v|faire une digression
+interrupt|v|interrompre
+hint|v|laisser entendre|faire allusion
+allude|v|faire allusion
+insinuate|v|insinuer
+exaggerate|v|exagérer
+understate|v|minimiser
+downplay|v|minimiser|relativiser
+overestimate|v|surestimer
+underestimate|v|sous-estimer
+outweigh|v|l'emporter sur
+offset|v|compenser
+compensate|v|compenser|indemniser
+reimburse|v|rembourser
+invoice|n|facture
+revenue|n|recettes|chiffre d'affaires
+expenditure|n|dépenses
+asset|n|atout|actif
+liability|n|responsabilité (juridique)|passif;handicap
+leverage|n|levier|moyen de pression
+incentive|n|incitation|motivation
+drawback|n|inconvénient
+shortcoming|n|défaut|lacune
+setback|n|revers|contretemps
+obstacle|n|obstacle
+bottleneck|n|goulot d'étranglement
+loophole|n|faille (dans une loi)
+trade-off|n|compromis (arbitrage)
+compromise|n|compromis
+consensus|n|consensus
+dilemma|n|dilemme
+paradox|n|paradoxe
+nuance|n|nuance
+implication|n|conséquence|sous-entendu
+assumption|n|hypothèse|présupposé
+premise|n|prémisse|locaux (premises)
+criterion|n|critère
+framework|n|cadre
+scope|n|portée|champ d'application;marge
+extent|n|étendue|mesure
+magnitude|n|ampleur
+proportion|n|proportion
+ratio|n|rapport|ratio
+trend|n|tendance
+outlook|n|perspectives|vision des choses
+prospect|n|perspective|chance
+insight|n|aperçu|compréhension fine
+hindsight|n|recul (avec le recul)
+foresight|n|prévoyance
+awareness|n|conscience|sensibilisation
+perception|n|perception
+stance|n|position (sur une question)
+viewpoint|n|point de vue
+rationale|n|raisonnement|justification
+motive|n|mobile|motivation
+intention|n|intention
+commitment|n|engagement
+dedication|n|dévouement
+integrity|n|intégrité
+accountability|n|responsabilité (devoir rendre des comptes)
+transparency|n|transparence
+reliability|n|fiabilité
+efficiency|n|efficacité (rendement)
+effectiveness|n|efficacité (résultat)
+productivity|n|productivité
+workload|n|charge de travail
+burnout|n|épuisement professionnel
+well-being|n|bien-être
+morale|n|moral (d'une équipe)
+rapport|n|bonne relation|entente
+feedback|n|retour|commentaires
+recognition|n|reconnaissance
+promotion|n|promotion
+redundancy|n|licenciement économique
+resignation|n|démission
+negotiation|n|négociation
+dispute|n|litige|différend
+grievance|n|grief|réclamation
+breach|n|infraction|manquement
+compliance|n|conformité
+regulation|n|réglementation
+guideline|n|directive|recommandation
+protocol|n|protocole
+procedure|n|procédure
+hazard|n|danger|risque
+precaution|n|précaution
+mishap|n|incident|contretemps
+incident|n|incident
+outcome|n|résultat|issue
+consequence|n|conséquence
+repercussion|n|répercussion
+aftermath|n|suites|lendemain (d'une catastrophe)
+turmoil|n|tourmente|chaos
+upheaval|n|bouleversement
+breakthrough|n|percée|avancée décisive
+milestone|n|étape importante|jalon
+landmark|n|point de repère|monument;historique (adj)
+overview|n|vue d'ensemble
+outline|n|grandes lignes|plan
+summary|n|résumé
+abstract|adj|abstrait
+tangible|adj|tangible|concret
+concrete|adj|concret
+vague|adj|vague|flou
+blurred|adj|flou
+distinct|adj|distinct|net
+subtle|adj|subtil
+striking|adj|frappant|saisissant
+remarkable|adj|remarquable
+notable|adj|notable
+noteworthy|adj|digne d'intérêt
+mundane|adj|banal|ordinaire
+trivial|adj|insignifiant|anodin
+petty|adj|mesquin|insignifiant
+genuine|adj|authentique|sincère
+authentic|adj|authentique
+sincere|adj|sincère
+deceptive|adj|trompeur
+misleading|adj|trompeur
+accurate|adj|exact|précis
+inaccurate|adj|inexact
+precise|adj|précis
+rigorous|adj|rigoureux
+flawed|adj|imparfait|défectueux
+flawless|adj|parfait|sans défaut
+outstanding|adj|exceptionnel|en suspens (facture)
+exceptional|adj|exceptionnel
+mediocre|adj|médiocre
+decent|adj|correct|convenable
+adequate|adj|suffisant
+sufficient|adj|suffisant
+excessive|adj|excessif
+moderate|adj|modéré
+drastic|adj|radical|draconien
+radical|adj|radical
+gradual|adj|progressif
+steady|adj|régulier|stable
+volatile|adj|instable|volatil
+fragile|adj|fragile
+robust|adj|robuste|solide
+vulnerable|adj|vulnérable
+susceptible|adj|sujet à|sensible à
+prone|adj|sujet à (prone to)|enclin à
+liable|adj|susceptible de|responsable (légalement)
+entitled|adj|en droit de (entitled to)|qui se croit tout permis
+eligible|adj|admissible|éligible
+mandatory|adj|obligatoire
+optional|adj|facultatif
+compulsory|adj|obligatoire
+voluntary|adj|volontaire|bénévole
+spontaneous|adj|spontané
+deliberate|adj|délibéré|réfléchi
+impulsive|adj|impulsif
+cautious|adj|prudent
+wary|adj|méfiant|prudent
+apprehensive|adj|inquiet|appréhensif
+anxious|adj|anxieux
+frustrated|adj|frustré
+overwhelmed|adj|débordé|submergé
+exhausted|adj|épuisé
+drained|adj|vidé (épuisé)
+content|adj|satisfait|content
+grateful|adj|reconnaissant
+indebted|adj|redevable
+appreciative|adj|reconnaissant
+dismissive|adj|dédaigneux
+condescending|adj|condescendant
+patronising|adj|condescendant
+considerate|adj|attentionné|prévenant
+inconsiderate|adj|irrespectueux|égoïste
+empathetic|adj|empathique
+compassionate|adj|compatissant
+sympathetic|adj|compatissant (≠ sympathique)
+approachable|adj|abordable (personne)|accessible
+down-to-earth|adj|terre à terre|simple (personne)
+easy-going|adj|facile à vivre|décontracté
+laid-back|adj|décontracté|cool
+outgoing|adj|sociable|extraverti
+reserved|adj|réservé
+articulate|adj|qui s'exprime bien
+eloquent|adj|éloquent
+fluent|adj|courant (langue)|fluide
+hesitation|n|hésitation
+fluency|n|aisance|fluidité
+accuracy|n|précision|exactitude
+register|n|registre (de langue)
+tone|n|ton
+emphasis|n|accent (insistance)
+connotation|n|connotation
+idiom|n|expression idiomatique
+jargon|n|jargon
+slang|n|argot
+euphemism|n|euphémisme
+understatement|n|euphémisme|litote
+exaggeration|n|exagération
+irony|n|ironie
+sarcasm|n|sarcasme
+ambiguity|n|ambiguïté
+clarity|n|clarté
+coherence|n|cohérence
+consistency|n|cohérence|régularité
+contradiction|n|contradiction
+discrepancy|n|écart|divergence
+correlation|n|corrélation
+causation|n|causalité
+evidence|n|preuves|éléments
+anecdotal|adj|anecdotique
+empirical|adj|empirique
+hypothetical|adj|hypothétique
+theoretical|adj|théorique
+practical|adj|pratique
+pragmatic|adj|pragmatique
+idealistic|adj|idéaliste
+realistic|adj|réaliste
+optimistic|adj|optimiste
+pessimistic|adj|pessimiste
+ambitious|adj|ambitieux
+complacent|adj|suffisant|qui se repose sur ses lauriers
+determined|adj|déterminé
+persistent|adj|persévérant|persistant
+relentless|adj|implacable|incessant
+tenacious|adj|tenace

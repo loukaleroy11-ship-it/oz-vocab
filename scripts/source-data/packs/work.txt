@@ -1,0 +1,142 @@
+# Vocabulaire professionnel : livraison, hôtellerie, ferme, chantier, mines, sécurité, recherche d'emploi (rédigé pour l'application). anglais|catégorie|niveau|traduction|exemple|traduction de l'exemple|remarque
+## chercher du travail
+résumé|n|B1|CV|Can I drop off my résumé?|Je peux déposer mon CV ?|on dit aussi CV
+cover letter|n|B1|lettre de motivation|I attached a short cover letter.|J'ai joint une courte lettre de motivation.
+job ad|n|B1|offre d'emploi|I saw your job ad on Seek.|J'ai vu votre offre d'emploi sur Seek.
+apply for|v|B1|postuler à|I'd like to apply for the kitchen hand position.|Je voudrais postuler au poste de commis de cuisine.
+position|n|B1|poste|Is the position still available?|Le poste est-il toujours disponible ?
+casual|adj|B1|occasionnel (contrat sans heures garanties)|It's a casual job, about 20 hours a week.|C'est un emploi occasionnel, environ 20 heures par semaine.|« casual loading » : majoration de salaire
+full-time|adj|B1|à temps plein|I'm looking for full-time work.|Je cherche un travail à temps plein.
+part-time|adj|B1|à temps partiel|She works part-time at a café.|Elle travaille à temps partiel dans un café.
+trial shift|n|B1|service d'essai|Can you come in for a trial shift on Friday?|Pouvez-vous venir faire un service d'essai vendredi ?|doit normalement être payé
+availability|n|B1|disponibilités|What's your availability?|Quelles sont vos disponibilités ?
+referee|n|B2|personne de référence|My last boss can be a referee.|Mon dernier patron peut me recommander.
+reference check|n|B2|vérification des références|They did a reference check before hiring me.|Ils ont vérifié mes références avant de m'embaucher.
+work experience|n|B1|expérience professionnelle|I have six months of work experience as a waiter.|J'ai six mois d'expérience comme serveur.
+strengths|n|B1|points forts|My strengths are reliability and teamwork.|Mes points forts sont la fiabilité et l'esprit d'équipe.
+weakness|n|B1|point faible|My weakness is that my English is still improving.|Mon point faible, c'est que mon anglais progresse encore.
+teamwork|n|B1|travail d'équipe|I enjoy teamwork.|J'aime le travail d'équipe.
+hard-working|adj|B1|travailleur|I'm hard-working and I learn quickly.|Je suis travailleur et j'apprends vite.
+reliable|adj|B1|fiable|I'm reliable and always on time.|Je suis fiable et toujours à l'heure.
+pay rate|n|B1|taux horaire|What's the pay rate?|Quel est le taux horaire ?
+award wage|n|C1|salaire minimum de la convention|They pay the award wage plus super.|Ils paient le salaire de la convention plus la retraite.
+super|n|B2|cotisation retraite (superannuation)|Your employer pays super into your fund.|Ton employeur verse ta cotisation retraite sur ton fonds.
+payslip|n|B1|fiche de paie|Check your payslip every week.|Vérifie ta fiche de paie chaque semaine.
+tax file number|n|B1|numéro fiscal (TFN)|I need your tax file number.|J'ai besoin de votre numéro fiscal.
+ABN|n|B1|numéro d'entreprise (indépendant)|Uber Eats riders need an ABN.|Les livreurs Uber Eats ont besoin d'un ABN.
+contractor|n|B2|prestataire|indépendant|I work as a contractor, not an employee.|Je travaille comme prestataire, pas comme salarié.
+## livraison
+delivery|n|A2|livraison|I did 25 deliveries yesterday.|J'ai fait 25 livraisons hier.
+order|n|A2|commande|Your order is on its way.|Votre commande est en route.
+pickup point|n|B1|point de retrait|Where's the pickup point for Uber Eats?|Où est le point de retrait Uber Eats ?
+drop-off|n|B1|livraison (dépôt)|The drop-off is on the third floor.|La livraison est au troisième étage.
+leave at the door|expression|B1|laisser devant la porte|The customer asked me to leave it at the door.|Le client m'a demandé de la laisser devant la porte.
+unit number|n|B1|numéro d'appartement|What's your unit number?|Quel est votre numéro d'appartement ?
+intercom|n|B1|interphone|I'm at the intercom, can you buzz me in?|Je suis à l'interphone, vous pouvez m'ouvrir ?
+buzz in|v|B2|ouvrir (par l'interphone)|Can you buzz me in?|Vous pouvez m'ouvrir ?
+ring|v|A2|appeler (au téléphone)|I'll give you a ring when I'm outside.|Je vous appelle quand je suis devant.
+running late|expression|B1|en retard|Sorry, I'm running a few minutes late.|Désolé, j'ai quelques minutes de retard.
+missing item|n|B1|article manquant|There's a missing item in the order.|Il manque un article dans la commande.
+spill|v|B1|renverser|The drink spilled in the bag.|La boisson s'est renversée dans le sac.
+tip|n|A2|pourboire|Thanks for the tip!|Merci pour le pourboire !
+bike lane|n|B1|piste cyclable|Stay in the bike lane.|Reste sur la piste cyclable.
+roundabout|n|B1|rond-point|Turn left at the roundabout.|Tourne à gauche au rond-point.
+traffic lights|n|A2|feux|Wait at the traffic lights.|Attends au feu.
+puncture|n|B1|crevaison|I got a puncture on the way.|J'ai crevé en route.
+peak time|n|B1|heure de pointe|Dinner is peak time for deliveries.|Le dîner, c'est l'heure de pointe des livraisons.
+## hôtellerie et restauration
+kitchen hand|n|B1|commis de cuisine|plongeur|I worked as a kitchen hand.|J'ai travaillé comme commis de cuisine.
+front of house|n|B2|service en salle|accueil|She works front of house.|Elle travaille en salle.
+wait tables|expression|B1|servir en salle|I've waited tables for three months.|J'ai servi en salle pendant trois mois.
+take an order|expression|A2|prendre une commande|Can I take your order?|Je peux prendre votre commande ?
+the bill|n|A2|l'addition|Could we get the bill, please?|L'addition, s'il vous plaît.
+set up|v|B1|mettre en place|I set up the tables before service.|Je mets en place les tables avant le service.
+clear the tables|expression|B1|débarrasser les tables|Can you clear table four?|Tu peux débarrasser la table quatre ?
+RSA|n|B2|certificat de service responsable d'alcool|You need an RSA to work in a bar.|Il faut un RSA pour travailler dans un bar.
+barista|n|B1|barista|They're looking for an experienced barista.|Ils cherchent un barista expérimenté.
+flat white|n|B1|café au lait (australien)|One flat white and a long black, please.|Un flat white et un long black, s'il vous plaît.
+dishwasher|n|A2|lave-vaisselle|plongeur|Load the dishwasher, please.|Remplis le lave-vaisselle, s'il te plaît.
+food safety|n|B2|hygiène alimentaire|We did a food safety course.|On a suivi une formation en hygiène alimentaire.
+allergy|n|B1|allergie|Does anyone have a nut allergy?|Quelqu'un a une allergie aux fruits à coque ?
+## ferme et cueillette
+farm work|n|B1|travail agricole|I need 88 days of farm work.|Il me faut 88 jours de travail agricole.
+picker|n|B1|cueilleur|They need twenty pickers for the harvest.|Ils ont besoin de vingt cueilleurs pour la récolte.
+packer|n|B1|emballeur|I'm a packer in the packing shed.|Je suis emballeur dans le hangar de conditionnement.
+harvest|n|B1|récolte|vendange|The harvest starts in March.|La récolte commence en mars.
+paid by the bin|expression|B2|payé au bac (au rendement)|We're paid by the bin, not by the hour.|On est payés au bac, pas à l'heure.|piece rates : rémunération au rendement
+piece rate|n|C1|rémunération à la pièce|The piece rate is $30 a bin.|La rémunération est de 30 $ le bac.
+orchard|n|B2|verger|We worked in an apple orchard.|On a travaillé dans un verger de pommes.
+vineyard|n|B2|vignoble|He's pruning at a vineyard.|Il fait la taille dans un vignoble.
+pruning|n|B2|taille (des arbres, de la vigne)|Pruning season is in winter.|La saison de taille, c'est l'hiver.
+livestock|n|B2|bétail|He looks after livestock on a station.|Il s'occupe du bétail dans un élevage.
+tractor|n|B1|tracteur|Can you drive a tractor?|Tu sais conduire un tracteur ?
+regional area|n|B2|zone régionale (éligible au visa)|The farm must be in a regional area.|La ferme doit être dans une zone régionale.
+## chantier et travaux
+white card|n|B1|carte de sécurité chantier|You need a White Card to work on site.|Il faut une White Card pour travailler sur un chantier.
+labourer|n|B1|manœuvre|I'm working as a labourer.|Je travaille comme manœuvre.
+on site|expression|B1|sur le chantier|sur place|Be on site at 6 am.|Sois sur le chantier à 6 h.
+toolbox talk|n|B2|réunion sécurité (début de poste)|We have a toolbox talk every morning.|On a une réunion sécurité chaque matin.
+pre-start|n|B2|réunion ou vérification avant le début du travail|Don't be late for the pre-start.|Ne sois pas en retard pour la réunion de début de poste.
+hi-vis|n|B1|vêtement haute visibilité|Wear your hi-vis at all times.|Porte ton gilet haute visibilité en permanence.
+PPE|n|B1|équipement de protection individuelle (EPI)|Check your PPE before you start.|Vérifie ton EPI avant de commencer.
+hard hat|n|B1|casque de chantier|Hard hats must be worn on site.|Le casque est obligatoire sur le chantier.
+steel caps|n|B1|chaussures de sécurité|You need steel caps and long sleeves.|Il faut des chaussures de sécurité et des manches longues.
+safety glasses|n|B1|lunettes de protection|Put your safety glasses on.|Mets tes lunettes de protection.
+ear plugs|n|B1|bouchons d'oreille|Wear ear plugs near the crusher.|Porte des bouchons d'oreille près du concasseur.
+scaffolding|n|B2|échafaudage|Don't climb the scaffolding without a harness.|Ne monte pas sur l'échafaudage sans harnais.
+harness|n|B2|harnais|Clip your harness on.|Accroche ton harnais.
+forklift|n|B1|chariot élévateur|Have you got a forklift licence?|Tu as un permis de chariot élévateur ?
+ticket|n|B2|habilitation (permis professionnel)|I've got my forklift ticket.|J'ai mon habilitation chariot élévateur.
+smoko|n|B1|pause (café, cigarette)|We'll finish this after smoko.|On finira ça après la pause.|australien
+knock off|v|B2|finir sa journée|What time do you knock off?|Tu finis à quelle heure ?
+## mines
+FIFO|n|B2|travail en rotation par avion (fly-in fly-out)|He works FIFO in the Pilbara.|Il travaille en rotation par avion dans le Pilbara.
+DIDO|n|C1|rotation par la route (drive-in drive-out)|It's a DIDO job, three hours from Perth.|C'est une rotation par la route, à trois heures de Perth.
+roster|n|B2|rotation|planning|I'm on an eight-and-six roster.|Je suis sur une rotation 8 jours / 6 jours.
+swing|n|B2|période de travail (une rotation)|I'm halfway through my swing.|Je suis à la moitié de ma rotation.
+R&R|n|C1|repos entre deux rotations|I'm flying home for R&R.|Je rentre chez moi pour mon repos.
+camp|n|B1|camp (logement du site)|The camp has a gym and a wet mess.|Le camp a une salle de sport et un bar.
+donga|n|B2|chambre préfabriquée (logement de camp)|My donga is right next to the gym.|Ma chambre est juste à côté de la salle de sport.
+crib|n|B2|pause repas (mines)|We have crib at midnight on night shift.|On a la pause repas à minuit en poste de nuit.|Australie-Occidentale
+wet mess|n|C1|bar du camp|Meet you at the wet mess.|On se retrouve au bar du camp.
+night shift|n|B1|poste de nuit|I'm on night shift this week.|Je suis de nuit cette semaine.
+day shift|n|B1|poste de jour|Day shift starts at 5:30.|Le poste de jour commence à 5 h 30.
+induction|n|B2|formation d'accueil (sécurité)|The site induction takes two days.|La formation d'accueil sur le site dure deux jours.
+pit|n|B2|fosse (mine à ciel ouvert)|The trucks run in and out of the pit.|Les camions entrent et sortent de la fosse.
+haul truck|n|B2|camion de roulage (tombereau)|He drives a haul truck.|Il conduit un camion de roulage.
+dump truck|n|B2|tombereau|camion-benne|The dump truck is unloading.|Le tombereau décharge.
+excavator|n|B2|pelleteuse|excavatrice|The excavator loads the trucks.|La pelleteuse charge les camions.
+loader|n|B2|chargeuse|He's operating the loader.|Il conduit la chargeuse.
+dozer|n|B2|bulldozer|The dozer is clearing the road.|Le bulldozer dégage la route.
+ore|n|B2|minerai|Iron ore is shipped from Port Hedland.|Le minerai de fer est expédié depuis Port Hedland.
+iron ore|n|B2|minerai de fer|WA exports a lot of iron ore.|L'Australie-Occidentale exporte beaucoup de minerai de fer.
+crusher|n|C1|concasseur|The crusher is down for maintenance.|Le concasseur est à l'arrêt pour maintenance.
+conveyor|n|B2|convoyeur|tapis roulant|Never reach into the conveyor.|Ne mets jamais la main dans le convoyeur.
+shutdown|n|B2|arrêt technique (maintenance)|They need extra workers for the shutdown.|Ils ont besoin de renforts pour l'arrêt technique.
+offsider|n|C1|aide|assistant|I'm the fitter's offsider.|Je suis l'aide du mécanicien.
+fitter|n|B2|mécanicien d'entretien|The fitter fixed the pump.|Le mécanicien a réparé la pompe.
+sparky|n|B2|électricien (familier)|Call the sparky.|Appelle l'électricien.
+leading hand|n|C1|chef d'équipe|Ask the leading hand.|Demande au chef d'équipe.
+supervisor|n|B1|superviseur|Report it to your supervisor.|Signale-le à ton superviseur.
+spotter|n|B2|guide (pour un engin)|You need a spotter when you reverse.|Il faut un guide quand tu recules.
+## sécurité
+hazard|n|B2|danger|Report any hazard straight away.|Signale tout danger immédiatement.
+risk assessment|n|B2|évaluation des risques|Fill in the risk assessment first.|Remplis d'abord l'évaluation des risques.
+Take 5|n|C1|évaluation rapide des risques en 5 étapes|Do a Take 5 before every task.|Fais un « Take 5 » avant chaque tâche.
+JHA|n|C1|analyse des risques d'une tâche (Job Hazard Analysis)|We reviewed the JHA together.|On a revu l'analyse des risques ensemble.
+isolation|n|C1|consignation (mise hors énergie)|Check the isolation before you start.|Vérifie la consignation avant de commencer.
+lockout tagout|n|C1|consignation avec cadenas et étiquette|Follow the lockout tagout procedure.|Suis la procédure de consignation.
+permit to work|n|C1|permis de travail|You need a permit to work for this job.|Il faut un permis de travail pour cette tâche.
+confined space|n|C1|espace confiné|Don't enter a confined space alone.|N'entre jamais seul dans un espace confiné.
+near miss|n|B2|presque-accident|Report every near miss.|Signale chaque presque-accident.
+incident report|n|B2|rapport d'incident|I filled in an incident report.|J'ai rempli un rapport d'incident.
+first aid|n|B1|premiers secours|Where's the first aid kit?|Où est la trousse de premiers secours ?
+fatigue|n|B2|fatigue (risque au travail)|Fatigue is a big risk on night shift.|La fatigue est un gros risque en poste de nuit.
+dehydration|n|B2|déshydratation|Drink water to avoid dehydration.|Bois de l'eau pour éviter la déshydratation.
+heat stress|n|C1|stress thermique (coup de chaleur)|Watch out for heat stress in summer.|Attention au coup de chaleur en été.
+sun smart|adj|B2|bien protégé du soleil|Be sun smart: hat, sunscreen, long sleeves.|Protège-toi du soleil : chapeau, crème, manches longues.
+emergency exit|n|A2|sortie de secours|Know where the emergency exits are.|Sache où sont les sorties de secours.
+muster point|n|C1|point de rassemblement|Go to the muster point when the alarm sounds.|Va au point de rassemblement quand l'alarme sonne.
+stop work|expression|C1|arrêter le travail (droit de retrait)|If it's unsafe, you can stop work.|Si c'est dangereux, tu peux arrêter le travail.
+fit for work|expression|C1|apte au travail|You must be fit for work every shift.|Tu dois être apte au travail à chaque poste.
+drug and alcohol test|n|B2|dépistage drogue et alcool|There's a drug and alcohol test every morning.|Il y a un dépistage drogue et alcool chaque matin.

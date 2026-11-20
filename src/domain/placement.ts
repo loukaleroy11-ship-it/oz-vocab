@@ -2,8 +2,9 @@
  * Test de placement (≈ 5 minutes). Fonctions pures.
  *
  * Le but : ne pas te faire « apprendre » des mots que tu connais déjà.
- * - Les 500 mots sont découpés en tranches de 50 par fréquence. Dans chaque
- *   tranche, on tire 4 mots que tu n'as pas encore commencés.
+ * - Les 500 mots sont découpés en tranches de 50 par fréquence, puis les paquets
+ *   B1, B2 et C1 en tranches de 100. Dans chaque tranche, on tire 4 mots que tu
+ *   n'as pas encore commencés.
  * - Question : un mot anglais, 4 traductions (A–D) et E « Aucune des propositions
  *   ci-dessus n'est exacte. » (la bonne réponse est E dans environ 1 cas sur 5),
  *   plus « Je ne sais pas » pour ne pas deviner.
@@ -17,6 +18,8 @@ import { DAY_MS, isStarted, newSrsState } from './srs';
 import type { Cefr, Word } from './types';
 
 export const BAND_SIZE = 50;
+export const PACK_BAND_SIZE = 100;
+const LEVEL_PACKS = { b1: 100, b2: 200, c1: 300 } as const;
 export const PER_BAND = 4;
 export const PASS_RATIO = 0.75;
 export const NONE_OPTION = 'Aucune des propositions ci-dessus n’est exacte.';
@@ -46,16 +49,40 @@ function shuffle<T>(arr: T[], rng: () => number): T[] {
   return a;
 }
 
-function bandOf(w: Word): number {
-  return Math.floor(((w.rank ?? 1) - 1) / BAND_SIZE);
+/**
+ * Tranches : 0 à 9 pour les 500 mots (50 par tranche) ; 100+, 200+, 300+ pour
+ * les paquets B1, B2, C1 (100 mots par tranche, dans l'ordre d'apprentissage).
+ * Les paquets thématiques (phrasal verbs, expressions…) ne sont pas testés.
+ */
+export function placementBands(words: Word[]): Map<string, number> {
+  const out = new Map<string, number>();
+  const byPack: Record<string, Word[]> = {};
+  for (const w of words) {
+    if (w.deleted || w.source !== 'core' || w.rank == null) continue;
+    if (!w.pack) out.set(w.id, Math.floor((w.rank - 1) / BAND_SIZE));
+    else if (w.pack in LEVEL_PACKS) (byPack[w.pack] ??= []).push(w);
+  }
+  for (const [pack, list] of Object.entries(byPack)) {
+    list.sort((a, b) => (a.rank ?? 0) - (b.rank ?? 0));
+    list.forEach((w, i) => out.set(w.id, LEVEL_PACKS[pack as keyof typeof LEVEL_PACKS] + Math.floor(i / PACK_BAND_SIZE)));
+  }
+  return out;
+}
+
+export function bandLabel(band: number): string {
+  if (band < 100) return `mots ${band * BAND_SIZE + 1} à ${(band + 1) * BAND_SIZE}`;
+  const level = band < 200 ? 'B1' : band < 300 ? 'B2' : 'C1';
+  const i = band % 100;
+  return `${level} · mots ${i * PACK_BAND_SIZE + 1} à ${(i + 1) * PACK_BAND_SIZE}`;
 }
 
 export function buildPlacement(words: Word[], rng: () => number = Math.random): PlacementQuestion[] {
-  const core = words.filter((w) => w.source === 'core' && !w.deleted && w.rank != null);
+  const bandMap = placementBands(words);
+  const core = words.filter((w) => bandMap.has(w.id));
   const bands = new Map<number, Word[]>();
   for (const w of core) {
     if (isStarted(w.srs)) continue;
-    const b = bandOf(w);
+    const b = bandMap.get(w.id)!;
     bands.set(b, [...(bands.get(b) ?? []), w]);
   }
   const questions: PlacementQuestion[] = [];
@@ -95,8 +122,7 @@ export function buildPlacement(words: Word[], rng: () => number = Math.random): 
 
 export interface BandResult {
   band: number;
-  from: number;
-  to: number;
+  label: string;
   asked: number;
   correct: number;
   passed: boolean;
@@ -106,7 +132,7 @@ export function bandResults(questions: PlacementQuestion[], answers: PlacementAn
   const rows = new Map<number, BandResult>();
   questions.forEach((q, i) => {
     if (i >= answers.length) return;
-    const r = rows.get(q.band) ?? { band: q.band, from: q.band * BAND_SIZE + 1, to: (q.band + 1) * BAND_SIZE, asked: 0, correct: 0, passed: false };
+    const r = rows.get(q.band) ?? { band: q.band, label: bandLabel(q.band), asked: 0, correct: 0, passed: false };
     r.asked++;
     if (answers[i] === q.correct) r.correct++;
     rows.set(q.band, r);
@@ -152,16 +178,17 @@ export function scorePlacement(
     (answers[i] === q.correct ? answeredRight : answeredWrong).add(q.wordId);
   });
 
+  const bandMap = placementBands(words);
   const placed: Word[] = [];
   let knownEstimate = 0;
   const ratio = new Map(bands.map((b) => [b.band, b.correct / b.asked]));
   for (const w of words) {
-    if (w.deleted || w.source !== 'core' || w.rank == null) continue;
+    const b = bandMap.get(w.id);
+    if (b == null || w.rank == null) continue;
     if (isStarted(w.srs)) {
       if (w.srs.phase === 'review') knownEstimate++;
       continue;
     }
-    const b = bandOf(w);
     knownEstimate += answeredRight.has(w.id) ? 1 : answeredWrong.has(w.id) ? 0 : (ratio.get(b) ?? 0);
     const known = answeredRight.has(w.id) || (passed.has(b) && !answeredWrong.has(w.id));
     if (!known) continue;

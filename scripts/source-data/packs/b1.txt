@@ -1,0 +1,701 @@
+# Paquet B1 : mots A1-B1 (CEFR-J) absents des 500, par fréquence orale. Format : anglais|catégorie|traduction|autres sens (;)
+hi|interj|salut|bonjour
+hey|interj|hé|salut
+better|adj|meilleur|mieux
+father|n|père
+hello|interj|bonjour|allô
+left|adj|gauche
+miss|v|manquer|rater;regretter l'absence de
+son|n|fils
+best|adj|meilleur|le mieux
+baby|n|bébé
+brother|n|frère
+wife|n|femme (épouse)
+tonight|adv|ce soir|cette nuit
+everyone|pron|tout le monde
+alone|adv|seul
+anyone|pron|quelqu'un|n'importe qui
+excuse|n|excuse|prétexte
+heart|n|cœur
+police|n|police
+doctor|n|médecin|docteur
+music|n|musique
+beautiful|adj|beau, belle|magnifique
+sleep|v|dormir
+fight|n|bagarre|combat;dispute
+fire|n|feu|incendie
+crazy|adj|fou, folle|dingue
+hit|v|frapper|heurter;atteindre
+hurt|v|faire mal|blesser
+body|n|corps
+shut|v|fermer
+chance|n|chance (possibilité)|occasion;risque
+inside|prep|à l'intérieur de|dans
+wish|n|souhait|vœu
+eye|n|œil
+fun|adj|amusant|drôle
+afraid|adj|effrayé|qui a peur;désolé (I'm afraid…)
+daughter|n|fille (enfant)
+dear|adj|cher, chère
+sister|n|sœur
+rest|n|repos|reste
+husband|n|mari
+married|adj|marié
+nobody|pron|personne (aucune personne)
+trouble|n|ennuis|problème;peine
+trust|v|faire confiance à|croire
+power|n|pouvoir|énergie;électricité
+truth|n|vérité
+behind|adv|derrière|en retard
+city|n|ville (grande)
+promise|n|promesse
+anymore|adv|ne… plus
+hate|v|détester|haïr
+town|n|ville (petite)|centre-ville
+welcome|interj|bienvenue|de rien (you're welcome)
+team|n|équipe
+free|adj|gratuit|libre
+cool|adj|frais|génial;calme
+bye|interj|au revoir|salut
+win|v|gagner
+news|n|nouvelles|actualités;informations
+stupid|adj|stupide|bête
+hurry|n|hâte|précipitation (in a hurry : pressé)
+dream|n|rêve
+lie|v|mentir|être allongé
+black|adj|noir
+touch|n|contact|toucher;touche
+hot|adj|chaud|épicé;canon
+alive|adj|vivant|en vie
+kill|v|tuer
+ahead|adv|devant|en avance;à l'avance
+hang|v|accrocher|pendre;traîner (hang out)
+pull|v|tirer
+boss|n|patron|chef
+dinner|n|dîner|repas du soir
+dance|n|danse
+white|adj|blanc
+safe|adj|en sécurité|sûr;sans danger
+human|adj|humain
+perfect|adj|parfait
+return|n|retour|rendement
+street|n|rue
+special|adj|spécial|particulier
+date|n|date|rendez-vous (amoureux)
+himself|pron|lui-même|se
+serious|adj|sérieux|grave
+uncle|n|oncle
+sick|adj|malade|écœuré;génial (familier)
+act|n|acte|loi;numéro
+scared|adj|effrayé|qui a peur
+poor|adj|pauvre|mauvais (de piètre qualité)
+red|adj|rouge|roux
+earth|n|terre|la Terre
+control|n|contrôle|maîtrise
+beat|v|battre|frapper;vaincre
+hair|n|cheveux|poils
+catch|n|prise|piège (the catch : le hic)
+glad|adj|content|heureux
+air|n|air
+luck|n|chance (hasard)
+voice|n|voix
+secret|n|secret
+hospital|n|hôpital
+clean|adj|propre
+finally|adv|enfin|finalement
+fast|adj|rapide
+land|v|atterrir|débarquer;décrocher (un travail)
+cold|adj|froid
+till|prep|jusqu'à
+song|n|chanson
+sweet|adj|sucré|gentil;mignon
+evening|n|soir|soirée
+throw|n|lancer|jet
+explain|v|expliquer
+bet|v|parier
+step|v|marcher (faire un pas)|poser le pied
+kiss|n|baiser|bisou
+lucky|adj|chanceux
+force|n|force
+surprise|n|surprise
+quiet|adj|calme|silencieux
+coffee|n|café
+cry|n|cri|pleurs
+careful|adj|prudent|attentif
+drop|v|laisser tomber|déposer;baisser
+star|n|étoile|star
+fault|n|faute|défaut
+movie|n|film
+straight|adv|tout droit|directement
+calm|adj|calme
+future|n|avenir|futur
+mad|adj|en colère|fou
+wonderful|adj|merveilleux
+law|n|loi|droit
+film|n|film
+ride|n|trajet|tour (à vélo, en voiture)
+mistake|n|erreur
+dress|n|robe
+president|n|président
+lead|n|tête (en tête)|piste;rôle principal
+worth|adj|qui vaut|valant (it's worth it : ça vaut le coup)
+scare|v|faire peur
+charge|n|frais|charge;accusation
+ship|n|navire|bateau
+hide|v|cacher|se cacher
+wake|v|réveiller|se réveiller
+quick|adj|rapide
+sometime|adv|un jour|à un moment
+key|adj|clé (essentiel)
+offer|n|offre|proposition
+strong|adj|fort|solide
+none|pron|aucun|personne
+amazing|adj|incroyable|génial
+marry|v|épouser|se marier
+fly|n|mouche
+protect|v|protéger
+pain|n|douleur
+dead|adj|mort
+imagine|v|imaginer
+bag|n|sac
+join|v|rejoindre|s'inscrire à;adhérer
+wedding|n|mariage (cérémonie)
+rock|n|rocher|pierre;rock
+weird|adj|bizarre
+count|v|compter
+ball|n|balle|ballon;bal
+missing|adj|manquant|disparu
+strange|adj|étrange
+horse|n|cheval
+mouth|n|bouche
+tired|adj|fatigué
+handle|n|poignée|manche
+busy|adj|occupé|chargé;fréquenté
+mark|n|marque|note (scolaire)
+message|n|message
+blow|v|souffler|exploser (blow up)
+fix|v|réparer|régler;fixer
+box|n|boîte|carton
+dark|adj|sombre|foncé
+park|n|parc
+station|n|gare|station
+arm|n|bras
+forgive|v|pardonner
+evidence|n|preuve(s)
+bill|n|facture|addition;billet (US)
+birthday|n|anniversaire
+hotel|n|hôtel
+completely|adv|complètement
+totally|adv|totalement
+blue|adj|bleu
+security|n|sécurité
+fish|n|poisson
+instead|adv|à la place|plutôt
+definitely|adv|vraiment|sans aucun doute
+realise|v|se rendre compte|réaliser (un rêve)
+fear|n|peur
+unless|conj|à moins que|sauf si
+clothes|n|vêtements
+mess|n|désordre|pagaille
+buddy|n|pote|copain
+smell|n|odeur|odorat
+share|v|partager
+history|n|histoire (passé)|historique
+terrible|adj|terrible|affreux
+near|prep|près de
+floor|n|sol|étage
+bar|n|bar|barre
+ground|n|sol|terrain
+joke|n|blague
+knock|n|coup (à la porte)
+club|n|club|boîte de nuit
+visit|n|visite
+except|conj|sauf|excepté
+brain|n|cerveau
+seriously|adv|sérieusement
+forever|adv|pour toujours
+entire|adj|entier
+burn|v|brûler
+bank|n|banque|rive
+push|v|pousser
+scream|n|cri (perçant)
+space|n|espace|place
+middle|n|milieu
+boat|n|bateau
+wall|n|mur
+anywhere|adv|n'importe où|quelque part
+dangerous|adj|dangereux
+marriage|n|mariage (union)
+sun|n|soleil
+reach|v|atteindre|joindre (quelqu'un)
+single|adj|seul|célibataire;simple
+fair|adj|juste|équitable;blond (teint)
+attention|n|attention
+lock|n|serrure|verrou
+camera|n|appareil photo|caméra
+simple|adj|simple
+prove|v|prouver
+relax|v|se détendre
+respect|n|respect
+peace|n|paix
+accept|v|accepter
+accident|n|accident
+seat|n|siège|place
+normal|adj|normal
+rule|n|règle
+radio|n|radio
+lunch|n|déjeuner
+sea|n|mer
+window|n|fenêtre|vitre
+trip|n|voyage|trajet;excursion
+scene|n|scène|lieux
+quickly|adv|vite|rapidement
+gold|n|or
+notice|n|avis|préavis;panneau
+destroy|v|détruire
+leg|n|jambe
+glass|n|verre
+search|n|recherche|fouille
+major|adj|majeur|important
+tree|n|arbre
+bear|v|supporter|porter
+deep|adj|profond
+smart|adj|intelligent|malin;élégant
+jump|v|sauter
+personal|adj|personnel
+dare|v|oser
+machine|n|machine
+afternoon|n|après-midi
+rich|adj|riche
+relationship|n|relation
+kick|v|donner un coup de pied
+tea|n|thé|dîner (familier, Australie)
+ice|n|glace
+proud|adj|fier
+art|n|art
+girlfriend|n|copine|petite amie
+angry|adj|en colère|fâché
+church|n|église
+contact|n|contact
+drug|n|médicament|drogue
+escape|v|s'échapper|échapper à
+rid|v|débarrasser (get rid of : se débarrasser de)
+cat|n|chat
+drunk|adj|ivre|soûl
+hat|n|chapeau
+field|n|champ|domaine;terrain
+bother|v|déranger|embêter
+animal|n|animal
+cheer|v|acclamer|encourager (cheer up : remonter le moral)
+lawyer|n|avocat
+sad|adj|triste
+smoke|n|fumée
+tyre|n|pneu
+store|n|magasin|réserve
+doubt|n|doute
+mum|n|maman
+patient|n|patient
+gift|n|cadeau|don
+honest|adj|honnête|franc
+guard|n|gardien|garde
+treat|v|traiter|soigner;offrir (régaler)
+waste|n|gaspillage|déchets
+partner|n|partenaire|conjoint
+pleasure|n|plaisir
+private|adj|privé
+hungry|adj|qui a faim|affamé
+boyfriend|n|copain|petit ami
+board|n|planche|tableau;conseil
+raise|v|lever|augmenter;élever
+college|n|établissement d'études supérieures|internat universitaire
+cross|v|traverser|croiser
+apartment|n|appartement
+appreciate|v|apprécier|être reconnaissant de
+consider|v|considérer|envisager
+especially|adv|surtout|particulièrement
+track|n|piste|voie;morceau (musique)
+match|n|match|allumette
+plane|n|avion
+island|n|île
+smile|n|sourire
+impossible|adj|impossible
+cook|v|cuisiner|faire cuire
+green|adj|vert
+study|v|étudier
+roll|n|rouleau|petit pain
+upset|adj|contrarié|bouleversé
+besides|adv|en plus|d'ailleurs
+slow|adj|lent
+steal|v|voler (dérober)
+breath|n|souffle|haleine
+professor|n|professeur (d'université)
+village|n|village
+truck|n|camion
+owe|v|devoir (une somme, un service)
+wind|n|vent
+cute|adj|mignon
+bird|n|oiseau
+computer|n|ordinateur
+beer|n|bière
+race|n|course|race
+huge|adj|énorme
+quit|v|démissionner|arrêter
+risk|n|risque
+memory|n|mémoire|souvenir
+wine|n|vin
+planet|n|planète
+breathe|v|respirer
+create|v|créer
+suit|n|costume|tailleur
+cash|n|espèces|argent liquide
+blame|v|reprocher|accuser
+prepare|v|préparer
+south|n|sud
+grab|v|attraper|saisir;prendre vite (grab a coffee)
+unit|n|unité|appartement (Australie)
+press|v|appuyer|presser
+action|n|action
+taste|n|goût
+serve|v|servir
+address|n|adresse|discours
+north|n|nord
+bus|n|bus
+river|n|rivière|fleuve
+choose|v|choisir
+deserve|v|mériter
+arrive|v|arriver
+magic|n|magie
+fit|adj|en forme|apte
+hero|n|héros
+death|n|mort|décès
+file|n|dossier|fichier
+bell|n|cloche|sonnette
+immediately|adv|immédiatement
+belong|v|appartenir
+remain|v|rester|demeurer
+final|adj|final|dernier
+dirty|adj|sale
+fill|v|remplir
+hole|n|trou
+note|n|note|mot;billet
+fat|adj|gros
+summer|n|été
+suddenly|adv|soudain|tout à coup
+aunt|n|tante
+moon|n|lune
+spot|n|endroit|tache;bouton
+kitchen|n|cuisine (pièce)
+favour|n|service (faveur)
+duty|n|devoir|service;taxe
+chicken|n|poulet|poule
+director|n|directeur|réalisateur
+everywhere|adv|partout
+stage|n|étape|scène
+rain|n|pluie
+complete|adj|complet|terminé
+foot|n|pied
+vote|n|vote|voix
+stone|n|pierre
+nervous|adj|nerveux|anxieux
+themselves|pron|eux-mêmes|se
+engine|n|moteur
+bottle|n|bouteille
+crowd|n|foule
+photo|n|photo
+mile|n|mille (1,6 km)
+paint|n|peinture
+further|adj|supplémentaire|plus loin
+pack|n|paquet|sac à dos;meute
+otherwise|adv|sinon|autrement
+awesome|adj|génial
+department|n|service (dans une entreprise)|rayon;ministère
+camp|n|camp|campement
+surprised|adj|surpris
+sky|n|ciel
+herself|pron|elle-même|se
+video|n|vidéo
+invite|v|inviter
+travel|v|voyager
+ourselves|pron|nous-mêmes|nous
+admit|v|admettre|avouer
+favourite|adj|préféré
+apart|adv|à part|séparé;en morceaux
+ruin|v|ruiner|gâcher
+gas|n|gaz|essence (États-Unis)
+double|adj|double
+tie|n|cravate|lien;match nul
+bunch|n|bouquet|tas;grappe
+west|n|ouest
+ticket|n|billet|ticket;amende
+account|n|compte|récit
+lay|v|poser|coucher;pondre
+warm|adj|chaud (agréable)|chaleureux
+trick|n|tour|astuce;truc
+upstairs|adv|en haut|à l'étage
+twice|adv|deux fois
+pressure|n|pression
+indeed|adv|en effet|vraiment
+guest|n|invité|client (hôtel)
+band|n|groupe (musique)|bande
+release|v|libérer|sortir (un film, un album)
+pregnant|adj|enceinte
+survive|v|survivre
+nose|n|nez
+danger|n|danger
+finger|n|doigt
+silly|adj|idiot|bête
+breakfast|n|petit-déjeuner
+above|adv|au-dessus|ci-dessus
+mountain|n|montagne
+flight|n|vol (en avion)
+rose|n|rose
+enter|v|entrer|saisir (des données)
+however|adv|cependant|toutefois
+fresh|adj|frais
+driver|n|conducteur|chauffeur
+empty|adj|vide
+bathroom|n|salle de bain|toilettes
+conversation|n|conversation
+leader|n|chef|dirigeant
+wash|v|laver|se laver
+pretend|v|faire semblant|prétendre (faussement)
+correct|adj|correct|exact
+neck|n|cou
+practice|n|entraînement|pratique;cabinet (médical)
+suffer|v|souffrir
+weekend|n|week-end
+itself|pron|lui-même, elle-même|se
+challenge|n|défi
+manage|v|gérer|réussir à (manage to)
+extra|adj|supplémentaire|en plus
+corner|n|coin|angle;virage
+opportunity|n|occasion|opportunité
+code|n|code
+condition|n|condition|état
+shot|n|tir|coup;injection;essai (give it a shot)
+van|n|camionnette|fourgon
+apparently|adv|apparemment
+excited|adj|enthousiaste|impatient
+nature|n|nature
+exist|v|exister
+shame|n|honte|dommage (what a shame)
+apologise|v|s'excuser
+fellow|adj|compagnon de|camarade (fellow workers : collègues)
+beauty|n|beauté
+flower|n|fleur
+war|n|guerre
+beside|prep|à côté de
+wild|adj|sauvage|fou
+heavy|adj|lourd|fort (pluie, trafic)
+settle|v|s'installer|régler (un différend)
+beach|n|plage
+ridiculous|adj|ridicule
+simply|adv|simplement
+warn|v|avertir|prévenir
+gun|n|arme à feu|pistolet
+copy|n|copie|exemplaire
+feed|v|nourrir|donner à manger
+appear|v|apparaître|sembler
+hall|n|couloir|salle;entrée
+bottom|n|fond|bas;derrière
+medical|adj|médical
+discuss|v|discuter de
+blind|adj|aveugle
+shoe|n|chaussure
+skin|n|peau
+famous|adj|célèbre
+disappear|v|disparaître
+asleep|adj|endormi
+fail|v|échouer|rater
+beg|v|supplier|mendier
+restaurant|n|restaurant
+speed|n|vitesse
+awful|adj|affreux|horrible
+operation|n|opération
+cup|n|tasse|coupe
+nurse|n|infirmier, infirmière
+blood|n|sang
+common|adj|courant|commun
+remind|v|rappeler (à quelqu'un)
+cousin|n|cousin
+target|n|cible|objectif
+shout|v|crier
+plenty|pron|beaucoup|largement assez
+pants|n|pantalon (Australie)|slip (Royaume-Uni)
+excellent|adj|excellent
+responsible|adj|responsable
+military|adj|militaire
+character|n|personnage|caractère
+whoever|pron|quiconque|qui que ce soit
+main|adj|principal
+block|n|bloc|pâté de maisons;terrain (Australie)
+knife|n|couteau
+due|adj|dû|prévu;à rendre
+strike|n|grève|frappe
+cake|n|gâteau
+necessary|adj|nécessaire
+receive|v|recevoir
+clearly|adv|clairement|manifestement
+recognise|v|reconnaître
+sight|n|vue|spectacle
+tight|adj|serré|tendu;juste (budget, délai)
+jam|n|confiture|embouteillage (traffic jam)
+coach|n|entraîneur|car (autocar)
+grandma|n|mamie|grand-mère
+several|det|plusieurs
+emergency|n|urgence
+east|n|est
+nor|conj|ni
+advice|n|conseil(s)
+fake|adj|faux|bidon
+career|n|carrière
+lift|n|ascenseur|trajet (give someone a lift : déposer quelqu'un)
+manager|n|responsable|gérant;directeur
+beyond|prep|au-delà de
+milk|n|lait
+bridge|n|pont
+focus|v|se concentrer
+hardly|adv|à peine|presque pas
+national|adj|national
+possibly|adv|peut-être|éventuellement
+pardon|interj|pardon ?|comment ?
+somehow|adv|d'une manière ou d'une autre
+size|n|taille|pointure
+plant|n|plante|usine
+wound|n|blessure|plaie
+honey|n|miel|chéri(e)
+chair|n|chaise
+fan|n|fan|ventilateur
+powerful|adj|puissant
+super|adj|super
+strength|n|force|point fort
+natural|adj|naturel
+freedom|n|liberté
+centre|n|centre
+meat|n|viande
+plus|prep|plus|et aussi
+introduce|v|présenter|introduire
+interview|n|entretien|interview
+among|prep|parmi
+chase|v|poursuivre|courir après
+crash|n|accident|collision;plantage
+result|n|résultat
+towards|prep|vers|envers
+shirt|n|chemise
+heat|n|chaleur
+hunt|v|chasser
+tear|n|larme
+loud|adj|fort (bruit)|bruyant
+nearly|adv|presque
+dressed|adj|habillé
+ear|n|oreille
+damage|n|dégâts|dommages
+horrible|adj|horrible
+shake|v|secouer|trembler;serrer (la main)
+science|n|science
+credit|n|crédit|mérite
+wood|n|bois
+fantastic|adj|fantastique
+pig|n|cochon
+research|n|recherche(s)
+post|n|courrier|poste;publication
+nonsense|n|bêtises|n'importe quoi
+noise|n|bruit
+opinion|n|avis|opinion
+model|n|modèle|mannequin
+female|adj|féminin|femelle
+oil|n|huile|pétrole
+prepared|adj|prêt|préparé
+bone|n|os
+incredible|adj|incroyable
+grandpa|n|papi|grand-père
+egg|n|œuf
+original|adj|original|d'origine
+truly|adv|vraiment|sincèrement
+honestly|adv|honnêtement|franchement
+male|adj|masculin|mâle
+bite|v|mordre
+assume|v|supposer|présumer
+dry|adj|sec
+deliver|v|livrer|remettre
+event|n|événement
+brown|adj|marron|brun
+perfectly|adv|parfaitement
+season|n|saison
+lab|n|labo
+audience|n|public|auditoire
+onto|prep|sur
+hill|n|colline
+hire|v|embaucher|louer
+society|n|société
+convince|v|convaincre
+gate|n|portail|porte (aéroport)
+prefer|v|préférer
+detail|n|détail
+shower|n|douche|averse
+responsibility|n|responsabilité
+shock|n|choc
+artist|n|artiste
+nowhere|adv|nulle part
+purpose|n|but|objectif (on purpose : exprès)
+load|n|charge|chargement (loads of : plein de)
+lesson|n|leçon|cours
+claim|v|affirmer|réclamer
+trade|n|commerce|métier (manuel)
+refuse|v|refuser
+jealous|adj|jaloux
+comfortable|adj|confortable|à l'aise
+cream|n|crème
+garden|n|jardin
+alarm|n|alarme|réveil
+birth|n|naissance
+unfortunately|adv|malheureusement
+signal|n|signal|réseau (téléphone)
+proof|n|preuve
+property|n|propriété|biens;bien immobilier
+usual|adj|habituel
+afford|v|avoir les moyens de|se permettre
+rush|n|hâte|ruée (rush hour : heure de pointe)
+yell|v|hurler|crier
+aware|adj|conscient|au courant
+total|adj|total
+surely|adv|sûrement|quand même
+request|n|demande
+spread|v|étaler|répandre;se propager
+player|n|joueur
+rise|n|hausse|augmentation
+distance|n|distance
+rent|n|loyer
+century|n|siècle
+joy|n|joie
+social|adj|social
+brilliant|adj|brillant|génial
+pool|n|piscine|flaque
+celebrate|v|fêter|célébrer
+path|n|chemin|sentier
+ugly|adj|laid|moche
+weight|n|poids
+painting|n|tableau|peinture
+pocket|n|poche
+neighbour|n|voisin
+customer|n|client
+bike|n|vélo
+cheap|adj|pas cher|bon marché
+expensive|adj|cher (coûteux)
+wallet|n|portefeuille
+rubbish|n|déchets|n'importe quoi (familier)
+bin|n|poubelle
+receipt|n|reçu|ticket de caisse
+shift|n|service (créneau de travail)|équipe;changement
+schedule|n|emploi du temps|planning
+salary|n|salaire
+skill|n|compétence|savoir-faire
+experience|n|expérience
+improve|v|améliorer|s'améliorer
+weather|n|temps (météo)
+storm|n|tempête|orage
+temperature|n|température
+helmet|n|casque
+traffic|n|circulation|trafic
+corner shop|n|épicerie de quartier
+appointment|n|rendez-vous (médical, administratif)

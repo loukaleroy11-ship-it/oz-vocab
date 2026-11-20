@@ -1,0 +1,157 @@
+# 150 phrasal verbs courants (rédigés pour l'application). anglais|catégorie|niveau|traduction|exemple|traduction de l'exemple|remarque
+## se déplacer
+go on|v|B1|continuer|Sorry, go on, what were you saying?|Pardon, continue, tu disais quoi ?|aussi : se passer (What's going on?)
+come back|v|B1|revenir|I'll come back after my shift.|Je reviendrai après mon service.
+go back|v|B1|retourner|I want to go back to Réunion for Christmas.|Je veux retourner à La Réunion pour Noël.
+come in|v|B1|entrer|Come in, the door's open.|Entre, la porte est ouverte.
+go out|v|B1|sortir|We're going out for dinner tonight.|On sort dîner ce soir.
+get out|v|B1|sortir (de)|Get out of the car slowly.|Sors de la voiture doucement.
+come over|v|B1|passer (chez quelqu'un)|Do you want to come over on Saturday?|Tu veux passer samedi ?
+get in|v|B1|monter (dans une voiture)|arriver|Get in, I'll give you a lift.|Monte, je te dépose.
+get on|v|B1|monter (bus, train)|s'entendre (get on with)|Get on the 950 bus to the city.|Prends le bus 950 pour le centre.
+get off|v|B1|descendre (bus, train)|Get off at the next stop.|Descends au prochain arrêt.
+get back|v|B1|rentrer|récupérer|What time did you get back last night?|Tu es rentré à quelle heure hier soir ?
+get around|v|B2|se déplacer|contourner|I get around Perth by bike.|Je me déplace à vélo dans Perth.
+head off|v|B2|partir|I'd better head off, it's getting late.|Je ferais mieux d'y aller, il se fait tard.
+set off|v|B2|partir (en voyage)|déclencher|We set off for Broome at 5 am.|On est partis pour Broome à 5 h.
+drop off|v|B1|déposer|I'll drop off the order at the front door.|Je dépose la commande devant la porte.
+pick up|v|B1|récupérer|prendre (quelqu'un);ramasser|I need to pick up an order from Maccas.|Je dois récupérer une commande chez McDo.
+pull over|v|B2|se garer sur le côté|The police told him to pull over.|La police lui a dit de se garer.
+turn around|v|B1|faire demi-tour|se retourner|Turn around, you missed the street.|Fais demi-tour, tu as raté la rue.
+come along|v|B2|venir (avec)|progresser|You can come along if you want.|Tu peux venir si tu veux.
+move in|v|B1|emménager|I moved in last week.|J'ai emménagé la semaine dernière.
+move out|v|B1|déménager (partir)|We have to move out by Friday.|On doit partir d'ici vendredi.
+check in|v|B1|s'enregistrer|We checked in at the hostel at noon.|On s'est enregistrés à l'auberge à midi.
+check out|v|B1|régler et partir (hôtel)|regarder (check it out)|Check out is at 10 am.|Le départ est à 10 h.
+## communiquer
+find out|v|B1|découvrir|apprendre (une info)|I'll find out what time it starts.|Je vais me renseigner sur l'heure de début.
+point out|v|B2|faire remarquer|signaler|She pointed out a mistake in my CV.|Elle m'a signalé une erreur dans mon CV.
+bring up|v|B2|aborder (un sujet)|élever (un enfant)|Don't bring up money at the first interview.|N'aborde pas l'argent au premier entretien.
+come up|v|B1|surgir|être abordé|Something came up, I can't make it.|Il y a eu un imprévu, je ne peux pas venir.
+call back|v|B1|rappeler|Can you call me back in five minutes?|Tu peux me rappeler dans cinq minutes ?
+hang up|v|B1|raccrocher|She hung up before I could answer.|Elle a raccroché avant que je réponde.
+speak up|v|B2|parler plus fort|donner son avis|Could you speak up a bit?|Tu peux parler un peu plus fort ?
+talk over|v|B2|discuter de|Let's talk it over tomorrow.|Discutons-en demain.
+sum up|v|B2|résumer|To sum up, I'm reliable and I learn fast.|Pour résumer, je suis fiable et j'apprends vite.
+get across|v|C1|faire passer (un message)|I struggled to get my point across.|J'ai eu du mal à faire passer mon idée.
+back up|v|B2|soutenir|sauvegarder;reculer|My boss backed me up.|Mon patron m'a soutenu.
+cut off|v|B2|couper (la parole, l'électricité)|Sorry to cut you off, but we need to go.|Désolé de te couper, mais on doit y aller.|cut out : ça coupe (au téléphone)
+fill in|v|B1|remplir (un formulaire)|remplacer (fill in for)|Fill in this form, please.|Remplissez ce formulaire, s'il vous plaît.
+fill out|v|B1|remplir (un document)|I filled out the application online.|J'ai rempli la candidature en ligne.
+write down|v|B1|noter|Write down the address.|Note l'adresse.
+look up|v|B1|chercher (une info)|lever les yeux|I looked it up in the dictionary.|Je l'ai cherché dans le dictionnaire.
+make up|v|B2|inventer|se réconcilier;constituer|He made up an excuse.|Il a inventé une excuse.
+let down|v|B2|décevoir|laisser tomber|I won't let you down.|Je ne te décevrai pas.
+put across|v|C1|exprimer clairement|She puts her ideas across really well.|Elle exprime très bien ses idées.
+## travail et action
+set up|v|B1|installer|créer;organiser|I set up my ABN in ten minutes.|J'ai créé mon ABN en dix minutes.
+end up|v|B1|finir par|We ended up working until midnight.|On a fini par travailler jusqu'à minuit.
+turn out|v|B2|s'avérer|It turned out to be easy.|Ça s'est avéré facile.
+take on|v|B2|embaucher|prendre (une responsabilité)|The farm is taking on pickers for the season.|La ferme embauche des cueilleurs pour la saison.
+take over|v|B2|prendre le relais|reprendre|Can you take over while I have a break?|Tu peux prendre le relais pendant ma pause ?
+carry on|v|B1|continuer|Carry on, you're doing well.|Continue, tu t'en sors bien.
+keep up|v|B1|suivre (le rythme)|maintenir|Slow down, I can't keep up!|Ralentis, je n'arrive pas à suivre !
+catch up|v|B1|rattraper|se voir (prendre des nouvelles)|Let's catch up for a coffee.|Prenons un café pour se donner des nouvelles.
+get on with|v|B2|continuer (une tâche)|s'entendre avec|Let's get on with the job.|Continuons le travail.
+work out|v|B1|trouver (une solution)|faire du sport;bien se passer|We'll work it out together.|On trouvera une solution ensemble.
+figure out|v|B1|comprendre|trouver|I can't figure out how this works.|Je n'arrive pas à comprendre comment ça marche.
+sort out|v|B1|régler|ranger;trier|Don't worry, I'll sort it out.|T'inquiète, je m'en occupe.
+deal with|v|B1|gérer|s'occuper de|I'll deal with the customer.|Je m'occupe du client.
+look after|v|B1|s'occuper de|Can you look after my bike?|Tu peux surveiller mon vélo ?
+look into|v|B2|examiner|se renseigner sur|We'll look into the problem.|Nous allons examiner le problème.
+carry out|v|B2|effectuer|mener à bien|We carry out a safety check every morning.|On fait un contrôle de sécurité chaque matin.
+hand in|v|B1|remettre|rendre (un devoir)|I handed in my resignation.|J'ai remis ma démission.
+hand out|v|B1|distribuer|They handed out hi-vis vests.|Ils ont distribué des gilets haute visibilité.
+take off|v|B1|enlever|décoller (avion);prendre (un congé)|Take off your shoes, please.|Enlève tes chaussures, s'il te plaît.
+put on|v|B1|mettre (un vêtement)|allumer;prendre (du poids)|Put on your gloves before you start.|Mets tes gants avant de commencer.
+turn on|v|B1|allumer|Turn on the lights.|Allume la lumière.
+turn off|v|B1|éteindre|Turn off the engine.|Coupe le moteur.
+turn up|v|B1|arriver (se pointer)|monter (le son)|He turned up late again.|Il est encore arrivé en retard.
+turn down|v|B2|refuser|baisser (le son)|I turned down the job offer.|J'ai refusé l'offre d'emploi.
+show up|v|B1|se pointer|arriver|Only half the team showed up.|Seule la moitié de l'équipe est venue.
+fall behind|v|B2|prendre du retard|We fell behind schedule.|On a pris du retard sur le planning.
+run out of|v|B1|manquer de|ne plus avoir de|We've run out of milk.|On n'a plus de lait.
+run into|v|B2|tomber sur|rencontrer (un problème)|I ran into an old friend.|Je suis tombé sur un vieil ami.
+come across|v|B2|tomber sur|donner l'impression|He comes across as very confident.|Il donne l'impression d'être très sûr de lui.
+put off|v|B2|reporter|décourager|Don't put it off until tomorrow.|Ne le reporte pas à demain.
+call off|v|B2|annuler|They called off the meeting.|Ils ont annulé la réunion.
+bring forward|v|C1|avancer (une date)|The meeting was brought forward to Monday.|La réunion a été avancée à lundi.
+follow up|v|B2|relancer|faire le suivi|I'll follow up with an email.|Je relancerai par e-mail.
+step down|v|C1|démissionner (d'un poste)|The manager stepped down last month.|Le directeur a quitté ses fonctions le mois dernier.
+lay off|v|B2|licencier|The mine laid off 200 workers.|La mine a licencié 200 employés.
+take up|v|B2|se mettre à|occuper (du temps, de la place)|I've taken up running.|Je me suis mis à la course.
+give up|v|B1|abandonner|arrêter (une habitude)|Don't give up, you're nearly there.|N'abandonne pas, tu y es presque.
+## vie quotidienne
+wake up|v|B1|se réveiller|I wake up at 6 every day.|Je me réveille à 6 h tous les jours.
+get up|v|B1|se lever|I got up early to ride to work.|Je me suis levé tôt pour aller au travail à vélo.
+go to bed|v|A2|aller se coucher|I went to bed at midnight.|Je suis allé me coucher à minuit.
+sit down|v|A2|s'asseoir|Please sit down.|Asseyez-vous, je vous prie.
+stand up|v|A2|se lever (debout)|Stand up and stretch.|Lève-toi et étire-toi.
+lie down|v|B1|s'allonger|I need to lie down for a bit.|J'ai besoin de m'allonger un peu.
+calm down|v|B1|se calmer|Calm down, it's not a big deal.|Calme-toi, ce n'est pas grave.
+cheer up|v|B1|remonter le moral|reprendre courage|Cheer up, mate!|Courage, mon pote !
+chill out|v|B1|se détendre|We just chilled out at the beach.|On s'est juste détendus à la plage.
+hang out|v|B1|traîner (avec des amis)|We hang out at the hostel most nights.|On traîne à l'auberge presque tous les soirs.
+eat out|v|B1|manger au restaurant|We don't eat out much, it's too expensive.|On ne mange pas souvent au resto, c'est trop cher.
+grow up|v|B1|grandir|I grew up in Saint-Leu.|J'ai grandi à Saint-Leu.
+look forward to|v|B1|avoir hâte de|I'm looking forward to the weekend.|J'ai hâte d'être au week-end.
+look for|v|A2|chercher|I'm looking for farm work.|Je cherche du travail en ferme.
+look out|v|B1|faire attention|Look out, there's a car!|Attention, une voiture !
+watch out|v|B1|faire attention|Watch out for kangaroos at night.|Attention aux kangourous la nuit.
+try on|v|B1|essayer (un vêtement)|Can I try these boots on?|Je peux essayer ces bottes ?
+throw away|v|B1|jeter|Don't throw away the receipt.|Ne jette pas le ticket.
+clean up|v|B1|nettoyer|ranger|Let's clean up the kitchen.|Nettoyons la cuisine.
+fix up|v|B2|réparer|arranger|I fixed up an old bike.|J'ai retapé un vieux vélo.
+break down|v|B1|tomber en panne|craquer (émotion)|My phone broke down in the middle of a delivery.|Mon téléphone a lâché en pleine livraison.
+pay back|v|B1|rembourser|I'll pay you back tomorrow.|Je te rembourse demain.
+save up|v|B1|mettre de l'argent de côté|I'm saving up for a car.|J'économise pour une voiture.
+top up|v|B2|recharger (crédit, carte)|compléter|I need to top up my SmartRider.|Je dois recharger ma carte SmartRider.
+sign up|v|B1|s'inscrire|I signed up for a surf lesson.|Je me suis inscrit à un cours de surf.
+log in|v|B1|se connecter|Log in to the app before your shift.|Connecte-toi à l'appli avant ton service.
+put up with|v|B2|supporter|tolérer|I can't put up with the noise anymore.|Je ne supporte plus le bruit.
+get over|v|B2|se remettre de|surmonter|It took me a week to get over the flu.|J'ai mis une semaine à me remettre de la grippe.
+get by|v|B2|s'en sortir|se débrouiller|I get by with my basic English.|Je me débrouille avec mon anglais de base.
+get along|v|B1|s'entendre|bien s'entendre|I get along well with my roommates.|Je m'entends bien avec mes colocs.
+take after|v|B2|ressembler à (un parent)|I take after my dad.|Je ressemble à mon père.
+fall out|v|B2|se brouiller|They fell out over money.|Ils se sont brouillés pour une histoire d'argent.
+split up|v|B2|se séparer|They split up last year.|Ils se sont séparés l'année dernière.
+ask out|v|B1|inviter (à sortir)|He asked her out.|Il lui a proposé de sortir avec lui.
+## réfléchir et décider
+think over|v|B2|réfléchir à|Think it over and let me know.|Réfléchis-y et tiens-moi au courant.
+come up with|v|B2|trouver (une idée)|proposer|She came up with a great idea.|Elle a eu une super idée.
+rule out|v|C1|exclure|écarter|We can't rule out a delay.|On ne peut pas exclure un retard.
+narrow down|v|C1|réduire (le choix)|I've narrowed it down to two jobs.|J'ai réduit mon choix à deux emplois.
+weigh up|v|C1|peser (le pour et le contre)|Weigh up the pros and cons.|Pèse le pour et le contre.
+go over|v|B2|revoir|examiner|Let's go over the plan again.|Revoyons le plan encore une fois.
+go through|v|B2|passer par|examiner;subir|I went through a tough time.|Je suis passé par une période difficile.
+stick to|v|B2|s'en tenir à|Stick to the plan.|Tiens-t'en au plan.
+stick with|v|B2|rester avec|persévérer|Stick with it, it gets easier.|Accroche-toi, ça devient plus facile.
+count on|v|B1|compter sur|You can count on me.|Tu peux compter sur moi.
+rely on|v|B2|compter sur|dépendre de|I rely on my phone for everything.|Je dépends de mon téléphone pour tout.
+depend on|v|B1|dépendre de|It depends on the weather.|Ça dépend du temps.
+believe in|v|B1|croire en|I believe in you.|Je crois en toi.
+care about|v|B1|tenir à|se soucier de|I really care about this job.|Ce travail compte vraiment pour moi.
+cope with|v|B2|faire face à|How do you cope with the heat?|Comment tu supportes la chaleur ?
+make out|v|C1|distinguer|comprendre|I couldn't make out what he said.|Je n'ai pas réussi à comprendre ce qu'il a dit.
+## changer et évoluer
+go up|v|B1|augmenter|monter|Rent has gone up again.|Le loyer a encore augmenté.
+go down|v|B1|baisser|descendre|Prices went down after summer.|Les prix ont baissé après l'été.
+bring down|v|B2|faire baisser|faire tomber|We need to bring down costs.|Il faut faire baisser les coûts.
+cut down on|v|B2|réduire (sa consommation de)|I'm cutting down on sugar.|Je réduis le sucre.
+build up|v|B2|accumuler|développer|I'm building up my savings.|Je me constitue une épargne.
+pick up on|v|C1|remarquer|relever|She picked up on my accent.|Elle a remarqué mon accent.
+slow down|v|B1|ralentir|Slow down near the school.|Ralentis près de l'école.
+speed up|v|B1|accélérer|We need to speed up the process.|Il faut accélérer le processus.
+wear out|v|B2|user|épuiser|These shoes are worn out.|Ces chaussures sont usées.
+run out|v|B1|s'épuiser|expirer|My visa runs out in June.|Mon visa expire en juin.
+pass out|v|B2|s'évanouir|He passed out in the heat.|Il s'est évanoui à cause de la chaleur.
+come down with|v|B2|attraper (une maladie)|I've come down with a cold.|J'ai attrapé un rhume.
+fall apart|v|B2|tomber en morceaux|s'effondrer|My old bike is falling apart.|Mon vieux vélo tombe en morceaux.
+blow up|v|B2|exploser|gonfler;s'emporter|The tyre blew up.|Le pneu a éclaté.
+break up|v|B2|rompre|se disperser|They broke up after two years.|Ils ont rompu après deux ans.
+shut down|v|B2|fermer|arrêter (une machine)|The site shuts down for Christmas.|Le site ferme pour Noël.
+start over|v|B1|recommencer|I had to start over from scratch.|J'ai dû tout recommencer à zéro.
+hold on|v|B1|patienter|tenir bon|Hold on, I'll check.|Attends, je vérifie.
+hold up|v|B2|retarder|tenir le coup|Sorry, I got held up in traffic.|Désolé, j'ai été retardé dans les bouchons.
+put through|v|C1|passer (au téléphone)|I'll put you through to the manager.|Je vous passe le responsable.
+see off|v|C1|raccompagner (au départ)|They came to the airport to see me off.|Ils sont venus à l'aéroport me dire au revoir.

@@ -3,6 +3,7 @@
  * sérialisées, suivi des paquets modifiés pour la synchronisation.
  */
 import { CORE_ENTRIES, CORE_VERSION, coreContent, coreWord } from '../data/core';
+import { PACK_ENTRIES, PACK_VERSION, packContent, packMeta, packWord } from '../data/packs';
 import { normalizeWord } from '../domain/normalize';
 import { normalizeSettings, type DailySnapshot, type ReviewSession, type Settings, type Word } from '../domain/types';
 import { SETTINGS_BUCKET, dailyBucket, sessionBucket, wordBucket } from './buckets';
@@ -39,13 +40,14 @@ export class Repo {
 
   /** Charge les données ; à la première ouverture, installe les 500 mots. */
   async load(now: number): Promise<AppData> {
-    const [words, sessions, daily, settings, coreVersion, dirty] = await Promise.all([
+    const [words, sessions, daily, settings, coreVersion, dirty, packVersion] = await Promise.all([
       this.store.getAllWords(),
       this.store.getAllSessions(),
       this.store.getAllDaily(),
       this.store.getMeta<Settings>('settings'),
       this.store.getMeta<number>('coreVersion'),
       this.store.getMeta<string[]>('dirty'),
+      this.store.getMeta<number>('packVersion'),
     ]);
     (dirty ?? []).forEach((d) => this.mark(d));
 
@@ -74,10 +76,25 @@ export class Repo {
         else toWrite[toWrite.indexOf(existing)] = w;
       }
     }
-    if (toWrite.length || coreVersion !== CORE_VERSION) {
+    // paquets B1 → C1, phrasal verbs, expressions…
+    for (const entry of PACK_ENTRIES) {
+      const existing = byId.get(entry.id);
+      if (!existing) {
+        const w = packWord(entry, now);
+        byId.set(w.id, w);
+        toWrite.push(w);
+      } else if ((packVersion ?? 0) < PACK_VERSION) {
+        const w = existing.edited ? { ...existing, ...packMeta(entry) } : { ...existing, ...packContent(entry), ...packMeta(entry) };
+        byId.set(w.id, w);
+        const at = toWrite.indexOf(existing);
+        if (at >= 0) toWrite[at] = w;
+        else toWrite.push(w);
+      }
+    }
+    if (toWrite.length || coreVersion !== CORE_VERSION || packVersion !== PACK_VERSION) {
       // les mots installés localement ne sont pas marqués à synchroniser :
-      // chaque appareil possède déjà les 500 mots de référence.
-      await this.store.commit({ words: toWrite, meta: { coreVersion: CORE_VERSION } });
+      // chaque appareil possède déjà les mots de référence.
+      await this.store.commit({ words: toWrite, meta: { coreVersion: CORE_VERSION, packVersion: PACK_VERSION } });
     }
     return {
       words: [...byId.values()],

@@ -17,7 +17,7 @@ import { startOfDay } from './dates';
 import { isStarted } from './srs';
 import { isDueToday } from './status';
 import { cardKey, isForgotten, isStateDueNow, isStateLaterToday, readyToProduce } from './tracks';
-import type { Track, Word } from './types';
+import type { PackId, Track, Word } from './types';
 
 /** Distance maximale (en mots) jusqu'à laquelle on va chercher des mots du même thème. */
 export const THEME_WINDOW = 40;
@@ -162,12 +162,13 @@ export interface SessionPlan {
 export function planNextSession(
   words: Word[],
   now: number,
-  opts: { size: number; newPerDay: number; ignoreNewLimit?: boolean },
+  opts: { size: number; newPerDay: number; ignoreNewLimit?: boolean; disabledPacks?: PackId[] },
 ): SessionPlan {
   const active = words.filter((w) => !w.deleted);
+  const off = new Set(opts.disabledPacks ?? []);
   const due = dueCards(active, now);
   const laterStates = active.flatMap((w) => [w.srs, w.prod]).filter((s) => isStateLaterToday(s, now));
-  const fresh = active.filter((w) => !isStarted(w.srs)).sort(newOrder);
+  const fresh = active.filter((w) => !isStarted(w.srs) && !(w.pack && off.has(w.pack))).sort(newOrder);
   const toProduce = active
     .filter((w) => readyToProduce(w, now))
     .sort((a, b) => (a.srs.firstSeen ?? 0) - (b.srs.firstSeen ?? 0) || newOrder(a, b));

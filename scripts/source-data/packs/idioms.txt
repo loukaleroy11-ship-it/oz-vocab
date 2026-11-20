@@ -1,0 +1,101 @@
+# Expressions idiomatiques et tournures naturelles (rédigées pour l'application). anglais|catégorie|niveau|traduction|exemple|traduction de l'exemple|remarque
+## pour réagir
+no worries|expression|A2|pas de souci|de rien|"Thanks for the lift." "No worries."|« Merci de m'avoir déposé. » « De rien. »|très australien
+fair enough|expression|B1|c'est normal|je comprends|"I can't work Sunday." "Fair enough."|« Je ne peux pas travailler dimanche. » « Pas de problème, je comprends. »
+sounds good|expression|A2|ça marche|ça me va|"Meet at six?" "Sounds good."|« On se retrouve à six heures ? » « Ça marche. »
+fair point|expression|B2|bonne remarque|c'est vrai|"It's cheaper by train." "Fair point."|« C'est moins cher en train. » « C'est vrai. »
+that makes sense|expression|B1|c'est logique|je comprends|Oh, that makes sense now.|Ah, maintenant je comprends.
+I see what you mean|expression|B1|je vois ce que tu veux dire|I see what you mean, but I disagree.|Je vois ce que tu veux dire, mais je ne suis pas d'accord.
+fair go|expression|B2|chance équitable|laisse-lui une chance|Give him a fair go, he's new.|Laisse-lui sa chance, il est nouveau.|australien
+it's up to you|expression|B1|c'est toi qui vois|c'est à toi de décider|Pizza or Thai? It's up to you.|Pizza ou thaï ? C'est toi qui vois.
+I couldn't care less|expression|B2|je m'en fiche complètement|Honestly, I couldn't care less about football.|Franchement, le foot, je m'en fiche complètement.|familier
+you bet|expression|B1|carrément|tu parles !|"Coming tonight?" "You bet!"|« Tu viens ce soir ? » « Carrément ! »
+good on you|expression|B1|bravo|bien joué|You got the job? Good on ya!|Tu as eu le poste ? Bravo !|australien : « good on ya »
+## travail et efforts
+get the hang of it|expression|B1|prendre le coup de main|It's hard at first, but you'll get the hang of it.|C'est dur au début, mais tu vas prendre le coup de main.
+learn the ropes|expression|B2|apprendre les ficelles|My first week was all about learning the ropes.|Ma première semaine, j'ai appris les ficelles du métier.
+call it a day|expression|B1|s'arrêter là (pour aujourd'hui)|We're all tired, let's call it a day.|On est tous fatigués, arrêtons-nous là.
+on the same page|expression|B2|sur la même longueur d'onde|Let's make sure we're on the same page.|Vérifions qu'on est d'accord sur tout.
+cut corners|expression|B2|bâcler|faire des économies de bout de chandelle|Never cut corners with safety.|On ne bâcle jamais la sécurité.
+pull your weight|expression|C1|faire sa part|Everyone has to pull their weight.|Tout le monde doit faire sa part.
+think outside the box|expression|B2|sortir des sentiers battus|We need to think outside the box.|Il faut sortir des sentiers battus.
+back to square one|expression|B2|retour à la case départ|The plan failed, so we're back to square one.|Le plan a échoué, retour à la case départ.
+up to speed|expression|B2|au courant|à niveau|Can you bring me up to speed?|Tu peux me mettre au courant ?
+a steep learning curve|expression|C1|un apprentissage rapide et exigeant|The job has a steep learning curve.|Il faut apprendre beaucoup très vite dans ce travail.
+in the long run|expression|B2|à long terme|It'll pay off in the long run.|Ça paiera à long terme.
+pay off|expression|B2|porter ses fruits|All that practice paid off.|Tout cet entraînement a porté ses fruits.
+make ends meet|expression|B2|joindre les deux bouts|It's hard to make ends meet in Perth.|C'est dur de joindre les deux bouts à Perth.
+work your way up|expression|C1|gravir les échelons|She worked her way up from cleaner to manager.|Elle est passée de femme de ménage à directrice.
+hit the ground running|expression|C1|être opérationnel tout de suite|I want to hit the ground running.|Je veux être opérationnel tout de suite.
+go the extra mile|expression|B2|en faire plus que demandé|She always goes the extra mile for customers.|Elle en fait toujours plus pour les clients.
+a piece of cake|expression|B1|du gâteau|facile|The test was a piece of cake.|Le test, c'était du gâteau.
+easier said than done|expression|B2|plus facile à dire qu'à faire|Save money? Easier said than done.|Économiser ? Plus facile à dire qu'à faire.
+the bottom line|expression|C1|l'essentiel|le fond du problème|The bottom line is we need more staff.|L'essentiel, c'est qu'il nous faut plus de personnel.
+## temps et rythme
+in the nick of time|expression|B2|juste à temps|I caught the train in the nick of time.|J'ai eu le train de justesse.
+once in a blue moon|expression|B2|tous les trente-six du mois|I eat out once in a blue moon.|Je mange au resto tous les trente-six du mois.
+from scratch|expression|B2|à partir de zéro|I had to learn English almost from scratch.|J'ai dû apprendre l'anglais presque à partir de zéro.
+on the spot|expression|B2|sur-le-champ|sur place|They hired me on the spot.|Ils m'ont embauché sur-le-champ.
+in a nutshell|expression|B2|en un mot|en résumé|In a nutshell, the job is hard but fun.|En résumé, le travail est dur mais sympa.
+for the time being|expression|B2|pour le moment|I'm staying here for the time being.|Je reste ici pour le moment.
+sooner or later|expression|B1|tôt ou tard|Sooner or later you'll find a job.|Tôt ou tard, tu trouveras un travail.
+at the last minute|expression|B1|à la dernière minute|He cancelled at the last minute.|Il a annulé à la dernière minute.
+in no time|expression|B2|en un rien de temps|You'll be fluent in no time.|Tu parleras couramment en un rien de temps.
+take your time|expression|A2|prends ton temps|No rush, take your time.|Pas d'urgence, prends ton temps.
+## émotions et relations
+break the ice|expression|B1|briser la glace|A joke is a good way to break the ice.|Une blague, c'est un bon moyen de briser la glace.
+get on someone's nerves|expression|B2|taper sur les nerfs de quelqu'un|The noise is getting on my nerves.|Le bruit me tape sur les nerfs.
+over the moon|expression|B2|aux anges|I was over the moon when I got the job.|J'étais aux anges quand j'ai eu le poste.
+feel under the weather|expression|B2|ne pas être dans son assiette|I'm feeling a bit under the weather today.|Je ne suis pas dans mon assiette aujourd'hui.
+cost an arm and a leg|expression|B2|coûter les yeux de la tête|Rent here costs an arm and a leg.|Le loyer ici coûte les yeux de la tête.
+keep in touch|expression|B1|rester en contact|Let's keep in touch!|Restons en contact !
+give someone a hand|expression|B1|donner un coup de main|Can you give me a hand with these boxes?|Tu peux me donner un coup de main avec ces cartons ?
+have a go|expression|B1|essayer|Have a go, it's not that hard.|Essaie, ce n'est pas si dur.|très courant en Australie
+take it easy|expression|B1|ne pas s'en faire|vas-y doucement|Take it easy, mate.|Vas-y doucement, mon pote.
+let off steam|expression|C1|décompresser|se défouler|I go running to let off steam.|Je vais courir pour décompresser.
+on edge|expression|B2|à cran|nerveux|Everyone was on edge before the inspection.|Tout le monde était à cran avant l'inspection.
+see eye to eye|expression|C1|être d'accord|We don't always see eye to eye.|On n'est pas toujours d'accord.
+give someone the benefit of the doubt|expression|C1|accorder le bénéfice du doute|I'll give him the benefit of the doubt.|Je vais lui accorder le bénéfice du doute.
+put yourself in someone's shoes|expression|B2|se mettre à la place de quelqu'un|Put yourself in the customer's shoes.|Mets-toi à la place du client.
+## parler et discuter
+get to the point|expression|B2|aller droit au but|Sorry, I'll get to the point.|Pardon, je vais droit au but.
+beat around the bush|expression|C1|tourner autour du pot|Stop beating around the bush.|Arrête de tourner autour du pot.
+speak your mind|expression|C1|dire ce qu'on pense|She always speaks her mind.|Elle dit toujours ce qu'elle pense.
+on second thoughts|expression|B2|à la réflexion|On second thoughts, I'll stay home.|À la réflexion, je vais rester à la maison.
+to be honest|expression|B1|pour être honnête|To be honest, I'm not sure.|Pour être honnête, je ne suis pas sûr.
+as far as I know|expression|B1|à ma connaissance|As far as I know, the shop opens at nine.|À ma connaissance, le magasin ouvre à neuf heures.
+if I were you|expression|B1|si j'étais toi|If I were you, I'd take the job.|Si j'étais toi, je prendrais le poste.
+it's not my cup of tea|expression|B2|ce n'est pas mon truc|Opera's not really my cup of tea.|L'opéra, ce n'est pas trop mon truc.
+by the way|expression|A2|au fait|By the way, are you free tomorrow?|Au fait, tu es libre demain ?
+in other words|expression|B1|autrement dit|In other words, we need to start again.|Autrement dit, il faut recommencer.
+having said that|expression|C1|cela dit|It's expensive. Having said that, it's worth it.|C'est cher. Cela dit, ça vaut le coup.
+that being said|expression|C1|cela étant dit|That being said, I'm happy to help.|Cela dit, je veux bien aider.
+the thing is|expression|B1|le truc, c'est que|The thing is, I don't have a car.|Le truc, c'est que je n'ai pas de voiture.
+it goes without saying|expression|C1|il va sans dire|It goes without saying that safety comes first.|Il va sans dire que la sécurité passe avant tout.
+not to mention|expression|B2|sans parler de|It's far, not to mention expensive.|C'est loin, sans parler du prix.
+let alone|expression|C1|encore moins|I can't afford a car, let alone a house.|Je n'ai pas les moyens d'une voiture, encore moins d'une maison.
+as a matter of fact|expression|B2|en fait|à vrai dire|As a matter of fact, I've done this before.|À vrai dire, j'ai déjà fait ça.
+## situations et jugements
+a blessing in disguise|expression|C1|un mal pour un bien|Losing that job was a blessing in disguise.|Perdre ce travail a été un mal pour un bien.
+the last straw|expression|B2|la goutte d'eau qui fait déborder le vase|That was the last straw, I quit.|C'était la goutte d'eau, j'ai démissionné.
+a long shot|expression|C1|peu probable|It's a long shot, but I'll apply anyway.|C'est peu probable, mais je vais postuler quand même.
+hit the nail on the head|expression|C1|mettre le doigt dessus|You've hit the nail on the head.|Tu as mis le doigt dessus.
+a no-brainer|expression|B2|une évidence|Taking the higher pay was a no-brainer.|Prendre le meilleur salaire, c'était une évidence.
+better late than never|expression|B1|mieux vaut tard que jamais|You're here! Better late than never.|Tu es là ! Mieux vaut tard que jamais.
+it's not rocket science|expression|B2|ce n'est pas sorcier|Come on, it's not rocket science.|Allez, ce n'est pas sorcier.
+the best of both worlds|expression|B2|le meilleur des deux mondes|Living near the beach and the city is the best of both worlds.|Vivre près de la plage et de la ville, c'est le meilleur des deux mondes.
+under pressure|expression|B1|sous pression|I work well under pressure.|Je travaille bien sous pression.
+out of the question|expression|B2|hors de question|Working for free is out of the question.|Travailler gratuitement, c'est hors de question.
+on the other hand|expression|B1|d'un autre côté|The pay is good. On the other hand, the hours are long.|Le salaire est bon. D'un autre côté, les horaires sont longs.
+at the end of the day|expression|B2|au bout du compte|At the end of the day, it's your decision.|Au bout du compte, c'est ta décision.
+when it comes to|expression|B2|quand il s'agit de|When it comes to cooking, I'm hopeless.|Quand il s'agit de cuisiner, je suis nul.
+as long as|expression|B1|du moment que|tant que|You can borrow it as long as you bring it back.|Tu peux l'emprunter du moment que tu le rends.
+in case|expression|B1|au cas où|Take a jacket in case it gets cold.|Prends une veste au cas où il fasse froid.
+make a decision|expression|B1|prendre une décision|I need to make a decision by Friday.|Je dois prendre une décision d'ici vendredi.
+take a break|expression|A2|faire une pause|Let's take a ten-minute break.|Faisons une pause de dix minutes.
+make sense|expression|B1|avoir du sens|être logique|Does that make sense?|Est-ce que c'est clair ?
+pay attention|expression|B1|faire attention|Pay attention to the safety signs.|Fais attention aux panneaux de sécurité.
+make a mistake|expression|A2|faire une erreur|Everyone makes mistakes.|Tout le monde fait des erreurs.
+do your best|expression|A2|faire de son mieux|Just do your best.|Fais juste de ton mieux.
+keep an eye on|expression|B2|surveiller|garder un œil sur|Can you keep an eye on my bag?|Tu peux surveiller mon sac ?
+run late|expression|B1|être en retard|Sorry, I'm running ten minutes late.|Désolé, j'ai dix minutes de retard.

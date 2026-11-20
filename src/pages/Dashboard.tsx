@@ -146,7 +146,7 @@ export function Dashboard() {
 
       {o.seen === 0 && (
         <Notice>
-          Ta collection contient les 500 mots les plus fréquents de l’anglais parlé. Ta première liste commence par « be », « have », « do »… Tu peux
+          Ta collection commence par les 500 mots les plus fréquents de l’anglais parlé, puis les niveaux B1, B2 et C1, les phrasal verbs, des expressions, l’anglais australien et le vocabulaire du travail. Ta première liste commence par « be », « have », « do »… Tu peux
           aussi <a className="font-bold underline" href="#ajouter">ajouter tes propres mots</a>.
         </Notice>
       )}
