@@ -1,6 +1,6 @@
 # Oz Vocab
 
-Site web pour apprendre les **500 mots les plus fréquents de l’anglais parlé**, avec la **prononciation australienne** et une **répétition espacée** inspirée d’Anki. Interface en français, pensée d’abord pour l’iPhone (Safari) et utilisable sur ordinateur.
+Site web pour **développer son vocabulaire anglais (A2 → C1) et s’exprimer à l’oral**, avec la **prononciation australienne** et une **répétition espacée** inspirée d’Anki. Interface en français, pensée d’abord pour l’iPhone (Safari) et utilisable sur ordinateur. Pas de module de compréhension orale, de dictée ni de transcription : l’audio sert à entendre le bon modèle et à répéter.
 
 C’est un site web (React + TypeScript + Vite + Tailwind CSS), pas une application native : il s’ouvre depuis une URL, et peut être ajouté à l’écran d’accueil de l’iPhone (PWA facultative).
 
@@ -10,11 +10,12 @@ C’est un site web (React + TypeScript + Vite + Tailwind CSS), pas une applicat
 
 | Section | Contenu |
 |---|---|
-| **Tableau de bord** | mots à revoir aujourd’hui, bouton « Commencer ma révision », série de jours, nouveaux / en cours / maîtrisés, bonnes réponses, courbe des mots maîtrisés, répartition par catégorie |
-| **Réviser** | sessions de 10 mots distincts ; un mot inconnu revient en fin de liste jusqu’à ce qu’il soit reconnu ; reprise après interruption ; bilan de fin de session |
-| **Explorer le vocabulaire** | recherche anglais / français (partielle, sans accents), filtres combinables : fréquence (top 100 / 250 / 500 / plage de rangs), catégorie grammaticale, état d’apprentissage, source ; tri ; sélection de mots à réviser |
-| **Ajouter un mot** | saisie en anglais ou en français, détection de la langue, traduction(s), catégorie, IPA, exemple, détection des doublons, fiche modifiable avant l’enregistrement |
-| **Statistiques et historique** | réponses par jour, mots maîtrisés dans le temps, tableau jour par jour, historique détaillé des sessions |
+| **Accueil — séance du jour** | ordre de la séance : mots oubliés → révisions (à dire / à reconnaître) → nouveaux mots ↔ mots à dire pour la 1re fois ; reconnus et productibles par niveau CECRL ; invitation au test de placement |
+| **Réviser** | listes de 10 cartes ; deux sortes de cartes : *anglais → français* (reconnaître) et *français → anglais* (produire, à l’oral ou en tapant le mot, fautes de frappe tolérées) ; une carte ratée revient en fin de liste ; reprise après interruption ; bilan |
+| **S’exprimer** | les 5 temps essentiels (present simple, present continuous, past simple, present perfect, will / going to) : quand et comment les utiliser, pièges de francophone, exemples audio, consignes à dire à voix haute, quiz de 12 questions |
+| **Vocabulaire** | recherche anglais / français, filtres combinables, fiche de chaque mot avec ses deux suivis ; **mots apparentés** (règles -tion, -té → -ty, -eux → -ous…, accent tonique, faux amis, orthographe australienne) ; ajout de mots |
+| **Test de placement** | ≈ 5 min, QCM A–E par tranches de 50 mots ; les tranches réussies ne sont pas reproposées comme nouvelles (vérifiées en révision 1 à 4 semaines plus tard) |
+| **Progrès** | reconnus / productibles par niveau, réponses par jour, mots maîtrisés, tableau jour par jour, historique des sessions |
 | **Paramètres** | voix et vitesse, lecture automatique, taille des sessions, nouveaux mots par jour, mode 2 boutons / 3 niveaux, thème clair / sombre, export JSON / CSV, import JSON, synchronisation, réinitialisation |
 
 ---
@@ -37,6 +38,7 @@ Test complet dans un vrai navigateur (Chromium via Playwright, Python) :
 pip install playwright && playwright install chromium
 npm run build && npx vite preview --port 4173 &
 python3 scripts/e2e_check.py http://localhost:4173 ./captures
+python3 scripts/e2e_v2.py http://localhost:4173 ./captures     # placement, cartes FR → EN, fiches
 ```
 
 ---
@@ -115,6 +117,8 @@ Sur iPhone : Réglages › Accessibilité › Contenu énoncé › Voix › Angl
 - **IPA** : dictionnaire [Britfone](https://github.com/JoseLlarena/Britfone) (anglais britannique, licence MIT) converti automatiquement en anglais australien, phonème par phonème (`scripts/build_dataset.py`).
 - **Traductions, catégories et exemples** : rédigés pour ce projet (`scripts/source-data/fr_entries.tsv`), avec traductions secondaires pour les mots à plusieurs sens (get, right, mean, still, since…).
 
+- **Niveaux CECRL** : [CEFR-J Wordlist 1.5](https://github.com/openlanguageprofiles/olp-en-cefrj) (A1–B2, Tono Lab, TUFS) et Octanove Vocabulary Profile C1/C2 (CC BY-SA 4.0), sens principal du mot ; un mot oral très fréquent absent des listes (yeah, okay…) est classé A1.
+
 Régénérer la base : `npm run data` (écrit `src/data/coreWords.json`).
 
 ---
@@ -137,7 +141,13 @@ Régénérer la base : `npm run data` (écrit `src/data/coreWords.json`).
 | mot appris, connu | intervalle × facilité (2,5 au départ) : 1 → 3 → 8 → 20 → 50 jours… |
 | mode avancé « Difficile » / « Facile » | intervalle × 1,2 et facilité −0,15 / bonus × 1,3 et facilité +0,15 |
 
-Un mot est **maîtrisé** à partir de 21 jours d’intervalle (seuil « mature » d’Anki). Les états « reconnu au moins une fois » et « maîtrisé » sont distincts.
+Un mot est **maîtrisé** à partir de 21 jours d’intervalle (seuil « mature » d’Anki), gagné en révision.
+
+**3. Deux suivis par mot** (`src/domain/tracks.ts`) — chacun avec sa propre répétition espacée :
+- *reconnaître* (anglais → français) ; *produire* (français → anglais), qui commence le lendemain d’une première reconnaissance réussie ;
+- réussir une carte « produire » valide aussi la reconnaissance si elle était à revoir ;
+- priorité (`src/domain/selection.ts`) : oubliés → produire à revoir → reconnaître à revoir → nouvelle liste et mots à dire pour la 1re fois, en alternance (la 1re nouvelle liste du jour passe d’abord) ;
+- un mot « jugé connu » au test de placement n’a aucune révision inventée : il est simplement programmé pour une vérification ; raté, il repart comme un mot nouveau.
 
 ---
 
@@ -192,3 +202,5 @@ Deux sorties de compilation :
 - Code : libre d’usage pour toi.
 - Liste NGSL-Spoken : CC BY-SA 4.0 (Browne & Culligan) — la base dérivée (`src/data/coreWords.json`) est partagée sous la même licence.
 - Britfone : licence MIT (`scripts/source-data/BRITFONE_LICENSE.txt`).
+- The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tokyo University of Foreign Studies (usage libre, y compris commercial, avec cette citation ; copyright Tono Laboratory, TUFS). Via [Open Language Profiles](https://github.com/openlanguageprofiles/olp-en-cefrj).
+- Octanove Vocabulary Profile C1/C2 1.0 : CC BY-SA 4.0.

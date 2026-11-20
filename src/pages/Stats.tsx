@@ -3,7 +3,9 @@ import { AreaChart, DailyBars } from '../components/Charts';
 import { PageHeader, Segmented, pct } from '../components/ui';
 import { formatDateTime, formatDay, formatDuration } from '../domain/dates';
 import { wordOutcome } from '../domain/queue';
-import { computeOverview, dailyRows, sessionHistory } from '../domain/stats';
+import { computeOverview, dailyRows, levelBreakdown, sessionHistory } from '../domain/stats';
+import { parseCard } from '../domain/tracks';
+import { LevelBars } from '../components/LevelBars';
 import { useApp } from '../state/AppContext';
 
 type Range = '14' | '30' | '90';
@@ -17,12 +19,13 @@ export function Stats() {
   const rows = useMemo(() => dailyRows(sessions, daily, now, days), [sessions, daily, now, days]);
   const history = useMemo(() => sessionHistory(sessions), [sessions]);
   const o = useMemo(() => computeOverview(words, sessions, now), [words, sessions, now]);
+  const levels = useMemo(() => levelBreakdown(words), [words]);
   const totalTime = history.reduce((a, h) => a + h.durationMs, 0);
   const activeDays = rows.filter((r) => r.answers > 0);
 
   return (
     <div className="mx-auto max-w-5xl">
-      <PageHeader eyebrow="Suivi" title="Statistiques et historique">
+      <PageHeader eyebrow="Suivi" title="Progrès">
         <Segmented
           label="Période"
           value={range}
@@ -34,6 +37,18 @@ export function Stats() {
           ]}
         />
       </PageHeader>
+
+      <section className="card mb-6 p-5" aria-labelledby="lv-title">
+        <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
+          <h2 id="lv-title" className="text-lg font-bold">
+            Par niveau
+          </h2>
+          <p className="text-sm text-ink-2 tabular">
+            {o.recognized} reconnus · {o.producible} productibles · {o.mastered} maîtrisés (21 j et plus)
+          </p>
+        </div>
+        <LevelBars rows={levels} />
+      </section>
 
       <dl className="card grid grid-cols-2 gap-4 p-5 sm:grid-cols-4">
         <Big label="Sessions" value={history.length} />
@@ -141,12 +156,14 @@ export function Stats() {
                   {isOpen && (
                     <ul className="border-t border-line bg-surface-2 px-4 py-2 text-sm">
                       {s.wordIds.map((id) => {
-                        const w = wordsById.get(id);
+                        const c = parseCard(id);
+                        const w = wordsById.get(c.wordId);
                         const out = wordOutcome(s, id);
                         return (
                           <li key={id} className="flex justify-between gap-3 py-1">
                             <span lang="en" className="font-bold">
                               {w?.en ?? '(mot supprimé)'}
+                              {c.track === 'prod' && <span className="ml-1.5 text-xs font-normal text-wattle-ink">FR → EN</span>}
                             </span>
                             <span className="text-ink-2">
                               {out.kind === 'first-try' ? 'du premier coup' : out.kind === 'after-retries' ? `après ${out.attempts} passages` : out.attempts ? 'non terminé' : 'pas vu'}

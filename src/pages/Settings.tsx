@@ -4,7 +4,7 @@ import { ConfirmButton, Notice, PageHeader, Segmented } from '../components/ui';
 import { CORE_META } from '../data/core';
 import { formatDateTime } from '../domain/dates';
 import { SRS } from '../domain/srs';
-import type { AnswerMode, AudioPreference, ThemeSetting } from '../domain/types';
+import type { AnswerMode, AudioPreference, ProdMode, ThemeSetting } from '../domain/types';
 import { analyzeImport, buildCsv, buildExport, planImport, type DuplicateStrategy, type ImportAnalysis } from '../storage/importExport';
 import { saveTextFile } from '../services/download';
 import { providerStatus, type ProviderStatus } from '../services/lookup';
@@ -240,6 +240,22 @@ export function SettingsPage() {
               { value: 'three', label: '3 niveaux' },
             ]}
           />
+        </Row>
+        <Row label="Cartes français → anglais" hint="À l’oral : tu dis le mot puis tu vérifies. À l’écrit : tu tapes le mot (petites fautes tolérées).">
+          <Segmented<ProdMode>
+            label="Cartes français → anglais"
+            value={settings.prodMode}
+            onChange={(v) => updateSettings({ prodMode: v })}
+            options={[
+              { value: 'oral', label: 'À l’oral' },
+              { value: 'written', label: 'À l’écrit' },
+            ]}
+          />
+        </Row>
+        <Row label="Test de placement" hint="Repère les mots que tu connais déjà parmi ceux que tu n’as pas encore commencés.">
+          <a href="#placement" className="btn btn-ghost min-h-10 text-sm">
+            <Icon name="target" size={18} /> {settings.placementDone ? 'Refaire le test' : 'Faire le test'}
+          </a>
         </Row>
       </Section>
 

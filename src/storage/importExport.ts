@@ -1,9 +1,12 @@
 /** Export JSON / CSV et import JSON vérifié, avec gestion des doublons. */
+import { normalizeWord } from '../domain/normalize';
 import { newSrsState } from '../domain/srs';
 import { englishKey } from '../domain/text';
 import {
+  CEFR_LEVELS,
   normalizeSettings,
   POS_LIST,
+  type Cefr,
   type DailySnapshot,
   type Grade,
   type Pos,
@@ -53,7 +56,8 @@ export function buildCsv(words: Word[], now: number): string {
   const header = [
     'anglais', 'francais', 'autres_traductions', 'categorie', 'ipa_australien', 'exemple_en', 'exemple_fr',
     'rang', 'source', 'etat', 'revisions', 'correctes', 'incorrectes', 'intervalle_jours', 'prochaine_revision',
-    'derniere_revision',
+    'derniere_revision', 'niveau', 'produire_etat', 'produire_revisions', 'produire_intervalle_jours',
+    'produire_prochaine_revision',
   ];
   const iso = (t: number | null) => (t ? new Date(t).toISOString().slice(0, 16).replace('T', ' ') : '');
   const lines = words
@@ -64,6 +68,8 @@ export function buildCsv(words: Word[], now: number): string {
         w.en, w.fr, w.frAlt.join(' ; '), POS_LABEL[w.pos], w.ipa ?? '', w.exampleEn, w.exampleFr,
         w.rank ?? '', w.source === 'core' ? '500 mots' : 'ajouté', STATUS_LABEL[statusTags(w, now)[0]],
         w.srs.reps, w.srs.correct, w.srs.incorrect, w.srs.interval, iso(w.srs.due), iso(w.srs.lastReviewed),
+        w.cefr ?? '', w.prod.reps === 0 ? 'Pas commencé' : w.prod.phase === 'review' ? 'Productible' : 'En cours',
+        w.prod.reps, w.prod.interval, iso(w.prod.due),
       ]
         .map(csvCell)
         .join(';'),
@@ -101,6 +107,7 @@ function cleanSrs(x: unknown): SrsState | null {
     lastGrade: GRADES.includes(o.lastGrade as Grade) ? (o.lastGrade as Grade) : null,
     lastReviewed: numOrNull('lastReviewed'),
     firstSeen: numOrNull('firstSeen'),
+    ...(o.origin === 'placement' ? { origin: 'placement' as const } : {}),
   };
 }
 
@@ -113,7 +120,9 @@ function cleanWord(x: unknown): Word | string {
   if (!POS_LIST.includes(o.pos as Pos)) return `catégorie inconnue pour « ${o.en} »`;
   const srs = cleanSrs(o.srs);
   if (!srs) return `progression illisible pour « ${o.en} »`;
-  return {
+  const prod = cleanSrs(o.prod);
+  if (!prod) return `progression (français → anglais) illisible pour « ${o.en} »`;
+  return normalizeWord({
     id: o.id,
     source: o.source === 'core' ? 'core' : 'user',
     rank: isNum(o.rank) ? o.rank : null,
@@ -137,8 +146,10 @@ function cleanWord(x: unknown): Word | string {
     exampleFr: isStr(o.exampleFr) ? o.exampleFr : '',
     forms: strArr(o.forms),
     spellingAlt: strArr(o.spellingAlt),
+    cefr: CEFR_LEVELS.includes(o.cefr as Cefr) ? (o.cefr as Cefr) : null,
     srs,
-  };
+    prod,
+  });
 }
 
 function cleanSession(x: unknown): ReviewSession | string {
@@ -290,7 +301,7 @@ export function planImport(a: ImportAnalysis, current: AppData, strategy: Duplic
         words.push({ ...w, updatedAt: now });
       } else if (strategy === 'replace' && twin.source === 'core' && w.source === 'user') {
         // on garde le mot de référence ; seule sa progression est reprise
-        words.push({ ...twin, srs: w.srs, updatedAt: now });
+        words.push({ ...twin, srs: w.srs, prod: w.prod, updatedAt: now });
       }
       // sinon : mot ignoré (doublon)
       continue;

@@ -139,6 +139,11 @@ export function schedule(prev: SrsState, grade: Grade, now: number): SrsState {
   return s;
 }
 
+/** Le suivi a-t-il commencé (au moins une réponse, ou mot jugé connu au test de placement) ? */
+export function isStarted(s: SrsState): boolean {
+  return s.reps > 0 || s.origin === 'placement';
+}
+
 /** Facteur de difficulté lisible (0 = très facile, 100 = très difficile). */
 export function difficultyScore(srs: SrsState): number {
   if (srs.reps === 0) return 0;
@@ -147,8 +152,9 @@ export function difficultyScore(srs: SrsState): number {
   return Math.round(Math.min(1, easePart * 0.6 + failRatio * 0.4) * 100);
 }
 
+/** Maîtrisé : intervalle d'au moins 21 jours, gagné en révision (pas seulement estimé au test de placement). */
 export function isMastered(srs: SrsState): boolean {
-  return srs.phase === 'review' && srs.interval >= SRS.masteredInterval;
+  return srs.phase === 'review' && srs.interval >= SRS.masteredInterval && srs.origin !== 'placement';
 }
 
 export function isDifficult(srs: SrsState): boolean {

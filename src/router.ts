@@ -4,15 +4,18 @@
  */
 import { useEffect, useState } from 'react';
 
-export const ROUTES = ['accueil', 'reviser', 'explorer', 'ajouter', 'stats', 'parametres'] as const;
+export const ROUTES = ['accueil', 'reviser', 'exprimer', 'explorer', 'apparentes', 'ajouter', 'placement', 'stats', 'parametres'] as const;
 export type Route = (typeof ROUTES)[number];
 
 export const ROUTE_LABEL: Record<Route, string> = {
-  accueil: 'Tableau de bord',
+  accueil: 'Accueil',
   reviser: 'Réviser',
-  explorer: 'Explorer le vocabulaire',
+  exprimer: 'S’exprimer',
+  explorer: 'Vocabulaire',
+  apparentes: 'Mots apparentés',
   ajouter: 'Ajouter un mot',
-  stats: 'Statistiques et historique',
+  placement: 'Test de placement',
+  stats: 'Progrès',
   parametres: 'Paramètres',
 };
 

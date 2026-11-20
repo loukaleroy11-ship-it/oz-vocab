@@ -4,7 +4,10 @@ import { Notice, Toasts } from './components/ui';
 import { computeOverview } from './domain/stats';
 import { AddWord } from './pages/AddWord';
 import { Dashboard } from './pages/Dashboard';
+import { CognatesPage } from './pages/Cognates';
 import { Explore } from './pages/Explore';
+import { ExpressPage } from './pages/Express';
+import { PlacementPage } from './pages/Placement';
 import { ReviewPage } from './pages/Review';
 import { SettingsPage, SyncBadge } from './pages/Settings';
 import { Stats } from './pages/Stats';
@@ -14,24 +17,27 @@ import { useApp } from './state/AppContext';
 const NAV: { route: Route; icon: IconName; short: string }[] = [
   { route: 'accueil', icon: 'home', short: 'Accueil' },
   { route: 'reviser', icon: 'cards', short: 'Réviser' },
-  { route: 'explorer', icon: 'search', short: 'Explorer' },
+  { route: 'exprimer', icon: 'speech', short: 'S’exprimer' },
+  { route: 'explorer', icon: 'book', short: 'Vocabulaire' },
   { route: 'ajouter', icon: 'plus', short: 'Ajouter' },
-  { route: 'stats', icon: 'chart', short: 'Stats' },
+  { route: 'stats', icon: 'chart', short: 'Progrès' },
   { route: 'parametres', icon: 'gear', short: 'Paramètres' },
 ];
 // barre du bas : 5 onglets atteignables au pouce ; les paramètres sont en haut à droite
-const TABS: Route[] = ['accueil', 'explorer', 'reviser', 'ajouter', 'stats'];
+const TABS: Route[] = ['accueil', 'reviser', 'exprimer', 'explorer', 'stats'];
+// pages rattachées à un onglet (pour le surligner)
+const PARENT: Partial<Record<Route, Route>> = { apparentes: 'explorer', ajouter: 'explorer', placement: 'accueil' };
 
 function Brand() {
   return (
-    <a href="#accueil" className="flex items-center gap-2.5" aria-label="Oz Vocab, tableau de bord">
+    <a href="#accueil" className="flex items-center gap-2.5" aria-label="Oz Vocab, accueil">
       <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-[11px] bg-ocean font-display text-lg font-extrabold text-on-ocean">
         Oz
         <span className="absolute -right-1 -top-1 h-3 w-3 rounded-full border-2 border-bg bg-wattle" aria-hidden="true" />
       </span>
       <span className="leading-none">
         <span className="block font-display text-lg font-extrabold">Oz Vocab</span>
-        <span className="block text-[11px] font-medium text-muted">500 mots · accent australien</span>
+        <span className="block text-[11px] font-medium text-muted">vocabulaire & expression · A2 → C1</span>
       </span>
     </a>
   );
@@ -84,7 +90,9 @@ export function App() {
               href={`#${n.route}`}
               aria-current={route === n.route ? 'page' : undefined}
               className={`relative flex min-h-11 items-center gap-3 rounded-xl px-3 font-bold transition-colors ${
-                route === n.route ? 'bg-ocean-soft text-ocean' : 'text-ink-2 hover:bg-surface-2 hover:text-ink'
+                route === n.route || (PARENT[route] === n.route && route !== 'ajouter')
+                  ? 'bg-ocean-soft text-ocean'
+                  : 'text-ink-2 hover:bg-surface-2 hover:text-ink'
               }`}
             >
               <Icon name={n.icon} size={21} />
@@ -140,8 +148,11 @@ export function App() {
         <main id="contenu" className="gutter flex-1 pb-[calc(96px+env(safe-area-inset-bottom,0px))] pt-4 lg:px-10 lg:pb-12 lg:pt-8">
           {route === 'accueil' && <Dashboard />}
           {route === 'reviser' && <ReviewPage />}
+          {route === 'exprimer' && <ExpressPage />}
           {route === 'explorer' && <Explore />}
+          {route === 'apparentes' && <CognatesPage />}
           {route === 'ajouter' && <AddWord />}
+          {route === 'placement' && <PlacementPage />}
           {route === 'stats' && <Stats />}
           {route === 'parametres' && <SettingsPage />}
         </main>
@@ -160,7 +171,7 @@ export function App() {
             <ul className="mx-auto grid max-w-lg grid-cols-5">
               {TABS.map((r) => {
                 const n = NAV.find((x) => x.route === r)!;
-                const active = route === r;
+                const active = route === r || PARENT[route] === r;
                 const main = r === 'reviser';
                 return (
                   <li key={r}>

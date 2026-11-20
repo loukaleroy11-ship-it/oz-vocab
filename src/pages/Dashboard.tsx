@@ -1,20 +1,18 @@
 import { useMemo } from 'react';
-import { AreaChart } from '../components/Charts';
 import { Icon } from '../components/Icon';
+import { LevelBars } from '../components/LevelBars';
 import { Notice, pct } from '../components/ui';
 import { sessionProgress } from '../domain/queue';
-import { computeOverview, dailyRows, posBreakdown } from '../domain/stats';
-import { POS_PLURAL } from '../domain/status';
+import { computeOverview, levelBreakdown } from '../domain/stats';
 import { navigate } from '../router';
 import { useApp } from '../state/AppContext';
-import { ThemeChips, useNextPlan } from './Review';
+import { PlacementInvite, ThemeChips, useNextPlan } from './Review';
 
 export function Dashboard() {
-  const { words, sessions, daily, now, activeSession, startDailySession, toast } = useApp();
+  const { words, sessions, now, activeSession, startDailySession, toast, settings } = useApp();
   const o = useMemo(() => computeOverview(words, sessions, now), [words, sessions, now]);
+  const levels = useMemo(() => levelBreakdown(words), [words]);
   const plan = useNextPlan();
-  const rows = useMemo(() => dailyRows(sessions, daily, now, 30), [sessions, daily, now]);
-  const pos = useMemo(() => posBreakdown(words, now), [words, now]);
   const today = new Intl.DateTimeFormat('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' }).format(now);
   const progress = activeSession ? sessionProgress(activeSession) : null;
 
@@ -31,11 +29,20 @@ export function Dashboard() {
     }
   };
 
+  const nextLabel =
+    plan.kind === 'review' ? 'cartes à revoir' : plan.kind === 'new' ? 'nouveaux mots' : plan.kind === 'produce' ? 'mots à dire en anglais' : '';
+  const newLine =
+    plan.newAvailable === 0
+      ? 'tous commencés'
+      : plan.newLimitReached
+        ? `objectif du jour atteint (${settings.newPerDay})`
+        : `${plan.newStartedToday} commencé${plan.newStartedToday > 1 ? 's' : ''} aujourd’hui`;
+
   return (
     <div className="mx-auto flex max-w-5xl flex-col gap-6">
       <header className="pt-2">
         <p className="eyebrow first-letter:uppercase">{today}</p>
-        <h1 className="text-[1.9rem] font-extrabold leading-tight sm:text-[2.4rem]">Tableau de bord</h1>
+        <h1 className="text-[1.9rem] font-extrabold leading-tight sm:text-[2.4rem]">Séance du jour</h1>
       </header>
 
       <section className="card relative overflow-hidden p-5 sm:p-7">
@@ -43,10 +50,10 @@ export function Dashboard() {
           <div className="min-w-0">
             {progress ? (
               <>
-                <p className="eyebrow">Session en pause</p>
+                <p className="eyebrow">Liste en pause</p>
                 <p className="mt-1 text-lg">
-                  <strong className="tabular">{progress.seen}</strong> mot{progress.seen > 1 ? 's' : ''} sur <span className="tabular">{progress.total}</span> déjà vu
-                  {progress.seen > 1 ? 's' : ''} dans « {activeSession!.label} ».
+                  <strong className="tabular">{progress.seen}</strong> carte{progress.seen > 1 ? 's' : ''} sur <span className="tabular">{progress.total}</span> déjà
+                  vue{progress.seen > 1 ? 's' : ''} dans « {activeSession!.label} ».
                 </p>
               </>
             ) : (
@@ -58,22 +65,29 @@ export function Dashboard() {
                   <>
                     <p className="mt-1 flex flex-wrap items-baseline gap-x-3">
                       <span className="font-display text-5xl font-extrabold tabular">{plan.ids.length}</span>
-                      <span className="text-ink-2">{plan.kind === 'review' ? 'mots à revoir' : 'nouveaux mots'}</span>
+                      <span className="text-ink-2">{nextLabel}</span>
                     </p>
                     <div className="mt-2">
                       <ThemeChips groups={plan.groups} />
                     </div>
-                    {plan.kind === 'review' && <p className="mt-2 text-sm text-ink-2">Ensuite, de nouveaux mots par ordre de fréquence.</p>}
                   </>
                 )}
               </>
             )}
           </div>
           <button type="button" className="btn btn-primary h-14 px-6 text-lg" onClick={start}>
-            <Icon name="play" size={20} /> {activeSession ? 'Reprendre ma révision' : 'Commencer ma révision'}
+            <Icon name="play" size={20} /> {activeSession ? 'Reprendre' : 'Commencer'}
           </button>
         </div>
-        <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+
+        <ol className="mt-6 grid grid-cols-2 gap-2 text-sm lg:grid-cols-4" aria-label="Ordre de la séance">
+          <Step n={1} title="Mots oubliés" value={plan.forgotten} note="toujours en premier" />
+          <Step n={2} title="Révisions" value={plan.prodDue + plan.recDue} note={`${plan.prodDue} à dire · ${plan.recDue} à reconnaître`} />
+          <Step n={3} title="Nouveaux mots" value={plan.newAvailable} note={newLine} />
+          <Step n={4} title="À dire pour la 1re fois" value={plan.produceAvailable} note="mots appris les jours précédents" />
+        </ol>
+
+        <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
           <span className="inline-flex items-center gap-2">
             <span className={`inline-flex h-8 w-8 items-center justify-center rounded-full ${o.streakIncludesToday ? 'bg-wattle text-ink' : 'bg-wattle-soft text-wattle-ink'}`}>
               <Icon name="flame" size={18} />
@@ -84,89 +98,71 @@ export function Dashboard() {
             </span>
           </span>
           <span className="text-ink-2">
-            Révisés aujourd’hui : <strong className="tabular text-ink">{o.reviewedToday}</strong> mot{o.reviewedToday > 1 ? 's' : ''} ·{' '}
-            <strong className="tabular text-ink">{o.correctToday}</strong> bonne{o.correctToday > 1 ? 's' : ''} réponse{o.correctToday > 1 ? 's' : ''} sur{' '}
+            Aujourd’hui : <strong className="tabular text-ink">{o.correctToday}</strong> bonne{o.correctToday > 1 ? 's' : ''} réponse{o.correctToday > 1 ? 's' : ''} sur{' '}
             <span className="tabular">{o.answersToday}</span> ({pct(o.accuracyToday)})
           </span>
         </div>
       </section>
 
-      <section aria-labelledby="progress-title">
-        <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
-          <h2 id="progress-title" className="text-xl font-bold">
-            Progression globale
-          </h2>
-          <p className="text-sm text-ink-2 tabular">
-            {o.mastered} maîtrisés sur {o.total} · {pct(o.masteredPct)}
-          </p>
-        </div>
-        <div className="card p-5">
-          <div className="flex h-4 overflow-hidden rounded-full bg-surface-2" role="img" aria-label={`${o.mastered} maîtrisés, ${o.learning} en cours, ${o.newCount} nouveaux`}>
-            <span className="bg-gum" style={{ width: `${(o.mastered / Math.max(1, o.total)) * 100}%` }} />
-            <span className="bg-ocean" style={{ width: `${(o.learning / Math.max(1, o.total)) * 100}%` }} />
-          </div>
-          <dl className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-            <Tile label="Dans la collection" value={o.total} />
-            <Tile label="Nouveaux" value={o.newCount} dot="bg-line" />
-            <Tile label="En cours" value={o.learning} dot="bg-ocean" />
-            <Tile label="Maîtrisés" value={o.mastered} dot="bg-gum" hint="intervalle ≥ 21 jours" />
-            <Tile label="Reconnus au moins 1 fois" value={o.recognized} />
-            <Tile label="Bonnes réponses (total)" value={o.correctTotal} hint={`taux ${pct(o.accuracyTotal)}`} />
-          </dl>
-        </div>
-      </section>
+      <PlacementInvite />
 
       <div className="grid gap-6 lg:grid-cols-5 lg:items-start">
-        <section className="card min-w-0 p-5 lg:col-span-3" aria-labelledby="mastered-title">
-          <h2 id="mastered-title" className="text-lg font-bold">
-            Mots maîtrisés, 30 derniers jours
-          </h2>
-          <p className="mb-3 text-sm text-ink-2">Relevé chaque jour où tu révises.</p>
-          <AreaChart points={rows.map((r) => ({ ts: r.ts, value: r.mastered }))} label="Évolution du nombre de mots maîtrisés" total={o.total} />
+        <section className="card min-w-0 p-5 lg:col-span-3" aria-labelledby="levels-title">
+          <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
+            <h2 id="levels-title" className="text-lg font-bold">
+              Reconnus et productibles
+            </h2>
+            <p className="text-sm text-ink-2 tabular">
+              {o.recognized} reconnus · {o.producible} productibles
+            </p>
+          </div>
+          <LevelBars rows={levels} />
+          <p className="mt-4 text-xs text-muted">
+            Reconnu : tu retrouves le sens à partir de l’anglais. Productible : tu sais le dire en anglais à partir du français. Niveaux CECRL d’après
+            CEFR-J et Octanove.
+          </p>
         </section>
-        <section className="card min-w-0 p-5 lg:col-span-2" aria-labelledby="pos-title">
-          <h2 id="pos-title" className="text-lg font-bold">
-            Par catégorie
-          </h2>
-          <p className="mb-4 text-sm text-ink-2">Catégorie principale de chaque mot.</p>
-          <ul className="flex flex-col gap-3">
-            {pos.map((r) => (
-              <li key={r.pos}>
-                <div className="flex justify-between text-sm">
-                  <span className="font-bold">{POS_PLURAL[r.pos]}</span>
-                  <span className="tabular text-ink-2">
-                    {r.mastered} / {r.total}
-                  </span>
-                </div>
-                <div className="mt-1 flex h-2 overflow-hidden rounded-full bg-surface-2">
-                  <span className="bg-gum" style={{ width: `${(r.mastered / r.total) * 100}%` }} />
-                  <span className="bg-ocean" style={{ width: `${(r.learning / r.total) * 100}%` }} />
-                </div>
-              </li>
-            ))}
-          </ul>
+        <section className="flex min-w-0 flex-col gap-3 lg:col-span-2" aria-label="Fiches">
+          <a href="#exprimer" className="card flex items-start gap-3 p-4 transition-colors hover:border-ocean">
+            <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-wattle-soft text-wattle-ink">
+              <Icon name="speech" />
+            </span>
+            <span className="min-w-0">
+              <strong className="block">Les 5 temps essentiels</strong>
+              <span className="text-sm text-ink-2">Quand et comment les utiliser, les pièges de francophone, à dire à voix haute, et un quiz.</span>
+            </span>
+          </a>
+          <a href="#apparentes" className="card flex items-start gap-3 p-4 transition-colors hover:border-ocean">
+            <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-ocean-soft text-ocean">
+              <Icon name="book" />
+            </span>
+            <span className="min-w-0">
+              <strong className="block">Mots apparentés : les règles</strong>
+              <span className="text-sm text-ink-2">-tion, -té → -ty, -eux → -ous… des milliers de mots que tu connais déjà, et les faux amis à éviter.</span>
+            </span>
+          </a>
         </section>
       </div>
 
       {o.seen === 0 && (
         <Notice>
-          Ta collection contient les 500 mots les plus fréquents de l’anglais parlé, classés du plus fréquent au moins fréquent. Ta première session commence par
-          « be », « the », « you »… Tu peux aussi <a className="font-bold underline" href="#ajouter">ajouter tes propres mots</a>.
+          Ta collection contient les 500 mots les plus fréquents de l’anglais parlé. Ta première liste commence par « be », « have », « do »… Tu peux
+          aussi <a className="font-bold underline" href="#ajouter">ajouter tes propres mots</a>.
         </Notice>
       )}
     </div>
   );
 }
 
-function Tile({ label, value, hint, dot }: { label: string; value: number; hint?: string; dot?: string }) {
+function Step({ n, title, value, note }: { n: number; title: string; value: number; note: string }) {
   return (
-    <div className="min-w-0">
-      <dt className="flex items-center gap-1.5 text-sm text-ink-2">
-        {dot && <span className={`h-2.5 w-2.5 rounded-full ${dot}`} />}
-        {label}
-      </dt>
-      <dd className="font-display text-2xl font-extrabold tabular">{value}</dd>
-      {hint && <p className="text-xs text-muted">{hint}</p>}
-    </div>
+    <li className="min-w-0 rounded-2xl bg-surface-2 p-3">
+      <span className="flex items-center gap-2 text-xs font-bold text-ink-2">
+        <span className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-surface">{n}</span>
+        {title}
+      </span>
+      <span className="mt-1 block font-display text-2xl font-extrabold leading-tight tabular">{value}</span>
+      <span className="block text-xs text-ink-2">{note}</span>
+    </li>
   );
 }

@@ -1,8 +1,10 @@
 /** Statistiques calculées à partir des données réellement enregistrées. */
 import { addDays, dayKey, startOfDay } from './dates';
-import { isMastered } from './srs';
-import { isDueNow, isDueToday, statusTags } from './status';
-import type { DailySnapshot, Pos, ReviewSession, Word } from './types';
+import { isMastered, isStarted } from './srs';
+import { dueCards } from './selection';
+import { isProducible, isRecognized } from './tracks';
+import { isDueToday, statusTags } from './status';
+import { CEFR_LEVELS, type Cefr, type DailySnapshot, type Pos, type ReviewSession, type Word } from './types';
 
 export interface Overview {
   total: number;
@@ -15,8 +17,10 @@ export interface Overview {
   dueNow: number;
   /** Mots déjà présentés au moins une fois. */
   seen: number;
-  /** Mots reconnus au moins une fois (≠ maîtrisés durablement). */
+  /** Mots reconnus (anglais → français acquis, dernière révision réussie). */
   recognized: number;
+  /** Mots productibles (je sais les dire en anglais à partir du français). */
+  producible: number;
   reviewedToday: number;
   answersToday: number;
   correctToday: number;
@@ -42,8 +46,8 @@ export function computeOverview(words: Word[], sessions: ReviewSession[], now: n
   let mastered = 0;
   let difficult = 0;
   let dueToday = 0;
-  let dueNow = 0;
   let recognized = 0;
+  let producible = 0;
   for (const w of active) {
     const tags = statusTags(w, now);
     if (tags.includes('new')) newCount++;
@@ -51,9 +55,10 @@ export function computeOverview(words: Word[], sessions: ReviewSession[], now: n
     if (tags.includes('mastered')) mastered++;
     if (tags.includes('difficult')) difficult++;
     if (isDueToday(w, now)) dueToday++;
-    if (isDueNow(w, now)) dueNow++;
-    if (w.srs.correct > 0) recognized++;
+    if (isRecognized(w)) recognized++;
+    if (isProducible(w)) producible++;
   }
+  const dueNow = dueCards(active, now).length;
   const today = startOfDay(now);
   const answers = liveSessions(sessions).flatMap((s) => s.answers);
   const todays = answers.filter((a) => a.at >= today);
@@ -72,6 +77,7 @@ export function computeOverview(words: Word[], sessions: ReviewSession[], now: n
     dueNow,
     seen,
     recognized,
+    producible,
     reviewedToday: new Set(todays.map((a) => a.wordId)).size,
     answersToday: todays.length,
     correctToday,
@@ -101,6 +107,29 @@ export function studyStreak(timestamps: number[], now: number): { streak: number
     cursor = addDays(cursor, -1);
   }
   return { streak, includesToday };
+}
+
+export interface LevelRow {
+  /** Niveau CECRL, ou null pour les mots ajoutés sans niveau connu. */
+  level: Cefr | null;
+  total: number;
+  recognized: number;
+  producible: number;
+}
+
+/** Reconnus / productibles par niveau (seulement les niveaux présents). */
+export function levelBreakdown(words: Word[]): LevelRow[] {
+  const rows = new Map<Cefr | null, LevelRow>();
+  for (const w of words) {
+    if (w.deleted) continue;
+    const row = rows.get(w.cefr) ?? { level: w.cefr, total: 0, recognized: 0, producible: 0 };
+    row.total++;
+    if (isRecognized(w)) row.recognized++;
+    if (isProducible(w)) row.producible++;
+    rows.set(w.cefr, row);
+  }
+  const order = (l: Cefr | null) => (l == null ? 99 : CEFR_LEVELS.indexOf(l));
+  return [...rows.values()].sort((a, b) => order(a.level) - order(b.level));
 }
 
 export interface PosRow {
@@ -217,7 +246,7 @@ export function makeSnapshot(words: Word[], now: number): DailySnapshot {
     id: dayKey(now),
     updatedAt: now,
     mastered: active.filter((w) => isMastered(w.srs)).length,
-    seen: active.filter((w) => w.srs.reps > 0).length,
+    seen: active.filter((w) => isStarted(w.srs)).length,
     total: active.length,
     deleted: false,
   };

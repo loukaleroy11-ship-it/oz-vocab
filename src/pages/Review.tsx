@@ -1,10 +1,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AudioButton } from '../components/AudioButton';
 import { Icon } from '../components/Icon';
-import { Ipa, Notice, PageHeader, PosChip, pct } from '../components/ui';
+import { Ipa, Notice, PageHeader, PosChip, Segmented, pct } from '../components/ui';
 import { formatDuration } from '../domain/dates';
 import { attemptsFor, currentWordId, sessionProgress, wordOutcome } from '../domain/queue';
+import { checkTyped, type TypedCheck } from '../domain/answerCheck';
 import { planNextSession, type SessionPlan } from '../domain/selection';
+import { parseCard } from '../domain/tracks';
 import { groupLabel } from '../data/themes';
 import type { Grade, ReviewSession, Word } from '../domain/types';
 import { navigate } from '../router';
@@ -44,39 +46,65 @@ export function ThemeChips({ groups }: { groups: string[] }) {
   );
 }
 
+export function PlanBreakdown({ plan }: { plan: SessionPlan }) {
+  if (!plan.dueNow) return null;
+  const parts: string[] = [];
+  if (plan.forgotten) parts.push(`${plan.forgotten} oublié${plan.forgotten > 1 ? 's' : ''} (en premier)`);
+  if (plan.prodDue) parts.push(`${plan.prodDue} à dire en anglais`);
+  if (plan.recDue) parts.push(`${plan.recDue} à reconnaître`);
+  return <p className="mt-1 text-sm text-ink-2 tabular">{parts.join(' · ')}</p>;
+}
+
+export function PlacementInvite() {
+  const { settings, words } = useApp();
+  const untouched = useMemo(() => words.filter((w) => w.source === 'core' && !w.deleted && w.srs.reps === 0 && !w.srs.origin).length, [words]);
+  if (settings.placementDone || untouched < 100) return null;
+  return (
+    <div className="card mt-4 flex flex-wrap items-center justify-between gap-3 border-ocean/30 bg-ocean-soft/40 p-4">
+      <p className="min-w-0 flex-1 text-sm">
+        <strong>Tu connais déjà une partie des 500 mots ?</strong> Le test de placement (5 min) t’évite de les apprendre comme des mots
+        nouveaux.
+      </p>
+      <a href="#placement" className="btn btn-ghost min-h-10 text-sm">
+        <Icon name="target" size={18} /> Faire le test
+      </a>
+    </div>
+  );
+}
+
 function ReviewStart() {
   const { words, settings, startDailySession, toast } = useApp();
-  const firstTime = useMemo(() => !words.some((w) => w.srs.reps > 0), [words]);
+  const firstTime = useMemo(() => !words.some((w) => w.srs.reps > 0 || w.srs.origin), [words]);
   const plan = useNextPlan();
   const extra = useNextPlan(true);
 
   const start = (opts?: { ignoreNewLimit?: boolean; ahead?: boolean }) => {
     const s = startDailySession(opts);
-    if (!s) toast('Aucun mot disponible pour cette session.', 'error');
+    if (!s) toast('Aucune carte disponible pour cette session.', 'error');
   };
   const laterNote =
     plan.laterToday > 0 && plan.nextDueAt ? (
       <p className="mt-3 text-sm text-ink-2 tabular">
-        {plan.laterToday} mot{plan.laterToday > 1 ? 's' : ''} raté{plan.laterToday > 1 ? 's' : ''} récemment reviendr{plan.laterToday > 1 ? 'ont' : 'a'} à partir de{' '}
+        {plan.laterToday} carte{plan.laterToday > 1 ? 's' : ''} ratée{plan.laterToday > 1 ? 's' : ''} récemment reviendr{plan.laterToday > 1 ? 'ont' : 'a'} à partir de{' '}
         {timeFmt.format(plan.nextDueAt)}.
       </p>
     ) : null;
+  const title = { review: 'À revoir', new: 'Nouvelle liste', produce: 'À dire en anglais', done: 'Tout est à jour' }[plan.kind];
 
   return (
     <div className="mx-auto max-w-2xl">
-      <PageHeader eyebrow="Réviser" title={plan.kind === 'review' ? 'À revoir' : plan.kind === 'new' ? 'Nouvelle liste' : 'Tout est à jour'} />
+      <PageHeader eyebrow="Réviser" title={title} />
       <div className="card p-5 sm:p-6">
         {plan.kind === 'review' && (
           <>
             <p className="text-lg">
-              <strong className="tabular">{plan.ids.length} mot{plan.ids.length > 1 ? 's' : ''}</strong> des listes précédentes à revoir.
+              <strong className="tabular">
+                {plan.ids.length} carte{plan.ids.length > 1 ? 's' : ''}
+              </strong>{' '}
+              à revoir{plan.dueNow > plan.ids.length ? <span className="tabular"> (sur {plan.dueNow} en tout)</span> : null}.
             </p>
-            {plan.dueNow > plan.ids.length && (
-              <p className="mt-1 text-sm text-ink-2 tabular">
-                Encore {plan.dueNow - plan.ids.length} après cette révision, puis de nouveaux mots.
-              </p>
-            )}
-            {plan.dueNow <= plan.ids.length && <p className="mt-1 text-sm text-ink-2">Ensuite, « Réviser » te proposera une nouvelle liste.</p>}
+            <PlanBreakdown plan={plan} />
+            {plan.dueNow <= plan.ids.length && <p className="mt-1 text-sm text-ink-2">Ensuite, « Réviser » te proposera la suite de ta séance.</p>}
           </>
         )}
         {plan.kind === 'new' && (
@@ -100,6 +128,18 @@ function ReviewStart() {
             )}
           </>
         )}
+        {plan.kind === 'produce' && (
+          <>
+            <p className="text-lg">
+              Tu reconnais déjà ces <strong className="tabular">{plan.ids.length} mots</strong>. Maintenant, dis-les en anglais à partir du
+              français.
+            </p>
+            <p className="mt-1 text-sm text-ink-2">
+              Réponds à voix haute puis vérifie, ou tape le mot (les petites fautes de frappe sont tolérées).
+              {plan.produceAvailable > plan.ids.length && <span className="tabular"> Encore {plan.produceAvailable - plan.ids.length} ensuite.</span>}
+            </p>
+          </>
+        )}
         {plan.kind === 'done' && (
           <>
             {plan.newAvailable > 0 ? (
@@ -107,7 +147,7 @@ function ReviewStart() {
                 Tu as atteint ton objectif de <strong className="tabular">{settings.newPerDay} nouveaux mots</strong> aujourd’hui.
               </p>
             ) : (
-              <p className="text-lg">Tu as déjà commencé tous les mots de ta collection. Bravo !</p>
+              <p className="text-lg">Tu as commencé tous les mots de ta collection, et tout est révisé. Bravo !</p>
             )}
             {laterNote}
             <div className="mt-5 flex flex-wrap gap-2">
@@ -130,15 +170,16 @@ function ReviewStart() {
             <button type="button" className="btn btn-primary mt-5 h-14 w-full text-lg sm:w-auto sm:px-8" onClick={() => start()}>
               <Icon name="play" size={20} /> {plan.kind === 'review' ? 'Commencer la révision' : 'Commencer la liste'}
             </button>
-            {plan.kind === 'new' && laterNote}
-            <p className="mt-3 text-sm text-muted">Les mots que tu ne connais pas reviennent à la fin de la liste jusqu’à ce que tu les reconnaisses.</p>
+            {plan.kind !== 'review' && laterNote}
+            <p className="mt-3 text-sm text-muted">Les cartes ratées reviennent à la fin de la liste jusqu’à ce que tu les trouves.</p>
           </>
         )}
       </div>
+      <PlacementInvite />
       <div className="mt-4 flex flex-wrap items-center gap-2 text-sm text-ink-2">
         <span>Envie de cibler certains mots ?</span>
         <button type="button" className="btn btn-quiet min-h-10 text-ocean" onClick={() => navigate('explorer')}>
-          Choisir dans l’explorateur <Icon name="chevronRight" size={18} />
+          Choisir dans le vocabulaire <Icon name="chevronRight" size={18} />
         </button>
       </div>
     </div>
@@ -169,17 +210,62 @@ function ProgressDots({ session }: { session: ReviewSession }) {
   );
 }
 
+function hintOf(en: string): string {
+  return en
+    .split('')
+    .map((c, i) => (i === 0 || c === ' ' || c === "'" || c === '-' ? c : '_'))
+    .join(' ');
+}
+
+function Verdict({ check, word, typed }: { check: TypedCheck; word: Word; typed: string }) {
+  const ok = check.verdict === 'exact' || check.verdict === 'typo' || check.verdict === 'form';
+  const tone = ok ? 'bg-gum-soft text-gum' : check.verdict === 'other-word' ? 'bg-wattle-soft text-wattle-ink' : 'bg-coral-soft text-coral';
+  const t = typed.trim();
+  let text: string;
+  switch (check.verdict) {
+    case 'exact':
+      text = 'Exact !';
+      break;
+    case 'typo':
+      text = `Bon, avec une petite faute : tu as écrit « ${t} ».`;
+      break;
+    case 'form':
+      text = `Correct (forme conjuguée). La forme de base est « ${word.en} ».`;
+      break;
+    case 'other-word':
+      text = `« ${t} » veut aussi dire « ${check.matched?.fr ?? word.fr} », mais le mot travaillé ici est « ${word.en} ». À toi de juger.`;
+      break;
+    case 'empty':
+      text = 'Pas de réponse : voici le mot.';
+      break;
+    default:
+      text = check.matched ? `Pas tout à fait : « ${t} » veut dire « ${check.matched.fr} ».` : `Pas tout à fait : tu as écrit « ${t} ».`;
+  }
+  return (
+    <p role="status" className={`flex items-center gap-2 rounded-2xl px-4 py-2.5 text-left text-sm font-bold ${tone}`}>
+      <Icon name={ok ? 'check' : check.verdict === 'other-word' ? 'info' : 'x'} size={18} className="shrink-0" />
+      {text}
+    </p>
+  );
+}
+
 function SessionView({ session }: { session: ReviewSession }) {
-  const { wordsById, settings, answer, endActive, resume } = useApp();
+  const { words, wordsById, settings, answer, endActive, resume, updateSettings } = useApp();
   const [revealed, setRevealed] = useState(false);
   const [confirmEnd, setConfirmEnd] = useState(false);
   const [voiceLabel, setVoiceLabel] = useState<string | null>(null);
-  const wordId = currentWordId(session);
-  const word = wordId ? wordsById.get(wordId) : undefined;
+  const [typed, setTyped] = useState('');
+  const [check, setCheck] = useState<TypedCheck | null>(null);
+  const [hint, setHint] = useState(false);
+  const key = currentWordId(session);
+  const card = key ? parseCard(key) : null;
+  const word = card ? wordsById.get(card.wordId) : undefined;
+  const isProd = card?.track === 'prod';
+  const written = isProd && settings.prodMode === 'written';
   const cardKey = `${session.id}:${session.answers.length}`;
   const playedKey = useRef<string | null>(null);
   const progress = sessionProgress(session);
-  const attempt = wordId ? attemptsFor(session, wordId) + 1 : 1;
+  const attempt = key ? attemptsFor(session, key) + 1 : 1;
   const voice = useMemo(() => describeVoice(settings.voiceURI), [settings.voiceURI]);
 
   // reprise : le temps passé hors de la session n'est pas compté
@@ -190,21 +276,24 @@ function SessionView({ session }: { session: ReviewSession }) {
 
   useEffect(() => {
     setRevealed(false);
+    setTyped('');
+    setCheck(null);
+    setHint(false);
   }, [cardKey]);
 
   // sans voix australienne : on prépare les enregistrements humains des mots à venir
   useEffect(() => {
     const ids = session.queue.slice(0, 3);
     prefetchNative(
-      ids.map((id) => wordsById.get(id)?.en ?? '').filter(Boolean),
+      ids.map((id) => wordsById.get(parseCard(id).wordId)?.en ?? '').filter(Boolean),
       settings.voiceURI,
     );
   }, [cardKey, session.queue, wordsById, settings.voiceURI]);
 
   const speakWord = useCallback(
-    (w: Word | undefined, key: string) => {
+    (w: Word | undefined, k: string) => {
       if (!w) return;
-      playedKey.current = key;
+      playedKey.current = k;
       void playWord(w.en, {
         voiceURI: settings.voiceURI,
         rate: settings.speechRate,
@@ -215,24 +304,33 @@ function SessionView({ session }: { session: ReviewSession }) {
     [settings.voiceURI, settings.speechRate, settings.audioPreference],
   );
 
-  // lecture automatique de chaque nouvelle carte
+  // lecture automatique : dès l'affichage (reconnaître), après vérification (produire, sinon l'audio donnerait la réponse)
   useEffect(() => {
     if (!settings.autoPlay || !word || playedKey.current === cardKey) return;
+    if (isProd && !revealed) return;
     speakWord(word, cardKey);
-  }, [cardKey, word, settings.autoPlay, speakWord]);
+  }, [cardKey, word, settings.autoPlay, speakWord, isProd, revealed]);
 
   const grade = useCallback(
     (g: Grade) => {
-      if (!wordId) return;
+      if (!key) return;
       // carte suivante, lue dans le même geste (exigence d'iOS pour l'audio)
       const rest = session.queue.slice(1);
-      const nextQueue = g === 'again' ? [...rest, wordId] : rest;
-      const nextId = nextQueue[0];
+      const nextQueue = g === 'again' ? [...rest, key] : rest;
+      const next = nextQueue[0] ? parseCard(nextQueue[0]) : null;
       answer(g);
-      if (settings.autoPlay && nextId) speakWord(wordsById.get(nextId), `${session.id}:${session.answers.length + 1}`);
+      if (settings.autoPlay && next && next.track === 'rec') {
+        speakWord(wordsById.get(next.wordId), `${session.id}:${session.answers.length + 1}`);
+      }
     },
-    [wordId, session, answer, settings.autoPlay, speakWord, wordsById],
+    [key, session, answer, settings.autoPlay, speakWord, wordsById],
   );
+
+  const submitTyped = useCallback(() => {
+    if (!word || revealed) return;
+    setCheck(checkTyped(typed, word, words));
+    setRevealed(true);
+  }, [word, revealed, typed, words]);
 
   // raccourcis clavier (ordinateur)
   useEffect(() => {
@@ -240,12 +338,16 @@ function SessionView({ session }: { session: ReviewSession }) {
       if (e.target instanceof HTMLElement && /input|textarea|select/i.test(e.target.tagName)) return;
       if (e.key === ' ' || e.key === 'Enter') {
         if (!revealed) {
+          if (written) return;
           e.preventDefault();
           setRevealed(true);
+        } else if (e.key === 'Enter' && check?.suggested) {
+          e.preventDefault();
+          grade(check.suggested);
         }
         return;
       }
-      if (e.key.toLowerCase() === 'p' && word) {
+      if (e.key.toLowerCase() === 'p' && word && (!isProd || revealed)) {
         speakWord(word, cardKey);
         return;
       }
@@ -261,7 +363,7 @@ function SessionView({ session }: { session: ReviewSession }) {
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [revealed, grade, settings.answerMode, word, speakWord, cardKey]);
+  }, [revealed, grade, settings.answerMode, word, speakWord, cardKey, written, check, isProd]);
 
   if (!word) {
     return (
@@ -274,6 +376,38 @@ function SessionView({ session }: { session: ReviewSession }) {
     );
   }
 
+  const suggest = (g: Grade) => (check?.suggested === g ? 'ring-4 ring-ocean/30' : '');
+  const example = word.exampleEn && (
+    <div className="mt-2 flex w-full max-w-md items-start gap-3 rounded-2xl bg-surface-2 p-4 text-left">
+      <AudioButton text={word.exampleEn} label="Écouter la phrase d’exemple" size="sm" />
+      <div className="min-w-0">
+        <p className="font-bold" lang="en">
+          {word.exampleEn}
+        </p>
+        <p className="text-ink-2">{word.exampleFr}</p>
+      </div>
+    </div>
+  );
+  const englishHead = (
+    <>
+      <h2
+        className={`font-display font-extrabold leading-none transition-[font-size] ${revealed ? 'text-[clamp(2rem,8vw,3rem)]' : 'text-[clamp(2.4rem,11vw,4rem)]'}`}
+        lang="en"
+      >
+        {word.en}
+      </h2>
+      <Ipa value={word.ipa} className="text-xl text-ink-2" />
+      <AudioButton
+        text={word.en}
+        label={`Écouter « ${word.en} » avec l’accent australien`}
+        size={revealed ? 'md' : 'lg'}
+        audioUrl={word.audioUrl}
+        audioAccent={word.audioAccent}
+        onResult={(r) => setVoiceLabel(r.label)}
+      />
+    </>
+  );
+
   return (
     <div
       className="fixed inset-0 z-40 flex flex-col bg-bg"
@@ -285,7 +419,7 @@ function SessionView({ session }: { session: ReviewSession }) {
             type="button"
             className="btn btn-quiet"
             onClick={() => navigate('accueil')}
-            aria-label="Mettre en pause et revenir au tableau de bord"
+            aria-label="Mettre en pause et revenir à l’accueil"
           >
             <Icon name="pause" size={20} /> Pause
           </button>
@@ -307,7 +441,7 @@ function SessionView({ session }: { session: ReviewSession }) {
         </div>
         <ProgressDots session={session} />
         <p className="tabular text-sm text-ink-2" aria-live="polite">
-          <strong className="text-ink">{progress.seen}</strong> mot{progress.seen > 1 ? 's' : ''} distinct{progress.seen > 1 ? 's' : ''} sur {progress.total}
+          <strong className="text-ink">{progress.seen}</strong> carte{progress.seen > 1 ? 's' : ''} distincte{progress.seen > 1 ? 's' : ''} sur {progress.total}
           {progress.toDiscover > 0 && <> · {progress.toDiscover} à découvrir</>}
           {progress.repetitions > 0 && (
             <>
@@ -316,100 +450,170 @@ function SessionView({ session }: { session: ReviewSession }) {
             </>
           )}
         </p>
-        {confirmEnd && <p className="text-sm text-ink-2">Les mots non terminés garderont leur état et reviendront dans une prochaine session.</p>}
+        {confirmEnd && <p className="text-sm text-ink-2">Les cartes non terminées garderont leur état et reviendront dans une prochaine session.</p>}
       </div>
 
       <div className="gutter mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col overflow-y-auto py-4">
         <article
           key={cardKey}
+          data-track={isProd ? 'prod' : 'rec'}
           className={`anim-card card flex flex-1 flex-col items-center gap-4 px-5 text-center shadow-card ${revealed ? 'justify-start py-5' : 'justify-center py-8'}`}
         >
-          {attempt > 1 && (
-            <span className="rounded-full bg-coral-soft px-3 py-1 text-xs font-bold text-coral">
-              Revient · {attempt}e passage
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <span className={`rounded-full px-3 py-1 text-xs font-bold ${isProd ? 'bg-wattle-soft text-wattle-ink' : 'bg-ocean-soft text-ocean'}`}>
+              {isProd ? 'Français → anglais' : 'Anglais → français'}
             </span>
-          )}
-          <h2
-            className={`font-display font-extrabold leading-none transition-[font-size] ${revealed ? 'text-[clamp(2rem,8vw,3rem)]' : 'text-[clamp(2.4rem,11vw,4rem)]'}`}
-            lang="en"
-          >
-            {word.en}
-          </h2>
-          <Ipa value={word.ipa} className="text-xl text-ink-2" />
-          <AudioButton
-            text={word.en}
-            label={`Écouter « ${word.en} » avec l’accent australien`}
-            size={revealed ? 'md' : 'lg'}
-            audioUrl={word.audioUrl}
-            audioAccent={word.audioAccent}
-            onResult={(r) => setVoiceLabel(r.label)}
-          />
-          {revealed ? null : !speechSupported() ? (
-            <p className="text-xs text-coral">Synthèse vocale indisponible dans ce navigateur.</p>
-          ) : (
-            !voice.australian && (
-              <p className="max-w-sm text-xs text-wattle-ink">
-                Pas de voix australienne sur cet appareil{voice.voice ? ` : lecture avec ${voice.voice.name} (${voice.voice.lang})` : ''}.{' '}
-                <a className="underline" href="#parametres">
-                  Comment en installer une
-                </a>
-              </p>
+            {attempt > 1 && (
+              <span className="rounded-full bg-coral-soft px-3 py-1 text-xs font-bold text-coral">Revient · {attempt}e passage</span>
+            )}
+          </div>
+
+          {isProd ? (
+            revealed ? (
+              <>
+                {check && <Verdict check={check} word={word} typed={typed} />}
+                {englishHead}
+                <p className="text-sm text-muted">Écoute, puis répète-le à voix haute.</p>
+                <div className="anim-reveal mt-1 flex w-full flex-col items-center gap-3 border-t border-line pt-5">
+                  <PosChip pos={word.pos} />
+                  <p className="text-xl font-bold">{word.fr}</p>
+                  {example}
+                </div>
+              </>
+            ) : (
+              <>
+                <PosChip pos={word.pos} />
+                <h2 className="font-display text-[clamp(2rem,9vw,3.4rem)] font-extrabold leading-tight">{word.fr}</h2>
+                {word.frAlt.length > 0 && <p className="max-w-md text-sm text-ink-2">aussi : {word.frAlt.slice(0, 3).join(' · ')}</p>}
+                {word.exampleFr && <p className="max-w-md text-ink-2">Contexte : « {word.exampleFr} »</p>}
+                {hint ? (
+                  <p className="font-mono text-2xl tracking-wider" lang="en" aria-label={`Indice : commence par ${word.en[0]}, ${word.en.length} caractères`}>
+                    {hintOf(word.en)}
+                  </p>
+                ) : (
+                  <button type="button" className="btn btn-quiet min-h-10 text-sm text-ocean" onClick={() => setHint(true)}>
+                    <Icon name="sparkle" size={18} /> Indice
+                  </button>
+                )}
+                <Segmented
+                  label="Répondre"
+                  value={settings.prodMode}
+                  onChange={(v) => updateSettings({ prodMode: v })}
+                  options={[
+                    { value: 'oral', label: 'À l’oral' },
+                    { value: 'written', label: 'À l’écrit' },
+                  ]}
+                />
+                {written ? (
+                  <form
+                    id="prod-form"
+                    className="w-full max-w-sm"
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      submitTyped();
+                    }}
+                  >
+                    <label className="sr-only" htmlFor="prod-input">
+                      Mot anglais
+                    </label>
+                    <input
+                      id="prod-input"
+                      className="field h-14 w-full text-center text-xl"
+                      lang="en"
+                      autoFocus
+                      autoComplete="off"
+                      autoCorrect="off"
+                      autoCapitalize="none"
+                      spellCheck={false}
+                      enterKeyHint="done"
+                      placeholder="Tape le mot anglais"
+                      value={typed}
+                      onChange={(e) => setTyped(e.target.value)}
+                    />
+                  </form>
+                ) : (
+                  <p className="max-w-sm text-sm text-muted">Dis le mot anglais à voix haute, puis vérifie.</p>
+                )}
+              </>
             )
+          ) : (
+            <>
+              {englishHead}
+              {revealed ? null : !speechSupported() ? (
+                <p className="text-xs text-coral">Synthèse vocale indisponible dans ce navigateur.</p>
+              ) : (
+                !voice.australian && (
+                  <p className="max-w-sm text-xs text-wattle-ink">
+                    Pas de voix australienne sur cet appareil{voice.voice ? ` : lecture avec ${voice.voice.name} (${voice.voice.lang})` : ''}.{' '}
+                    <a className="underline" href="#parametres">
+                      Comment en installer une
+                    </a>
+                  </p>
+                )
+              )}
+              {revealed ? (
+                <div className="anim-reveal mt-2 flex w-full flex-col items-center gap-3 border-t border-line pt-5">
+                  <PosChip pos={word.pos} />
+                  <p className="text-2xl font-bold">{word.fr}</p>
+                  {word.frAlt.length > 0 && <p className="max-w-md text-ink-2">{word.frAlt.join(' · ')}</p>}
+                  {example}
+                </div>
+              ) : (
+                <p className="text-sm text-muted">Essaie de trouver la traduction avant de la révéler.</p>
+              )}
+            </>
           )}
           {voiceLabel && voice.australian && <p className="sr-only">{voiceLabel}</p>}
-
-          {revealed ? (
-            <div className="anim-reveal mt-2 flex w-full flex-col items-center gap-3 border-t border-line pt-5">
-              <PosChip pos={word.pos} />
-              <p className="text-2xl font-bold">{word.fr}</p>
-              {word.frAlt.length > 0 && <p className="max-w-md text-ink-2">{word.frAlt.join(' · ')}</p>}
-              {word.exampleEn && (
-                <div className="mt-2 flex w-full max-w-md items-start gap-3 rounded-2xl bg-surface-2 p-4 text-left">
-                  <AudioButton text={word.exampleEn} label="Écouter la phrase d’exemple" size="sm" />
-                  <div className="min-w-0">
-                    <p className="font-bold" lang="en">
-                      {word.exampleEn}
-                    </p>
-                    <p className="text-ink-2">{word.exampleFr}</p>
-                  </div>
-                </div>
-              )}
-            </div>
-          ) : (
-            <p className="text-sm text-muted">Essaie de trouver la traduction avant de la révéler.</p>
-          )}
         </article>
       </div>
 
       <div className="gutter mx-auto w-full max-w-2xl pb-4">
         {!revealed ? (
-          <button type="button" className="btn btn-primary h-16 w-full text-lg" onClick={() => setRevealed(true)}>
-            Révéler la réponse
-          </button>
+          written ? (
+            <button type="submit" form="prod-form" className="btn btn-primary h-16 w-full text-lg">
+              Vérifier
+            </button>
+          ) : (
+            <button type="button" className="btn btn-primary h-16 w-full text-lg" onClick={() => setRevealed(true)}>
+              {isProd ? 'Vérifier' : 'Révéler la réponse'}
+            </button>
+          )
         ) : settings.answerMode === 'two' ? (
           <div className="grid grid-cols-2 gap-3">
-            <button type="button" className="btn h-16 whitespace-normal bg-coral-soft px-3 text-base leading-tight text-coral sm:text-lg" onClick={() => grade('again')}>
-              <Icon name="x" className="shrink-0" /> Je ne connais pas
+            <button
+              type="button"
+              className={`btn h-16 whitespace-normal bg-coral-soft px-3 text-base leading-tight text-coral sm:text-lg ${suggest('again')}`}
+              onClick={() => grade('again')}
+            >
+              <Icon name="x" className="shrink-0" /> {isProd ? 'Je ne l’avais pas' : 'Je ne connais pas'}
             </button>
-            <button type="button" className="btn h-16 whitespace-normal bg-gum px-3 text-base leading-tight text-white sm:text-lg" onClick={() => grade('good')}>
-              <Icon name="check" className="shrink-0" /> Je connais
+            <button
+              type="button"
+              className={`btn h-16 whitespace-normal bg-gum px-3 text-base leading-tight text-white sm:text-lg ${suggest('good')}`}
+              onClick={() => grade('good')}
+            >
+              <Icon name="check" className="shrink-0" /> {isProd ? 'Je l’avais' : 'Je connais'}
             </button>
           </div>
         ) : (
           <div className="grid grid-cols-3 gap-2">
-            <button type="button" className="btn h-16 bg-coral-soft text-base text-coral" onClick={() => grade('again')}>
+            <button type="button" className={`btn h-16 bg-coral-soft text-base text-coral ${suggest('again')}`} onClick={() => grade('again')}>
               À revoir
             </button>
             <button type="button" className="btn h-16 bg-wattle-soft text-base text-wattle-ink" onClick={() => grade('hard')}>
               Difficile
             </button>
-            <button type="button" className="btn h-16 bg-gum text-base text-white" onClick={() => grade('easy')}>
+            <button type="button" className={`btn h-16 bg-gum text-base text-white ${suggest('good')}`} onClick={() => grade('easy')}>
               Facile
             </button>
           </div>
         )}
         <p className="mt-2 hidden text-center text-xs text-muted md:block">
-          Clavier : Espace pour révéler · {settings.answerMode === 'two' ? '1 ou ← « Je ne connais pas » · 2 ou → « Je connais »' : '1 À revoir · 2 Difficile · 3 Facile'} · P pour écouter
+          Clavier : {written ? 'Entrée pour vérifier' : 'Espace pour révéler'} ·{' '}
+          {settings.answerMode === 'two'
+            ? `1 ou ← « ${isProd ? 'Je ne l’avais pas' : 'Je ne connais pas'} » · 2 ou → « ${isProd ? 'Je l’avais' : 'Je connais'} »`
+            : '1 À revoir · 2 Difficile · 3 Facile'}{' '}
+          · P pour écouter
         </p>
       </div>
     </div>
@@ -429,7 +633,7 @@ function SessionSummary({ session }: { session: ReviewSession }) {
     <div className="mx-auto max-w-2xl">
       <PageHeader eyebrow="Session terminée" title={session.label} />
       <div className="card grid grid-cols-2 gap-4 p-5 sm:grid-cols-4">
-        <Figure label="Mots distincts" value={p.seen} />
+        <Figure label="Cartes distinctes" value={p.seen} />
         <Figure label="Répétitions" value={p.repetitions} />
         <Figure label="Réussite" value={pct(answered ? p.correct / answered : null)} hint={`${p.correct} correctes · ${p.incorrect} incorrectes`} />
         <Figure label="Durée" value={formatDuration(session.activeMs)} />
@@ -437,7 +641,8 @@ function SessionSummary({ session }: { session: ReviewSession }) {
       <h2 className="mb-2 mt-6 text-lg font-bold">Détail</h2>
       <ul className="card divide-y divide-line">
         {session.wordIds.map((id) => {
-          const w = wordsById.get(id);
+          const c = parseCard(id);
+          const w = wordsById.get(c.wordId);
           const o = wordOutcome(session, id);
           if (!w) return null;
           return (
@@ -445,6 +650,7 @@ function SessionSummary({ session }: { session: ReviewSession }) {
               <div className="min-w-0">
                 <p className="font-bold" lang="en">
                   {w.en}
+                  {c.track === 'prod' && <span className="ml-2 rounded-full bg-wattle-soft px-2 py-0.5 align-middle text-[11px] font-bold text-wattle-ink">FR → EN</span>}
                 </p>
                 <p className="truncate text-sm text-ink-2">{w.fr}</p>
               </div>
@@ -474,7 +680,11 @@ function SessionSummary({ session }: { session: ReviewSession }) {
           next.kind !== 'done' ? (
             <button type="button" className="btn btn-primary" onClick={() => startDailySession()}>
               <Icon name="play" size={20} />{' '}
-              {next.kind === 'review' ? `Réviser ${next.ids.length} mot${next.ids.length > 1 ? 's' : ''}` : `Liste suivante (${next.ids.length} nouveaux mots)`}
+              {next.kind === 'review'
+                ? `Réviser ${next.ids.length} carte${next.ids.length > 1 ? 's' : ''}`
+                : next.kind === 'produce'
+                  ? `À dire en anglais (${next.ids.length} mots)`
+                  : `Liste suivante (${next.ids.length} nouveaux mots)`}
             </button>
           ) : (
             <button type="button" className="btn btn-primary" onClick={() => dismissFinished()}>
@@ -490,7 +700,7 @@ function SessionSummary({ session }: { session: ReviewSession }) {
             navigate('accueil');
           }}
         >
-          Tableau de bord
+          Accueil
         </button>
       </div>
     </div>

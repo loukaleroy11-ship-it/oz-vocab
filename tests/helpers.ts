@@ -33,7 +33,9 @@ export function makeWord(id: string, over: Partial<Word> = {}): Word {
     exampleFr: '',
     forms: [],
     spellingAlt: [],
+    cefr: null,
     srs: newSrsState(),
+    prod: newSrsState(),
     ...over,
   };
 }

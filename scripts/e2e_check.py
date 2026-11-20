@@ -23,6 +23,11 @@ OUT.mkdir(parents=True, exist_ok=True)
 results: list[tuple[str, bool, str]] = []
 
 
+def step_value(page, title: str) -> str:
+    """Valeur d'une étape de la séance du jour (« Nouveaux mots 489 »)."""
+    return page.locator(f'ol[aria-label="Ordre de la séance"] li:has-text("{title}") .font-display').first.inner_text().strip()
+
+
 def check(name: str, ok: bool, detail: str = ''):
     results.append((name, ok, detail))
     print(('✔' if ok else '✘'), name, detail)
@@ -44,14 +49,14 @@ def run():
 
         # ---------- 1. premier lancement
         page.goto(BASE + '/#accueil')
-        expect(page.get_by_role('heading', name='Tableau de bord')).to_be_visible(timeout=15000)
-        total = page.locator('dt:has-text("Dans la collection") + dd').inner_text()
-        check('500 mots présents au premier lancement', total.strip() == '500', f'collection = {total}')
+        expect(page.get_by_role('heading', name='Séance du jour')).to_be_visible(timeout=15000)
+        total = step_value(page, 'Nouveaux mots')
+        check('500 mots présents au premier lancement', total == '500', f'nouveaux = {total}')
         check('mobile : pas de défilement horizontal (accueil)', no_horizontal_scroll(page))
         page.screenshot(path=str(OUT / 'mobile-accueil.png'), full_page=True)
 
         # ---------- 2. première liste (thèmes cohérents), retour en fin de liste
-        page.get_by_role('button', name='Commencer ma révision').click()
+        page.locator('main').get_by_role('button', name='Commencer', exact=True).click()
         expect(page.get_by_role('button', name='Révéler la réponse')).to_be_visible()
         page.wait_for_timeout(350)
         page.screenshot(path=str(OUT / 'mobile-carte.png'))
@@ -84,10 +89,10 @@ def run():
         page.screenshot(path=str(OUT / 'mobile-bilan.png'), full_page=True)
         summary = page.locator('main').inner_text().lower()
         import re
-        check('bilan : 11 mots distincts, 1 répétition', bool(re.search(r'mots distincts\s+11\b', summary)) and bool(re.search(r'répétitions\s+1\b', summary)))
+        check('bilan : 11 mots distincts, 1 répétition', bool(re.search(r'cartes distinctes\s+11\b', summary)) and bool(re.search(r'répétitions\s+1\b', summary)))
         nxt = page.get_by_role('button', name='Liste suivante')
         check('après la liste : nouvelle liste proposée', nxt.is_visible(), nxt.inner_text() if nxt.count() else '')
-        page.get_by_role('button', name='Tableau de bord').click()
+        page.locator('main').get_by_role('button', name='Accueil').click()
         page.goto(BASE + '/#reviser')
         expect(page.get_by_role('heading', name='Nouvelle liste')).to_be_visible()
         chips = page.get_by_label('Thèmes de la liste').inner_text()
@@ -97,11 +102,11 @@ def run():
         # ---------- 4. sauvegarde après rechargement + statistiques
         page.goto(BASE + '/#accueil')
         page.reload()
-        expect(page.get_by_role('heading', name='Tableau de bord')).to_be_visible()
-        new_count = page.locator('dt:has-text("Nouveaux") + dd').first.inner_text()
-        check('progrès conservés après rechargement', new_count.strip() == '489', f'nouveaux = {new_count}')
+        expect(page.get_by_role('heading', name='Séance du jour')).to_be_visible()
+        new_count = step_value(page, 'Nouveaux mots')
+        check('progrès conservés après rechargement', new_count == '489', f'nouveaux = {new_count}')
         txt = page.locator('main').inner_text()
-        check('statistiques du jour', 'Révisés aujourd’hui : 11 mots' in txt and '11 bonnes réponses sur 12' in txt)
+        check('statistiques du jour', '11 bonnes réponses sur 12' in txt, txt[:300])
         check('accueil : prochaine liste annoncée', 'prochaine liste' in txt.lower() and 'nouveaux mots' in txt)
 
         # ---------- 5. explorer : filtres combinés et recherche
@@ -244,9 +249,9 @@ def run():
         p3.get_by_role('button', name='Importer', exact=True).click()
         expect(p3.get_by_text('Import terminé')).to_be_visible()
         p3.goto(BASE + '/#accueil')
-        check('import : progression retrouvée sur un autre navigateur', p3.locator('dt:has-text("Nouveaux") + dd').first.inner_text().strip() == '490')
+        check('import : progression retrouvée sur un autre navigateur', step_value(p3, 'Nouveaux mots') == '490')
         p3.screenshot(path=str(OUT / 'desktop-accueil.png'), full_page=True)
-        for r in ['explorer', 'stats', 'parametres', 'ajouter']:
+        for r in ['explorer', 'stats', 'parametres', 'ajouter', 'exprimer', 'apparentes', 'placement']:
             p3.goto(BASE + f'/#{r}')
             p3.wait_for_timeout(400)
             p3.screenshot(path=str(OUT / f'desktop-{r}.png'), full_page=True)
@@ -268,12 +273,12 @@ def run():
         ctx.set_offline(True)
         page.reload()
         try:
-            expect(page.get_by_role('heading', name='Tableau de bord')).to_be_visible(timeout=10000)
+            expect(page.get_by_role('heading', name='Séance du jour')).to_be_visible(timeout=10000)
             ok = True
         except AssertionError:
             ok = False
         check('site disponible hors ligne (service worker)', ok)
-        page.get_by_role('button', name='Commencer ma révision').click()
+        page.locator('main').get_by_role('button', name='Commencer', exact=True).click()
         page.get_by_role('button', name='Révéler la réponse').click()
         page.get_by_role('button', name='Je connais').click()
         check('révision hors ligne enregistrée', page.locator('p[aria-live="polite"]').first.is_visible())

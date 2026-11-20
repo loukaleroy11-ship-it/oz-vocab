@@ -1,6 +1,6 @@
 import raw from './coreWords.json';
 import { newSrsState } from '../domain/srs';
-import type { Pos, Word, WordContent } from '../domain/types';
+import type { Cefr, Pos, Word, WordContent } from '../domain/types';
 
 export interface CoreEntry {
   id: string;
@@ -20,6 +20,7 @@ export interface CoreEntry {
   exampleFr: string;
   freqPerMillion: number;
   freqEstimated?: boolean;
+  cefr: Cefr;
 }
 
 export const CORE_META = raw.meta as {
@@ -27,13 +28,15 @@ export const CORE_META = raw.meta as {
   sourceUrl: string;
   ipaSource: string;
   removedTags: string[];
+  cefrSource: string;
   count: number;
 };
 
 export const CORE_ENTRIES = raw.words as CoreEntry[];
+export const CORE_BY_ID = new Map(CORE_ENTRIES.map((e) => [e.id, e]));
 
-/** Version du jeu de données : à incrémenter quand coreWords.json change. */
-export const CORE_VERSION = 1;
+/** Version du jeu de données : à incrémenter quand coreWords.json change (2 : niveaux CECRL). */
+export const CORE_VERSION = 2;
 
 export function coreContent(e: CoreEntry): WordContent {
   return {
@@ -66,7 +69,9 @@ export function coreWord(e: CoreEntry, now: number): Word {
     updatedAt: 0,
     edited: false,
     deleted: false,
+    cefr: e.cefr,
     srs: newSrsState(),
+    prod: newSrsState(),
     ...coreContent(e),
   };
 }

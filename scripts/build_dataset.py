@@ -149,6 +149,48 @@ def to_australian_ipa(tokens):
     return "/" + "".join(out) + "/"
 
 
+CEFR_FILES = ["cefrj-vocabulary-profile-1.5.csv", "octanove-vocabulary-profile-c1c2-1.0.csv"]
+CEFR_ORDER = ["A1", "A2", "B1", "B2", "C1", "C2"]
+
+
+def load_cefr():
+    """CEFR-J 1.5 (A1-B2) + Octanove (C1-C2) : mot -> {catégorie: niveau le plus bas}."""
+    table = {}
+    for name in CEFR_FILES:
+        path = SRC / name
+        if not path.exists():
+            continue
+        with path.open(encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                lvl = r["CEFR"].strip().upper()
+                if lvl not in CEFR_ORDER:
+                    continue
+                for head in r["headword"].split("/"):
+                    head = head.strip().lower()
+                    if not head:
+                        continue
+                    d = table.setdefault(head, {})
+                    pos = r["pos"].strip().lower()
+                    if pos not in d or CEFR_ORDER.index(lvl) < CEFR_ORDER.index(d[pos]):
+                        d[pos] = lvl
+    return table
+
+
+CEFR_POS = {"auxiliary": "verb", "number": "number"}
+
+
+def cefr_level(table, en, lemma, pos):
+    """Niveau du sens principal ; à défaut le plus bas toutes catégories ; à défaut A1 (mots oraux très fréquents)."""
+    for key in (en.lower(), lemma.lower()):
+        d = table.get(key)
+        if d:
+            want = CEFR_POS.get(pos, pos)
+            if want in d:
+                return d[want]
+            return min(d.values(), key=CEFR_ORDER.index)
+    return "A1"
+
+
 def main():
     rows = list(csv.DictReader(open(SRC / "ngsls_stats.csv", encoding="utf-8-sig")))
     for r in rows:
@@ -198,6 +240,7 @@ def main():
 
     words = []
     seen_en = set()
+    cefr = load_cefr()
     for i, r in enumerate(kept, start=1):
         lemma = r["Lemma"]
         e = entries[lemma]
@@ -232,6 +275,7 @@ def main():
             "exampleEn": e["exampleEn"].strip(),
             "exampleFr": e["exampleFr"].strip(),
             "freqPerMillion": round(float(r["U"]), 2),
+            "cefr": cefr_level(cefr, en, lemma, POS_CODES[pos_codes[0]]),
             **({"freqEstimated": True} if r.get("U_estimated") else {}),
         })
 
@@ -251,6 +295,7 @@ def main():
         "sourceUrl": "https://www.newgeneralservicelist.com/ngsl-spoken",
         "ipaSource": "Britfone 3.0.1 (MIT) converti en IPA australienne (Cox & Palethorpe 2007)",
         "removedTags": sorted(TRANSCRIPTION_TAGS),
+        "cefrSource": "CEFR-J Wordlist 1.5 (Tono Lab, TUFS) + Octanove Vocabulary Profile C1/C2 1.0 (CC BY-SA 4.0)",
         "count": len(words),
     }
     OUT.write_text(json.dumps({"meta": meta, "words": words}, ensure_ascii=False, indent=0), encoding="utf-8")

@@ -10,6 +10,7 @@
 "pause",
 "unclear"
 ],
+"cefrSource": "CEFR-J Wordlist 1.5 (Tono Lab, TUFS) + Octanove Vocabulary Profile C1/C2 1.0 (CC BY-SA 4.0)",
 "count": 500
 },
 "words": [
@@ -46,7 +47,8 @@
 ],
 "exampleEn": "I'm tired, but I'm happy.",
 "exampleFr": "Je suis fatigué, mais je suis content.",
-"freqPerMillion": 62378.07
+"freqPerMillion": 62378.07,
+"cefr": "A1"
 },
 {
 "id": "core-002",
@@ -66,7 +68,8 @@
 ],
 "exampleEn": "The beach is beautiful today.",
 "exampleFr": "La plage est magnifique aujourd'hui.",
-"freqPerMillion": 50498.86
+"freqPerMillion": 50498.86,
+"cefr": "A1"
 },
 {
 "id": "core-003",
@@ -92,7 +95,8 @@
 ],
 "exampleEn": "Are you coming with us?",
 "exampleFr": "Tu viens avec nous ?",
-"freqPerMillion": 23349.51
+"freqPerMillion": 23349.51,
+"cefr": "A1"
 },
 {
 "id": "core-004",
@@ -112,7 +116,8 @@
 ],
 "exampleEn": "I'd like a coffee and a muffin, please.",
 "exampleFr": "Je voudrais un café et un muffin, s'il vous plaît.",
-"freqPerMillion": 31027.07
+"freqPerMillion": 31027.07,
+"cefr": "A1"
 },
 {
 "id": "core-005",
@@ -134,7 +139,8 @@
 "ipaAlt": [],
 "exampleEn": "It's really hot today.",
 "exampleFr": "Il fait vraiment chaud aujourd'hui.",
-"freqPerMillion": 20435.84
+"freqPerMillion": 20435.84,
+"cefr": "A1"
 },
 {
 "id": "core-006",
@@ -157,7 +163,8 @@
 ],
 "exampleEn": "I'm going to the shops.",
 "exampleFr": "Je vais aux magasins.",
-"freqPerMillion": 28336.61
+"freqPerMillion": 28336.61,
+"cefr": "A1"
 },
 {
 "id": "core-007",
@@ -179,7 +186,8 @@
 ],
 "exampleEn": "There's a café on the corner.",
 "exampleFr": "Il y a un café au coin de la rue.",
-"freqPerMillion": 26519.71
+"freqPerMillion": 26519.71,
+"cefr": "A1"
 },
 {
 "id": "core-008",
@@ -209,7 +217,8 @@
 ],
 "exampleEn": "We have two dogs.",
 "exampleFr": "Nous avons deux chiens.",
-"freqPerMillion": 18117.94
+"freqPerMillion": 18117.94,
+"cefr": "A1"
 },
 {
 "id": "core-009",
@@ -229,7 +238,8 @@
 ],
 "exampleEn": "It's a cup of tea.",
 "exampleFr": "C'est une tasse de thé.",
-"freqPerMillion": 23918.35
+"freqPerMillion": 23918.35,
+"cefr": "A1"
 },
 {
 "id": "core-010",
@@ -256,7 +266,8 @@
 "ipaAlt": [],
 "exampleEn": "What do you do for work?",
 "exampleFr": "Qu'est-ce que tu fais comme travail ?",
-"freqPerMillion": 13493.91
+"freqPerMillion": 13493.91,
+"cefr": "A1"
 },
 {
 "id": "core-011",
@@ -277,7 +288,8 @@
 "ipaAlt": [],
 "exampleEn": "I'm not ready yet.",
 "exampleFr": "Je ne suis pas encore prêt.",
-"freqPerMillion": 13700.98
+"freqPerMillion": 13700.98,
+"cefr": "A1"
 },
 {
 "id": "core-012",
@@ -306,7 +318,8 @@
 ],
 "exampleEn": "I think that's a great idea.",
 "exampleFr": "Je pense que c'est une super idée.",
-"freqPerMillion": 15146.0
+"freqPerMillion": 15146.0,
+"cefr": "A1"
 },
 {
 "id": "core-013",
@@ -330,7 +343,8 @@
 "ipaAlt": [],
 "exampleEn": "They live near the beach.",
 "exampleFr": "Ils habitent près de la plage.",
-"freqPerMillion": 13785.39
+"freqPerMillion": 13785.39,
+"cefr": "A1"
 },
 {
 "id": "core-014",
@@ -354,7 +368,8 @@
 "ipaAlt": [],
 "exampleEn": "We're going to the beach on Saturday.",
 "exampleFr": "On va à la plage samedi.",
-"freqPerMillion": 14058.04
+"freqPerMillion": 14058.04,
+"cefr": "A1"
 },
 {
 "id": "core-015",
@@ -377,7 +392,8 @@
 "ipaAlt": [],
 "exampleEn": "She's in the kitchen.",
 "exampleFr": "Elle est dans la cuisine.",
-"freqPerMillion": 18173.65
+"freqPerMillion": 18173.65,
+"cefr": "A1"
 },
 {
 "id": "core-016",
@@ -398,7 +414,8 @@
 "ipaAlt": [],
 "exampleEn": "He works at a café in the city.",
 "exampleFr": "Il travaille dans un café en ville.",
-"freqPerMillion": 10738.3
+"freqPerMillion": 10738.3,
+"cefr": "A1"
 },
 {
 "id": "core-017",
@@ -421,7 +438,8 @@
 "ipaAlt": [],
 "exampleEn": "I don't know where she is.",
 "exampleFr": "Je ne sais pas où elle est.",
-"freqPerMillion": 6683.0
+"freqPerMillion": 6683.0,
+"cefr": "A1"
 },
 {
 "id": "core-018",
@@ -449,7 +467,8 @@
 "ipaAlt": [],
 "exampleEn": "I'll get some bread on the way home.",
 "exampleFr": "Je vais prendre du pain en rentrant.",
-"freqPerMillion": 5853.25
+"freqPerMillion": 5853.25,
+"cefr": "A1"
 },
 {
 "id": "core-019",
@@ -475,7 +494,8 @@
 "ipaAlt": [],
 "exampleEn": "Let's go to the beach.",
 "exampleFr": "Allons à la plage.",
-"freqPerMillion": 6548.15
+"freqPerMillion": 6548.15,
+"cefr": "A1"
 },
 {
 "id": "core-020",
@@ -498,7 +518,8 @@
 "ipaAlt": [],
 "exampleEn": "It was raining, so we stayed home.",
 "exampleFr": "Il pleuvait, donc on est restés à la maison.",
-"freqPerMillion": 6112.59
+"freqPerMillion": 6112.59,
+"cefr": "A2"
 },
 {
 "id": "core-021",
@@ -522,7 +543,8 @@
 "ipaAlt": [],
 "exampleEn": "This coffee is really good.",
 "exampleFr": "Ce café est vraiment bon.",
-"freqPerMillion": 9015.97
+"freqPerMillion": 9015.97,
+"cefr": "A1"
 },
 {
 "id": "core-022",
@@ -540,7 +562,8 @@
 "ipaAlt": [],
 "exampleEn": "It's sunny, but it's cold.",
 "exampleFr": "Il fait beau, mais il fait froid.",
-"freqPerMillion": 6930.22
+"freqPerMillion": 6930.22,
+"cefr": "A1"
 },
 {
 "id": "core-023",
@@ -563,7 +586,8 @@
 "ipaAlt": [],
 "exampleEn": "Your keys are on the table.",
 "exampleFr": "Tes clés sont sur la table.",
-"freqPerMillion": 7812.92
+"freqPerMillion": 7812.92,
+"cefr": "A1"
 },
 {
 "id": "core-024",
@@ -586,7 +610,8 @@
 "ipaAlt": [],
 "exampleEn": "I need a coffee.",
 "exampleFr": "J'ai besoin d'un café.",
-"freqPerMillion": 5527.54
+"freqPerMillion": 5527.54,
+"cefr": "A1"
 },
 {
 "id": "core-025",
@@ -609,7 +634,8 @@
 ],
 "exampleEn": "This is for you.",
 "exampleFr": "C'est pour toi.",
-"freqPerMillion": 8469.82
+"freqPerMillion": 8469.82,
+"cefr": "A1"
 },
 {
 "id": "core-026",
@@ -634,7 +660,8 @@
 "ipaAlt": [],
 "exampleEn": "I think it's going to rain.",
 "exampleFr": "Je crois qu'il va pleuvoir.",
-"freqPerMillion": 5590.98
+"freqPerMillion": 5590.98,
+"cefr": "A1"
 },
 {
 "id": "core-027",
@@ -661,7 +688,8 @@
 "ipaAlt": [],
 "exampleEn": "I really like this song.",
 "exampleFr": "J'aime beaucoup cette chanson.",
-"freqPerMillion": 4190.62
+"freqPerMillion": 4190.62,
+"cefr": "A1"
 },
 {
 "id": "core-028",
@@ -684,7 +712,8 @@
 "ipaAlt": [],
 "exampleEn": "There's a good café over there.",
 "exampleFr": "Il y a un bon café là-bas.",
-"freqPerMillion": 5234.66
+"freqPerMillion": 5234.66,
+"cefr": "A1"
 },
 {
 "id": "core-029",
@@ -710,7 +739,8 @@
 ],
 "exampleEn": "I'll call you tonight.",
 "exampleFr": "Je t'appellerai ce soir.",
-"freqPerMillion": 5081.15
+"freqPerMillion": 5081.15,
+"cefr": "A1"
 },
 {
 "id": "core-030",
@@ -733,7 +763,8 @@
 "ipaAlt": [],
 "exampleEn": "What did she say?",
 "exampleFr": "Qu'est-ce qu'elle a dit ?",
-"freqPerMillion": 6023.85
+"freqPerMillion": 6023.85,
+"cefr": "A1"
 },
 {
 "id": "core-031",
@@ -754,7 +785,8 @@
 "ipaAlt": [],
 "exampleEn": "She's my sister.",
 "exampleFr": "C'est ma sœur.",
-"freqPerMillion": 4243.7
+"freqPerMillion": 4243.7,
+"cefr": "A1"
 },
 {
 "id": "core-032",
@@ -777,7 +809,8 @@
 "ipaAlt": [],
 "exampleEn": "What do you want to eat?",
 "exampleFr": "Qu'est-ce que tu veux manger ?",
-"freqPerMillion": 4873.06
+"freqPerMillion": 4873.06,
+"cefr": "A1"
 },
 {
 "id": "core-033",
@@ -799,7 +832,8 @@
 "ipaAlt": [],
 "exampleEn": "I just want to sleep.",
 "exampleFr": "Je veux juste dormir.",
-"freqPerMillion": 4037.55
+"freqPerMillion": 4037.55,
+"cefr": "A1"
 },
 {
 "id": "core-034",
@@ -827,7 +861,8 @@
 "ipaAlt": [],
 "exampleEn": "She speaks English really well.",
 "exampleFr": "Elle parle très bien anglais.",
-"freqPerMillion": 3847.5
+"freqPerMillion": 3847.5,
+"cefr": "A1"
 },
 {
 "id": "core-035",
@@ -852,7 +887,8 @@
 "ipaAlt": [],
 "exampleEn": "I have one brother and two sisters.",
 "exampleFr": "J'ai un frère et deux sœurs.",
-"freqPerMillion": 4001.88
+"freqPerMillion": 4001.88,
+"cefr": "A1"
 },
 {
 "id": "core-036",
@@ -870,7 +906,8 @@
 "ipaAlt": [],
 "exampleEn": "Do you want to come with me?",
 "exampleFr": "Tu veux venir avec moi ?",
-"freqPerMillion": 6052.93
+"freqPerMillion": 6052.93,
+"cefr": "A1"
 },
 {
 "id": "core-037",
@@ -890,7 +927,8 @@
 "ipaAlt": [],
 "exampleEn": "If you're hungry, there's food in the fridge.",
 "exampleFr": "Si tu as faim, il y a à manger dans le frigo.",
-"freqPerMillion": 3904.41
+"freqPerMillion": 3904.41,
+"cefr": "A1"
 },
 {
 "id": "core-038",
@@ -913,7 +951,8 @@
 ],
 "exampleEn": "I'll meet you at the station.",
 "exampleFr": "Je te retrouve à la gare.",
-"freqPerMillion": 4993.73
+"freqPerMillion": 4993.73,
+"cefr": "A1"
 },
 {
 "id": "core-039",
@@ -935,7 +974,8 @@
 "ipaAlt": [],
 "exampleEn": "All my friends are here.",
 "exampleFr": "Tous mes amis sont là.",
-"freqPerMillion": 3770.24
+"freqPerMillion": 3770.24,
+"cefr": "A1"
 },
 {
 "id": "core-040",
@@ -957,7 +997,8 @@
 "ipaAlt": [],
 "exampleEn": "What's the movie about?",
 "exampleFr": "De quoi parle le film ?",
-"freqPerMillion": 4829.99
+"freqPerMillion": 4829.99,
+"cefr": "A1"
 },
 {
 "id": "core-041",
@@ -977,7 +1018,8 @@
 "ipaAlt": [],
 "exampleEn": "Tea or coffee?",
 "exampleFr": "Thé ou café ?",
-"freqPerMillion": 3887.1
+"freqPerMillion": 3887.1,
+"cefr": "A1"
 },
 {
 "id": "core-042",
@@ -1002,7 +1044,8 @@
 ],
 "exampleEn": "She works as a nurse.",
 "exampleFr": "Elle travaille comme infirmière.",
-"freqPerMillion": 4966.0
+"freqPerMillion": 4966.0,
+"cefr": "A2"
 },
 {
 "id": "core-043",
@@ -1023,7 +1066,8 @@
 "ipaAlt": [],
 "exampleEn": "I would love to come.",
 "exampleFr": "J'adorerais venir.",
-"freqPerMillion": 3185.9
+"freqPerMillion": 3185.9,
+"cefr": "A1"
 },
 {
 "id": "core-044",
@@ -1044,7 +1088,8 @@
 "ipaAlt": [],
 "exampleEn": "We had lunch, then we went to the beach.",
 "exampleFr": "On a déjeuné, puis on est allés à la plage.",
-"freqPerMillion": 2265.59
+"freqPerMillion": 2265.59,
+"cefr": "A1"
 },
 {
 "id": "core-045",
@@ -1064,7 +1109,8 @@
 "ipaAlt": [],
 "exampleEn": "I'm tired because I worked late.",
 "exampleFr": "Je suis fatigué parce que j'ai travaillé tard.",
-"freqPerMillion": 2915.47
+"freqPerMillion": 2915.47,
+"cefr": "A1"
 },
 {
 "id": "core-046",
@@ -1097,7 +1143,8 @@
 "ipaAlt": [],
 "exampleEn": "You're right, it's too expensive.",
 "exampleFr": "Tu as raison, c'est trop cher.",
-"freqPerMillion": 2627.03
+"freqPerMillion": 2627.03,
+"cefr": "A1"
 },
 {
 "id": "core-047",
@@ -1124,7 +1171,8 @@
 ],
 "exampleEn": "Can you help me?",
 "exampleFr": "Tu peux m'aider ?",
-"freqPerMillion": 3030.91
+"freqPerMillion": 3030.91,
+"cefr": "A1"
 },
 {
 "id": "core-048",
@@ -1146,7 +1194,8 @@
 "ipaAlt": [],
 "exampleEn": "No, thanks, I'm fine.",
 "exampleFr": "Non merci, ça va.",
-"freqPerMillion": 2345.09
+"freqPerMillion": 2345.09,
+"cefr": "A1"
 },
 {
 "id": "core-049",
@@ -1173,7 +1222,8 @@
 "ipaAlt": [],
 "exampleEn": "Is she up yet?",
 "exampleFr": "Elle est déjà levée ?",
-"freqPerMillion": 2876.07
+"freqPerMillion": 2876.07,
+"cefr": "A2"
 },
 {
 "id": "core-050",
@@ -1203,7 +1253,8 @@
 "ipaAlt": [],
 "exampleEn": "What does this word mean?",
 "exampleFr": "Que veut dire ce mot ?",
-"freqPerMillion": 2178.91
+"freqPerMillion": 2178.91,
+"cefr": "A1"
 },
 {
 "id": "core-051",
@@ -1229,7 +1280,8 @@
 "ipaAlt": [],
 "exampleEn": "She's out at the moment.",
 "exampleFr": "Elle est sortie pour le moment.",
-"freqPerMillion": 2983.09
+"freqPerMillion": 2983.09,
+"cefr": "A1"
 },
 {
 "id": "core-052",
@@ -1255,7 +1307,8 @@
 "ipaAlt": [],
 "exampleEn": "I'll see you tomorrow.",
 "exampleFr": "On se voit demain.",
-"freqPerMillion": 2625.08
+"freqPerMillion": 2625.08,
+"cefr": "A1"
 },
 {
 "id": "core-053",
@@ -1277,7 +1330,8 @@
 "ipaAlt": [],
 "exampleEn": "There's one more thing I need to tell you.",
 "exampleFr": "Il y a encore une chose que je dois te dire.",
-"freqPerMillion": 2508.68
+"freqPerMillion": 2508.68,
+"cefr": "A1"
 },
 {
 "id": "core-054",
@@ -1299,7 +1353,8 @@
 "ipaAlt": [],
 "exampleEn": "Yes, I'd love some.",
 "exampleFr": "Oui, j'en veux bien.",
-"freqPerMillion": 1521.78
+"freqPerMillion": 1521.78,
+"cefr": "A1"
 },
 {
 "id": "core-055",
@@ -1322,7 +1377,8 @@
 "ipaAlt": [],
 "exampleEn": "When does the shop close?",
 "exampleFr": "Quand est-ce que le magasin ferme ?",
-"freqPerMillion": 2832.66
+"freqPerMillion": 2832.66,
+"cefr": "A1"
 },
 {
 "id": "core-056",
@@ -1343,7 +1399,8 @@
 "ipaAlt": [],
 "exampleEn": "I really like it here.",
 "exampleFr": "J'aime vraiment bien ici.",
-"freqPerMillion": 2308.57
+"freqPerMillion": 2308.57,
+"cefr": "A1"
 },
 {
 "id": "core-057",
@@ -1367,7 +1424,8 @@
 "ipaAlt": [],
 "exampleEn": "Do you want a drink?",
 "exampleFr": "Tu veux boire quelque chose ?",
-"freqPerMillion": 2375.4
+"freqPerMillion": 2375.4,
+"cefr": "A1"
 },
 {
 "id": "core-058",
@@ -1392,7 +1450,8 @@
 "ipaAlt": [],
 "exampleEn": "Can you come to my party?",
 "exampleFr": "Tu peux venir à ma fête ?",
-"freqPerMillion": 2542.3
+"freqPerMillion": 2542.3,
+"cefr": "A1"
 },
 {
 "id": "core-059",
@@ -1413,7 +1472,8 @@
 "ipaAlt": [],
 "exampleEn": "I have to go now.",
 "exampleFr": "Je dois y aller maintenant.",
-"freqPerMillion": 2751.82
+"freqPerMillion": 2751.82,
+"cefr": "A1"
 },
 {
 "id": "core-060",
@@ -1436,7 +1496,8 @@
 "ipaAlt": [],
 "exampleEn": "Would you like some water?",
 "exampleFr": "Tu veux de l'eau ?",
-"freqPerMillion": 2666.38
+"freqPerMillion": 2666.38,
+"cefr": "A1"
 },
 {
 "id": "core-061",
@@ -1459,7 +1520,8 @@
 "ipaAlt": [],
 "exampleEn": "This pizza is really good.",
 "exampleFr": "Cette pizza est vraiment bonne.",
-"freqPerMillion": 2180.9
+"freqPerMillion": 2180.9,
+"cefr": "A1"
 },
 {
 "id": "core-062",
@@ -1479,7 +1541,8 @@
 "ipaAlt": [],
 "exampleEn": "Where are you from?",
 "exampleFr": "D'où viens-tu ?",
-"freqPerMillion": 3759.43
+"freqPerMillion": 3759.43,
+"cefr": "A1"
 },
 {
 "id": "core-063",
@@ -1504,7 +1567,8 @@
 "ipaAlt": [],
 "exampleEn": "I don't have time today.",
 "exampleFr": "Je n'ai pas le temps aujourd'hui.",
-"freqPerMillion": 2391.39
+"freqPerMillion": 2391.39,
+"cefr": "A1"
 },
 {
 "id": "core-064",
@@ -1529,7 +1593,8 @@
 "ipaAlt": [],
 "exampleEn": "There were lots of people at the beach.",
 "exampleFr": "Il y avait beaucoup de monde à la plage.",
-"freqPerMillion": 3415.01
+"freqPerMillion": 3415.01,
+"cefr": "A1"
 },
 {
 "id": "core-065",
@@ -1547,7 +1612,8 @@
 "ipaAlt": [],
 "exampleEn": "It's very hot today.",
 "exampleFr": "Il fait très chaud aujourd'hui.",
-"freqPerMillion": 2624.72
+"freqPerMillion": 2624.72,
+"cefr": "A1"
 },
 {
 "id": "core-066",
@@ -1565,7 +1631,8 @@
 "ipaAlt": [],
 "exampleEn": "Yeah, sounds good.",
 "exampleFr": "Ouais, ça me va.",
-"freqPerMillion": 713.64
+"freqPerMillion": 713.64,
+"cefr": "A2"
 },
 {
 "id": "core-067",
@@ -1590,7 +1657,8 @@
 "ipaAlt": [],
 "exampleEn": "I'll make some coffee.",
 "exampleFr": "Je vais faire du café.",
-"freqPerMillion": 2442.42
+"freqPerMillion": 2442.42,
+"cefr": "A1"
 },
 {
 "id": "core-068",
@@ -1618,7 +1686,8 @@
 "ipaAlt": [],
 "exampleEn": "Look at the sunset!",
 "exampleFr": "Regarde le coucher de soleil !",
-"freqPerMillion": 1882.7
+"freqPerMillion": 1882.7,
+"cefr": "A1"
 },
 {
 "id": "core-069",
@@ -1638,7 +1707,8 @@
 "ipaAlt": [],
 "exampleEn": "We need two tickets, please.",
 "exampleFr": "Il nous faut deux billets, s'il vous plaît.",
-"freqPerMillion": 1583.73
+"freqPerMillion": 1583.73,
+"cefr": "A1"
 },
 {
 "id": "core-070",
@@ -1664,7 +1734,8 @@
 "ipaAlt": [],
 "exampleEn": "Take the bus, it's faster.",
 "exampleFr": "Prends le bus, c'est plus rapide.",
-"freqPerMillion": 2110.76
+"freqPerMillion": 2110.76,
+"cefr": "A1"
 },
 {
 "id": "core-071",
@@ -1684,7 +1755,8 @@
 "ipaAlt": [],
 "exampleEn": "Come here for a second.",
 "exampleFr": "Viens ici une seconde.",
-"freqPerMillion": 1962.44
+"freqPerMillion": 1962.44,
+"cefr": "A1"
 },
 {
 "id": "core-072",
@@ -1706,7 +1778,8 @@
 "ipaAlt": [],
 "exampleEn": "Which one do you want?",
 "exampleFr": "Lequel tu veux ?",
-"freqPerMillion": 1895.91
+"freqPerMillion": 1895.91,
+"cefr": "A1"
 },
 {
 "id": "core-073",
@@ -1726,7 +1799,8 @@
 "ipaAlt": [],
 "exampleEn": "Could you open the window?",
 "exampleFr": "Tu pourrais ouvrir la fenêtre ?",
-"freqPerMillion": 1692.45
+"freqPerMillion": 1692.45,
+"cefr": "A1"
 },
 {
 "id": "core-074",
@@ -1754,7 +1828,8 @@
 "ipaAlt": [],
 "exampleEn": "I work on weekends.",
 "exampleFr": "Je travaille le week-end.",
-"freqPerMillion": 1702.31
+"freqPerMillion": 1702.31,
+"cefr": "A1"
 },
 {
 "id": "core-075",
@@ -1777,7 +1852,8 @@
 "ipaAlt": [],
 "exampleEn": "Can I have some more bread?",
 "exampleFr": "Je peux avoir encore du pain ?",
-"freqPerMillion": 2462.78
+"freqPerMillion": 2462.78,
+"cefr": "A1"
 },
 {
 "id": "core-076",
@@ -1798,7 +1874,8 @@
 "ipaAlt": [],
 "exampleEn": "Who's that guy?",
 "exampleFr": "C'est qui ce type ?",
-"freqPerMillion": 2828.51
+"freqPerMillion": 2828.51,
+"cefr": "A1"
 },
 {
 "id": "core-077",
@@ -1820,7 +1897,8 @@
 "ipaAlt": [],
 "exampleEn": "The other shop is cheaper.",
 "exampleFr": "L'autre magasin est moins cher.",
-"freqPerMillion": 1927.94
+"freqPerMillion": 1927.94,
+"cefr": "A1"
 },
 {
 "id": "core-078",
@@ -1847,7 +1925,8 @@
 "ipaAlt": [],
 "exampleEn": "He always makes me laugh.",
 "exampleFr": "Il me fait toujours rire.",
-"freqPerMillion": 429.52
+"freqPerMillion": 429.52,
+"cefr": "A1"
 },
 {
 "id": "core-079",
@@ -1867,7 +1946,8 @@
 "ipaAlt": [],
 "exampleEn": "Where's the nearest bus stop?",
 "exampleFr": "Où est l'arrêt de bus le plus proche ?",
-"freqPerMillion": 1600.35
+"freqPerMillion": 1600.35,
+"cefr": "A1"
 },
 {
 "id": "core-080",
@@ -1895,7 +1975,8 @@
 ],
 "exampleEn": "Can I use your phone?",
 "exampleFr": "Je peux utiliser ton téléphone ?",
-"freqPerMillion": 1349.49
+"freqPerMillion": 1349.49,
+"cefr": "A1"
 },
 {
 "id": "core-081",
@@ -1913,7 +1994,8 @@
 "ipaAlt": [],
 "exampleEn": "I want to tell you something.",
 "exampleFr": "Je veux te dire quelque chose.",
-"freqPerMillion": 1314.62
+"freqPerMillion": 1314.62,
+"cefr": "A1"
 },
 {
 "id": "core-082",
@@ -1936,7 +2018,8 @@
 "ipaAlt": [],
 "exampleEn": "How are you?",
 "exampleFr": "Comment ça va ?",
-"freqPerMillion": 1669.39
+"freqPerMillion": 1669.39,
+"cefr": "A1"
 },
 {
 "id": "core-083",
@@ -1964,7 +2047,8 @@
 "ipaAlt": [],
 "exampleEn": "I'll be back in five minutes.",
 "exampleFr": "Je reviens dans cinq minutes.",
-"freqPerMillion": 1562.14
+"freqPerMillion": 1562.14,
+"cefr": "A1"
 },
 {
 "id": "core-084",
@@ -1984,7 +2068,8 @@
 "ipaAlt": [],
 "exampleEn": "I moved here last year.",
 "exampleFr": "J'ai emménagé ici l'année dernière.",
-"freqPerMillion": 2183.84
+"freqPerMillion": 2183.84,
+"cefr": "A1"
 },
 {
 "id": "core-085",
@@ -2006,7 +2091,8 @@
 "ipaAlt": [],
 "exampleEn": "I go to work by bus.",
 "exampleFr": "Je vais au travail en bus.",
-"freqPerMillion": 2351.36
+"freqPerMillion": 2351.36,
+"cefr": "A1"
 },
 {
 "id": "core-086",
@@ -2028,7 +2114,8 @@
 "ipaAlt": [],
 "exampleEn": "Do you have any questions?",
 "exampleFr": "Est-ce que vous avez des questions ?",
-"freqPerMillion": 1266.46
+"freqPerMillion": 1266.46,
+"cefr": "A1"
 },
 {
 "id": "core-087",
@@ -2050,7 +2137,8 @@
 "ipaAlt": [],
 "exampleEn": "Thanks a lot!",
 "exampleFr": "Merci beaucoup !",
-"freqPerMillion": 1607.02
+"freqPerMillion": 1607.02,
+"cefr": "A2"
 },
 {
 "id": "core-088",
@@ -2073,7 +2161,8 @@
 "ipaAlt": [],
 "exampleEn": "Is this the way to the beach?",
 "exampleFr": "C'est le chemin pour la plage ?",
-"freqPerMillion": 1679.82
+"freqPerMillion": 1679.82,
+"cefr": "A1"
 },
 {
 "id": "core-089",
@@ -2097,7 +2186,8 @@
 "ipaAlt": [],
 "exampleEn": "Put your bag on the chair.",
 "exampleFr": "Pose ton sac sur la chaise.",
-"freqPerMillion": 1108.95
+"freqPerMillion": 1108.95,
+"cefr": "A1"
 },
 {
 "id": "core-090",
@@ -2123,7 +2213,8 @@
 "ipaAlt": [],
 "exampleEn": "Please sit down.",
 "exampleFr": "Assieds-toi, s'il te plaît.",
-"freqPerMillion": 1171.37
+"freqPerMillion": 1171.37,
+"cefr": "A1"
 },
 {
 "id": "core-091",
@@ -2148,7 +2239,8 @@
 "ipaAlt": [],
 "exampleEn": "Can you give me a hand?",
 "exampleFr": "Tu peux me donner un coup de main ?",
-"freqPerMillion": 1282.8
+"freqPerMillion": 1282.8,
+"cefr": "A1"
 },
 {
 "id": "core-092",
@@ -2175,7 +2267,8 @@
 "ipaAlt": [],
 "exampleEn": "What sort of music do you like?",
 "exampleFr": "Quel genre de musique tu aimes ?",
-"freqPerMillion": 975.83
+"freqPerMillion": 975.83,
+"cefr": "B1"
 },
 {
 "id": "core-093",
@@ -2197,7 +2290,8 @@
 "ipaAlt": [],
 "exampleEn": "I've been here for three weeks.",
 "exampleFr": "Je suis ici depuis trois semaines.",
-"freqPerMillion": 988.88
+"freqPerMillion": 988.88,
+"cefr": "A1"
 },
 {
 "id": "core-094",
@@ -2221,7 +2315,8 @@
 "ipaAlt": [],
 "exampleEn": "How much is this?",
 "exampleFr": "C'est combien ?",
-"freqPerMillion": 1550.87
+"freqPerMillion": 1550.87,
+"cefr": "A1"
 },
 {
 "id": "core-095",
@@ -2242,7 +2337,8 @@
 "ipaAlt": [],
 "exampleEn": "Actually, I'm from France.",
 "exampleFr": "En fait, je viens de France.",
-"freqPerMillion": 1035.68
+"freqPerMillion": 1035.68,
+"cefr": "A2"
 },
 {
 "id": "core-096",
@@ -2269,7 +2365,8 @@
 "ipaAlt": [],
 "exampleEn": "I need a new phone.",
 "exampleFr": "J'ai besoin d'un nouveau téléphone.",
-"freqPerMillion": 1157.93
+"freqPerMillion": 1157.93,
+"cefr": "A2"
 },
 {
 "id": "core-097",
@@ -2295,7 +2392,8 @@
 "ipaAlt": [],
 "exampleEn": "Can we talk later?",
 "exampleFr": "On peut parler plus tard ?",
-"freqPerMillion": 1647.55
+"freqPerMillion": 1647.55,
+"cefr": "A1"
 },
 {
 "id": "core-098",
@@ -2321,7 +2419,8 @@
 "ipaAlt": [],
 "exampleEn": "What kind of food do you like?",
 "exampleFr": "Quel genre de cuisine tu aimes ?",
-"freqPerMillion": 1253.04
+"freqPerMillion": 1253.04,
+"cefr": "A1"
 },
 {
 "id": "core-099",
@@ -2346,7 +2445,8 @@
 "ipaAlt": [],
 "exampleEn": "Can you tell me the time?",
 "exampleFr": "Tu peux me dire l'heure ?",
-"freqPerMillion": 1174.38
+"freqPerMillion": 1174.38,
+"cefr": "A1"
 },
 {
 "id": "core-100",
@@ -2368,7 +2468,8 @@
 "ipaAlt": [],
 "exampleEn": "It only costs five dollars.",
 "exampleFr": "Ça ne coûte que cinq dollars.",
-"freqPerMillion": 1070.69
+"freqPerMillion": 1070.69,
+"cefr": "A1"
 },
 {
 "id": "core-101",
@@ -2390,7 +2491,8 @@
 "ipaAlt": [],
 "exampleEn": "You should try the fish here.",
 "exampleFr": "Tu devrais goûter le poisson ici.",
-"freqPerMillion": 1006.37
+"freqPerMillion": 1006.37,
+"cefr": "A1"
 },
 {
 "id": "core-102",
@@ -2416,7 +2518,8 @@
 "ipaAlt": [],
 "exampleEn": "The game is over.",
 "exampleFr": "Le match est fini.",
-"freqPerMillion": 1303.89
+"freqPerMillion": 1303.89,
+"cefr": "A1"
 },
 {
 "id": "core-103",
@@ -2441,7 +2544,8 @@
 "ipaAlt": [],
 "exampleEn": "I speak a little English.",
 "exampleFr": "Je parle un peu anglais.",
-"freqPerMillion": 979.22
+"freqPerMillion": 979.22,
+"cefr": "A1"
 },
 {
 "id": "core-104",
@@ -2461,7 +2565,8 @@
 "ipaAlt": [],
 "exampleEn": "Have a good day!",
 "exampleFr": "Bonne journée !",
-"freqPerMillion": 1254.33
+"freqPerMillion": 1254.33,
+"cefr": "A1"
 },
 {
 "id": "core-105",
@@ -2479,7 +2584,8 @@
 "ipaAlt": [],
 "exampleEn": "Get into the car.",
 "exampleFr": "Monte dans la voiture.",
-"freqPerMillion": 1336.88
+"freqPerMillion": 1336.88,
+"cefr": "A1"
 },
 {
 "id": "core-106",
@@ -2502,7 +2608,8 @@
 "ipaAlt": [],
 "exampleEn": "I'm a bit tired today.",
 "exampleFr": "Je suis un peu fatigué aujourd'hui.",
-"freqPerMillion": 656.16
+"freqPerMillion": 656.16,
+"cefr": "A2"
 },
 {
 "id": "core-107",
@@ -2529,7 +2636,8 @@
 "ipaAlt": [],
 "exampleEn": "Try this cake, it's delicious.",
 "exampleFr": "Goûte ce gâteau, il est délicieux.",
-"freqPerMillion": 1143.61
+"freqPerMillion": 1143.61,
+"cefr": "A2"
 },
 {
 "id": "core-108",
@@ -2547,7 +2655,8 @@
 "ipaAlt": [],
 "exampleEn": "Why are you late?",
 "exampleFr": "Pourquoi tu es en retard ?",
-"freqPerMillion": 963.02
+"freqPerMillion": 963.02,
+"cefr": "A1"
 },
 {
 "id": "core-109",
@@ -2576,7 +2685,8 @@
 "ipaAlt": [],
 "exampleEn": "Is that okay with you?",
 "exampleFr": "Ça te va ?",
-"freqPerMillion": 441.95
+"freqPerMillion": 441.95,
+"cefr": "A1"
 },
 {
 "id": "core-110",
@@ -2603,7 +2713,8 @@
 "ipaAlt": [],
 "exampleEn": "Turn off the lights, please.",
 "exampleFr": "Éteins les lumières, s'il te plaît.",
-"freqPerMillion": 831.66
+"freqPerMillion": 831.66,
+"cefr": "A2"
 },
 {
 "id": "core-111",
@@ -2628,7 +2739,8 @@
 "ipaAlt": [],
 "exampleEn": "Is this your first time in Australia?",
 "exampleFr": "C'est ta première fois en Australie ?",
-"freqPerMillion": 1229.54
+"freqPerMillion": 1229.54,
+"cefr": "A1"
 },
 {
 "id": "core-112",
@@ -2650,7 +2762,8 @@
 ],
 "exampleEn": "She's taller than me.",
 "exampleFr": "Elle est plus grande que moi.",
-"freqPerMillion": 1265.58
+"freqPerMillion": 1265.58,
+"cefr": "A1"
 },
 {
 "id": "core-113",
@@ -2670,7 +2783,8 @@
 "ipaAlt": [],
 "exampleEn": "It's too expensive.",
 "exampleFr": "C'est trop cher.",
-"freqPerMillion": 795.11
+"freqPerMillion": 795.11,
+"cefr": "A1"
 },
 {
 "id": "core-114",
@@ -2692,7 +2806,8 @@
 "ipaAlt": [],
 "exampleEn": "The bus comes every five minutes.",
 "exampleFr": "Le bus passe toutes les cinq minutes.",
-"freqPerMillion": 562.12
+"freqPerMillion": 562.12,
+"cefr": "A1"
 },
 {
 "id": "core-115",
@@ -2717,7 +2832,8 @@
 "ipaAlt": [],
 "exampleEn": "Let me help you.",
 "exampleFr": "Laisse-moi t'aider.",
-"freqPerMillion": 986.75
+"freqPerMillion": 986.75,
+"cefr": "A1"
 },
 {
 "id": "core-116",
@@ -2744,7 +2860,8 @@
 "ipaAlt": [],
 "exampleEn": "I'll call you later.",
 "exampleFr": "Je t'appellerai plus tard.",
-"freqPerMillion": 1276.6
+"freqPerMillion": 1276.6,
+"cefr": "A2"
 },
 {
 "id": "core-117",
@@ -2766,7 +2883,8 @@
 "ipaAlt": [],
 "exampleEn": "There are four people in my family.",
 "exampleFr": "Nous sommes quatre dans ma famille.",
-"freqPerMillion": 606.72
+"freqPerMillion": 606.72,
+"cefr": "A1"
 },
 {
 "id": "core-118",
@@ -2792,7 +2910,8 @@
 "ipaAlt": [],
 "exampleEn": "I saw her last week.",
 "exampleFr": "Je l'ai vue la semaine dernière.",
-"freqPerMillion": 1004.44
+"freqPerMillion": 1004.44,
+"cefr": "A2"
 },
 {
 "id": "core-119",
@@ -2819,7 +2938,8 @@
 "ipaAlt": [],
 "exampleEn": "What time does the movie start?",
 "exampleFr": "À quelle heure commence le film ?",
-"freqPerMillion": 863.3
+"freqPerMillion": 863.3,
+"cefr": "A1"
 },
 {
 "id": "core-120",
@@ -2839,7 +2959,8 @@
 "ipaAlt": [],
 "exampleEn": "It's quite cold this morning.",
 "exampleFr": "Il fait assez froid ce matin.",
-"freqPerMillion": 509.75
+"freqPerMillion": 509.75,
+"cefr": "A2"
 },
 {
 "id": "core-121",
@@ -2868,7 +2989,8 @@
 "ipaAlt": [],
 "exampleEn": "Are you still at work?",
 "exampleFr": "Tu es encore au travail ?",
-"freqPerMillion": 892.29
+"freqPerMillion": 892.29,
+"cefr": "A2"
 },
 {
 "id": "core-122",
@@ -2890,7 +3012,8 @@
 "ipaAlt": [],
 "exampleEn": "I can't find my keys.",
 "exampleFr": "Je ne trouve pas mes clés.",
-"freqPerMillion": 981.61
+"freqPerMillion": 981.61,
+"cefr": "A1"
 },
 {
 "id": "core-123",
@@ -2910,7 +3033,8 @@
 "ipaAlt": [],
 "exampleEn": "I'll probably be late.",
 "exampleFr": "Je serai probablement en retard.",
-"freqPerMillion": 572.06
+"freqPerMillion": 572.06,
+"cefr": "A2"
 },
 {
 "id": "core-124",
@@ -2931,7 +3055,8 @@
 "ipaAlt": [],
 "exampleEn": "Even my dad likes this song.",
 "exampleFr": "Même mon père aime cette chanson.",
-"freqPerMillion": 997.41
+"freqPerMillion": 997.41,
+"cefr": "A2"
 },
 {
 "id": "core-125",
@@ -2953,7 +3078,8 @@
 "ipaAlt": [],
 "exampleEn": "It might rain later.",
 "exampleFr": "Il va peut-être pleuvoir plus tard.",
-"freqPerMillion": 685.22
+"freqPerMillion": 685.22,
+"cefr": "A2"
 },
 {
 "id": "core-126",
@@ -2974,7 +3100,8 @@
 "ipaAlt": [],
 "exampleEn": "We drove through the city.",
 "exampleFr": "On a traversé la ville en voiture.",
-"freqPerMillion": 872.25
+"freqPerMillion": 872.25,
+"cefr": "A1"
 },
 {
 "id": "core-127",
@@ -3001,7 +3128,8 @@
 "ipaAlt": [],
 "exampleEn": "That's a good point.",
 "exampleFr": "C'est une bonne remarque.",
-"freqPerMillion": 861.68
+"freqPerMillion": 861.68,
+"cefr": "A1"
 },
 {
 "id": "core-128",
@@ -3021,7 +3149,8 @@
 "ipaAlt": [],
 "exampleEn": "Do you need anything?",
 "exampleFr": "Tu as besoin de quelque chose ?",
-"freqPerMillion": 534.5
+"freqPerMillion": 534.5,
+"cefr": "A1"
 },
 {
 "id": "core-129",
@@ -3041,7 +3170,8 @@
 "ipaAlt": [],
 "exampleEn": "See you next week!",
 "exampleFr": "À la semaine prochaine !",
-"freqPerMillion": 794.17
+"freqPerMillion": 794.17,
+"cefr": "A1"
 },
 {
 "id": "core-130",
@@ -3064,7 +3194,8 @@
 "ipaAlt": [],
 "exampleEn": "Call me before you leave.",
 "exampleFr": "Appelle-moi avant de partir.",
-"freqPerMillion": 811.75
+"freqPerMillion": 811.75,
+"cefr": "A1"
 },
 {
 "id": "core-131",
@@ -3084,7 +3215,8 @@
 "ipaAlt": [],
 "exampleEn": "Can you say that again?",
 "exampleFr": "Tu peux répéter ?",
-"freqPerMillion": 700.88
+"freqPerMillion": 700.88,
+"cefr": "A1"
 },
 {
 "id": "core-132",
@@ -3104,7 +3236,8 @@
 "ipaAlt": [],
 "exampleEn": "No problem, mate!",
 "exampleFr": "Pas de souci, mon pote !",
-"freqPerMillion": 779.01
+"freqPerMillion": 779.01,
+"cefr": "A1"
 },
 {
 "id": "core-133",
@@ -3122,7 +3255,8 @@
 "ipaAlt": [],
 "exampleEn": "I've never been to Sydney.",
 "exampleFr": "Je ne suis jamais allé à Sydney.",
-"freqPerMillion": 660.35
+"freqPerMillion": 660.35,
+"cefr": "A1"
 },
 {
 "id": "core-134",
@@ -3142,7 +3276,8 @@
 "ipaAlt": [],
 "exampleEn": "We have the same phone.",
 "exampleFr": "On a le même téléphone.",
-"freqPerMillion": 697.62
+"freqPerMillion": 697.62,
+"cefr": "A1"
 },
 {
 "id": "core-135",
@@ -3163,7 +3298,8 @@
 "ipaAlt": [],
 "exampleEn": "They have a big house near the beach.",
 "exampleFr": "Ils ont une grande maison près de la plage.",
-"freqPerMillion": 828.24
+"freqPerMillion": 828.24,
+"cefr": "A1"
 },
 {
 "id": "core-136",
@@ -3189,7 +3325,8 @@
 "ipaAlt": [],
 "exampleEn": "I don't feel well today.",
 "exampleFr": "Je ne me sens pas bien aujourd'hui.",
-"freqPerMillion": 828.73
+"freqPerMillion": 828.73,
+"cefr": "A1"
 },
 {
 "id": "core-137",
@@ -3213,7 +3350,8 @@
 "ipaAlt": [],
 "exampleEn": "Can I ask you a question?",
 "exampleFr": "Je peux te poser une question ?",
-"freqPerMillion": 754.37
+"freqPerMillion": 754.37,
+"cefr": "A1"
 },
 {
 "id": "core-138",
@@ -3236,7 +3374,8 @@
 "ipaAlt": [],
 "exampleEn": "That's a good question.",
 "exampleFr": "C'est une bonne question.",
-"freqPerMillion": 861.46
+"freqPerMillion": 861.46,
+"cefr": "A1"
 },
 {
 "id": "core-139",
@@ -3254,7 +3393,8 @@
 "ipaAlt": [],
 "exampleEn": "She speaks French and also Spanish.",
 "exampleFr": "Elle parle français et aussi espagnol.",
-"freqPerMillion": 1151.51
+"freqPerMillion": 1151.51,
+"cefr": "A1"
 },
 {
 "id": "core-140",
@@ -3272,7 +3412,8 @@
 "ipaAlt": [],
 "exampleEn": "Australian English is a bit different.",
 "exampleFr": "L'anglais australien est un peu différent.",
-"freqPerMillion": 712.54
+"freqPerMillion": 712.54,
+"cefr": "A1"
 },
 {
 "id": "core-141",
@@ -3297,7 +3438,8 @@
 "ipaAlt": [],
 "exampleEn": "Are you sure?",
 "exampleFr": "Tu es sûr ?",
-"freqPerMillion": 604.9
+"freqPerMillion": 604.9,
+"cefr": "A1"
 },
 {
 "id": "core-142",
@@ -3325,7 +3467,8 @@
 "ipaAlt": [],
 "exampleEn": "It was a long day.",
 "exampleFr": "C'était une longue journée.",
-"freqPerMillion": 739.85
+"freqPerMillion": 739.85,
+"cefr": "A1"
 },
 {
 "id": "core-143",
@@ -3345,7 +3488,8 @@
 "ipaAlt": [],
 "exampleEn": "She's always on time.",
 "exampleFr": "Elle est toujours à l'heure.",
-"freqPerMillion": 601.38
+"freqPerMillion": 601.38,
+"cefr": "A1"
 },
 {
 "id": "core-144",
@@ -3371,7 +3515,8 @@
 "ipaAlt": [],
 "exampleEn": "My kids walk to school.",
 "exampleFr": "Mes enfants vont à l'école à pied.",
-"freqPerMillion": 653.44
+"freqPerMillion": 653.44,
+"cefr": "A1"
 },
 {
 "id": "core-145",
@@ -3396,7 +3541,8 @@
 "ipaAlt": [],
 "exampleEn": "What happened?",
 "exampleFr": "Qu'est-ce qui s'est passé ?",
-"freqPerMillion": 842.23
+"freqPerMillion": 842.23,
+"cefr": "A1"
 },
 {
 "id": "core-146",
@@ -3421,7 +3567,8 @@
 "ipaAlt": [],
 "exampleEn": "Of course you can come!",
 "exampleFr": "Bien sûr que tu peux venir !",
-"freqPerMillion": 587.66
+"freqPerMillion": 587.66,
+"cefr": "A1"
 },
 {
 "id": "core-147",
@@ -3446,7 +3593,8 @@
 "ipaAlt": [],
 "exampleEn": "Keep the change.",
 "exampleFr": "Gardez la monnaie.",
-"freqPerMillion": 616.66
+"freqPerMillion": 616.66,
+"cefr": "A1"
 },
 {
 "id": "core-148",
@@ -3468,7 +3616,8 @@
 "ipaAlt": [],
 "exampleEn": "Can I have another coffee?",
 "exampleFr": "Je peux avoir un autre café ?",
-"freqPerMillion": 694.44
+"freqPerMillion": 694.44,
+"cefr": "A1"
 },
 {
 "id": "core-149",
@@ -3492,7 +3641,8 @@
 "ipaAlt": [],
 "exampleEn": "It's a nice day today.",
 "exampleFr": "Il fait beau aujourd'hui.",
-"freqPerMillion": 329.2
+"freqPerMillion": 329.2,
+"cefr": "A1"
 },
 {
 "id": "core-150",
@@ -3516,7 +3666,8 @@
 ],
 "exampleEn": "I read before I go to sleep.",
 "exampleFr": "Je lis avant de dormir.",
-"freqPerMillion": 509.62
+"freqPerMillion": 509.62,
+"cefr": "A1"
 },
 {
 "id": "core-151",
@@ -3538,7 +3689,8 @@
 "ipaAlt": [],
 "exampleEn": "It costs a hundred dollars.",
 "exampleFr": "Ça coûte cent dollars.",
-"freqPerMillion": 335.1
+"freqPerMillion": 335.1,
+"cefr": "A2"
 },
 {
 "id": "core-152",
@@ -3563,7 +3715,8 @@
 "ipaAlt": [],
 "exampleEn": "What time do you leave work?",
 "exampleFr": "À quelle heure tu quittes le travail ?",
-"freqPerMillion": 602.06
+"freqPerMillion": 602.06,
+"cefr": "A1"
 },
 {
 "id": "core-153",
@@ -3586,7 +3739,8 @@
 "ipaAlt": [],
 "exampleEn": "How many people are coming?",
 "exampleFr": "Combien de personnes viennent ?",
-"freqPerMillion": 931.8
+"freqPerMillion": 931.8,
+"cefr": "A1"
 },
 {
 "id": "core-154",
@@ -3606,7 +3760,8 @@
 "ipaAlt": [],
 "exampleEn": "Let's go to the beach after work.",
 "exampleFr": "Allons à la plage après le travail.",
-"freqPerMillion": 882.93
+"freqPerMillion": 882.93,
+"cefr": "A1"
 },
 {
 "id": "core-155",
@@ -3630,7 +3785,8 @@
 "ipaAlt": [],
 "exampleEn": "Thank you so much!",
 "exampleFr": "Merci beaucoup !",
-"freqPerMillion": 876.35
+"freqPerMillion": 876.35,
+"cefr": "A1"
 },
 {
 "id": "core-156",
@@ -3656,7 +3812,8 @@
 "ipaAlt": [],
 "exampleEn": "Nice to meet you.",
 "exampleFr": "Enchanté de faire ta connaissance.",
-"freqPerMillion": 558.47
+"freqPerMillion": 558.47,
+"cefr": "A1"
 },
 {
 "id": "core-157",
@@ -3680,7 +3837,8 @@
 "ipaAlt": [],
 "exampleEn": "Where can I put my stuff?",
 "exampleFr": "Où est-ce que je peux mettre mes affaires ?",
-"freqPerMillion": 343.39
+"freqPerMillion": 343.39,
+"cefr": "A2"
 },
 {
 "id": "core-158",
@@ -3707,7 +3865,8 @@
 "ipaAlt": [],
 "exampleEn": "Turn left at the end of the street.",
 "exampleFr": "Tourne à gauche au bout de la rue.",
-"freqPerMillion": 646.45
+"freqPerMillion": 646.45,
+"cefr": "A1"
 },
 {
 "id": "core-159",
@@ -3732,7 +3891,8 @@
 "ipaAlt": [],
 "exampleEn": "What's your phone number?",
 "exampleFr": "C'est quoi ton numéro de téléphone ?",
-"freqPerMillion": 678.71
+"freqPerMillion": 678.71,
+"cefr": "A1"
 },
 {
 "id": "core-160",
@@ -3757,7 +3917,8 @@
 "ipaAlt": [],
 "exampleEn": "Can you hear me?",
 "exampleFr": "Tu m'entends ?",
-"freqPerMillion": 776.63
+"freqPerMillion": 776.63,
+"cefr": "A1"
 },
 {
 "id": "core-161",
@@ -3778,7 +3939,8 @@
 "ipaAlt": [],
 "exampleEn": "The next bus is in ten minutes.",
 "exampleFr": "Le prochain bus est dans dix minutes.",
-"freqPerMillion": 653.47
+"freqPerMillion": 653.47,
+"cefr": "A2"
 },
 {
 "id": "core-162",
@@ -3800,7 +3962,8 @@
 "ipaAlt": [],
 "exampleEn": "I start work at six in the morning.",
 "exampleFr": "Je commence le travail à six heures du matin.",
-"freqPerMillion": 375.92
+"freqPerMillion": 375.92,
+"cefr": "A1"
 },
 {
 "id": "core-163",
@@ -3826,7 +3989,8 @@
 "ipaAlt": [],
 "exampleEn": "Can I pay by card?",
 "exampleFr": "Je peux payer par carte ?",
-"freqPerMillion": 526.26
+"freqPerMillion": 526.26,
+"cefr": "A1"
 },
 {
 "id": "core-164",
@@ -3846,7 +4010,8 @@
 "ipaAlt": [],
 "exampleEn": "I'm trying to save money.",
 "exampleFr": "J'essaie d'économiser de l'argent.",
-"freqPerMillion": 646.72
+"freqPerMillion": 646.72,
+"cefr": "A1"
 },
 {
 "id": "core-165",
@@ -3871,7 +4036,8 @@
 "ipaAlt": [],
 "exampleEn": "This is a great place for lunch.",
 "exampleFr": "C'est un super endroit pour déjeuner.",
-"freqPerMillion": 652.79
+"freqPerMillion": 652.79,
+"cefr": "A1"
 },
 {
 "id": "core-166",
@@ -3895,7 +4061,8 @@
 "ipaAlt": [],
 "exampleEn": "Do you remember her name?",
 "exampleFr": "Tu te souviens de son nom ?",
-"freqPerMillion": 418.41
+"freqPerMillion": 418.41,
+"cefr": "A1"
 },
 {
 "id": "core-167",
@@ -3913,7 +4080,8 @@
 "ipaAlt": [],
 "exampleEn": "Maybe we can meet tomorrow.",
 "exampleFr": "On peut peut-être se voir demain.",
-"freqPerMillion": 510.98
+"freqPerMillion": 510.98,
+"cefr": "A1"
 },
 {
 "id": "core-168",
@@ -3937,7 +4105,8 @@
 "ipaAlt": [],
 "exampleEn": "How old are you?",
 "exampleFr": "Quel âge as-tu ?",
-"freqPerMillion": 518.34
+"freqPerMillion": 518.34,
+"cefr": "A1"
 },
 {
 "id": "core-169",
@@ -3963,7 +4132,8 @@
 "ipaAlt": [],
 "exampleEn": "I have a driving test next week.",
 "exampleFr": "J'ai mon examen de conduite la semaine prochaine.",
-"freqPerMillion": 381.36
+"freqPerMillion": 381.36,
+"cefr": "A1"
 },
 {
 "id": "core-170",
@@ -3989,7 +4159,8 @@
 "ipaAlt": [],
 "exampleEn": "I'm going home.",
 "exampleFr": "Je rentre à la maison.",
-"freqPerMillion": 607.19
+"freqPerMillion": 607.19,
+"cefr": "A1"
 },
 {
 "id": "core-171",
@@ -4016,7 +4187,8 @@
 "ipaAlt": [],
 "exampleEn": "I need to change my shoes.",
 "exampleFr": "Je dois changer de chaussures.",
-"freqPerMillion": 710.65
+"freqPerMillion": 710.65,
+"cefr": "A1"
 },
 {
 "id": "core-172",
@@ -4038,7 +4210,8 @@
 "ipaAlt": [],
 "exampleEn": "It's cold. It's sunny, though.",
 "exampleFr": "Il fait froid. Il y a du soleil, quand même.",
-"freqPerMillion": 450.92
+"freqPerMillion": 450.92,
+"cefr": "B2"
 },
 {
 "id": "core-173",
@@ -4061,7 +4234,8 @@
 "ipaAlt": [],
 "exampleEn": "They bought a house in Fremantle.",
 "exampleFr": "Ils ont acheté une maison à Fremantle.",
-"freqPerMillion": 507.01
+"freqPerMillion": 507.01,
+"cefr": "A1"
 },
 {
 "id": "core-174",
@@ -4082,7 +4256,8 @@
 "ipaAlt": [],
 "exampleEn": "I need a new laptop.",
 "exampleFr": "J'ai besoin d'un nouvel ordinateur portable.",
-"freqPerMillion": 944.32
+"freqPerMillion": 944.32,
+"cefr": "A1"
 },
 {
 "id": "core-175",
@@ -4110,7 +4285,8 @@
 ],
 "exampleEn": "Where do you live?",
 "exampleFr": "Où est-ce que tu habites ?",
-"freqPerMillion": 611.69
+"freqPerMillion": 611.69,
+"cefr": "A1"
 },
 {
 "id": "core-176",
@@ -4135,7 +4311,8 @@
 "ipaAlt": [],
 "exampleEn": "This is the best part of the movie.",
 "exampleFr": "C'est le meilleur passage du film.",
-"freqPerMillion": 767.62
+"freqPerMillion": 767.62,
+"cefr": "A2"
 },
 {
 "id": "core-177",
@@ -4161,7 +4338,8 @@
 "ipaAlt": [],
 "exampleEn": "They have three kids.",
 "exampleFr": "Ils ont trois enfants.",
-"freqPerMillion": 495.93
+"freqPerMillion": 495.93,
+"cefr": "A1"
 },
 {
 "id": "core-178",
@@ -4188,7 +4366,8 @@
 "ipaAlt": [],
 "exampleEn": "I have no interest in politics.",
 "exampleFr": "La politique ne m'intéresse pas.",
-"freqPerMillion": 635.54
+"freqPerMillion": 635.54,
+"cefr": "A2"
 },
 {
 "id": "core-179",
@@ -4211,7 +4390,8 @@
 "ipaAlt": [],
 "exampleEn": "Is there a supermarket around here?",
 "exampleFr": "Il y a un supermarché dans le coin ?",
-"freqPerMillion": 658.85
+"freqPerMillion": 658.85,
+"cefr": "A1"
 },
 {
 "id": "core-180",
@@ -4235,7 +4415,8 @@
 "ipaAlt": [],
 "exampleEn": "Can you write it down for me?",
 "exampleFr": "Tu peux me l'écrire ?",
-"freqPerMillion": 592.81
+"freqPerMillion": 592.81,
+"cefr": "A1"
 },
 {
 "id": "core-181",
@@ -4258,7 +4439,8 @@
 "ipaAlt": [],
 "exampleEn": "Most people here are really friendly.",
 "exampleFr": "La plupart des gens ici sont très sympas.",
-"freqPerMillion": 857.84
+"freqPerMillion": 857.84,
+"cefr": "A1"
 },
 {
 "id": "core-182",
@@ -4285,7 +4467,8 @@
 "ipaAlt": [],
 "exampleEn": "We're moving to Melbourne next month.",
 "exampleFr": "On déménage à Melbourne le mois prochain.",
-"freqPerMillion": 546.98
+"freqPerMillion": 546.98,
+"cefr": "A2"
 },
 {
 "id": "core-183",
@@ -4303,7 +4486,8 @@
 "ipaAlt": [],
 "exampleEn": "I go for a swim every morning.",
 "exampleFr": "Je vais nager tous les matins.",
-"freqPerMillion": 581.99
+"freqPerMillion": 581.99,
+"cefr": "A1"
 },
 {
 "id": "core-184",
@@ -4323,7 +4507,8 @@
 "ipaAlt": [],
 "exampleEn": "What are you doing today?",
 "exampleFr": "Qu'est-ce que tu fais aujourd'hui ?",
-"freqPerMillion": 943.02
+"freqPerMillion": 943.02,
+"cefr": "A1"
 },
 {
 "id": "core-185",
@@ -4346,7 +4531,8 @@
 "ipaAlt": [],
 "exampleEn": "It's about twenty minutes by car.",
 "exampleFr": "C'est à environ vingt minutes en voiture.",
-"freqPerMillion": 97.64
+"freqPerMillion": 97.64,
+"cefr": "A1"
 },
 {
 "id": "core-186",
@@ -4366,7 +4552,8 @@
 "ipaAlt": [],
 "exampleEn": "Do you need anything else?",
 "exampleFr": "Tu as besoin d'autre chose ?",
-"freqPerMillion": 365.35
+"freqPerMillion": 365.35,
+"cefr": "A1"
 },
 {
 "id": "core-187",
@@ -4388,7 +4575,8 @@
 "ipaAlt": [],
 "exampleEn": "Anyway, I have to go.",
 "exampleFr": "Bref, je dois y aller.",
-"freqPerMillion": 211.17
+"freqPerMillion": 211.17,
+"cefr": "A2"
 },
 {
 "id": "core-188",
@@ -4408,7 +4596,8 @@
 "ipaAlt": [],
 "exampleEn": "She has one child.",
 "exampleFr": "Elle a un enfant.",
-"freqPerMillion": 589.79
+"freqPerMillion": 589.79,
+"cefr": "A1"
 },
 {
 "id": "core-189",
@@ -4430,7 +4619,8 @@
 "ipaAlt": [],
 "exampleEn": "I need to buy some groceries.",
 "exampleFr": "Je dois faire des courses.",
-"freqPerMillion": 385.9
+"freqPerMillion": 385.9,
+"cefr": "A1"
 },
 {
 "id": "core-190",
@@ -4452,7 +4642,8 @@
 "ipaAlt": [],
 "exampleEn": "In fact, I've never been there.",
 "exampleFr": "En fait, je n'y suis jamais allé.",
-"freqPerMillion": 616.86
+"freqPerMillion": 616.86,
+"cefr": "A2"
 },
 {
 "id": "core-191",
@@ -4479,7 +4670,8 @@
 "ipaAlt": [],
 "exampleEn": "Do you want to play cards?",
 "exampleFr": "Tu veux jouer aux cartes ?",
-"freqPerMillion": 636.68
+"freqPerMillion": 636.68,
+"cefr": "A1"
 },
 {
 "id": "core-192",
@@ -4503,7 +4695,8 @@
 "ipaAlt": [],
 "exampleEn": "That's a great idea!",
 "exampleFr": "C'est une super idée !",
-"freqPerMillion": 692.54
+"freqPerMillion": 692.54,
+"cefr": "A1"
 },
 {
 "id": "core-193",
@@ -4526,7 +4719,8 @@
 "ipaAlt": [],
 "exampleEn": "I'm looking for a job.",
 "exampleFr": "Je cherche du travail.",
-"freqPerMillion": 520.39
+"freqPerMillion": 520.39,
+"cefr": "A1"
 },
 {
 "id": "core-194",
@@ -4550,7 +4744,8 @@
 "ipaAlt": [],
 "exampleEn": "She seems really nice.",
 "exampleFr": "Elle a l'air vraiment sympa.",
-"freqPerMillion": 519.63
+"freqPerMillion": 519.63,
+"cefr": "A2"
 },
 {
 "id": "core-195",
@@ -4575,7 +4770,8 @@
 "ipaAlt": [],
 "exampleEn": "Who's that man?",
 "exampleFr": "Qui est cet homme ?",
-"freqPerMillion": 670.02
+"freqPerMillion": 670.02,
+"cefr": "A1"
 },
 {
 "id": "core-196",
@@ -4597,7 +4793,8 @@
 "ipaAlt": [],
 "exampleEn": "Did you sleep well last night?",
 "exampleFr": "Tu as bien dormi cette nuit ?",
-"freqPerMillion": 430.25
+"freqPerMillion": 430.25,
+"cefr": "A1"
 },
 {
 "id": "core-197",
@@ -4618,7 +4815,8 @@
 "ipaAlt": [],
 "exampleEn": "The beach is ten minutes away.",
 "exampleFr": "La plage est à dix minutes.",
-"freqPerMillion": 452.13
+"freqPerMillion": 452.13,
+"cefr": "A1"
 },
 {
 "id": "core-198",
@@ -4641,7 +4839,8 @@
 "ipaAlt": [],
 "exampleEn": "It costs ten pounds in London.",
 "exampleFr": "Ça coûte dix livres à Londres.",
-"freqPerMillion": 163.42
+"freqPerMillion": 163.42,
+"cefr": "B1"
 },
 {
 "id": "core-199",
@@ -4666,7 +4865,8 @@
 "ipaAlt": [],
 "exampleEn": "There's an issue with my visa.",
 "exampleFr": "Il y a un problème avec mon visa.",
-"freqPerMillion": 722.37
+"freqPerMillion": 722.37,
+"cefr": "A2"
 },
 {
 "id": "core-200",
@@ -4693,7 +4893,8 @@
 "ipaAlt": [],
 "exampleEn": "I'd love to have my own place.",
 "exampleFr": "J'adorerais avoir mon propre appart.",
-"freqPerMillion": 567.85
+"freqPerMillion": 567.85,
+"cefr": "A1"
 },
 {
 "id": "core-201",
@@ -4716,7 +4917,8 @@
 "ipaAlt": [],
 "exampleEn": "It's a nice area to live in.",
 "exampleFr": "C'est un quartier agréable pour vivre.",
-"freqPerMillion": 432.16
+"freqPerMillion": 432.16,
+"cefr": "A2"
 },
 {
 "id": "core-202",
@@ -4742,7 +4944,8 @@
 "ipaAlt": [],
 "exampleEn": "I'll be there in half an hour.",
 "exampleFr": "J'arrive dans une demi-heure.",
-"freqPerMillion": 344.09
+"freqPerMillion": 344.09,
+"cefr": "A1"
 },
 {
 "id": "core-203",
@@ -4767,7 +4970,8 @@
 "ipaAlt": [],
 "exampleEn": "The weather is bad today.",
 "exampleFr": "Il fait mauvais aujourd'hui.",
-"freqPerMillion": 464.99
+"freqPerMillion": 464.99,
+"cefr": "A1"
 },
 {
 "id": "core-204",
@@ -4798,7 +5002,8 @@
 "ipaAlt": [],
 "exampleEn": "It's my round, what are you drinking?",
 "exampleFr": "C'est ma tournée, tu bois quoi ?",
-"freqPerMillion": 194.88
+"freqPerMillion": 194.88,
+"cefr": "B2"
 },
 {
 "id": "core-205",
@@ -4820,7 +5025,8 @@
 "ipaAlt": [],
 "exampleEn": "The shop opens at eight.",
 "exampleFr": "Le magasin ouvre à huit heures.",
-"freqPerMillion": 261.13
+"freqPerMillion": 261.13,
+"cefr": "A1"
 },
 {
 "id": "core-206",
@@ -4848,7 +5054,8 @@
 "ipaAlt": [],
 "exampleEn": "Can I help you?",
 "exampleFr": "Je peux vous aider ?",
-"freqPerMillion": 634.21
+"freqPerMillion": 634.21,
+"cefr": "A1"
 },
 {
 "id": "core-207",
@@ -4870,7 +5077,8 @@
 "ipaAlt": [],
 "exampleEn": "I'll be ready in ten minutes.",
 "exampleFr": "Je serai prêt dans dix minutes.",
-"freqPerMillion": 223.86
+"freqPerMillion": 223.86,
+"cefr": "A1"
 },
 {
 "id": "core-208",
@@ -4892,7 +5100,8 @@
 "ipaAlt": [],
 "exampleEn": "I slept the whole day.",
 "exampleFr": "J'ai dormi toute la journée.",
-"freqPerMillion": 411.34
+"freqPerMillion": 411.34,
+"cefr": "A2"
 },
 {
 "id": "core-209",
@@ -4910,7 +5119,8 @@
 "ipaAlt": [],
 "exampleEn": "Everything is ready.",
 "exampleFr": "Tout est prêt.",
-"freqPerMillion": 354.76
+"freqPerMillion": 354.76,
+"cefr": "A1"
 },
 {
 "id": "core-210",
@@ -4930,7 +5140,8 @@
 "ipaAlt": [],
 "exampleEn": "Wait a minute, please.",
 "exampleFr": "Attends une minute, s'il te plaît.",
-"freqPerMillion": 367.42
+"freqPerMillion": 367.42,
+"cefr": "A1"
 },
 {
 "id": "core-211",
@@ -4950,7 +5161,8 @@
 "ipaAlt": [],
 "exampleEn": "May I come in?",
 "exampleFr": "Je peux entrer ?",
-"freqPerMillion": 619.81
+"freqPerMillion": 619.81,
+"cefr": "A1"
 },
 {
 "id": "core-212",
@@ -4970,7 +5182,8 @@
 "ipaAlt": [],
 "exampleEn": "I don't know whether he's coming.",
 "exampleFr": "Je ne sais pas s'il vient.",
-"freqPerMillion": 491.44
+"freqPerMillion": 491.44,
+"cefr": "B1"
 },
 {
 "id": "core-213",
@@ -4990,7 +5203,8 @@
 "ipaAlt": [],
 "exampleEn": "She's an international student.",
 "exampleFr": "C'est une étudiante internationale.",
-"freqPerMillion": 366.73
+"freqPerMillion": 366.73,
+"cefr": "A1"
 },
 {
 "id": "core-214",
@@ -5017,7 +5231,8 @@
 "ipaAlt": [],
 "exampleEn": "Guess what happened!",
 "exampleFr": "Devine ce qui s'est passé !",
-"freqPerMillion": 301.12
+"freqPerMillion": 301.12,
+"cefr": "A1"
 },
 {
 "id": "core-215",
@@ -5039,7 +5254,8 @@
 "ipaAlt": [],
 "exampleEn": "You can eat whatever you want.",
 "exampleFr": "Tu peux manger tout ce que tu veux.",
-"freqPerMillion": 285.37
+"freqPerMillion": 285.37,
+"cefr": "B1"
 },
 {
 "id": "core-216",
@@ -5059,7 +5275,8 @@
 "ipaAlt": [],
 "exampleEn": "Can you lend me your car?",
 "exampleFr": "Tu peux me prêter ta voiture ?",
-"freqPerMillion": 346.14
+"freqPerMillion": 346.14,
+"cefr": "A1"
 },
 {
 "id": "core-217",
@@ -5083,7 +5300,8 @@
 "ipaAlt": [],
 "exampleEn": "Can I sit here?",
 "exampleFr": "Je peux m'asseoir ici ?",
-"freqPerMillion": 338.01
+"freqPerMillion": 338.01,
+"cefr": "A1"
 },
 {
 "id": "core-218",
@@ -5105,7 +5323,8 @@
 "ipaAlt": [],
 "exampleEn": "Bring a jacket, it gets cold at night.",
 "exampleFr": "Apporte une veste, il fait froid la nuit.",
-"freqPerMillion": 518.97
+"freqPerMillion": 518.97,
+"cefr": "A1"
 },
 {
 "id": "core-219",
@@ -5132,7 +5351,8 @@
 "ipaAlt": [],
 "exampleEn": "I'm reading a great book.",
 "exampleFr": "Je lis un super livre.",
-"freqPerMillion": 545.65
+"freqPerMillion": 545.65,
+"cefr": "A1"
 },
 {
 "id": "core-220",
@@ -5156,7 +5376,8 @@
 "ipaAlt": [],
 "exampleEn": "What's your name?",
 "exampleFr": "Comment tu t'appelles ?",
-"freqPerMillion": 427.54
+"freqPerMillion": 427.54,
+"cefr": "A1"
 },
 {
 "id": "core-221",
@@ -5184,7 +5405,8 @@
 "ipaAlt": [],
 "exampleEn": "I go for a run before work.",
 "exampleFr": "Je vais courir avant le travail.",
-"freqPerMillion": 538.65
+"freqPerMillion": 538.65,
+"cefr": "A1"
 },
 {
 "id": "core-222",
@@ -5211,7 +5433,8 @@
 "ipaAlt": [],
 "exampleEn": "Can you show me how it works?",
 "exampleFr": "Tu peux me montrer comment ça marche ?",
-"freqPerMillion": 662.23
+"freqPerMillion": 662.23,
+"cefr": "A1"
 },
 {
 "id": "core-223",
@@ -5236,7 +5459,8 @@
 "ipaAlt": [],
 "exampleEn": "What's the English word for \"plage\"?",
 "exampleFr": "Comment on dit « plage » en anglais ?",
-"freqPerMillion": 389.55
+"freqPerMillion": 389.55,
+"cefr": "A1"
 },
 {
 "id": "core-224",
@@ -5260,7 +5484,8 @@
 "ipaAlt": [],
 "exampleEn": "I suppose you're right.",
 "exampleFr": "Je suppose que tu as raison.",
-"freqPerMillion": 236.13
+"freqPerMillion": 236.13,
+"cefr": "B1"
 },
 {
 "id": "core-225",
@@ -5280,7 +5505,8 @@
 "ipaAlt": [],
 "exampleEn": "I'm not a morning person.",
 "exampleFr": "Je ne suis pas du matin.",
-"freqPerMillion": 318.59
+"freqPerMillion": 318.59,
+"cefr": "A1"
 },
 {
 "id": "core-226",
@@ -5302,7 +5528,8 @@
 "ipaAlt": [],
 "exampleEn": "You must be tired after the flight.",
 "exampleFr": "Tu dois être fatigué après le vol.",
-"freqPerMillion": 294.58
+"freqPerMillion": 294.58,
+"cefr": "A1"
 },
 {
 "id": "core-227",
@@ -5325,7 +5552,8 @@
 "ipaAlt": [],
 "exampleEn": "Sorry, I don't understand.",
 "exampleFr": "Désolé, je ne comprends pas.",
-"freqPerMillion": 448.44
+"freqPerMillion": 448.44,
+"cefr": "A2"
 },
 {
 "id": "core-228",
@@ -5345,7 +5573,8 @@
 "ipaAlt": [],
 "exampleEn": "I've been here for a month.",
 "exampleFr": "Je suis ici depuis un mois.",
-"freqPerMillion": 485.03
+"freqPerMillion": 485.03,
+"cefr": "A1"
 },
 {
 "id": "core-229",
@@ -5367,7 +5596,8 @@
 "ipaAlt": [],
 "exampleEn": "Both of my parents work.",
 "exampleFr": "Mes deux parents travaillent.",
-"freqPerMillion": 517.86
+"freqPerMillion": 517.86,
+"cefr": "A1"
 },
 {
 "id": "core-230",
@@ -5387,7 +5617,8 @@
 "ipaAlt": [],
 "exampleEn": "I have no idea.",
 "exampleFr": "Je n'en ai aucune idée.",
-"freqPerMillion": 423.32
+"freqPerMillion": 423.32,
+"cefr": "A1"
 },
 {
 "id": "core-231",
@@ -5409,7 +5640,8 @@
 "ipaAlt": [],
 "exampleEn": "There are seven days in a week.",
 "exampleFr": "Il y a sept jours dans une semaine.",
-"freqPerMillion": 239.44
+"freqPerMillion": 239.44,
+"cefr": "A1"
 },
 {
 "id": "core-232",
@@ -5436,7 +5668,8 @@
 "ipaAlt": [],
 "exampleEn": "The test was pretty easy.",
 "exampleFr": "L'examen était plutôt facile.",
-"freqPerMillion": 360.72
+"freqPerMillion": 360.72,
+"cefr": "A2"
 },
 {
 "id": "core-233",
@@ -5454,7 +5687,8 @@
 "ipaAlt": [],
 "exampleEn": "Somebody left their phone here.",
 "exampleFr": "Quelqu'un a laissé son téléphone ici.",
-"freqPerMillion": 318.08
+"freqPerMillion": 318.08,
+"cefr": "A2"
 },
 {
 "id": "core-234",
@@ -5475,7 +5709,8 @@
 "ipaAlt": [],
 "exampleEn": "Will you be able to come?",
 "exampleFr": "Est-ce que tu pourras venir ?",
-"freqPerMillion": 437.39
+"freqPerMillion": 437.39,
+"cefr": "B1"
 },
 {
 "id": "core-235",
@@ -5497,7 +5732,8 @@
 "ipaAlt": [],
 "exampleEn": "There's an item missing from my order.",
 "exampleFr": "Il manque un article dans ma commande.",
-"freqPerMillion": 134.15
+"freqPerMillion": 134.15,
+"cefr": "A1"
 },
 {
 "id": "core-236",
@@ -5517,7 +5753,8 @@
 "ipaAlt": [],
 "exampleEn": "The drive takes about an hour.",
 "exampleFr": "Le trajet dure environ une heure.",
-"freqPerMillion": 419.56
+"freqPerMillion": 419.56,
+"cefr": "A1"
 },
 {
 "id": "core-237",
@@ -5542,7 +5779,8 @@
 "ipaAlt": [],
 "exampleEn": "The shop is on the other side of the road.",
 "exampleFr": "Le magasin est de l'autre côté de la route.",
-"freqPerMillion": 392.82
+"freqPerMillion": 392.82,
+"cefr": "A1"
 },
 {
 "id": "core-238",
@@ -5562,7 +5800,8 @@
 "ipaAlt": [],
 "exampleEn": "Do we have enough time?",
 "exampleFr": "Est-ce qu'on a assez de temps ?",
-"freqPerMillion": 390.5
+"freqPerMillion": 390.5,
+"cefr": "A2"
 },
 {
 "id": "core-239",
@@ -5583,7 +5822,8 @@
 "ipaAlt": [],
 "exampleEn": "Have you ever been to Bali?",
 "exampleFr": "Tu es déjà allé à Bali ?",
-"freqPerMillion": 383.39
+"freqPerMillion": 383.39,
+"cefr": "A2"
 },
 {
 "id": "core-240",
@@ -5601,7 +5841,8 @@
 "ipaAlt": [],
 "exampleEn": "It's important to wear sunscreen here.",
 "exampleFr": "C'est important de mettre de la crème solaire ici.",
-"freqPerMillion": 461.83
+"freqPerMillion": 461.83,
+"cefr": "A1"
 },
 {
 "id": "core-241",
@@ -5626,7 +5867,8 @@
 "ipaAlt": [],
 "exampleEn": "Sorry I'm late!",
 "exampleFr": "Désolé, je suis en retard !",
-"freqPerMillion": 511.67
+"freqPerMillion": 511.67,
+"cefr": "A1"
 },
 {
 "id": "core-242",
@@ -5654,7 +5896,8 @@
 "ipaAlt": [],
 "exampleEn": "Turn left at the lights.",
 "exampleFr": "Tourne à gauche au feu.",
-"freqPerMillion": 451.77
+"freqPerMillion": 451.77,
+"cefr": "A1"
 },
 {
 "id": "core-243",
@@ -5672,7 +5915,8 @@
 "ipaAlt": [],
 "exampleEn": "The café is between the bank and the pharmacy.",
 "exampleFr": "Le café est entre la banque et la pharmacie.",
-"freqPerMillion": 472.47
+"freqPerMillion": 472.47,
+"cefr": "A1"
 },
 {
 "id": "core-244",
@@ -5694,7 +5938,8 @@
 "ipaAlt": [],
 "exampleEn": "It costs about a thousand dollars.",
 "exampleFr": "Ça coûte environ mille dollars.",
-"freqPerMillion": 274.26
+"freqPerMillion": 274.26,
+"cefr": "A2"
 },
 {
 "id": "core-245",
@@ -5719,7 +5964,8 @@
 "ipaAlt": [],
 "exampleEn": "I'll be there in a few minutes.",
 "exampleFr": "J'arrive dans quelques minutes.",
-"freqPerMillion": 457.69
+"freqPerMillion": 457.69,
+"cefr": "A2"
 },
 {
 "id": "core-246",
@@ -5745,7 +5991,8 @@
 "ipaAlt": [],
 "exampleEn": "The school term starts next week.",
 "exampleFr": "Le trimestre scolaire commence la semaine prochaine.",
-"freqPerMillion": 419.61
+"freqPerMillion": 419.61,
+"cefr": "B1"
 },
 {
 "id": "core-247",
@@ -5763,7 +6010,8 @@
 "ipaAlt": [],
 "exampleEn": "Life is good here.",
 "exampleFr": "La vie est belle ici.",
-"freqPerMillion": 622.9
+"freqPerMillion": 622.9,
+"cefr": "A1"
 },
 {
 "id": "core-248",
@@ -5785,7 +6033,8 @@
 "ipaAlt": [],
 "exampleEn": "I start work at nine.",
 "exampleFr": "Je commence le travail à neuf heures.",
-"freqPerMillion": 177.59
+"freqPerMillion": 177.59,
+"cefr": "A1"
 },
 {
 "id": "core-249",
@@ -5807,7 +6056,8 @@
 "ipaAlt": [],
 "exampleEn": "I can't believe it!",
 "exampleFr": "Je n'arrive pas à y croire !",
-"freqPerMillion": 513.57
+"freqPerMillion": 513.57,
+"cefr": "A1"
 },
 {
 "id": "core-250",
@@ -5830,7 +6080,8 @@
 "ipaAlt": [],
 "exampleEn": "Is it far from here?",
 "exampleFr": "C'est loin d'ici ?",
-"freqPerMillion": 391.19
+"freqPerMillion": 391.19,
+"cefr": "A2"
 },
 {
 "id": "core-251",
@@ -5855,7 +6106,8 @@
 "ipaAlt": [],
 "exampleEn": "Sorry, I didn't mean to.",
 "exampleFr": "Désolé, je ne l'ai pas fait exprès.",
-"freqPerMillion": 180.48
+"freqPerMillion": 180.48,
+"cefr": "A1"
 },
 {
 "id": "core-252",
@@ -5882,7 +6134,8 @@
 "ipaAlt": [],
 "exampleEn": "Can you set the table?",
 "exampleFr": "Tu peux mettre la table ?",
-"freqPerMillion": 383.71
+"freqPerMillion": 383.71,
+"cefr": "A1"
 },
 {
 "id": "core-253",
@@ -5905,7 +6158,8 @@
 "ipaAlt": [],
 "exampleEn": "It's thirty degrees today.",
 "exampleFr": "Il fait trente degrés aujourd'hui.",
-"freqPerMillion": 73.86
+"freqPerMillion": 73.86,
+"cefr": "A1"
 },
 {
 "id": "core-254",
@@ -5923,7 +6177,8 @@
 "ipaAlt": [],
 "exampleEn": "There's nothing in the fridge.",
 "exampleFr": "Il n'y a rien dans le frigo.",
-"freqPerMillion": 306.03
+"freqPerMillion": 306.03,
+"cefr": "A1"
 },
 {
 "id": "core-255",
@@ -5950,7 +6205,8 @@
 "ipaAlt": [],
 "exampleEn": "Take an umbrella, just in case.",
 "exampleFr": "Prends un parapluie, au cas où.",
-"freqPerMillion": 549.28
+"freqPerMillion": 549.28,
+"cefr": "A1"
 },
 {
 "id": "core-256",
@@ -5972,7 +6228,8 @@
 "ipaAlt": [],
 "exampleEn": "Is that a real diamond?",
 "exampleFr": "C'est un vrai diamant ?",
-"freqPerMillion": 381.39
+"freqPerMillion": 381.39,
+"cefr": "A1"
 },
 {
 "id": "core-257",
@@ -5999,7 +6256,8 @@
 "ipaAlt": [],
 "exampleEn": "It's my second time here.",
 "exampleFr": "C'est ma deuxième fois ici.",
-"freqPerMillion": 356.37
+"freqPerMillion": 356.37,
+"cefr": "A1"
 },
 {
 "id": "core-258",
@@ -6026,7 +6284,8 @@
 "ipaAlt": [],
 "exampleEn": "Do you mind if I open the window?",
 "exampleFr": "Ça te dérange si j'ouvre la fenêtre ?",
-"freqPerMillion": 276.07
+"freqPerMillion": 276.07,
+"cefr": "A1"
 },
 {
 "id": "core-259",
@@ -6046,7 +6305,8 @@
 "ipaAlt": [],
 "exampleEn": "That woman is my boss.",
 "exampleFr": "Cette femme est ma patronne.",
-"freqPerMillion": 571.57
+"freqPerMillion": 571.57,
+"cefr": "A1"
 },
 {
 "id": "core-260",
@@ -6070,7 +6330,8 @@
 "ipaAlt": [],
 "exampleEn": "He's a really nice guy.",
 "exampleFr": "C'est un mec vraiment sympa.",
-"freqPerMillion": 378.57
+"freqPerMillion": 378.57,
+"cefr": "A1"
 },
 {
 "id": "core-261",
@@ -6092,7 +6353,8 @@
 "ipaAlt": [],
 "exampleEn": "Each room has its own bathroom.",
 "exampleFr": "Chaque chambre a sa propre salle de bain.",
-"freqPerMillion": 340.53
+"freqPerMillion": 340.53,
+"cefr": "A1"
 },
 {
 "id": "core-262",
@@ -6117,7 +6379,8 @@
 "ipaAlt": [],
 "exampleEn": "This exercise is really hard.",
 "exampleFr": "Cet exercice est vraiment difficile.",
-"freqPerMillion": 401.92
+"freqPerMillion": 401.92,
+"cefr": "A1"
 },
 {
 "id": "core-263",
@@ -6141,7 +6404,8 @@
 "ipaAlt": [],
 "exampleEn": "I'll be back in a couple of days.",
 "exampleFr": "Je reviens dans deux ou trois jours.",
-"freqPerMillion": 315.41
+"freqPerMillion": 315.41,
+"cefr": "A2"
 },
 {
 "id": "core-264",
@@ -6167,7 +6431,8 @@
 "ipaAlt": [],
 "exampleEn": "I love the beaches here.",
 "exampleFr": "J'adore les plages ici.",
-"freqPerMillion": 400.43
+"freqPerMillion": 400.43,
+"cefr": "A1"
 },
 {
 "id": "core-265",
@@ -6190,7 +6455,8 @@
 "ipaAlt": [],
 "exampleEn": "Do you speak French?",
 "exampleFr": "Tu parles français ?",
-"freqPerMillion": 476.61
+"freqPerMillion": 476.61,
+"cefr": "A1"
 },
 {
 "id": "core-266",
@@ -6212,7 +6478,8 @@
 "ipaAlt": [],
 "exampleEn": "We're a group of five.",
 "exampleFr": "On est un groupe de cinq.",
-"freqPerMillion": 457.2
+"freqPerMillion": 457.2,
+"cefr": "A1"
 },
 {
 "id": "core-267",
@@ -6230,7 +6497,8 @@
 "ipaAlt": [],
 "exampleEn": "Let's have dinner together.",
 "exampleFr": "Dînons ensemble.",
-"freqPerMillion": 339.93
+"freqPerMillion": 339.93,
+"cefr": "A1"
 },
 {
 "id": "core-268",
@@ -6252,7 +6520,8 @@
 "ipaAlt": [],
 "exampleEn": "The prices are really high here.",
 "exampleFr": "Les prix sont vraiment élevés ici.",
-"freqPerMillion": 487.82
+"freqPerMillion": 487.82,
+"cefr": "A1"
 },
 {
 "id": "core-269",
@@ -6274,7 +6543,8 @@
 "ipaAlt": [],
 "exampleEn": "She's my best friend.",
 "exampleFr": "C'est ma meilleure amie.",
-"freqPerMillion": 321.42
+"freqPerMillion": 321.42,
+"cefr": "A1"
 },
 {
 "id": "core-270",
@@ -6297,7 +6567,8 @@
 "ipaAlt": [],
 "exampleEn": "They're building a new hospital.",
 "exampleFr": "Ils construisent un nouvel hôpital.",
-"freqPerMillion": 382.22
+"freqPerMillion": 382.22,
+"cefr": "A1"
 },
 {
 "id": "core-271",
@@ -6317,7 +6588,8 @@
 "ipaAlt": [],
 "exampleEn": "My family lives overseas.",
 "exampleFr": "Ma famille vit à l'étranger.",
-"freqPerMillion": 479.38
+"freqPerMillion": 479.38,
+"cefr": "A1"
 },
 {
 "id": "core-272",
@@ -6344,7 +6616,8 @@
 "ipaAlt": [],
 "exampleEn": "Do you want to watch a movie?",
 "exampleFr": "Tu veux regarder un film ?",
-"freqPerMillion": 319.82
+"freqPerMillion": 319.82,
+"cefr": "A1"
 },
 {
 "id": "core-273",
@@ -6366,7 +6639,8 @@
 "ipaAlt": [],
 "exampleEn": "Australia is a huge country.",
 "exampleFr": "L'Australie est un pays immense.",
-"freqPerMillion": 745.25
+"freqPerMillion": 745.25,
+"cefr": "A2"
 },
 {
 "id": "core-274",
@@ -6392,7 +6666,8 @@
 "ipaAlt": [],
 "exampleEn": "What are your plans for the weekend?",
 "exampleFr": "Qu'est-ce que tu as prévu pour le week-end ?",
-"freqPerMillion": 391.31
+"freqPerMillion": 391.31,
+"cefr": "A1"
 },
 {
 "id": "core-275",
@@ -6415,7 +6690,8 @@
 "ipaAlt": [],
 "exampleEn": "It's fifty dollars a night.",
 "exampleFr": "C'est cinquante dollars la nuit.",
-"freqPerMillion": 68.77
+"freqPerMillion": 68.77,
+"cefr": "A1"
 },
 {
 "id": "core-276",
@@ -6437,7 +6713,8 @@
 "ipaAlt": [],
 "exampleEn": "Can you send me the address?",
 "exampleFr": "Tu peux m'envoyer l'adresse ?",
-"freqPerMillion": 320.0
+"freqPerMillion": 320.0,
+"cefr": "A2"
 },
 {
 "id": "core-277",
@@ -6457,7 +6734,8 @@
 "ipaAlt": [],
 "exampleEn": "Obviously, I said yes.",
 "exampleFr": "Évidemment, j'ai dit oui.",
-"freqPerMillion": 242.87
+"freqPerMillion": 242.87,
+"cefr": "B1"
 },
 {
 "id": "core-278",
@@ -6481,7 +6759,8 @@
 "ipaAlt": [],
 "exampleEn": "There's no reason to worry.",
 "exampleFr": "Il n'y a aucune raison de s'inquiéter.",
-"freqPerMillion": 355.98
+"freqPerMillion": 355.98,
+"cefr": "A1"
 },
 {
 "id": "core-279",
@@ -6503,7 +6782,8 @@
 "ipaAlt": [],
 "exampleEn": "Have you eaten yet?",
 "exampleFr": "Tu as déjà mangé ?",
-"freqPerMillion": 301.48
+"freqPerMillion": 301.48,
+"cefr": "A1"
 },
 {
 "id": "core-280",
@@ -6530,7 +6810,8 @@
 "ipaAlt": [],
 "exampleEn": "Let's walk to the beach.",
 "exampleFr": "Allons à la plage à pied.",
-"freqPerMillion": 264.69
+"freqPerMillion": 264.69,
+"cefr": "A1"
 },
 {
 "id": "core-281",
@@ -6556,7 +6837,8 @@
 ],
 "exampleEn": "I don't like it either.",
 "exampleFr": "Je n'aime pas ça non plus.",
-"freqPerMillion": 258.08
+"freqPerMillion": 258.08,
+"cefr": "B1"
 },
 {
 "id": "core-282",
@@ -6578,7 +6860,8 @@
 "ipaAlt": [],
 "exampleEn": "Wait for me!",
 "exampleFr": "Attends-moi !",
-"freqPerMillion": 266.83
+"freqPerMillion": 266.83,
+"cefr": "A1"
 },
 {
 "id": "core-283",
@@ -6596,7 +6879,8 @@
 "ipaAlt": [],
 "exampleEn": "I've already eaten.",
 "exampleFr": "J'ai déjà mangé.",
-"freqPerMillion": 319.99
+"freqPerMillion": 319.99,
+"cefr": "A1"
 },
 {
 "id": "core-284",
@@ -6616,7 +6900,8 @@
 "ipaAlt": [],
 "exampleEn": "She's a really kind person.",
 "exampleFr": "C'est une personne vraiment gentille.",
-"freqPerMillion": 360.43
+"freqPerMillion": 360.43,
+"cefr": "A1"
 },
 {
 "id": "core-285",
@@ -6643,7 +6928,8 @@
 "ipaAlt": [],
 "exampleEn": "Is the shop open on Sunday?",
 "exampleFr": "Le magasin est ouvert le dimanche ?",
-"freqPerMillion": 349.14
+"freqPerMillion": 349.14,
+"cefr": "A1"
 },
 {
 "id": "core-286",
@@ -6666,7 +6952,8 @@
 "ipaAlt": [],
 "exampleEn": "I go to the gym once a week.",
 "exampleFr": "Je vais à la salle de sport une fois par semaine.",
-"freqPerMillion": 318.96
+"freqPerMillion": 318.96,
+"cefr": "A1"
 },
 {
 "id": "core-287",
@@ -6692,7 +6979,8 @@
 "ipaAlt": [],
 "exampleEn": "It's a good deal.",
 "exampleFr": "C'est une bonne affaire.",
-"freqPerMillion": 416.22
+"freqPerMillion": 416.22,
+"cefr": "A2"
 },
 {
 "id": "core-288",
@@ -6719,7 +7007,8 @@
 "ipaAlt": [],
 "exampleEn": "I have to finish this report by Friday.",
 "exampleFr": "Je dois finir ce rapport d'ici vendredi.",
-"freqPerMillion": 586.12
+"freqPerMillion": 586.12,
+"cefr": "A2"
 },
 {
 "id": "core-289",
@@ -6745,7 +7034,8 @@
 "ipaAlt": [],
 "exampleEn": "Stop! The light is red.",
 "exampleFr": "Arrête-toi ! Le feu est rouge.",
-"freqPerMillion": 317.7
+"freqPerMillion": 317.7,
+"cefr": "A1"
 },
 {
 "id": "core-290",
@@ -6772,7 +7062,8 @@
 "ipaAlt": [],
 "exampleEn": "Wash your hands before eating.",
 "exampleFr": "Lave-toi les mains avant de manger.",
-"freqPerMillion": 322.12
+"freqPerMillion": 322.12,
+"cefr": "A1"
 },
 {
 "id": "core-291",
@@ -6795,7 +7086,8 @@
 "ipaAlt": [],
 "exampleEn": "Are you alright?",
 "exampleFr": "Ça va ?",
-"freqPerMillion": 57.41
+"freqPerMillion": 57.41,
+"cefr": "A2"
 },
 {
 "id": "core-292",
@@ -6815,7 +7107,8 @@
 "ipaAlt": [],
 "exampleEn": "Can you give me an example?",
 "exampleFr": "Tu peux me donner un exemple ?",
-"freqPerMillion": 318.74
+"freqPerMillion": 318.74,
+"cefr": "A1"
 },
 {
 "id": "core-293",
@@ -6842,7 +7135,8 @@
 "ipaAlt": [],
 "exampleEn": "The storm caused a lot of damage.",
 "exampleFr": "La tempête a causé beaucoup de dégâts.",
-"freqPerMillion": 278.5
+"freqPerMillion": 278.5,
+"cefr": "A2"
 },
 {
 "id": "core-294",
@@ -6860,7 +7154,8 @@
 "ipaAlt": [],
 "exampleEn": "I need more information about the job.",
 "exampleFr": "J'ai besoin de plus d'informations sur le poste.",
-"freqPerMillion": 290.67
+"freqPerMillion": 290.67,
+"cefr": "A1"
 },
 {
 "id": "core-295",
@@ -6886,7 +7181,8 @@
 "ipaAlt": [],
 "exampleEn": "Can I have the bill, please?",
 "exampleFr": "L'addition, s'il vous plaît.",
-"freqPerMillion": 177.61
+"freqPerMillion": 177.61,
+"cefr": "A1"
 },
 {
 "id": "core-296",
@@ -6904,7 +7200,8 @@
 "ipaAlt": [],
 "exampleEn": "That's exactly what I wanted.",
 "exampleFr": "C'est exactement ce que je voulais.",
-"freqPerMillion": 302.25
+"freqPerMillion": 302.25,
+"cefr": "A2"
 },
 {
 "id": "core-297",
@@ -6922,7 +7219,8 @@
 "ipaAlt": [],
 "exampleEn": "I arrived two weeks ago.",
 "exampleFr": "Je suis arrivé il y a deux semaines.",
-"freqPerMillion": 435.54
+"freqPerMillion": 435.54,
+"cefr": "A1"
 },
 {
 "id": "core-298",
@@ -6946,7 +7244,8 @@
 "ipaAlt": [],
 "exampleEn": "My room is upstairs.",
 "exampleFr": "Ma chambre est à l'étage.",
-"freqPerMillion": 231.98
+"freqPerMillion": 231.98,
+"cefr": "A1"
 },
 {
 "id": "core-299",
@@ -6972,7 +7271,8 @@
 "ipaAlt": [],
 "exampleEn": "I don't know the answer.",
 "exampleFr": "Je ne connais pas la réponse.",
-"freqPerMillion": 285.04
+"freqPerMillion": 285.04,
+"cefr": "A1"
 },
 {
 "id": "core-300",
@@ -6996,7 +7296,8 @@
 "ipaAlt": [],
 "exampleEn": "We spent the day at the beach.",
 "exampleFr": "On a passé la journée à la plage.",
-"freqPerMillion": 352.99
+"freqPerMillion": 352.99,
+"cefr": "A1"
 },
 {
 "id": "core-301",
@@ -7020,7 +7321,8 @@
 "ipaAlt": [],
 "exampleEn": "How long are you staying in Perth?",
 "exampleFr": "Tu restes combien de temps à Perth ?",
-"freqPerMillion": 306.33
+"freqPerMillion": 306.33,
+"cefr": "A1"
 },
 {
 "id": "core-302",
@@ -7040,7 +7342,8 @@
 "ipaAlt": [],
 "exampleEn": "I'd rather stay home tonight.",
 "exampleFr": "Je préfère rester à la maison ce soir.",
-"freqPerMillion": 229.51
+"freqPerMillion": 229.51,
+"cefr": "A2"
 },
 {
 "id": "core-303",
@@ -7060,7 +7363,8 @@
 "ipaAlt": [],
 "exampleEn": "I'll certainly be there.",
 "exampleFr": "Je serai certainement là.",
-"freqPerMillion": 337.31
+"freqPerMillion": 337.31,
+"cefr": "A2"
 },
 {
 "id": "core-304",
@@ -7087,7 +7391,8 @@
 "ipaAlt": [],
 "exampleEn": "I'll wait here while you get changed.",
 "exampleFr": "J'attends ici pendant que tu te changes.",
-"freqPerMillion": 356.46
+"freqPerMillion": 356.46,
+"cefr": "A2"
 },
 {
 "id": "core-305",
@@ -7105,7 +7410,8 @@
 "ipaAlt": [],
 "exampleEn": "Everybody loves summer here.",
 "exampleFr": "Tout le monde adore l'été ici.",
-"freqPerMillion": 271.56
+"freqPerMillion": 271.56,
+"cefr": "A1"
 },
 {
 "id": "core-306",
@@ -7134,7 +7440,8 @@
 "ipaAlt": [],
 "exampleEn": "Is that clear?",
 "exampleFr": "C'est clair ?",
-"freqPerMillion": 277.61
+"freqPerMillion": 277.61,
+"cefr": "A2"
 },
 {
 "id": "core-307",
@@ -7157,7 +7464,8 @@
 "ipaAlt": [],
 "exampleEn": "What do you want to eat tonight?",
 "exampleFr": "Tu veux manger quoi ce soir ?",
-"freqPerMillion": 203.16
+"freqPerMillion": 203.16,
+"cefr": "A1"
 },
 {
 "id": "core-308",
@@ -7175,7 +7483,8 @@
 "ipaAlt": [],
 "exampleEn": "Perhaps we should leave early.",
 "exampleFr": "On devrait peut-être partir tôt.",
-"freqPerMillion": 228.75
+"freqPerMillion": 228.75,
+"cefr": "A2"
 },
 {
 "id": "core-309",
@@ -7201,7 +7510,8 @@
 "ipaAlt": [],
 "exampleEn": "I have to get up early tomorrow.",
 "exampleFr": "Je dois me lever tôt demain.",
-"freqPerMillion": 400.76
+"freqPerMillion": 400.76,
+"cefr": "A2"
 },
 {
 "id": "core-310",
@@ -7229,7 +7539,8 @@
 "ipaAlt": [],
 "exampleEn": "I don't care.",
 "exampleFr": "Ça m'est égal.",
-"freqPerMillion": 339.39
+"freqPerMillion": 339.39,
+"cefr": "B1"
 },
 {
 "id": "core-311",
@@ -7255,7 +7566,8 @@
 "ipaAlt": [],
 "exampleEn": "Pick any seat you like.",
 "exampleFr": "Choisis la place que tu veux.",
-"freqPerMillion": 235.08
+"freqPerMillion": 235.08,
+"cefr": "A1"
 },
 {
 "id": "core-312",
@@ -7281,7 +7593,8 @@
 "ipaAlt": [],
 "exampleEn": "What type of visa do you have?",
 "exampleFr": "Quel type de visa as-tu ?",
-"freqPerMillion": 192.27
+"freqPerMillion": 192.27,
+"cefr": "A1"
 },
 {
 "id": "core-313",
@@ -7308,7 +7621,8 @@
 "ipaAlt": [],
 "exampleEn": "It doesn't matter.",
 "exampleFr": "Ce n'est pas grave.",
-"freqPerMillion": 290.98
+"freqPerMillion": 290.98,
+"cefr": "A2"
 },
 {
 "id": "core-314",
@@ -7328,7 +7642,8 @@
 "ipaAlt": [],
 "exampleEn": "It was such a nice day.",
 "exampleFr": "C'était une si belle journée.",
-"freqPerMillion": 335.57
+"freqPerMillion": 335.57,
+"cefr": "A2"
 },
 {
 "id": "core-315",
@@ -7352,7 +7667,8 @@
 "ipaAlt": [],
 "exampleEn": "The shop is open until nine.",
 "exampleFr": "Le magasin est ouvert jusqu'à neuf heures.",
-"freqPerMillion": 294.61
+"freqPerMillion": 294.61,
+"cefr": "A1"
 },
 {
 "id": "core-316",
@@ -7378,7 +7694,8 @@
 "ipaAlt": [],
 "exampleEn": "I hope you feel better soon.",
 "exampleFr": "J'espère que tu iras mieux bientôt.",
-"freqPerMillion": 366.75
+"freqPerMillion": 366.75,
+"cefr": "B1"
 },
 {
 "id": "core-317",
@@ -7402,7 +7719,8 @@
 "ipaAlt": [],
 "exampleEn": "What's your level of English?",
 "exampleFr": "Quel est ton niveau d'anglais ?",
-"freqPerMillion": 287.38
+"freqPerMillion": 287.38,
+"cefr": "A2"
 },
 {
 "id": "core-318",
@@ -7423,7 +7741,8 @@
 "ipaAlt": [],
 "exampleEn": "Can I have a small coffee?",
 "exampleFr": "Je peux avoir un petit café ?",
-"freqPerMillion": 309.71
+"freqPerMillion": 309.71,
+"cefr": "A1"
 },
 {
 "id": "core-319",
@@ -7448,7 +7767,8 @@
 "ipaAlt": [],
 "exampleEn": "There's a long line at the bank.",
 "exampleFr": "Il y a une longue file d'attente à la banque.",
-"freqPerMillion": 366.18
+"freqPerMillion": 366.18,
+"cefr": "A1"
 },
 {
 "id": "core-320",
@@ -7478,7 +7798,8 @@
 ],
 "exampleEn": "What time do you close?",
 "exampleFr": "Vous fermez à quelle heure ?",
-"freqPerMillion": 379.41
+"freqPerMillion": 379.41,
+"cefr": "A1"
 },
 {
 "id": "core-321",
@@ -7504,7 +7825,8 @@
 "ipaAlt": [],
 "exampleEn": "My phone is almost dead.",
 "exampleFr": "Mon téléphone n'a presque plus de batterie.",
-"freqPerMillion": 247.29
+"freqPerMillion": 247.29,
+"cefr": "A1"
 },
 {
 "id": "core-322",
@@ -7526,7 +7848,8 @@
 "ipaAlt": [],
 "exampleEn": "It takes at least an hour.",
 "exampleFr": "Ça prend au moins une heure.",
-"freqPerMillion": 326.79
+"freqPerMillion": 326.79,
+"cefr": "B1"
 },
 {
 "id": "core-323",
@@ -7546,7 +7869,8 @@
 "ipaAlt": [],
 "exampleEn": "The cat is under the bed.",
 "exampleFr": "Le chat est sous le lit.",
-"freqPerMillion": 353.85
+"freqPerMillion": 353.85,
+"cefr": "A1"
 },
 {
 "id": "core-324",
@@ -7564,7 +7888,8 @@
 "ipaAlt": [],
 "exampleEn": "Someone is at the door.",
 "exampleFr": "Il y a quelqu'un à la porte.",
-"freqPerMillion": 298.25
+"freqPerMillion": 298.25,
+"cefr": "A1"
 },
 {
 "id": "core-325",
@@ -7586,7 +7911,8 @@
 "ipaAlt": [],
 "exampleEn": "The public transport system is good here.",
 "exampleFr": "Le réseau de transports en commun est bon ici.",
-"freqPerMillion": 381.55
+"freqPerMillion": 381.55,
+"cefr": "A2"
 },
 {
 "id": "core-326",
@@ -7611,7 +7937,8 @@
 "ipaAlt": [],
 "exampleEn": "How much does it cost?",
 "exampleFr": "Combien ça coûte ?",
-"freqPerMillion": 250.9
+"freqPerMillion": 250.9,
+"cefr": "A2"
 },
 {
 "id": "core-327",
@@ -7638,7 +7965,8 @@
 "ipaAlt": [],
 "exampleEn": "Western Australia is the biggest state.",
 "exampleFr": "L'Australie-Occidentale est le plus grand État.",
-"freqPerMillion": 606.58
+"freqPerMillion": 606.58,
+"cefr": "A2"
 },
 {
 "id": "core-328",
@@ -7656,7 +7984,8 @@
 "ipaAlt": [],
 "exampleEn": "Sometimes I work on Sundays.",
 "exampleFr": "Parfois, je travaille le dimanche.",
-"freqPerMillion": 248.84
+"freqPerMillion": 248.84,
+"cefr": "B1"
 },
 {
 "id": "core-329",
@@ -7680,7 +8009,8 @@
 "ipaAlt": [],
 "exampleEn": "Do you have a piece of paper?",
 "exampleFr": "Tu as une feuille de papier ?",
-"freqPerMillion": 178.52
+"freqPerMillion": 178.52,
+"cefr": "A1"
 },
 {
 "id": "core-330",
@@ -7709,7 +8039,8 @@
 "ipaAlt": [],
 "exampleEn": "The view from the top is amazing.",
 "exampleFr": "La vue d'en haut est incroyable.",
-"freqPerMillion": 292.29
+"freqPerMillion": 292.29,
+"cefr": "A1"
 },
 {
 "id": "core-331",
@@ -7735,7 +8066,8 @@
 "ipaAlt": [],
 "exampleEn": "Thanks for your concern.",
 "exampleFr": "Merci de t'inquiéter pour moi.",
-"freqPerMillion": 305.18
+"freqPerMillion": 305.18,
+"cefr": "A2"
 },
 {
 "id": "core-332",
@@ -7757,7 +8089,8 @@
 "ipaAlt": [],
 "exampleEn": "I've lived here since March.",
 "exampleFr": "J'habite ici depuis mars.",
-"freqPerMillion": 372.38
+"freqPerMillion": 372.38,
+"cefr": "A2"
 },
 {
 "id": "core-333",
@@ -7784,6 +8117,7 @@
 "exampleEn": "Is it true?",
 "exampleFr": "C'est vrai ?",
 "freqPerMillion": 314.65,
+"cefr": "A1",
 "freqEstimated": true
 },
 {
@@ -7811,7 +8145,8 @@
 "ipaAlt": [],
 "exampleEn": "Are you ready to order?",
 "exampleFr": "Vous êtes prêts à commander ?",
-"freqPerMillion": 256.92
+"freqPerMillion": 256.92,
+"cefr": "A1"
 },
 {
 "id": "core-335",
@@ -7831,7 +8166,8 @@
 "ipaAlt": [],
 "exampleEn": "The government is changing the rules.",
 "exampleFr": "Le gouvernement change les règles.",
-"freqPerMillion": 610.04
+"freqPerMillion": 610.04,
+"cefr": "A2"
 },
 {
 "id": "core-336",
@@ -7857,7 +8193,8 @@
 "ipaAlt": [],
 "exampleEn": "That sounds great!",
 "exampleFr": "Ça a l'air génial !",
-"freqPerMillion": 260.97
+"freqPerMillion": 260.97,
+"cefr": "A2"
 },
 {
 "id": "core-337",
@@ -7879,7 +8216,8 @@
 "ipaAlt": [],
 "exampleEn": "See you tomorrow!",
 "exampleFr": "À demain !",
-"freqPerMillion": 213.32
+"freqPerMillion": 213.32,
+"cefr": "A1"
 },
 {
 "id": "core-338",
@@ -7901,7 +8239,8 @@
 "ipaAlt": [],
 "exampleEn": "The service here is really fast.",
 "exampleFr": "Le service est très rapide ici.",
-"freqPerMillion": 256.18
+"freqPerMillion": 256.18,
+"cefr": "B1"
 },
 {
 "id": "core-339",
@@ -7926,7 +8265,8 @@
 "ipaAlt": [],
 "exampleEn": "Sorry, wrong number.",
 "exampleFr": "Désolé, mauvais numéro.",
-"freqPerMillion": 230.43
+"freqPerMillion": 230.43,
+"cefr": "A1"
 },
 {
 "id": "core-340",
@@ -7948,7 +8288,8 @@
 "ipaAlt": [],
 "exampleEn": "I always lose my keys.",
 "exampleFr": "Je perds toujours mes clés.",
-"freqPerMillion": 350.87
+"freqPerMillion": 350.87,
+"cefr": "A2"
 },
 {
 "id": "core-341",
@@ -7969,7 +8310,8 @@
 "ipaAlt": [],
 "exampleEn": "The first lesson is easy.",
 "exampleFr": "La première leçon est facile.",
-"freqPerMillion": 220.62
+"freqPerMillion": 220.62,
+"cefr": "A1"
 },
 {
 "id": "core-342",
@@ -7995,7 +8337,8 @@
 "ipaAlt": [],
 "exampleEn": "Don't forget to drink water.",
 "exampleFr": "N'oublie pas de boire de l'eau.",
-"freqPerMillion": 260.93
+"freqPerMillion": 260.93,
+"cefr": "A1"
 },
 {
 "id": "core-343",
@@ -8026,7 +8369,8 @@
 "ipaAlt": [],
 "exampleEn": "It's a great TV program.",
 "exampleFr": "C'est une super émission de télé.",
-"freqPerMillion": 414.98
+"freqPerMillion": 414.98,
+"cefr": "A1"
 },
 {
 "id": "core-344",
@@ -8050,7 +8394,8 @@
 "ipaAlt": [],
 "exampleEn": "My parents are visiting next month.",
 "exampleFr": "Mes parents viennent me voir le mois prochain.",
-"freqPerMillion": 252.5
+"freqPerMillion": 252.5,
+"cefr": "A1"
 },
 {
 "id": "core-345",
@@ -8078,7 +8423,8 @@
 "ipaAlt": [],
 "exampleEn": "Be careful, don't break it.",
 "exampleFr": "Fais attention, ne le casse pas.",
-"freqPerMillion": 294.69
+"freqPerMillion": 294.69,
+"cefr": "A1"
 },
 {
 "id": "core-346",
@@ -8102,7 +8448,8 @@
 "ipaAlt": [],
 "exampleEn": "I agree with you.",
 "exampleFr": "Je suis d'accord avec toi.",
-"freqPerMillion": 276.43
+"freqPerMillion": 276.43,
+"cefr": "A1"
 },
 {
 "id": "core-347",
@@ -8125,7 +8472,8 @@
 "ipaAlt": [],
 "exampleEn": "She runs her own business.",
 "exampleFr": "Elle dirige sa propre entreprise.",
-"freqPerMillion": 362.91
+"freqPerMillion": 362.91,
+"cefr": "A1"
 },
 {
 "id": "core-348",
@@ -8146,7 +8494,8 @@
 "ipaAlt": [],
 "exampleEn": "I'll reply within 24 hours.",
 "exampleFr": "Je répondrai d'ici 24 heures.",
-"freqPerMillion": 229.19
+"freqPerMillion": 229.19,
+"cefr": "A2"
 },
 {
 "id": "core-349",
@@ -8166,7 +8515,8 @@
 "ipaAlt": [],
 "exampleEn": "Can you close the door?",
 "exampleFr": "Tu peux fermer la porte ?",
-"freqPerMillion": 164.42
+"freqPerMillion": 164.42,
+"cefr": "A1"
 },
 {
 "id": "core-350",
@@ -8194,7 +8544,8 @@
 "ipaAlt": [],
 "exampleEn": "Can you drive me to the airport?",
 "exampleFr": "Tu peux m'emmener à l'aéroport ?",
-"freqPerMillion": 243.39
+"freqPerMillion": 243.39,
+"cefr": "A2"
 },
 {
 "id": "core-351",
@@ -8219,7 +8570,8 @@
 "ipaAlt": [],
 "exampleEn": "That makes sense.",
 "exampleFr": "C'est logique.",
-"freqPerMillion": 316.71
+"freqPerMillion": 316.71,
+"cefr": "A2"
 },
 {
 "id": "core-352",
@@ -8243,7 +8595,8 @@
 "ipaAlt": [],
 "exampleEn": "We had to stand on the bus.",
 "exampleFr": "On a dû rester debout dans le bus.",
-"freqPerMillion": 279.07
+"freqPerMillion": 279.07,
+"cefr": "A2"
 },
 {
 "id": "core-353",
@@ -8263,7 +8616,8 @@
 "ipaAlt": [],
 "exampleEn": "Basically, we need more time.",
 "exampleFr": "En gros, on a besoin de plus de temps.",
-"freqPerMillion": 234.75
+"freqPerMillion": 234.75,
+"cefr": "A2"
 },
 {
 "id": "core-354",
@@ -8290,7 +8644,8 @@
 "ipaAlt": [],
 "exampleEn": "The visa process takes a few weeks.",
 "exampleFr": "La procédure de visa prend quelques semaines.",
-"freqPerMillion": 284.73
+"freqPerMillion": 284.73,
+"cefr": "B1"
 },
 {
 "id": "core-355",
@@ -8317,7 +8672,8 @@
 "ipaAlt": [],
 "exampleEn": "Can you hold my bag for a second?",
 "exampleFr": "Tu peux tenir mon sac une seconde ?",
-"freqPerMillion": 322.31
+"freqPerMillion": 322.31,
+"cefr": "A2"
 },
 {
 "id": "core-356",
@@ -8343,7 +8699,8 @@
 "ipaAlt": [],
 "exampleEn": "Can you cut the bread?",
 "exampleFr": "Tu peux couper le pain ?",
-"freqPerMillion": 261.55
+"freqPerMillion": 261.55,
+"cefr": "A1"
 },
 {
 "id": "core-357",
@@ -8365,7 +8722,8 @@
 "ipaAlt": [],
 "exampleEn": "I'm busy at the moment.",
 "exampleFr": "Je suis occupé en ce moment.",
-"freqPerMillion": 274.88
+"freqPerMillion": 274.88,
+"cefr": "A1"
 },
 {
 "id": "core-358",
@@ -8387,7 +8745,8 @@
 "ipaAlt": [],
 "exampleEn": "The little girl is playing in the park.",
 "exampleFr": "La petite fille joue dans le parc.",
-"freqPerMillion": 188.51
+"freqPerMillion": 188.51,
+"cefr": "A1"
 },
 {
 "id": "core-359",
@@ -8411,7 +8770,8 @@
 "ipaAlt": [],
 "exampleEn": "It's ten past five.",
 "exampleFr": "Il est cinq heures dix.",
-"freqPerMillion": 297.75
+"freqPerMillion": 297.75,
+"cefr": "A1"
 },
 {
 "id": "core-360",
@@ -8429,7 +8789,8 @@
 "ipaAlt": [],
 "exampleEn": "I can't live without coffee.",
 "exampleFr": "Je ne peux pas vivre sans café.",
-"freqPerMillion": 287.43
+"freqPerMillion": 287.43,
+"cefr": "A2"
 },
 {
 "id": "core-361",
@@ -8452,7 +8813,8 @@
 "ipaAlt": [],
 "exampleEn": "I'm learning English.",
 "exampleFr": "J'apprends l'anglais.",
-"freqPerMillion": 286.41
+"freqPerMillion": 286.41,
+"cefr": "A1"
 },
 {
 "id": "core-362",
@@ -8473,7 +8835,8 @@
 "ipaAlt": [],
 "exampleEn": "She's too young to drive.",
 "exampleFr": "Elle est trop jeune pour conduire.",
-"freqPerMillion": 347.45
+"freqPerMillion": 347.45,
+"cefr": "A1"
 },
 {
 "id": "core-363",
@@ -8493,7 +8856,8 @@
 "ipaAlt": [],
 "exampleEn": "Is anybody home?",
 "exampleFr": "Il y a quelqu'un ?",
-"freqPerMillion": 182.04
+"freqPerMillion": 182.04,
+"cefr": "A1"
 },
 {
 "id": "core-364",
@@ -8513,7 +8877,8 @@
 "ipaAlt": [],
 "exampleEn": "My English teacher is from Brisbane.",
 "exampleFr": "Ma prof d'anglais vient de Brisbane.",
-"freqPerMillion": 168.44
+"freqPerMillion": 168.44,
+"cefr": "A1"
 },
 {
 "id": "core-365",
@@ -8535,7 +8900,8 @@
 "ipaAlt": [],
 "exampleEn": "She wants to become a nurse.",
 "exampleFr": "Elle veut devenir infirmière.",
-"freqPerMillion": 432.59
+"freqPerMillion": 432.59,
+"cefr": "A1"
 },
 {
 "id": "core-366",
@@ -8555,7 +8921,8 @@
 "ipaAlt": [],
 "exampleEn": "Are you a member of the gym?",
 "exampleFr": "Tu es membre de la salle de sport ?",
-"freqPerMillion": 316.67
+"freqPerMillion": 316.67,
+"cefr": "A2"
 },
 {
 "id": "core-367",
@@ -8583,7 +8950,8 @@
 "ipaAlt": [],
 "exampleEn": "The train leaves at seven.",
 "exampleFr": "Le train part à sept heures.",
-"freqPerMillion": 214.09
+"freqPerMillion": 214.09,
+"cefr": "A1"
 },
 {
 "id": "core-368",
@@ -8605,7 +8973,8 @@
 "ipaAlt": [],
 "exampleEn": "My English class starts at nine.",
 "exampleFr": "Mon cours d'anglais commence à neuf heures.",
-"freqPerMillion": 182.95
+"freqPerMillion": 182.95,
+"cefr": "A1"
 },
 {
 "id": "core-369",
@@ -8628,7 +8997,8 @@
 "ipaAlt": [],
 "exampleEn": "It was forty degrees yesterday!",
 "exampleFr": "Il a fait quarante degrés hier !",
-"freqPerMillion": 50.07
+"freqPerMillion": 50.07,
+"cefr": "A1"
 },
 {
 "id": "core-370",
@@ -8650,7 +9020,8 @@
 "ipaAlt": [],
 "exampleEn": "He works for a big company.",
 "exampleFr": "Il travaille pour une grande entreprise.",
-"freqPerMillion": 404.26
+"freqPerMillion": 404.26,
+"cefr": "A2"
 },
 {
 "id": "core-371",
@@ -8674,7 +9045,8 @@
 "ipaAlt": [],
 "exampleEn": "When does the course begin?",
 "exampleFr": "Quand commence la formation ?",
-"freqPerMillion": 408.01
+"freqPerMillion": 408.01,
+"cefr": "A1"
 },
 {
 "id": "core-372",
@@ -8704,7 +9076,8 @@
 "ipaAlt": [],
 "exampleEn": "I'm fine, thanks.",
 "exampleFr": "Je vais bien, merci.",
-"freqPerMillion": 153.04
+"freqPerMillion": 153.04,
+"cefr": "A1"
 },
 {
 "id": "core-373",
@@ -8731,7 +9104,8 @@
 "ipaAlt": [],
 "exampleEn": "My family really supports me.",
 "exampleFr": "Ma famille me soutient vraiment.",
-"freqPerMillion": 335.78
+"freqPerMillion": 335.78,
+"cefr": "B1"
 },
 {
 "id": "core-374",
@@ -8759,7 +9133,8 @@
 "ipaAlt": [],
 "exampleEn": "My head hurts.",
 "exampleFr": "J'ai mal à la tête.",
-"freqPerMillion": 298.15
+"freqPerMillion": 298.15,
+"cefr": "A1"
 },
 {
 "id": "core-375",
@@ -8779,7 +9154,8 @@
 "ipaAlt": [],
 "exampleEn": "It's one of the best beaches in the world.",
 "exampleFr": "C'est une des plus belles plages du monde.",
-"freqPerMillion": 602.23
+"freqPerMillion": 602.23,
+"cefr": "A1"
 },
 {
 "id": "core-376",
@@ -8801,7 +9177,8 @@
 "ipaAlt": [],
 "exampleEn": "She's nineteen years old.",
 "exampleFr": "Elle a dix-neuf ans.",
-"freqPerMillion": 39.64
+"freqPerMillion": 39.64,
+"cefr": "A1"
 },
 {
 "id": "core-377",
@@ -8823,7 +9200,8 @@
 "ipaAlt": [],
 "exampleEn": "My dad calls me every Sunday.",
 "exampleFr": "Mon père m'appelle tous les dimanches.",
-"freqPerMillion": 116.08
+"freqPerMillion": 116.08,
+"cefr": "A1"
 },
 {
 "id": "core-378",
@@ -8847,7 +9225,8 @@
 "ipaAlt": [],
 "exampleEn": "What a beautiful view!",
 "exampleFr": "Quelle belle vue !",
-"freqPerMillion": 241.3
+"freqPerMillion": 241.3,
+"cefr": "A2"
 },
 {
 "id": "core-379",
@@ -8869,7 +9248,8 @@
 "ipaAlt": [],
 "exampleEn": "I can't decide what to order.",
 "exampleFr": "Je n'arrive pas à décider quoi commander.",
-"freqPerMillion": 259.44
+"freqPerMillion": 259.44,
+"cefr": "A2"
 },
 {
 "id": "core-380",
@@ -8891,7 +9271,8 @@
 "ipaAlt": [],
 "exampleEn": "What time do you finish work?",
 "exampleFr": "À quelle heure tu finis le travail ?",
-"freqPerMillion": 149.71
+"freqPerMillion": 149.71,
+"cefr": "A1"
 },
 {
 "id": "core-381",
@@ -8916,7 +9297,8 @@
 "ipaAlt": [],
 "exampleEn": "I didn't expect to see you here.",
 "exampleFr": "Je ne m'attendais pas à te voir ici.",
-"freqPerMillion": 287.64
+"freqPerMillion": 287.64,
+"cefr": "A2"
 },
 {
 "id": "core-382",
@@ -8939,7 +9321,8 @@
 "ipaAlt": [],
 "exampleEn": "Are you looking for anything in particular?",
 "exampleFr": "Vous cherchez quelque chose en particulier ?",
-"freqPerMillion": 199.47
+"freqPerMillion": 199.47,
+"cefr": "B2"
 },
 {
 "id": "core-383",
@@ -8959,7 +9342,8 @@
 "ipaAlt": [],
 "exampleEn": "Prices went up by ten percent.",
 "exampleFr": "Les prix ont augmenté de dix pour cent.",
-"freqPerMillion": 324.63
+"freqPerMillion": 324.63,
+"cefr": "B1"
 },
 {
 "id": "core-384",
@@ -8985,7 +9369,8 @@
 "ipaAlt": [],
 "exampleEn": "The shop closes at five.",
 "exampleFr": "Le magasin ferme à cinq heures.",
-"freqPerMillion": 134.1
+"freqPerMillion": 134.1,
+"cefr": "A1"
 },
 {
 "id": "core-385",
@@ -9005,7 +9390,8 @@
 "ipaAlt": [],
 "exampleEn": "It's a difficult situation.",
 "exampleFr": "C'est une situation difficile.",
-"freqPerMillion": 269.81
+"freqPerMillion": 269.81,
+"cefr": "A2"
 },
 {
 "id": "core-386",
@@ -9029,7 +9415,8 @@
 "ipaAlt": [],
 "exampleEn": "The job involves a lot of travel.",
 "exampleFr": "Le poste implique beaucoup de déplacements.",
-"freqPerMillion": 253.65
+"freqPerMillion": 253.65,
+"cefr": "B1"
 },
 {
 "id": "core-387",
@@ -9056,7 +9443,8 @@
 "ipaAlt": [],
 "exampleEn": "Let me check my calendar.",
 "exampleFr": "Laisse-moi vérifier mon agenda.",
-"freqPerMillion": 192.65
+"freqPerMillion": 192.65,
+"cefr": "A2"
 },
 {
 "id": "core-388",
@@ -9078,7 +9466,8 @@
 "ipaAlt": [],
 "exampleEn": "We walked along the beach.",
 "exampleFr": "On a marché le long de la plage.",
-"freqPerMillion": 241.12
+"freqPerMillion": 241.12,
+"cefr": "A2"
 },
 {
 "id": "core-389",
@@ -9101,7 +9490,8 @@
 "ipaAlt": [],
 "exampleEn": "The bus is full.",
 "exampleFr": "Le bus est plein.",
-"freqPerMillion": 183.71
+"freqPerMillion": 183.71,
+"cefr": "A1"
 },
 {
 "id": "core-390",
@@ -9128,7 +9518,8 @@
 "ipaAlt": [],
 "exampleEn": "Please fill in this form.",
 "exampleFr": "Veuillez remplir ce formulaire.",
-"freqPerMillion": 189.51
+"freqPerMillion": 189.51,
+"cefr": "A1"
 },
 {
 "id": "core-391",
@@ -9150,7 +9541,8 @@
 "ipaAlt": [],
 "exampleEn": "They sell fresh fish at the market.",
 "exampleFr": "Ils vendent du poisson frais au marché.",
-"freqPerMillion": 230.97
+"freqPerMillion": 230.97,
+"cefr": "A1"
 },
 {
 "id": "core-392",
@@ -9175,7 +9567,8 @@
 "ipaAlt": [],
 "exampleEn": "Tell me a story.",
 "exampleFr": "Raconte-moi une histoire.",
-"freqPerMillion": 494.28
+"freqPerMillion": 494.28,
+"cefr": "A1"
 },
 {
 "id": "core-393",
@@ -9195,7 +9588,8 @@
 "ipaAlt": [],
 "exampleEn": "Are you certain about that?",
 "exampleFr": "Tu en es certain ?",
-"freqPerMillion": 223.75
+"freqPerMillion": 223.75,
+"cefr": "A2"
 },
 {
 "id": "core-394",
@@ -9217,7 +9611,8 @@
 "ipaAlt": [],
 "exampleEn": "We went to the local pub.",
 "exampleFr": "On est allés au pub du coin.",
-"freqPerMillion": 214.62
+"freqPerMillion": 214.62,
+"cefr": "A2"
 },
 {
 "id": "core-395",
@@ -9246,7 +9641,8 @@
 "ipaAlt": [],
 "exampleEn": "I'll ring you tomorrow.",
 "exampleFr": "Je t'appelle demain.",
-"freqPerMillion": 92.92
+"freqPerMillion": 92.92,
+"cefr": "A1"
 },
 {
 "id": "core-396",
@@ -9273,7 +9669,8 @@
 "ipaAlt": [],
 "exampleEn": "I can't figure it out.",
 "exampleFr": "Je n'arrive pas à comprendre.",
-"freqPerMillion": 224.51
+"freqPerMillion": 224.51,
+"cefr": "A2"
 },
 {
 "id": "core-397",
@@ -9295,7 +9692,8 @@
 "ipaAlt": [],
 "exampleEn": "The shop opens at twelve on Sundays.",
 "exampleFr": "Le magasin ouvre à midi le dimanche.",
-"freqPerMillion": 40.23
+"freqPerMillion": 40.23,
+"cefr": "A1"
 },
 {
 "id": "core-398",
@@ -9322,7 +9720,8 @@
 "ipaAlt": [],
 "exampleEn": "I wonder if it will rain.",
 "exampleFr": "Je me demande s'il va pleuvoir.",
-"freqPerMillion": 195.08
+"freqPerMillion": 195.08,
+"cefr": "A2"
 },
 {
 "id": "core-399",
@@ -9342,7 +9741,8 @@
 "ipaAlt": [],
 "exampleEn": "Their little boy is three.",
 "exampleFr": "Leur petit garçon a trois ans.",
-"freqPerMillion": 167.73
+"freqPerMillion": 167.73,
+"cefr": "A1"
 },
 {
 "id": "core-400",
@@ -9360,7 +9760,8 @@
 "ipaAlt": [],
 "exampleEn": "I usually walk to work.",
 "exampleFr": "D'habitude, je vais au travail à pied.",
-"freqPerMillion": 141.03
+"freqPerMillion": 141.03,
+"cefr": "A1"
 },
 {
 "id": "core-401",
@@ -9384,7 +9785,8 @@
 "ipaAlt": [],
 "exampleEn": "Is there public transport near here?",
 "exampleFr": "Il y a des transports en commun près d'ici ?",
-"freqPerMillion": 346.9
+"freqPerMillion": 346.9,
+"cefr": "B1"
 },
 {
 "id": "core-402",
@@ -9406,7 +9808,8 @@
 "ipaAlt": [],
 "exampleEn": "I'm trying to eat less sugar.",
 "exampleFr": "J'essaie de manger moins de sucre.",
-"freqPerMillion": 262.61
+"freqPerMillion": 262.61,
+"cefr": "A2"
 },
 {
 "id": "core-403",
@@ -9432,7 +9835,8 @@
 "ipaAlt": [],
 "exampleEn": "Don't worry, it's fine.",
 "exampleFr": "Ne t'inquiète pas, ça va.",
-"freqPerMillion": 203.89
+"freqPerMillion": 203.89,
+"cefr": "A2"
 },
 {
 "id": "core-404",
@@ -9455,7 +9859,8 @@
 "ipaAlt": [],
 "exampleEn": "He's really funny.",
 "exampleFr": "Il est vraiment drôle.",
-"freqPerMillion": 125.62
+"freqPerMillion": 125.62,
+"cefr": "A1"
 },
 {
 "id": "core-405",
@@ -9477,7 +9882,8 @@
 "ipaAlt": [],
 "exampleEn": "I saw a kangaroo yesterday!",
 "exampleFr": "J'ai vu un kangourou hier !",
-"freqPerMillion": 199.12
+"freqPerMillion": 199.12,
+"cefr": "A1"
 },
 {
 "id": "core-406",
@@ -9499,7 +9905,8 @@
 "ipaAlt": [],
 "exampleEn": "Be careful when you cross the road.",
 "exampleFr": "Fais attention quand tu traverses la route.",
-"freqPerMillion": 170.81
+"freqPerMillion": 170.81,
+"cefr": "A2"
 },
 {
 "id": "core-407",
@@ -9519,7 +9926,8 @@
 "ipaAlt": [],
 "exampleEn": "We had a long discussion about it.",
 "exampleFr": "On en a longuement discuté.",
-"freqPerMillion": 144.9
+"freqPerMillion": 144.9,
+"cefr": "A2"
 },
 {
 "id": "core-408",
@@ -9546,7 +9954,8 @@
 "ipaAlt": [],
 "exampleEn": "I'll wait in front of the station.",
 "exampleFr": "J'attendrai devant la gare.",
-"freqPerMillion": 186.31
+"freqPerMillion": 186.31,
+"cefr": "A2"
 },
 {
 "id": "core-409",
@@ -9576,7 +9985,8 @@
 ],
 "exampleEn": "She broke the world record.",
 "exampleFr": "Elle a battu le record du monde.",
-"freqPerMillion": 289.07
+"freqPerMillion": 289.07,
+"cefr": "B1"
 },
 {
 "id": "core-410",
@@ -9598,7 +10008,8 @@
 "ipaAlt": [],
 "exampleEn": "There's a café across the street.",
 "exampleFr": "Il y a un café de l'autre côté de la rue.",
-"freqPerMillion": 259.98
+"freqPerMillion": 259.98,
+"cefr": "A2"
 },
 {
 "id": "core-411",
@@ -9618,7 +10029,8 @@
 "ipaAlt": [],
 "exampleEn": "You're absolutely right.",
 "exampleFr": "Tu as tout à fait raison.",
-"freqPerMillion": 241.86
+"freqPerMillion": 241.86,
+"cefr": "B1"
 },
 {
 "id": "core-412",
@@ -9644,7 +10056,8 @@
 "ipaAlt": [],
 "exampleEn": "It's a short walk from here.",
 "exampleFr": "C'est à quelques pas d'ici.",
-"freqPerMillion": 181.59
+"freqPerMillion": 181.59,
+"cefr": "A1"
 },
 {
 "id": "core-413",
@@ -9667,7 +10080,8 @@
 "ipaAlt": [],
 "exampleEn": "What's the refund policy?",
 "exampleFr": "Quelle est la politique de remboursement ?",
-"freqPerMillion": 274.03
+"freqPerMillion": 274.03,
+"cefr": "B1"
 },
 {
 "id": "core-414",
@@ -9685,7 +10099,8 @@
 "ipaAlt": [],
 "exampleEn": "It's difficult to find a room in the city.",
 "exampleFr": "C'est difficile de trouver une chambre en ville.",
-"freqPerMillion": 219.04
+"freqPerMillion": 219.04,
+"cefr": "A1"
 },
 {
 "id": "core-415",
@@ -9708,7 +10123,8 @@
 "ipaAlt": [],
 "exampleEn": "Can you teach me to surf?",
 "exampleFr": "Tu peux m'apprendre à surfer ?",
-"freqPerMillion": 175.8
+"freqPerMillion": 175.8,
+"cefr": "A1"
 },
 {
 "id": "core-416",
@@ -9732,7 +10148,8 @@
 "ipaAlt": [],
 "exampleEn": "This bag is mine.",
 "exampleFr": "Ce sac est à moi.",
-"freqPerMillion": 120.95
+"freqPerMillion": 120.95,
+"cefr": "A1"
 },
 {
 "id": "core-417",
@@ -9757,7 +10174,8 @@
 "ipaAlt": [],
 "exampleEn": "Can I have a piece of cake?",
 "exampleFr": "Je peux avoir un morceau de gâteau ?",
-"freqPerMillion": 193.75
+"freqPerMillion": 193.75,
+"cefr": "A1"
 },
 {
 "id": "core-418",
@@ -9781,7 +10199,8 @@
 "ipaAlt": [],
 "exampleEn": "The hostel provides free breakfast.",
 "exampleFr": "L'auberge offre le petit-déjeuner.",
-"freqPerMillion": 207.98
+"freqPerMillion": 207.98,
+"cefr": "A2"
 },
 {
 "id": "core-419",
@@ -9808,7 +10227,8 @@
 "ipaAlt": [],
 "exampleEn": "Thanks for your comments.",
 "exampleFr": "Merci pour tes commentaires.",
-"freqPerMillion": 168.08
+"freqPerMillion": 168.08,
+"cefr": "B1"
 },
 {
 "id": "core-420",
@@ -9835,7 +10255,8 @@
 "ipaAlt": [],
 "exampleEn": "Cover the food, there are flies.",
 "exampleFr": "Couvre la nourriture, il y a des mouches.",
-"freqPerMillion": 197.78
+"freqPerMillion": 197.78,
+"cefr": "A2"
 },
 {
 "id": "core-421",
@@ -9857,7 +10278,8 @@
 "ipaAlt": [],
 "exampleEn": "My mother is a teacher.",
 "exampleFr": "Ma mère est professeure.",
-"freqPerMillion": 200.42
+"freqPerMillion": 200.42,
+"cefr": "A1"
 },
 {
 "id": "core-422",
@@ -9875,7 +10297,8 @@
 "ipaAlt": [],
 "exampleEn": "I'm almost ready.",
 "exampleFr": "Je suis presque prêt.",
-"freqPerMillion": 274.93
+"freqPerMillion": 274.93,
+"cefr": "A1"
 },
 {
 "id": "core-423",
@@ -9898,7 +10321,8 @@
 "ipaAlt": [],
 "exampleEn": "I'll make a shopping list.",
 "exampleFr": "Je vais faire une liste de courses.",
-"freqPerMillion": 163.92
+"freqPerMillion": 163.92,
+"cefr": "A1"
 },
 {
 "id": "core-424",
@@ -9920,7 +10344,8 @@
 "ipaAlt": [],
 "exampleEn": "What's the difference between these two?",
 "exampleFr": "Quelle est la différence entre ces deux-là ?",
-"freqPerMillion": 211.65
+"freqPerMillion": 211.65,
+"cefr": "A1"
 },
 {
 "id": "core-425",
@@ -9943,7 +10368,8 @@
 "ipaAlt": [],
 "exampleEn": "My grandma is ninety.",
 "exampleFr": "Ma grand-mère a quatre-vingt-dix ans.",
-"freqPerMillion": 33.42
+"freqPerMillion": 33.42,
+"cefr": "A1"
 },
 {
 "id": "core-426",
@@ -9961,7 +10387,8 @@
 "ipaAlt": [],
 "exampleEn": "Lean it against the wall.",
 "exampleFr": "Appuie-le contre le mur.",
-"freqPerMillion": 402.64
+"freqPerMillion": 402.64,
+"cefr": "A2"
 },
 {
 "id": "core-427",
@@ -9984,7 +10411,8 @@
 "ipaAlt": [],
 "exampleEn": "Don't forget your keys!",
 "exampleFr": "N'oublie pas tes clés !",
-"freqPerMillion": 135.44
+"freqPerMillion": 135.44,
+"cefr": "A1"
 },
 {
 "id": "core-428",
@@ -10006,7 +10434,8 @@
 "ipaAlt": [],
 "exampleEn": "Turn to page ten.",
 "exampleFr": "Allez à la page dix.",
-"freqPerMillion": 123.47
+"freqPerMillion": 123.47,
+"cefr": "A1"
 },
 {
 "id": "core-429",
@@ -10036,7 +10465,8 @@
 "ipaAlt": [],
 "exampleEn": "Can you turn on the light?",
 "exampleFr": "Tu peux allumer la lumière ?",
-"freqPerMillion": 177.29
+"freqPerMillion": 177.29,
+"cefr": "A1"
 },
 {
 "id": "core-430",
@@ -10057,7 +10487,8 @@
 "ipaAlt": [],
 "exampleEn": "I'm so happy for you!",
 "exampleFr": "Je suis tellement content pour toi !",
-"freqPerMillion": 169.73
+"freqPerMillion": 169.73,
+"cefr": "A1"
 },
 {
 "id": "core-431",
@@ -10079,7 +10510,8 @@
 "ipaAlt": [],
 "exampleEn": "Help yourself!",
 "exampleFr": "Sers-toi !",
-"freqPerMillion": 149.58
+"freqPerMillion": 149.58,
+"cefr": "A1"
 },
 {
 "id": "core-432",
@@ -10099,7 +10531,8 @@
 "ipaAlt": [],
 "exampleEn": "I made it myself.",
 "exampleFr": "Je l'ai fait moi-même.",
-"freqPerMillion": 164.2
+"freqPerMillion": 164.2,
+"cefr": "A2"
 },
 {
 "id": "core-433",
@@ -10119,7 +10552,8 @@
 "ipaAlt": [],
 "exampleEn": "Twenty dollars, please.",
 "exampleFr": "Vingt dollars, s'il vous plaît.",
-"freqPerMillion": 213.8
+"freqPerMillion": 213.8,
+"cefr": "A1"
 },
 {
 "id": "core-434",
@@ -10146,7 +10580,8 @@
 "ipaAlt": [],
 "exampleEn": "Do you have any tape?",
 "exampleFr": "Tu as du scotch ?",
-"freqPerMillion": 115.35
+"freqPerMillion": 115.35,
+"cefr": "A2"
 },
 {
 "id": "core-435",
@@ -10168,7 +10603,8 @@
 "ipaAlt": [],
 "exampleEn": "Dogs aren't allowed on this beach.",
 "exampleFr": "Les chiens ne sont pas autorisés sur cette plage.",
-"freqPerMillion": 244.06
+"freqPerMillion": 244.06,
+"cefr": "A2"
 },
 {
 "id": "core-436",
@@ -10193,7 +10629,8 @@
 "ipaAlt": [],
 "exampleEn": "You should wear a hat in the sun.",
 "exampleFr": "Tu devrais porter un chapeau au soleil.",
-"freqPerMillion": 136.0
+"freqPerMillion": 136.0,
+"cefr": "A1"
 },
 {
 "id": "core-437",
@@ -10218,7 +10655,8 @@
 "ipaAlt": [],
 "exampleEn": "I'm looking forward to the weekend.",
 "exampleFr": "J'ai hâte d'être au week-end.",
-"freqPerMillion": 170.27
+"freqPerMillion": 170.27,
+"cefr": "A2"
 },
 {
 "id": "core-438",
@@ -10241,7 +10679,8 @@
 "ipaAlt": [],
 "exampleEn": "Follow me, I know the way.",
 "exampleFr": "Suis-moi, je connais le chemin.",
-"freqPerMillion": 227.54
+"freqPerMillion": 227.54,
+"cefr": "A2"
 },
 {
 "id": "core-439",
@@ -10267,7 +10706,8 @@
 "ipaAlt": [],
 "exampleEn": "Do you have any work experience?",
 "exampleFr": "As-tu de l'expérience professionnelle ?",
-"freqPerMillion": 262.37
+"freqPerMillion": 262.37,
+"cefr": "A2"
 },
 {
 "id": "core-440",
@@ -10291,7 +10731,8 @@
 "ipaAlt": [],
 "exampleEn": "It's five o'clock.",
 "exampleFr": "Il est cinq heures.",
-"freqPerMillion": 79.92
+"freqPerMillion": 79.92,
+"cefr": "A1"
 },
 {
 "id": "core-441",
@@ -10313,7 +10754,8 @@
 "ipaAlt": [],
 "exampleEn": "Listen to me!",
 "exampleFr": "Écoute-moi !",
-"freqPerMillion": 276.37
+"freqPerMillion": 276.37,
+"cefr": "A1"
 },
 {
 "id": "core-442",
@@ -10333,7 +10775,8 @@
 "ipaAlt": [],
 "exampleEn": "It was a hard decision.",
 "exampleFr": "C'était une décision difficile.",
-"freqPerMillion": 242.86
+"freqPerMillion": 242.86,
+"cefr": "B1"
 },
 {
 "id": "core-443",
@@ -10357,7 +10800,8 @@
 "ipaAlt": [],
 "exampleEn": "Did she mention the party?",
 "exampleFr": "Elle a parlé de la fête ?",
-"freqPerMillion": 190.61
+"freqPerMillion": 190.61,
+"cefr": "B1"
 },
 {
 "id": "core-444",
@@ -10375,7 +10819,8 @@
 "ipaAlt": [],
 "exampleEn": "Let's go somewhere quiet.",
 "exampleFr": "Allons quelque part au calme.",
-"freqPerMillion": 106.63
+"freqPerMillion": 106.63,
+"cefr": "A2"
 },
 {
 "id": "core-445",
@@ -10398,7 +10843,8 @@
 "ipaAlt": [],
 "exampleEn": "It's about eighty kilometres away.",
 "exampleFr": "C'est à environ quatre-vingts kilomètres.",
-"freqPerMillion": 35.62
+"freqPerMillion": 35.62,
+"cefr": "A1"
 },
 {
 "id": "core-446",
@@ -10427,7 +10873,8 @@
 "ipaAlt": [],
 "exampleEn": "It's bloody hot today!",
 "exampleFr": "Il fait vachement chaud aujourd'hui !",
-"freqPerMillion": 51.11
+"freqPerMillion": 51.11,
+"cefr": "B2"
 },
 {
 "id": "core-447",
@@ -10450,7 +10897,8 @@
 "ipaAlt": [],
 "exampleEn": "At what age can you drive here?",
 "exampleFr": "À quel âge on peut conduire ici ?",
-"freqPerMillion": 195.71
+"freqPerMillion": 195.71,
+"cefr": "A1"
 },
 {
 "id": "core-448",
@@ -10474,7 +10922,8 @@
 "ipaAlt": [],
 "exampleEn": "Let's eat outside.",
 "exampleFr": "Mangeons dehors.",
-"freqPerMillion": 188.45
+"freqPerMillion": 188.45,
+"cefr": "A1"
 },
 {
 "id": "core-449",
@@ -10496,7 +10945,8 @@
 "ipaAlt": [],
 "exampleEn": "I got a letter from the bank.",
 "exampleFr": "J'ai reçu une lettre de la banque.",
-"freqPerMillion": 136.8
+"freqPerMillion": 136.8,
+"cefr": "A1"
 },
 {
 "id": "core-450",
@@ -10514,7 +10964,8 @@
 "ipaAlt": [],
 "exampleEn": "I work during the day.",
 "exampleFr": "Je travaille pendant la journée.",
-"freqPerMillion": 273.34
+"freqPerMillion": 273.34,
+"cefr": "A2"
 },
 {
 "id": "core-451",
@@ -10534,7 +10985,8 @@
 "ipaAlt": [],
 "exampleEn": "How many languages do you speak?",
 "exampleFr": "Tu parles combien de langues ?",
-"freqPerMillion": 172.11
+"freqPerMillion": 172.11,
+"cefr": "A1"
 },
 {
 "id": "core-452",
@@ -10556,7 +11008,8 @@
 "ipaAlt": [],
 "exampleEn": "I'll send you a birthday card.",
 "exampleFr": "Je t'enverrai une carte d'anniversaire.",
-"freqPerMillion": 127.35
+"freqPerMillion": 127.35,
+"cefr": "A1"
 },
 {
 "id": "core-453",
@@ -10577,7 +11030,8 @@
 "ipaAlt": [],
 "exampleEn": "A large pizza, please.",
 "exampleFr": "Une grande pizza, s'il vous plaît.",
-"freqPerMillion": 279.3
+"freqPerMillion": 279.3,
+"cefr": "A1"
 },
 {
 "id": "core-454",
@@ -10605,7 +11059,8 @@
 "ipaAlt": [],
 "exampleEn": "Stick it on the fridge.",
 "exampleFr": "Colle-le sur le frigo.",
-"freqPerMillion": 125.95
+"freqPerMillion": 125.95,
+"cefr": "B1"
 },
 {
 "id": "core-455",
@@ -10633,7 +11088,8 @@
 "ipaAlt": [],
 "exampleEn": "The film is based on a true story.",
 "exampleFr": "Le film est basé sur une histoire vraie.",
-"freqPerMillion": 225.15
+"freqPerMillion": 225.15,
+"cefr": "A2"
 },
 {
 "id": "core-456",
@@ -10657,7 +11113,8 @@
 "ipaAlt": [],
 "exampleEn": "Can you take a picture of us?",
 "exampleFr": "Tu peux nous prendre en photo ?",
-"freqPerMillion": 175.41
+"freqPerMillion": 175.41,
+"cefr": "A1"
 },
 {
 "id": "core-457",
@@ -10680,7 +11137,8 @@
 "ipaAlt": [],
 "exampleEn": "Can we get a table outside?",
 "exampleFr": "On peut avoir une table dehors ?",
-"freqPerMillion": 132.65
+"freqPerMillion": 132.65,
+"cefr": "A1"
 },
 {
 "id": "core-458",
@@ -10705,7 +11163,8 @@
 "ipaAlt": [],
 "exampleEn": "Enjoy your holiday!",
 "exampleFr": "Profite bien de tes vacances !",
-"freqPerMillion": 123.94
+"freqPerMillion": 123.94,
+"cefr": "A1"
 },
 {
 "id": "core-459",
@@ -10729,7 +11188,8 @@
 "ipaAlt": [],
 "exampleEn": "Are you coming to the party tonight?",
 "exampleFr": "Tu viens à la soirée ce soir ?",
-"freqPerMillion": 279.21
+"freqPerMillion": 279.21,
+"cefr": "A1"
 },
 {
 "id": "core-460",
@@ -10751,7 +11211,8 @@
 "ipaAlt": [],
 "exampleEn": "Please continue.",
 "exampleFr": "Continuez, s'il vous plaît.",
-"freqPerMillion": 304.62
+"freqPerMillion": 304.62,
+"cefr": "A2"
 },
 {
 "id": "core-461",
@@ -10776,7 +11237,8 @@
 "ipaAlt": [],
 "exampleEn": "Can you pass me the salt?",
 "exampleFr": "Tu peux me passer le sel ?",
-"freqPerMillion": 208.11
+"freqPerMillion": 208.11,
+"cefr": "A2"
 },
 {
 "id": "core-462",
@@ -10798,7 +11260,8 @@
 "ipaAlt": [],
 "exampleEn": "Add a bit of salt.",
 "exampleFr": "Ajoute un peu de sel.",
-"freqPerMillion": 171.9
+"freqPerMillion": 171.9,
+"cefr": "A1"
 },
 {
 "id": "core-463",
@@ -10821,7 +11284,8 @@
 "ipaAlt": [],
 "exampleEn": "The speed limit is sixty here.",
 "exampleFr": "La vitesse est limitée à soixante ici.",
-"freqPerMillion": 31.47
+"freqPerMillion": 31.47,
+"cefr": "A1"
 },
 {
 "id": "core-464",
@@ -10839,7 +11303,8 @@
 "ipaAlt": [],
 "exampleEn": "How often do you go to the gym?",
 "exampleFr": "Tu vas à la salle tous les combien ?",
-"freqPerMillion": 209.56
+"freqPerMillion": 209.56,
+"cefr": "A1"
 },
 {
 "id": "core-465",
@@ -10867,7 +11332,8 @@
 "ipaAlt": [],
 "exampleEn": "Be careful, don't fall!",
 "exampleFr": "Fais attention, ne tombe pas !",
-"freqPerMillion": 228.73
+"freqPerMillion": 228.73,
+"cefr": "A2"
 },
 {
 "id": "core-466",
@@ -10893,7 +11359,8 @@
 "ipaAlt": [],
 "exampleEn": "Tomatoes grow well here.",
 "exampleFr": "Les tomates poussent bien ici.",
-"freqPerMillion": 265.06
+"freqPerMillion": 265.06,
+"cefr": "A1"
 },
 {
 "id": "core-467",
@@ -10915,7 +11382,8 @@
 "ipaAlt": [],
 "exampleEn": "In general, people are friendly here.",
 "exampleFr": "En général, les gens sont sympas ici.",
-"freqPerMillion": 207.45
+"freqPerMillion": 207.45,
+"cefr": "B1"
 },
 {
 "id": "core-468",
@@ -10941,7 +11409,8 @@
 "ipaAlt": [],
 "exampleEn": "Do you want to grab a drink after work?",
 "exampleFr": "Tu veux prendre un verre après le travail ?",
-"freqPerMillion": 115.11
+"freqPerMillion": 115.11,
+"cefr": "A1"
 },
 {
 "id": "core-469",
@@ -10965,7 +11434,8 @@
 "ipaAlt": [],
 "exampleEn": "Can you help me carry these bags?",
 "exampleFr": "Tu peux m'aider à porter ces sacs ?",
-"freqPerMillion": 165.76
+"freqPerMillion": 165.76,
+"cefr": "A1"
 },
 {
 "id": "core-470",
@@ -10987,7 +11457,8 @@
 "ipaAlt": [],
 "exampleEn": "I'm still waiting for a response.",
 "exampleFr": "J'attends toujours une réponse.",
-"freqPerMillion": 136.9
+"freqPerMillion": 136.9,
+"cefr": "A2"
 },
 {
 "id": "core-471",
@@ -11010,7 +11481,8 @@
 "ipaAlt": [],
 "exampleEn": "The price includes breakfast.",
 "exampleFr": "Le prix comprend le petit-déjeuner.",
-"freqPerMillion": 244.2
+"freqPerMillion": 244.2,
+"cefr": "A1"
 },
 {
 "id": "core-472",
@@ -11032,7 +11504,8 @@
 "ipaAlt": [],
 "exampleEn": "Is tax included?",
 "exampleFr": "La taxe est comprise ?",
-"freqPerMillion": 285.62
+"freqPerMillion": 285.62,
+"cefr": "A2"
 },
 {
 "id": "core-473",
@@ -11055,7 +11528,8 @@
 "ipaAlt": [],
 "exampleEn": "I'm going to bed.",
 "exampleFr": "Je vais me coucher.",
-"freqPerMillion": 85.66
+"freqPerMillion": 85.66,
+"cefr": "A1"
 },
 {
 "id": "core-474",
@@ -11079,7 +11553,8 @@
 "ipaAlt": [],
 "exampleEn": "We have a position available.",
 "exampleFr": "Nous avons un poste disponible.",
-"freqPerMillion": 190.3
+"freqPerMillion": 190.3,
+"cefr": "A2"
 },
 {
 "id": "core-475",
@@ -11102,7 +11577,8 @@
 "ipaAlt": [],
 "exampleEn": "See you soon!",
 "exampleFr": "À bientôt !",
-"freqPerMillion": 160.07
+"freqPerMillion": 160.07,
+"cefr": "A1"
 },
 {
 "id": "core-476",
@@ -11124,7 +11600,8 @@
 "ipaAlt": [],
 "exampleEn": "What do you suggest?",
 "exampleFr": "Qu'est-ce que tu proposes ?",
-"freqPerMillion": 161.8
+"freqPerMillion": 161.8,
+"cefr": "A2"
 },
 {
 "id": "core-477",
@@ -11144,7 +11621,8 @@
 "ipaAlt": [],
 "exampleEn": "I work in an office in the city.",
 "exampleFr": "Je travaille dans un bureau en ville.",
-"freqPerMillion": 230.6
+"freqPerMillion": 230.6,
+"cefr": "A1"
 },
 {
 "id": "core-478",
@@ -11162,7 +11640,8 @@
 "ipaAlt": [],
 "exampleEn": "Is it possible to change my booking?",
 "exampleFr": "Est-il possible de modifier ma réservation ?",
-"freqPerMillion": 203.21
+"freqPerMillion": 203.21,
+"cefr": "A2"
 },
 {
 "id": "core-479",
@@ -11184,7 +11663,8 @@
 "ipaAlt": [],
 "exampleEn": "The bus is fifteen minutes late.",
 "exampleFr": "Le bus a quinze minutes de retard.",
-"freqPerMillion": 32.98
+"freqPerMillion": 32.98,
+"cefr": "A1"
 },
 {
 "id": "core-480",
@@ -11211,7 +11691,8 @@
 "ipaAlt": [],
 "exampleEn": "Follow the signs to the beach.",
 "exampleFr": "Suivez les panneaux jusqu'à la plage.",
-"freqPerMillion": 205.56
+"freqPerMillion": 205.56,
+"cefr": "A1"
 },
 {
 "id": "core-481",
@@ -11237,7 +11718,8 @@
 "ipaAlt": [],
 "exampleEn": "Put some sunscreen on your face.",
 "exampleFr": "Mets de la crème solaire sur ton visage.",
-"freqPerMillion": 257.39
+"freqPerMillion": 257.39,
+"cefr": "A1"
 },
 {
 "id": "core-482",
@@ -11264,7 +11746,8 @@
 "ipaAlt": [],
 "exampleEn": "Can you draw me a map?",
 "exampleFr": "Tu peux me dessiner un plan ?",
-"freqPerMillion": 139.36
+"freqPerMillion": 139.36,
+"cefr": "A1"
 },
 {
 "id": "core-483",
@@ -11291,7 +11774,8 @@
 "ipaAlt": [],
 "exampleEn": "The prices are low at this market.",
 "exampleFr": "Les prix sont bas dans ce marché.",
-"freqPerMillion": 222.31
+"freqPerMillion": 222.31,
+"cefr": "A2"
 },
 {
 "id": "core-484",
@@ -11309,7 +11793,8 @@
 "ipaAlt": [],
 "exampleEn": "Although it was raining, we went swimming.",
 "exampleFr": "Même s'il pleuvait, on est allés nager.",
-"freqPerMillion": 147.27
+"freqPerMillion": 147.27,
+"cefr": "A2"
 },
 {
 "id": "core-485",
@@ -11331,7 +11816,8 @@
 "ipaAlt": [],
 "exampleEn": "Can I pat your dog?",
 "exampleFr": "Je peux caresser ton chien ?",
-"freqPerMillion": 115.64
+"freqPerMillion": 115.64,
+"cefr": "A1"
 },
 {
 "id": "core-486",
@@ -11361,7 +11847,8 @@
 ],
 "exampleEn": "I bought a present for my mum.",
 "exampleFr": "J'ai acheté un cadeau pour ma mère.",
-"freqPerMillion": 144.88
+"freqPerMillion": 144.88,
+"cefr": "A1"
 },
 {
 "id": "core-487",
@@ -11384,7 +11871,8 @@
 "ipaAlt": [],
 "exampleEn": "What's the total amount?",
 "exampleFr": "Quel est le montant total ?",
-"freqPerMillion": 162.91
+"freqPerMillion": 162.91,
+"cefr": "B1"
 },
 {
 "id": "core-488",
@@ -11406,7 +11894,8 @@
 "ipaAlt": [],
 "exampleEn": "There's a farmers' market every Saturday.",
 "exampleFr": "Il y a un marché de producteurs tous les samedis.",
-"freqPerMillion": 290.99
+"freqPerMillion": 290.99,
+"cefr": "A2"
 },
 {
 "id": "core-489",
@@ -11429,7 +11918,8 @@
 "ipaAlt": [],
 "exampleEn": "She sings really well.",
 "exampleFr": "Elle chante très bien.",
-"freqPerMillion": 200.12
+"freqPerMillion": 200.12,
+"cefr": "A1"
 },
 {
 "id": "core-490",
@@ -11456,7 +11946,8 @@
 "ipaAlt": [],
 "exampleEn": "I'm saving for a car.",
 "exampleFr": "J'économise pour une voiture.",
-"freqPerMillion": 164.08
+"freqPerMillion": 164.08,
+"cefr": "A1"
 },
 {
 "id": "core-491",
@@ -11480,7 +11971,8 @@
 "ipaAlt": [],
 "exampleEn": "Did you watch the footy game last night?",
 "exampleFr": "Tu as regardé le match de footy hier soir ?",
-"freqPerMillion": 265.3
+"freqPerMillion": 265.3,
+"cefr": "A1"
 },
 {
 "id": "core-492",
@@ -11503,7 +11995,8 @@
 "ipaAlt": [],
 "exampleEn": "What a lovely day!",
 "exampleFr": "Quelle belle journée !",
-"freqPerMillion": 49.37
+"freqPerMillion": 49.37,
+"cefr": "A1"
 },
 {
 "id": "core-493",
@@ -11525,7 +12018,8 @@
 "ipaAlt": [],
 "exampleEn": "You have no choice.",
 "exampleFr": "Tu n'as pas le choix.",
-"freqPerMillion": 153.76
+"freqPerMillion": 153.76,
+"cefr": "A2"
 },
 {
 "id": "core-494",
@@ -11549,7 +12043,8 @@
 "ipaAlt": [],
 "exampleEn": "Dinner's ready!",
 "exampleFr": "Le dîner est prêt !",
-"freqPerMillion": 147.6
+"freqPerMillion": 147.6,
+"cefr": "A1"
 },
 {
 "id": "core-495",
@@ -11572,7 +12067,8 @@
 "ipaAlt": [],
 "exampleEn": "The food here is amazing.",
 "exampleFr": "La nourriture est incroyable ici.",
-"freqPerMillion": 206.11
+"freqPerMillion": 206.11,
+"cefr": "A1"
 },
 {
 "id": "core-496",
@@ -11596,7 +12092,8 @@
 "ipaAlt": [],
 "exampleEn": "My grandfather died last year.",
 "exampleFr": "Mon grand-père est mort l'année dernière.",
-"freqPerMillion": 216.42
+"freqPerMillion": 216.42,
+"cefr": "A2"
 },
 {
 "id": "core-497",
@@ -11614,7 +12111,8 @@
 "ipaAlt": [],
 "exampleEn": "Health is more important than money.",
 "exampleFr": "La santé est plus importante que l'argent.",
-"freqPerMillion": 244.22
+"freqPerMillion": 244.22,
+"cefr": "A1"
 },
 {
 "id": "core-498",
@@ -11643,7 +12141,8 @@
 "ipaAlt": [],
 "exampleEn": "What's your favourite colour?",
 "exampleFr": "C'est quoi ta couleur préférée ?",
-"freqPerMillion": 115.38
+"freqPerMillion": 115.38,
+"cefr": "A1"
 },
 {
 "id": "core-499",
@@ -11665,7 +12164,8 @@
 "ipaAlt": [],
 "exampleEn": "There's a strong community spirit here.",
 "exampleFr": "Il y a un fort esprit de communauté ici.",
-"freqPerMillion": 298.24
+"freqPerMillion": 298.24,
+"cefr": "B2"
 },
 {
 "id": "core-500",
@@ -11689,7 +12189,8 @@
 "ipaAlt": [],
 "exampleEn": "I was never good at mathematics.",
 "exampleFr": "Je n'ai jamais été bon en mathématiques.",
-"freqPerMillion": 72.01
+"freqPerMillion": 72.01,
+"cefr": "B1"
 }
 ]
 }

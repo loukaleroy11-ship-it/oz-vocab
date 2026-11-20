@@ -75,7 +75,16 @@ export function Explore() {
 
   return (
     <div className="mx-auto max-w-5xl">
-      <PageHeader eyebrow="Vocabulaire" title="Explorer le vocabulaire" />
+      <PageHeader eyebrow="Mes mots" title="Vocabulaire">
+        <div className="flex flex-wrap gap-2">
+          <a href="#apparentes" className="btn btn-ghost min-h-11 text-sm">
+            <Icon name="book" size={18} /> Mots apparentés
+          </a>
+          <a href="#ajouter" className="btn btn-primary min-h-11 text-sm">
+            <Icon name="plus" size={18} /> Ajouter un mot
+          </a>
+        </div>
+      </PageHeader>
 
       <div className="flex flex-col gap-3">
         <div className="flex gap-2">

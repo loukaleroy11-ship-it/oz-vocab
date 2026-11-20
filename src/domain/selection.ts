@@ -1,17 +1,23 @@
 /**
- * Choix des mots d'une session. Fonctions pures.
+ * Choix des cartes d'une session. Fonctions pures.
  *
- * Bouton « Réviser » :
- *   1. d'abord les mots déjà vus qui sont à revoir (listes des jours précédents,
- *      mots ratés il y a plus de 10 minutes) ;
- *   2. quand il n'y a plus rien à revoir, une nouvelle liste de mots jamais vus,
- *      en suivant à peu près l'ordre de fréquence mais en regroupant les mots
- *      d'un même thème (« I » avec « you, he, she… »).
+ * Bouton « Réviser » (séance du jour), dans cet ordre :
+ *   1. les mots OUBLIÉS (appris puis ratés) et les mots pas encore terminés ;
+ *   2. les cartes « produire » (français → anglais) à revoir ;
+ *   3. les cartes « reconnaître » (anglais → français) à revoir ;
+ *   4. puis, en alternance pour garder l'équilibre :
+ *      - une nouvelle liste de mots jamais vus (ordre de fréquence, regroupés par thème),
+ *      - une liste de mots des jours précédents à dire pour la première fois en anglais.
+ *      La première liste nouvelle de la journée passe en premier.
+ * Quand un mot est à revoir dans les deux suivis, on montre la carte « produire » :
+ * la réussir valide aussi la reconnaissance (tracks.ts).
  */
 import { groupKey } from '../data/themes';
 import { startOfDay } from './dates';
-import { isDueNow, isDueToday } from './status';
-import type { Word } from './types';
+import { isStarted } from './srs';
+import { isDueToday } from './status';
+import { cardKey, isForgotten, isStateDueNow, isStateLaterToday, readyToProduce } from './tracks';
+import type { Track, Word } from './types';
 
 /** Distance maximale (en mots) jusqu'à laquelle on va chercher des mots du même thème. */
 export const THEME_WINDOW = 40;
@@ -30,36 +36,38 @@ export interface CoherentPick {
   groups: string[];
 }
 
-/**
- * Compose une liste cohérente à partir d'une file ordonnée par priorité.
- * - Le premier mot de la file est toujours pris (le plus fréquent ne recule jamais).
- * - On ajoute les mots de son thème situés dans les `window` mots suivants.
- * - S'il reste de la place, on continue avec le thème le mieux représenté
- *   parmi les 3 mots suivants, et ainsi de suite.
- * - Pour ne pas couper une famille de mots (I, you, he, she…), la liste peut
- *   dépasser la taille prévue de 2 mots au plus.
- * Les mots d'un même thème se suivent dans la liste.
- */
+/** Pour ne pas couper une famille de mots (I, you, he, she…), la liste peut dépasser la taille prévue de 2 au plus. */
 export const MAX_OVERFLOW = 2;
 
-export function coherentPick(pool: Word[], size: number, window = THEME_WINDOW): CoherentPick {
+interface Item {
+  id: string;
+  group: string;
+}
+
+/**
+ * Compose une liste cohérente à partir d'une file ordonnée par priorité.
+ * - Le premier élément de la file est toujours pris (le plus prioritaire ne recule jamais).
+ * - On ajoute les éléments de son thème situés dans les `window` suivants.
+ * - S'il reste de la place, on continue avec le thème le mieux représenté
+ *   parmi les 3 éléments suivants, et ainsi de suite.
+ * Les éléments d'un même thème se suivent dans la liste.
+ */
+function pickItems(pool: Item[], size: number, window: number): CoherentPick {
   const taken = new Set<string>();
-  const blocks: { key: string; words: Word[] }[] = [];
+  const blocks: { key: string; items: Item[] }[] = [];
   let count = 0;
   const membersOf = (key: string, from: number) =>
-    pool.slice(from, from + window).filter((w) => !taken.has(w.id) && groupKey(w) === key);
+    pool.slice(from, from + window).filter((w) => !taken.has(w.id) && w.group === key);
 
   while (count < size) {
     const first = pool.findIndex((w) => !taken.has(w.id));
     if (first < 0) break;
-    let key = groupKey(pool[first]);
+    let key = pool[first].group;
     if (blocks.length > 0) {
-      // parmi les 3 prochains mots, le thème qui permet le bloc le plus fourni
       const options: string[] = [];
       for (let i = first; i < pool.length && options.length < 3; i++) {
         if (taken.has(pool[i].id)) continue;
-        const k = groupKey(pool[i]);
-        if (!options.includes(k)) options.push(k);
+        if (!options.includes(pool[i].group)) options.push(pool[i].group);
       }
       key = options.reduce((best, k) => (membersOf(k, first).length > membersOf(best, first).length ? k : best), options[0]);
     }
@@ -70,69 +78,157 @@ export function coherentPick(pool: Word[], size: number, window = THEME_WINDOW):
     chosen.forEach((w) => taken.add(w.id));
     count += chosen.length;
     const existing = blocks.find((b) => b.key === key);
-    if (existing) existing.words.push(...chosen);
-    else blocks.push({ key, words: chosen });
+    if (existing) existing.items.push(...chosen);
+    else blocks.push({ key, items: chosen });
   }
-  return { ids: blocks.flatMap((b) => b.words.map((w) => w.id)), groups: blocks.map((b) => b.key) };
+  return { ids: blocks.flatMap((b) => b.items.map((w) => w.id)), groups: blocks.map((b) => b.key) };
 }
 
+/** Liste cohérente de mots (cartes « reconnaître »). */
+export function coherentPick(pool: Word[], size: number, window = THEME_WINDOW): CoherentPick {
+  return pickItems(
+    pool.map((w) => ({ id: w.id, group: groupKey(w) })),
+    size,
+    window,
+  );
+}
+
+function coherentCards(pool: Word[], track: Track, size: number, window: number): CoherentPick {
+  const pick = pickItems(
+    pool.map((w) => ({ id: cardKey(w.id, track), group: groupKey(w) })),
+    size,
+    window,
+  );
+  return pick;
+}
+
+export interface DueCard {
+  key: string;
+  word: Word;
+  track: Track;
+  /** 0 oublié · 1 pas terminé · 2 produire à revoir · 3 reconnaître à revoir */
+  tier: 0 | 1 | 2 | 3;
+  due: number;
+}
+
+/** Cartes à revoir maintenant, une par mot, triées par priorité puis échéance. */
+export function dueCards(words: Word[], now: number): DueCard[] {
+  const out: DueCard[] = [];
+  for (const w of words) {
+    if (w.deleted) continue;
+    const recDue = isStateDueNow(w.srs, now);
+    const prodDue = isStateDueNow(w.prod, now);
+    if (recDue && w.srs.interval === 0) {
+      out.push({ key: cardKey(w.id, 'rec'), word: w, track: 'rec', tier: isForgotten(w.srs) ? 0 : 1, due: w.srs.due ?? 0 });
+    } else if (prodDue) {
+      const tier = isForgotten(w.prod) ? 0 : w.prod.interval === 0 ? 1 : 2;
+      out.push({ key: cardKey(w.id, 'prod'), word: w, track: 'prod', tier, due: w.prod.due ?? 0 });
+    } else if (recDue) {
+      out.push({ key: cardKey(w.id, 'rec'), word: w, track: 'rec', tier: 3, due: w.srs.due ?? 0 });
+    }
+  }
+  return out.sort((a, b) => a.tier - b.tier || a.due - b.due);
+}
+
+export type PlanKind = 'review' | 'new' | 'produce' | 'done';
+
 export interface SessionPlan {
-  kind: 'review' | 'new' | 'done';
+  kind: PlanKind;
+  /** Clés de cartes (voir tracks.ts). */
   ids: string[];
   groups: string[];
-  /** Mots à revoir maintenant. */
+  /** Cartes à revoir maintenant (tous suivis). */
   dueNow: number;
-  /** Mots ratés récemment qui reviendront plus tard aujourd'hui. */
+  /** Dont mots oubliés. */
+  forgotten: number;
+  /** Dont cartes « produire » (hors oubliés). */
+  prodDue: number;
+  /** Dont cartes « reconnaître » (hors oubliés). */
+  recDue: number;
+  /** Cartes ratées récemment qui reviendront plus tard aujourd'hui. */
   laterToday: number;
-  /** Échéance la plus proche parmi ceux-là. */
+  /** Échéance la plus proche parmi celles-là. */
   nextDueAt: number | null;
   newAvailable: number;
   newStartedToday: number;
   /** Objectif quotidien de nouveaux mots atteint (seulement si une limite est réglée). */
   newLimitReached: boolean;
+  /** Mots des jours précédents prêts à être dits en anglais pour la première fois. */
+  produceAvailable: number;
+  produceStartedToday: number;
 }
 
-/** Prochaine session du bouton « Réviser ». `newPerDay` = 0 : pas de limite. */
+/** Prochaine liste du bouton « Réviser ». `newPerDay` = 0 : pas de limite. */
 export function planNextSession(
   words: Word[],
   now: number,
   opts: { size: number; newPerDay: number; ignoreNewLimit?: boolean },
 ): SessionPlan {
   const active = words.filter((w) => !w.deleted);
-  const due = active.filter((w) => isDueNow(w, now)).sort(byDue);
-  const later = active.filter((w) => isDueToday(w, now) && !isDueNow(w, now));
-  const fresh = active.filter((w) => w.srs.reps === 0).sort(newOrder);
+  const due = dueCards(active, now);
+  const laterStates = active.flatMap((w) => [w.srs, w.prod]).filter((s) => isStateLaterToday(s, now));
+  const fresh = active.filter((w) => !isStarted(w.srs)).sort(newOrder);
+  const toProduce = active
+    .filter((w) => readyToProduce(w, now))
+    .sort((a, b) => (a.srs.firstSeen ?? 0) - (b.srs.firstSeen ?? 0) || newOrder(a, b));
   const today = startOfDay(now);
-  const newStartedToday = active.filter((w) => w.srs.firstSeen != null && w.srs.firstSeen >= today).length;
+  const newStartedToday = active.filter(
+    (w) => w.srs.firstSeen != null && w.srs.firstSeen >= today && w.srs.origin !== 'placement',
+  ).length;
+  const produceStartedToday = active.filter((w) => w.prod.firstSeen != null && w.prod.firstSeen >= today).length;
   const limit = opts.newPerDay > 0 ? opts.newPerDay : Infinity;
   const newLimitReached = newStartedToday >= limit;
   const base = {
     dueNow: due.length,
-    laterToday: later.length,
-    nextDueAt: later.length ? Math.min(...later.map((w) => w.srs.due ?? Infinity)) : null,
+    forgotten: due.filter((c) => c.tier === 0).length,
+    prodDue: due.filter((c) => c.track === 'prod' && c.tier > 0).length,
+    recDue: due.filter((c) => c.track === 'rec' && c.tier > 0).length,
+    laterToday: laterStates.length,
+    nextDueAt: laterStates.length ? Math.min(...laterStates.map((s) => s.due ?? Infinity)) : null,
     newAvailable: fresh.length,
     newStartedToday,
     newLimitReached,
+    produceAvailable: toProduce.length,
+    produceStartedToday,
   };
+
   if (due.length) {
-    // révision : thèmes regroupés, sans contrainte de fréquence
-    const pick = coherentPick(due, opts.size, due.length);
-    return { ...base, kind: 'review', ...pick };
+    // priorité : oubliés et non terminés, puis le reste ; thèmes regroupés à l'intérieur de chaque niveau
+    const urgent = due.filter((c) => c.tier <= 1);
+    const rest = due.filter((c) => c.tier > 1);
+    const asItems = (cards: DueCard[]) => cards.map((c) => ({ id: c.key, group: groupKey(c.word) }));
+    const first = pickItems(asItems(urgent), opts.size, urgent.length);
+    const room = opts.size - first.ids.length;
+    const second = room > 0 ? pickItems(asItems(rest), room, rest.length) : { ids: [], groups: [] };
+    const groups = [...first.groups, ...second.groups.filter((g) => !first.groups.includes(g))];
+    return { ...base, kind: 'review', ids: [...first.ids, ...second.ids], groups };
   }
-  if (fresh.length && (!newLimitReached || opts.ignoreNewLimit)) {
-    const size = opts.ignoreNewLimit || limit === Infinity ? opts.size : Math.min(opts.size, limit - newStartedToday);
-    return { ...base, kind: 'new', ...coherentPick(fresh, size) };
-  }
+
+  const newAllowed = fresh.length > 0 && (!newLimitReached || !!opts.ignoreNewLimit);
+  const newSize = opts.ignoreNewLimit || limit === Infinity ? opts.size : Math.min(opts.size, limit - newStartedToday);
+  const newList = () => ({ ...base, kind: 'new' as const, ...coherentPick(fresh, newSize) });
+  const produceList = () => ({ ...base, kind: 'produce' as const, ...coherentCards(toProduce, 'prod', opts.size, THEME_WINDOW) });
+
+  if (newAllowed && (toProduce.length === 0 || newStartedToday <= produceStartedToday)) return newList();
+  if (toProduce.length) return produceList();
+  if (newAllowed) return newList();
   return { ...base, kind: 'done', ids: [], groups: [] };
 }
 
-/** Révision anticipée : les mots appris dont l'échéance est la plus proche. */
+/** Révision anticipée : les cartes déjà commencées dont l'échéance est la plus proche (une par mot). */
 export function pickAhead(words: Word[], now: number, size: number): string[] {
-  return words
-    .filter((w) => !w.deleted && w.srs.reps > 0 && !isDueNow(w, now))
-    .sort(byDue)
+  const cards: { key: string; due: number }[] = [];
+  for (const w of words) {
+    if (w.deleted) continue;
+    const rec = isStarted(w.srs) && !isStateDueNow(w.srs, now) ? (w.srs.due ?? Infinity) : Infinity;
+    const prod = w.prod.reps > 0 && !isStateDueNow(w.prod, now) ? (w.prod.due ?? Infinity) : Infinity;
+    if (rec === Infinity && prod === Infinity) continue;
+    cards.push(prod <= rec ? { key: cardKey(w.id, 'prod'), due: prod } : { key: cardKey(w.id, 'rec'), due: rec });
+  }
+  return cards
+    .sort((a, b) => a.due - b.due)
     .slice(0, size)
-    .map((w) => w.id);
+    .map((c) => c.key);
 }
 
 /**
@@ -142,8 +238,8 @@ export function pickAhead(words: Word[], now: number, size: number): string[] {
  */
 export function orderSelection(words: Word[], now: number): Word[] {
   const due = words.filter((w) => isDueToday(w, now)).sort(byDue);
-  const fresh = words.filter((w) => w.srs.reps === 0).sort(newOrder);
-  const others = words.filter((w) => w.srs.reps > 0 && !isDueToday(w, now)).sort(byDue);
+  const fresh = words.filter((w) => !isStarted(w.srs)).sort(newOrder);
+  const others = words.filter((w) => isStarted(w.srs) && !isDueToday(w, now)).sort(byDue);
   return [...due, ...fresh, ...others];
 }
 

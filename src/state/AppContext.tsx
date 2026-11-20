@@ -7,7 +7,8 @@ import { answerCurrent, createSession, currentWordId, endSession, resumeSession 
 import { pickAhead, pickFromSelection, planNextSession } from '../domain/selection';
 import { groupLabel } from '../data/themes';
 import { makeSnapshot } from '../domain/stats';
-import { newSrsState, schedule } from '../domain/srs';
+import { newSrsState } from '../domain/srs';
+import { applyAnswer, parseCard, stateOf } from '../domain/tracks';
 import { uid } from '../domain/text';
 import { buildLangIndex, type LangIndex } from '../domain/lang';
 import {
@@ -76,6 +77,8 @@ interface AppValue {
   deleteWord(id: string): void;
   updateSettings(patch: Partial<Settings>): void;
   applyImport(changes: Changes): Promise<void>;
+  /** Enregistre les mots jugés connus au test de placement et marque le test comme fait. */
+  applyPlacement(updated: Word[]): void;
   resetAllProgress(): Promise<void>;
   syncNow(): Promise<void>;
   toast(text: string, tone?: Toast['tone']): void;
@@ -105,9 +108,10 @@ function normalizeActive(sessions: ReviewSession[], now: number): { sessions: Re
 }
 
 /** Titre d'une session : « Nouvelle liste · pronoms, verbes essentiels ». */
-export function sessionTitle(kind: 'review' | 'new', groups: string[]): string {
+export function sessionTitle(kind: 'review' | 'new' | 'produce', groups: string[]): string {
   const themes = groups.slice(0, 3).map(groupLabel).join(', ');
-  return `${kind === 'review' ? 'Révision' : 'Nouvelle liste'}${themes ? ' · ' + themes : ''}`;
+  const head = kind === 'review' ? 'Révision' : kind === 'new' ? 'Nouvelle liste' : 'À dire en anglais';
+  return `${head}${themes ? ' · ' + themes : ''}`;
 }
 
 export function AppProvider({ children }: { children: ReactNode }) {
@@ -296,7 +300,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const startSession = useCallback(
     (ids: string[], label: string, selection: { label: string; remainingIds: string[] } | null = null) => {
       const t = Date.now();
-      const valid = ids.filter((id) => wordsById.has(id) && !wordsById.get(id)!.deleted);
+      const valid = ids.filter((id) => {
+        const w = wordsById.get(parseCard(id).wordId);
+        return !!w && !w.deleted;
+      });
       if (!valid.length) return null;
       const closed = activeSession ? [endSession(activeSession, t)] : [];
       const s = createSession(valid, { id: uid('s'), now: t, label, selection });
@@ -349,13 +356,21 @@ export function AppProvider({ children }: { children: ReactNode }) {
       const key = `${s.id}:${s.answers.length}`;
       if (lastAnswerKey.current === key) return;
       lastAnswerKey.current = key;
-      const wordId = currentWordId(s);
-      const w = wordId ? wordsById.get(wordId) : undefined;
-      if (!wordId || !w) return;
+      const key0 = currentWordId(s);
+      if (!key0) return;
+      const { wordId, track } = parseCard(key0);
+      const w = wordsById.get(wordId);
       const t = Date.now();
-      const srs = schedule(w.srs, grade, t);
-      const updated: Word = { ...w, srs, updatedAt: t };
-      const next = answerCurrent(s, grade, t, srs.interval);
+      if (!w) {
+        // mot supprimé entre-temps : on passe simplement à la carte suivante
+        const next = answerCurrent(s, 'good', t, 0);
+        setSessions((cur) => upsert(cur, [next]));
+        if (next.status !== 'active') setFinished(next);
+        persist({ sessions: [next] });
+        return;
+      }
+      const updated = applyAnswer(w, track, grade, t);
+      const next = answerCurrent(s, grade, t, stateOf(updated, track).interval);
       const nextWords = words.map((x) => (x.id === updated.id ? updated : x));
       const snap = makeSnapshot(nextWords, t);
       setWords(nextWords);
@@ -401,7 +416,9 @@ export function AppProvider({ children }: { children: ReactNode }) {
         updatedAt: t,
         edited: false,
         deleted: false,
+        cefr: null,
         srs: newSrsState(),
+        prod: newSrsState(),
       };
       setWords((cur) => [...cur, w]);
       persist({ words: [w] });
@@ -425,7 +442,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
     (id: string, content: Partial<WordContent>) => mutateWord(id, (w) => ({ ...w, ...content, edited: true })),
     [mutateWord],
   );
-  const resetWord = useCallback((id: string) => mutateWord(id, (w) => ({ ...w, srs: newSrsState() })), [mutateWord]);
+  const resetWord = useCallback((id: string) => mutateWord(id, (w) => ({ ...w, srs: newSrsState(), prod: newSrsState() })), [mutateWord]);
   const restoreCoreContent = useCallback(
     (id: string) => {
       const entry = CORE_ENTRIES.find((e) => e.id === id);
@@ -434,7 +451,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
     [mutateWord],
   );
   const deleteWord = useCallback(
-    (id: string) => mutateWord(id, (w) => (w.source === 'user' ? { ...w, deleted: true } : { ...w, srs: newSrsState() })),
+    (id: string) => mutateWord(id, (w) => (w.source === 'user' ? { ...w, deleted: true } : { ...w, srs: newSrsState(), prod: newSrsState() })),
     [mutateWord],
   );
 
@@ -465,15 +482,31 @@ export function AppProvider({ children }: { children: ReactNode }) {
     [scheduleSync],
   );
 
+  const applyPlacement = useCallback(
+    (updated: Word[]) => {
+      const t = Date.now();
+      const map = new Map(updated.map((w) => [w.id, w]));
+      const nextSettings = { ...stateRef.current.settings, placementDone: true, updatedAt: t };
+      setWords((cur) => cur.map((w) => map.get(w.id) ?? w));
+      setSettings(nextSettings);
+      persist({ words: updated, settings: nextSettings });
+    },
+    [persist],
+  );
+
   const resetAllProgress = useCallback(async () => {
     const repo = repoRef.current;
     if (!repo) return;
     const t = Date.now();
     const cur = stateRef.current;
-    const resetWords = cur.words.filter((w) => w.srs.reps > 0).map((w) => ({ ...w, srs: newSrsState(), updatedAt: t }));
+    const resetWords = cur.words
+      .filter((w) => w.srs.reps > 0 || w.prod.reps > 0 || w.srs.origin)
+      .map((w) => ({ ...w, srs: newSrsState(), prod: newSrsState(), updatedAt: t }));
     const delSessions = cur.sessions.filter((s) => !s.deleted).map((s) => ({ ...s, deleted: true, status: 'completed' as const, updatedAt: t }));
     const delDaily = cur.daily.filter((d) => !d.deleted).map((d) => ({ ...d, deleted: true, updatedAt: t }));
-    await repo.save({ words: resetWords, sessions: delSessions, daily: delDaily });
+    const nextSettings = { ...cur.settings, placementDone: false, updatedAt: t };
+    await repo.save({ words: resetWords, sessions: delSessions, daily: delDaily, settings: nextSettings });
+    setSettings(nextSettings);
     setWords((w) => upsert(w, resetWords));
     setSessions((s) => upsert(s, delSessions));
     setDaily((d) => upsert(d, delDaily));
@@ -518,6 +551,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
     deleteWord,
     updateSettings,
     applyImport,
+    applyPlacement,
     resetAllProgress,
     syncNow,
     toast,

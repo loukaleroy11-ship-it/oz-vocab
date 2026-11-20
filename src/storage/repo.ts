@@ -3,6 +3,7 @@
  * sérialisées, suivi des paquets modifiés pour la synchronisation.
  */
 import { CORE_ENTRIES, CORE_VERSION, coreContent, coreWord } from '../data/core';
+import { normalizeWord } from '../domain/normalize';
 import { normalizeSettings, type DailySnapshot, type ReviewSession, type Settings, type Word } from '../domain/types';
 import { SETTINGS_BUCKET, dailyBucket, sessionBucket, wordBucket } from './buckets';
 import type { Batch, Store } from './store';
@@ -48,19 +49,29 @@ export class Repo {
     ]);
     (dirty ?? []).forEach((d) => this.mark(d));
 
-    const byId = new Map(words.map((w) => [w.id, w]));
     const toWrite: Word[] = [];
+    // ajout des champs récents (suivi « produire », niveau) aux mots enregistrés par une ancienne version
+    const byId = new Map(
+      words.map((raw) => {
+        const w = normalizeWord(raw);
+        if (w !== raw) toWrite.push(w);
+        return [w.id, w];
+      }),
+    );
     for (const entry of CORE_ENTRIES) {
       const existing = byId.get(entry.id);
       if (!existing) {
         const w = coreWord(entry, now);
         byId.set(w.id, w);
         toWrite.push(w);
-      } else if ((coreVersion ?? 0) < CORE_VERSION && !existing.edited) {
-        // mise à jour du contenu de référence sans toucher à la progression
-        const w = { ...existing, ...coreContent(entry), rank: entry.rank, sourceRank: entry.sourceRank, freqPerMillion: entry.freqPerMillion };
+      } else if ((coreVersion ?? 0) < CORE_VERSION) {
+        // mise à jour des données de référence sans toucher à la progression
+        // (le contenu modifié à la main est conservé)
+        const meta = { rank: entry.rank, sourceRank: entry.sourceRank, freqPerMillion: entry.freqPerMillion, cefr: entry.cefr };
+        const w = existing.edited ? { ...existing, ...meta } : { ...existing, ...coreContent(entry), ...meta };
         byId.set(w.id, w);
-        toWrite.push(w);
+        if (!toWrite.includes(existing)) toWrite.push(w);
+        else toWrite[toWrite.indexOf(existing)] = w;
       }
     }
     if (toWrite.length || coreVersion !== CORE_VERSION) {
@@ -119,7 +130,7 @@ export class Repo {
         return (incoming ?? []).filter((x) => x.updatedAt > (map.get(x.id) ?? -1));
       };
       const applied: Changes = {
-        words: newer(changes.words, words),
+        words: newer(changes.words?.map(normalizeWord), words),
         sessions: newer(changes.sessions, sessions),
         daily: newer(changes.daily, daily),
         settings:

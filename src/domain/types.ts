@@ -34,6 +34,16 @@ export type Grade = 'again' | 'hard' | 'good' | 'easy';
 
 export type Phase = 'new' | 'learning' | 'review' | 'relearning';
 
+/**
+ * Deux suivis indépendants par mot :
+ *  - rec  (reconnaître) : je vois l'anglais, je retrouve le sens en français ;
+ *  - prod (produire)    : je vois le français, je dis ou j'écris le mot anglais.
+ */
+export type Track = 'rec' | 'prod';
+
+export type Cefr = 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2';
+export const CEFR_LEVELS: Cefr[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+
 /** Paramètres de répétition espacée d'un mot (adaptation de SM-2, voir srs.ts). */
 export interface SrsState {
   phase: Phase;
@@ -55,6 +65,8 @@ export interface SrsState {
   lastGrade: Grade | null;
   lastReviewed: number | null;
   firstSeen: number | null;
+  /** « placement » : mot jugé connu au test de placement (pas encore révisé dans une liste). */
+  origin?: 'placement';
 }
 
 export type IpaSource = 'britfone-au' | 'claude' | 'server-ai' | 'dictionary' | 'manual';
@@ -91,10 +103,16 @@ export interface Word extends WordContent {
   /** Le contenu (traduction, exemple…) a été modifié à la main. */
   edited: boolean;
   deleted: boolean;
+  /** Niveau CECRL du sens principal (CEFR-J / Octanove), null si inconnu. */
+  cefr: Cefr | null;
+  /** Suivi « reconnaître » (anglais → français). */
   srs: SrsState;
+  /** Suivi « produire » (français → anglais). */
+  prod: SrsState;
 }
 
 export interface SessionAnswer {
+  /** Clé de carte : identifiant du mot (reconnaître) ou identifiant + « @p » (produire). */
   wordId: string;
   grade: Grade;
   at: number;
@@ -143,6 +161,8 @@ export interface DailySnapshot {
 export type ThemeSetting = 'light' | 'dark' | 'system';
 export type AnswerMode = 'two' | 'three';
 export type AudioPreference = 'tts' | 'native-first';
+/** Réponse aux cartes français → anglais : à voix haute puis vérifier, ou en tapant le mot. */
+export type ProdMode = 'oral' | 'written';
 
 export interface Settings {
   /** Version du format des réglages (migrations). */
@@ -156,13 +176,16 @@ export interface Settings {
   speechRate: number;
   autoPlay: boolean;
   audioPreference: AudioPreference;
+  prodMode: ProdMode;
+  /** Test de placement fait (ou ignoré). */
+  placementDone: boolean;
   syncEnabled: boolean;
   /** Code d'accès facultatif pour la fonction serveur de traduction. */
   lookupAccessCode: string;
   updatedAt: number;
 }
 
-export const SETTINGS_SCHEMA = 2;
+export const SETTINGS_SCHEMA = 3;
 
 export const DEFAULT_SETTINGS: Settings = {
   schema: SETTINGS_SCHEMA,
@@ -174,6 +197,8 @@ export const DEFAULT_SETTINGS: Settings = {
   speechRate: 0.9,
   autoPlay: true,
   audioPreference: 'tts',
+  prodMode: 'oral',
+  placementDone: false,
   syncEnabled: true,
   lookupAccessCode: '',
   updatedAt: 0,
@@ -183,13 +208,14 @@ export const DEFAULT_SETTINGS: Settings = {
  * Complète et met à jour des réglages enregistrés.
  * Version 1 : limite de 20 nouveaux mots par jour par défaut → désormais sans limite
  * (le bouton « Réviser » enchaîne les nouvelles listes une fois les révisions faites).
+ * Version 2 → 3 : mode de réponse des cartes français → anglais et test de placement.
  */
 export function normalizeSettings(s: Partial<Settings> | null | undefined): Settings {
   const merged: Settings = { ...DEFAULT_SETTINGS, ...(s ?? {}) };
-  if ((s?.schema ?? 1) < 2) {
-    if (merged.newPerDay === 20) merged.newPerDay = 0;
-    merged.schema = SETTINGS_SCHEMA;
-  }
+  if ((s?.schema ?? 1) < 2 && merged.newPerDay === 20) merged.newPerDay = 0;
+  if (merged.prodMode !== 'oral' && merged.prodMode !== 'written') merged.prodMode = 'oral';
+  merged.placementDone = merged.placementDone === true;
+  merged.schema = SETTINGS_SCHEMA;
   return merged;
 }
 

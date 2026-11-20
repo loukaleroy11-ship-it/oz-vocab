@@ -1,10 +1,10 @@
 import { endOfDay } from './dates';
-import { isDifficult, isMastered } from './srs';
+import { isDifficult, isMastered, isStarted } from './srs';
 import type { LearningStatus, Pos, Word } from './types';
 
 /** Un mot est-il à réviser aujourd'hui (échéance passée ou dans la journée) ? */
 export function isDueToday(w: Word, now: number): boolean {
-  return w.srs.reps > 0 && w.srs.due != null && w.srs.due <= endOfDay(now);
+  return isStarted(w.srs) && w.srs.due != null && w.srs.due <= endOfDay(now);
 }
 
 /**
@@ -12,14 +12,14 @@ export function isDueToday(w: Word, now: number): boolean {
  * à l'heure prévue (10 min plus tard) ; un mot appris peut être revu à tout moment de la journée.
  */
 export function isDueNow(w: Word, now: number): boolean {
-  if (w.srs.reps === 0 || w.srs.due == null) return false;
+  if (!isStarted(w.srs) || w.srs.due == null) return false;
   return w.srs.interval === 0 ? w.srs.due <= now : w.srs.due <= endOfDay(now);
 }
 
 /** Les états se recoupent : un mot peut être à la fois « difficile » et « à revoir ». */
 export function statusTags(w: Word, now: number): LearningStatus[] {
   const tags: LearningStatus[] = [];
-  if (w.srs.reps === 0) return ['new'];
+  if (!isStarted(w.srs)) return ['new'];
   if (isMastered(w.srs)) tags.push('mastered');
   else tags.push('learning');
   if (isDueToday(w, now)) tags.push('due');

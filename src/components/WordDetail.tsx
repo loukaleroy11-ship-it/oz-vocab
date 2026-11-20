@@ -132,8 +132,10 @@ export function WordDetail({ wordId, onClose }: { wordId: string | null; onClose
           </dl>
 
           <section>
-            <p className="eyebrow mb-2">Progression</p>
-            {s.reps === 0 ? (
+            <p className="eyebrow mb-2">Reconnaître (anglais → français){word.cefr ? ` · niveau ${word.cefr}` : ''}</p>
+            {s.origin === 'placement' ? (
+              <p className="text-ink-2">Jugé connu au test de placement · vérification {formatDue(s.due, now)}.</p>
+            ) : s.reps === 0 ? (
               <p className="text-ink-2">Jamais révisé.</p>
             ) : (
               <dl className="grid grid-cols-2 gap-x-4 gap-y-3 text-sm sm:grid-cols-3">
@@ -150,6 +152,24 @@ export function WordDetail({ wordId, onClose }: { wordId: string | null; onClose
             )}
             {s.reps > 0 && s.interval < SRS.masteredInterval && (
               <p className="mt-2 text-xs text-muted">Un mot est « maîtrisé » quand son intervalle atteint {SRS.masteredInterval} jours.</p>
+            )}
+          </section>
+
+          <section>
+            <p className="eyebrow mb-2">Dire en anglais (français → anglais)</p>
+            {word.prod.reps === 0 ? (
+              <p className="text-ink-2">
+                {word.srs.phase === 'review' ? 'Pas encore commencé : il viendra dans une liste « À dire en anglais ».' : 'Commence quand le mot est reconnu.'}
+              </p>
+            ) : (
+              <dl className="grid grid-cols-2 gap-x-4 gap-y-3 text-sm sm:grid-cols-3">
+                <Stat label="Révisions" value={word.prod.reps} />
+                <Stat label="Correctes" value={word.prod.correct} />
+                <Stat label="Incorrectes" value={word.prod.incorrect} />
+                <Stat label="Intervalle" value={word.prod.interval ? `${word.prod.interval} j` : 'apprentissage'} />
+                <Stat label="Prochaine révision" value={formatDue(word.prod.due, now)} />
+                <Stat label="Dernier résultat" value={word.prod.lastGrade ? GRADE_LABEL[word.prod.lastGrade] : '—'} />
+              </dl>
             )}
           </section>
 
