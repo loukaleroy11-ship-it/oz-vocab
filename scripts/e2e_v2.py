@@ -25,6 +25,8 @@ ROOT = Path(__file__).resolve().parent.parent
 CORE = json.loads((ROOT / 'src/data/coreWords.json').read_text(encoding='utf-8'))['words']
 FR_OF = {w['en']: w['fr'] for w in CORE}
 RANK_OF = {w['en']: w['rank'] for w in CORE}
+PACK = json.loads((ROOT / 'src/data/packWords.json').read_text(encoding='utf-8'))['words']
+RANK_OF.update({w['en']: w['rank'] for w in PACK})
 results: list[tuple[str, bool, str]] = []
 
 
@@ -91,7 +93,7 @@ def run():
 
         page.goto(BASE + '/#accueil')
         expect(page.get_by_role('heading', name='Séance du jour')).to_be_visible()
-        check('accueil : 400 nouveaux mots restants', step_value(page, 'Nouveaux mots') == '400', step_value(page, 'Nouveaux mots'))
+        check('accueil : 400 nouveaux mots restants (+ paquets)', step_value(page, 'Nouveaux mots') == str(400 + len(PACK)), step_value(page, 'Nouveaux mots'))
         check('accueil : 100 mots prêts à être dits en anglais', step_value(page, 'À dire pour la 1re fois') == '100')
         check('invitation au placement masquée une fois le test fait', page.get_by_role('link', name='Faire le test').count() == 0)
 
@@ -146,7 +148,7 @@ def run():
         page.get_by_role('button', name='Pause').click()
 
         # ---------- 5. S'exprimer : les 5 temps + quiz
-        page.goto(BASE + '/#exprimer')
+        page.goto(BASE + '/#temps')
         expect(page.get_by_role('heading', name='Les 5 temps essentiels')).to_be_visible()
         check('5 fiches de temps', page.locator('details').count() == 5)
         check('fiche : quand / comment / pièges / à voix haute', all(t in page.locator('details').first.inner_text().lower() for t in ['quand l’utiliser', 'comment le former', 'pièges de francophone', 'à toi, à voix haute']))
@@ -181,6 +183,56 @@ def run():
         expect(page.get_by_role('dialog')).to_be_visible()
         dlg = page.get_by_role('dialog').inner_text().lower()
         check('fiche du mot : deux suivis affichés', 'reconnaître (anglais → français)' in dlg and 'dire en anglais' in dlg, dlg[-300:].replace('\n', ' '))
+
+        # ---------- 9. S'exprimer : hub et exercices
+        page.goto(BASE + '/#exprimer')
+        expect(page.get_by_role('heading', name='S’exprimer')).to_be_visible()
+        hub = page.locator('main').inner_text()
+        check('hub : 7 exercices + fiches', all(t in hub for t in ['Phrase avec le mot', 'Le mot juste', 'Plus naturel', 'Reformuler', 'Situations', 'Réponse rapide', 'Mon histoire', 'Prononciation', 'Les 5 temps essentiels']))
+        check('mobile : pas de défilement horizontal (hub)', no_horizontal_scroll(page))
+        page.screenshot(path=str(OUT / 'v2-mobile-hub.png'), full_page=True)
+
+        page.goto(BASE + '/#ex-motjuste')
+        page.locator('main article ul li button').first.click()
+        st = page.locator('main [role="status"]').first.inner_text()
+        check('le mot juste : correction et explication', ('Bonne réponse' in st or 'Réponse :' in st) and len(st) > 30, st[:80].replace('\n', ' '))
+        page.screenshot(path=str(OUT / 'v2-mobile-motjuste.png'), full_page=True)
+        page.get_by_role('button', name='Suivante').click()
+        check('le mot juste : question suivante', 'Question 2 / 6' in page.locator('main').inner_text())
+
+        page.goto(BASE + '/#ex-situations')
+        page.locator('main ul li button').first.click()
+        page.get_by_role('button', name='Je suis prêt').click()
+        page.get_by_role('button', name='Voir les réponses modèles').click()
+        sit = page.locator('main').inner_text()
+        check('situation : réponse modèle + un cran au-dessus', 'RÉPONSE MODÈLE' in sit.upper() and 'UN CRAN AU-DESSUS' in sit.upper())
+        page.screenshot(path=str(OUT / 'v2-mobile-situation.png'), full_page=True)
+        boxes = page.locator('main input[type=checkbox]')
+        boxes.nth(0).check()
+        boxes.nth(1).check()
+        page.get_by_role('button', name='Valider (2/3)').click()
+        check('situation réussie enregistrée', page.get_by_text('réussie').first.is_visible())
+
+        page.goto(BASE + '/#ex-naturel')
+        page.get_by_role('button', name='Voir la version naturelle').click()
+        check('plus naturel : version corrigée affichée', page.locator('main p.text-gum').count() >= 1)
+
+        page.goto(BASE + '/#ex-rapide')
+        page.locator('main').get_by_role('button', name='Commencer').click()
+        check('réponse rapide : minuteur de 20 s', bool(re.search(r'\b(20|19|18) s\b', page.locator('main').inner_text())))
+        for _ in range(10):
+            page.get_by_role('button', name='Question suivante').click()
+        check('réponse rapide : exemples de réponses à la fin', page.get_by_text('Exemples de réponses').is_visible())
+
+        page.goto(BASE + '/#prononciation')
+        check('prononciation : 12 fiches à écouter et répéter', page.locator('main details').count() == 12)
+        page.screenshot(path=str(OUT / 'v2-mobile-prononciation.png'), full_page=True)
+
+        page.goto(BASE + '/#accueil')
+        acc = page.locator('main').inner_text()
+        check('accueil : niveau en cours et critères', 'Niveau en cours' in acc and 'situations' in acc)
+        page.goto(BASE + '/#parametres')
+        check('réglages : paquets activables', page.get_by_role('button', name=re.compile('Phrasal verbs')).count() == 1)
 
         real_errors = [e for e in errors if 'Failed to load resource' not in e and 'dictionaryapi.dev' not in e]
         check('aucune erreur JavaScript', not real_errors, '; '.join(real_errors[:3]))

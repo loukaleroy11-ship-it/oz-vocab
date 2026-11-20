@@ -21,6 +21,7 @@ BASE = sys.argv[1] if len(sys.argv) > 1 else 'http://localhost:4173'
 OUT = Path(sys.argv[2] if len(sys.argv) > 2 else 'captures')
 OUT.mkdir(parents=True, exist_ok=True)
 results: list[tuple[str, bool, str]] = []
+PACKS = len(json.loads((Path(__file__).resolve().parent.parent / 'src/data/packWords.json').read_text(encoding='utf-8'))['words'])
 
 
 def step_value(page, title: str) -> str:
@@ -51,7 +52,7 @@ def run():
         page.goto(BASE + '/#accueil')
         expect(page.get_by_role('heading', name='Séance du jour')).to_be_visible(timeout=15000)
         total = step_value(page, 'Nouveaux mots')
-        check('500 mots présents au premier lancement', total == '500', f'nouveaux = {total}')
+        check('500 mots + paquets présents au premier lancement', total == str(500 + PACKS), f'nouveaux = {total}')
         check('mobile : pas de défilement horizontal (accueil)', no_horizontal_scroll(page))
         page.screenshot(path=str(OUT / 'mobile-accueil.png'), full_page=True)
 
@@ -104,7 +105,7 @@ def run():
         page.reload()
         expect(page.get_by_role('heading', name='Séance du jour')).to_be_visible()
         new_count = step_value(page, 'Nouveaux mots')
-        check('progrès conservés après rechargement', new_count == '489', f'nouveaux = {new_count}')
+        check('progrès conservés après rechargement', new_count == str(489 + PACKS), f'nouveaux = {new_count}')
         txt = page.locator('main').inner_text()
         check('statistiques du jour', '11 bonnes réponses sur 12' in txt, txt[:300])
         check('accueil : prochaine liste annoncée', 'prochaine liste' in txt.lower() and 'nouveaux mots' in txt)
@@ -198,8 +199,8 @@ def run():
                 route.fulfill(json={
                     'inputLanguage': 'en', 'ambiguous': True,
                     'candidates': [
-                        {'en': 'to improve', 'fr': 'améliorer', 'frAlt': ['perfectionner'], 'pos': 'verb', 'ipa': '/ɪmˈpɹʉːv/', 'exampleEn': 'I want to improve my English.', 'exampleFr': 'Je veux améliorer mon anglais.', 'sense': 'rendre meilleur'},
-                        {'en': 'to improve', 'fr': 's’améliorer', 'frAlt': [], 'pos': 'verb', 'ipa': '/ɪmˈpɹʉːv/', 'exampleEn': 'The weather should improve.', 'exampleFr': 'Le temps devrait s’améliorer.', 'sense': 'devenir meilleur'},
+                        {'en': 'to whittle', 'fr': 'tailler', 'frAlt': ['sculpter au couteau'], 'pos': 'verb', 'ipa': '/ˈwɪtl̩/', 'exampleEn': 'He whittled a spoon from a branch.', 'exampleFr': 'Il a taillé une cuillère dans une branche.', 'sense': 'tailler du bois'},
+                        {'en': 'to whittle down', 'fr': 'réduire', 'frAlt': [], 'pos': 'verb', 'ipa': '/ˈwɪtl̩ daʊn/', 'exampleEn': 'We whittled the list down to five.', 'exampleFr': 'On a réduit la liste à cinq.', 'sense': 'réduire peu à peu'},
                     ],
                     'echo': body.get('text'),
                 })
@@ -208,12 +209,12 @@ def run():
         p2.route('**/api/lookup', fake_api)
         p2.goto(BASE + '/#ajouter')
         expect(p2.get_by_text('Service de traduction du site')).to_be_visible(timeout=15000)
-        p2.fill('#add-input', 'to improve')
+        p2.fill('#add-input', 'to whittle')
         p2.get_by_role('button', name='Rechercher').click()
         expect(p2.get_by_text('Plusieurs traductions possibles')).to_be_visible(timeout=15000)
         p2.screenshot(path=str(OUT / 'mobile-ajout-ambigu.png'), full_page=True)
         p2.get_by_text('Choisir ce sens').first.click()
-        check('traduction proposée modifiable', p2.input_value('#add-fr') == 'améliorer' and p2.input_value('#add-ipa') == '/ɪmˈpɹʉːv/')
+        check('traduction proposée modifiable', p2.input_value('#add-fr') == 'tailler' and p2.input_value('#add-ipa') == '/ˈwɪtl̩/')
         p2.get_by_role('button', name='Ajouter à ma collection').click()
         expect(p2.get_by_text('ajouté à ta collection')).to_be_visible()
         # échec du service : pas de fausse traduction
@@ -233,12 +234,12 @@ def run():
         path = OUT / 'sauvegarde.json'
         dl.value.save_as(path)
         data = json.loads(path.read_text())
-        check('export JSON complet', data['app'] == 'oz-vocab' and len(data['words']) == 501 and len(data['sessions']) >= 1, f"{len(data['words'])} mots, {len(data['sessions'])} sessions")
+        check('export JSON complet', data['app'] == 'oz-vocab' and len(data['words']) == 501 + PACKS and len(data['sessions']) >= 1, f"{len(data['words'])} mots, {len(data['sessions'])} sessions")
         with page.expect_download() as dl2:
             page.get_by_role('button', name='Exporter le vocabulaire (CSV)').click()
         csv_path = OUT / 'vocabulaire.csv'
         dl2.value.save_as(csv_path)
-        check('export CSV', csv_path.read_text(encoding='utf-8-sig').count('\n') >= 500)
+        check('export CSV', csv_path.read_text(encoding='utf-8-sig').count('\n') >= 500 + PACKS)
         # import dans un navigateur neuf
         ctx3 = browser.new_context(viewport={'width': 1280, 'height': 860}, locale='fr-FR')
         p3 = ctx3.new_page()
@@ -249,7 +250,7 @@ def run():
         p3.get_by_role('button', name='Importer', exact=True).click()
         expect(p3.get_by_text('Import terminé')).to_be_visible()
         p3.goto(BASE + '/#accueil')
-        check('import : progression retrouvée sur un autre navigateur', step_value(p3, 'Nouveaux mots') == '490')
+        check('import : progression retrouvée sur un autre navigateur', step_value(p3, 'Nouveaux mots') == str(490 + PACKS))
         p3.screenshot(path=str(OUT / 'desktop-accueil.png'), full_page=True)
         for r in ['explorer', 'stats', 'parametres', 'ajouter', 'exprimer', 'apparentes', 'placement']:
             p3.goto(BASE + f'/#{r}')

@@ -12,10 +12,10 @@ C’est un site web (React + TypeScript + Vite + Tailwind CSS), pas une applicat
 |---|---|
 | **Accueil — séance du jour** | ordre de la séance : mots oubliés → révisions (à dire / à reconnaître) → nouveaux mots ↔ mots à dire pour la 1re fois ; reconnus et productibles par niveau CECRL ; invitation au test de placement |
 | **Réviser** | listes de 10 cartes ; deux sortes de cartes : *anglais → français* (reconnaître) et *français → anglais* (produire, à l’oral ou en tapant le mot, fautes de frappe tolérées) ; une carte ratée revient en fin de liste ; reprise après interruption ; bilan |
-| **S’exprimer** | les 5 temps essentiels (present simple, present continuous, past simple, present perfect, will / going to) : quand et comment les utiliser, pièges de francophone, exemples audio, consignes à dire à voix haute, quiz de 12 questions |
+| **S’exprimer** | 7 exercices par niveau (A2, B1, B2, C1) : *Phrase avec le mot* (tes mots récents + consigne de niveau), *Le mot juste* (synonymes et nuances), *Plus naturel* (calques du français), *Reformuler* (plus simple / poli / formel / nuancé), *Situations* (quotidien, travail, mines, social : préparation 30 s, réponse modèle + version un cran au-dessus), *Réponse rapide* (10 questions × 20 s), *Mon histoire* (3 essais enregistrés, mots manquants ajoutés au vocabulaire) ; fiches *Les 5 temps* et *Prononciation* (12 sons, écouter / s’enregistrer / comparer). Réponse à l’oral ou à l’écrit, correcteur gratuit LanguageTool pour l’écrit, auto-évaluation |
 | **Vocabulaire** | recherche anglais / français, filtres combinables, fiche de chaque mot avec ses deux suivis ; **mots apparentés** (règles -tion, -té → -ty, -eux → -ous…, accent tonique, faux amis, orthographe australienne) ; ajout de mots |
 | **Test de placement** | ≈ 5 min, QCM A–E par tranches de 50 mots ; les tranches réussies ne sont pas reproposées comme nouvelles (vérifiées en révision 1 à 4 semaines plus tard) |
-| **Progrès** | reconnus / productibles par niveau, réponses par jour, mots maîtrisés, tableau jour par jour, historique des sessions |
+| **Progrès** | progression A2 → C1 (un niveau est validé avec 80 % de ses mots productibles et 5 situations réussies), reconnus / productibles par niveau, réponses par jour, mots maîtrisés, tableau jour par jour, historique des sessions |
 | **Paramètres** | voix et vitesse, lecture automatique, taille des sessions, nouveaux mots par jour, mode 2 boutons / 3 niveaux, thème clair / sombre, export JSON / CSV, import JSON, synchronisation, réinitialisation |
 
 ---
@@ -106,6 +106,18 @@ Les mots anglais ajoutés sont aussi enrichis, quand c’est possible, par le di
 Sur iPhone : Réglages › Accessibilité › Contenu énoncé › Voix › Anglais › Karen (Australie), version « améliorée ».
 
 ---
+
+## Paquets de vocabulaire (après les 500)
+
+| Paquet | Contenu |
+|---|---|
+| B1 · B2 · C1 | ≈ 690 + 550 + 400 mots. B1 et B2 : mots CEFR-J classés par fréquence orale (sous-titres OpenSubtitles, FrequencyWords), triés à la main (mots utiles gardés, mots de films policiers relégués) ; C1 : sélection rédigée pour nuancer et argumenter. Traductions rédigées pour l’application. |
+| Phrasal verbs | 150, avec exemple et traduction |
+| Expressions | ≈ 95 expressions idiomatiques et tournures naturelles |
+| Anglais australien | ≈ 95 mots et expressions (arvo, servo, reckon, yeah nah…) avec registre |
+| Travail et mines | ≈ 130 : recherche d’emploi, livraison, hôtellerie, ferme, chantier, mines (FIFO, roster, donga, crib…), sécurité (PPE, Take 5, JHA, isolation…) |
+
+Ordre : B1 → B2 → C1, les paquets thématiques étant intercalés par petits groupes du même thème. Chaque paquet peut être désactivé dans les paramètres. Régénérer : `python3 scripts/build_packs.py` (sources dans `scripts/source-data/packs/`).
 
 ## Les 500 mots : source et méthode
 
@@ -204,3 +216,5 @@ Deux sorties de compilation :
 - Britfone : licence MIT (`scripts/source-data/BRITFONE_LICENSE.txt`).
 - The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tokyo University of Foreign Studies (usage libre, y compris commercial, avec cette citation ; copyright Tono Laboratory, TUFS). Via [Open Language Profiles](https://github.com/openlanguageprofiles/olp-en-cefrj).
 - Octanove Vocabulary Profile C1/C2 1.0 : CC BY-SA 4.0.
+- FrequencyWords (Hermit Dave, d’après OpenSubtitles) : CC BY-SA 4.0, utilisé seulement pour classer les mots.
+- Correcteur des réponses tapées : API publique gratuite de LanguageTool (le texte tapé lui est envoyé ; aucune clé dans le code).
