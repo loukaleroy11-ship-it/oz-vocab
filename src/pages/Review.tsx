@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AudioButton } from '../components/AudioButton';
 import { Icon } from '../components/Icon';
+import { RecordCompare } from '../components/RecordCompare';
 import { Ipa, Notice, PageHeader, PosChip, Segmented, pct } from '../components/ui';
 import { formatDuration } from '../domain/dates';
 import { attemptsFor, currentWordId, sessionProgress, wordOutcome } from '../domain/queue';
@@ -480,6 +481,7 @@ function SessionView({ session }: { session: ReviewSession }) {
                 {check && <Verdict check={check} word={word} typed={typed} />}
                 {englishHead}
                 <p className="text-sm text-muted">Écoute, puis répète-le à voix haute.</p>
+                <RecordCompare key={cardKey} model={word.en} className="items-center" />
                 <div className="anim-reveal mt-1 flex w-full flex-col items-center gap-3 border-t border-line pt-5">
                   <PosChip pos={word.pos} />
                   <p className="text-xl font-bold">{word.fr}</p>
@@ -565,6 +567,7 @@ function SessionView({ session }: { session: ReviewSession }) {
                   {word.frAlt.length > 0 && <p className="max-w-md text-ink-2">{word.frAlt.join(' · ')}</p>}
                   {word.note && <p className="text-sm text-wattle-ink">{word.note}</p>}
                   {example}
+                  <RecordCompare key={cardKey} model={word.en} className="items-center" />
                 </div>
               ) : (
                 <p className="text-sm text-muted">Essaie de trouver la traduction avant de la révéler.</p>

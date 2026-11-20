@@ -1,17 +1,18 @@
 import { useMemo } from 'react';
 import { Icon } from '../components/Icon';
-import { LevelBars } from '../components/LevelBars';
+import { StageProgressList } from '../components/StageProgress';
+import { currentStage, stageProgress } from '../domain/practice';
 import { Notice, pct } from '../components/ui';
 import { sessionProgress } from '../domain/queue';
-import { computeOverview, levelBreakdown } from '../domain/stats';
+import { computeOverview } from '../domain/stats';
 import { navigate } from '../router';
 import { useApp } from '../state/AppContext';
 import { PlacementInvite, ThemeChips, useNextPlan } from './Review';
 
 export function Dashboard() {
-  const { words, sessions, now, activeSession, startDailySession, toast, settings } = useApp();
+  const { words, sessions, now, activeSession, startDailySession, toast, settings, practice } = useApp();
   const o = useMemo(() => computeOverview(words, sessions, now), [words, sessions, now]);
-  const levels = useMemo(() => levelBreakdown(words), [words]);
+  const stages = useMemo(() => stageProgress(words, practice), [words, practice]);
   const plan = useNextPlan();
   const today = new Intl.DateTimeFormat('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' }).format(now);
   const progress = activeSession ? sessionProgress(activeSession) : null;
@@ -110,16 +111,16 @@ export function Dashboard() {
         <section className="card min-w-0 p-5 lg:col-span-3" aria-labelledby="levels-title">
           <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
             <h2 id="levels-title" className="text-lg font-bold">
-              Reconnus et productibles
+              Niveau en cours : {currentStage(stages)}
             </h2>
             <p className="text-sm text-ink-2 tabular">
               {o.recognized} reconnus · {o.producible} productibles
             </p>
           </div>
-          <LevelBars rows={levels} />
+          <StageProgressList stages={stages} />
           <p className="mt-4 text-xs text-muted">
-            Reconnu : tu retrouves le sens à partir de l’anglais. Productible : tu sais le dire en anglais à partir du français. Niveaux CECRL d’après
-            CEFR-J et Octanove.
+            Pour valider un niveau : 80 % de ses mots productibles (tu sais les dire en anglais à partir du français, trait vertical) et 5 situations
+            réussies dans « S’exprimer ». Bleu clair : mots reconnus.
           </p>
         </section>
         <section className="flex min-w-0 flex-col gap-3 lg:col-span-2" aria-label="Fiches">
@@ -128,8 +129,8 @@ export function Dashboard() {
               <Icon name="speech" />
             </span>
             <span className="min-w-0">
-              <strong className="block">Les 5 temps essentiels</strong>
-              <span className="text-sm text-ink-2">Quand et comment les utiliser, les pièges de francophone, à dire à voix haute, et un quiz.</span>
+              <strong className="block">S’exprimer</strong>
+              <span className="text-sm text-ink-2">7 exercices pour parler : situations, réponse rapide, reformuler… et les 5 temps essentiels.</span>
             </span>
           </a>
           <a href="#apparentes" className="card flex items-start gap-3 p-4 transition-colors hover:border-ocean">

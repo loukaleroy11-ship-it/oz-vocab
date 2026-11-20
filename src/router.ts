@@ -4,7 +4,26 @@
  */
 import { useEffect, useState } from 'react';
 
-export const ROUTES = ['accueil', 'reviser', 'exprimer', 'explorer', 'apparentes', 'ajouter', 'placement', 'stats', 'parametres'] as const;
+export const ROUTES = [
+  'accueil',
+  'reviser',
+  'exprimer',
+  'explorer',
+  'apparentes',
+  'ajouter',
+  'placement',
+  'stats',
+  'parametres',
+  'temps',
+  'prononciation',
+  'ex-phrase',
+  'ex-motjuste',
+  'ex-naturel',
+  'ex-reformuler',
+  'ex-situations',
+  'ex-rapide',
+  'ex-histoire',
+] as const;
 export type Route = (typeof ROUTES)[number];
 
 export const ROUTE_LABEL: Record<Route, string> = {
@@ -17,6 +36,15 @@ export const ROUTE_LABEL: Record<Route, string> = {
   placement: 'Test de placement',
   stats: 'Progrès',
   parametres: 'Paramètres',
+  temps: 'Les 5 temps',
+  prononciation: 'Prononciation',
+  'ex-phrase': 'Phrase avec le mot',
+  'ex-motjuste': 'Le mot juste',
+  'ex-naturel': 'Plus naturel',
+  'ex-reformuler': 'Reformuler',
+  'ex-situations': 'Situations',
+  'ex-rapide': 'Réponse rapide',
+  'ex-histoire': 'Mon histoire',
 };
 
 function current(): Route {

@@ -9,6 +9,7 @@ import { groupLabel } from '../data/themes';
 import { makeSnapshot } from '../domain/stats';
 import { newSrsState } from '../domain/srs';
 import { applyAnswer, parseCard, stateOf } from '../domain/tracks';
+import { addPractice, type PracticeEntry } from '../domain/practice';
 import { uid } from '../domain/text';
 import { buildLangIndex, type LangIndex } from '../domain/lang';
 import {
@@ -77,12 +78,15 @@ interface AppValue {
   deleteWord(id: string): void;
   updateSettings(patch: Partial<Settings>): void;
   applyImport(changes: Changes): Promise<void>;
+  /** Journal des exercices « S'exprimer ». */
+  practice: PracticeEntry[];
+  logPractice(entries: Omit<PracticeEntry, 'id' | 'at'>[]): void;
   /** Enregistre les mots jugés connus au test de placement et marque le test comme fait. */
   applyPlacement(updated: Word[]): void;
   resetAllProgress(): Promise<void>;
   syncNow(): Promise<void>;
   toast(text: string, tone?: Toast['tone']): void;
-  getRepoData(): { words: Word[]; sessions: ReviewSession[]; daily: DailySnapshot[]; settings: Settings };
+  getRepoData(): { words: Word[]; sessions: ReviewSession[]; daily: DailySnapshot[]; settings: Settings; practice: PracticeEntry[] };
 }
 
 const Ctx = createContext<AppValue | null>(null);
@@ -129,14 +133,15 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [sessions, setSessions] = useState<ReviewSession[]>([]);
   const [daily, setDaily] = useState<DailySnapshot[]>([]);
   const [settings, setSettings] = useState<Settings>(DEFAULT_SETTINGS);
+  const [practice, setPractice] = useState<PracticeEntry[]>([]);
   const [finishedSession, setFinished] = useState<ReviewSession | null>(null);
   const [sync, setSync] = useState<SyncInfo>({ state: 'checking', lastAt: null, message: null });
   const [toasts, setToasts] = useState<Toast[]>([]);
   const [online, setOnline] = useState(() => (typeof navigator === 'undefined' ? true : navigator.onLine !== false));
 
   // références à jour pour les callbacks asynchrones
-  const stateRef = useRef({ words, sessions, daily, settings });
-  stateRef.current = { words, sessions, daily, settings };
+  const stateRef = useRef({ words, sessions, daily, settings, practice });
+  stateRef.current = { words, sessions, daily, settings, practice };
 
   const toast = useCallback((text: string, tone: Toast['tone'] = 'info') => {
     const id = Date.now() + Math.random();
@@ -229,6 +234,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
         setSessions(n.sessions);
         setDaily(data.daily);
         setSettings(data.settings);
+        setPractice(data.practice ?? []);
         const lastAt = (await repo.getMeta<number>('lastSyncAt')) ?? null;
         setReady(true);
         // synchronisation (claude.ai uniquement)
@@ -478,9 +484,21 @@ export function AppProvider({ children }: { children: ReactNode }) {
       if (changes.sessions?.length) setSessions((cur) => upsert(cur, changes.sessions!));
       if (changes.daily?.length) setDaily((cur) => upsert(cur, changes.daily!));
       if (changes.settings) setSettings(normalizeSettings(changes.settings));
+      if (changes.practice) setPractice(changes.practice);
       scheduleSync();
     },
     [scheduleSync],
+  );
+
+  const logPractice = useCallback(
+    (entries: Omit<PracticeEntry, 'id' | 'at'>[]) => {
+      const t = Date.now();
+      const full = entries.map((e, i) => ({ ...e, id: uid('p') + i, at: t }));
+      const next = addPractice(stateRef.current.practice, full);
+      setPractice(next);
+      repoRef.current?.save({ practice: next }, { markDirty: false }).catch(() => undefined);
+    },
+    [],
   );
 
   const applyPlacement = useCallback(
@@ -506,8 +524,9 @@ export function AppProvider({ children }: { children: ReactNode }) {
     const delSessions = cur.sessions.filter((s) => !s.deleted).map((s) => ({ ...s, deleted: true, status: 'completed' as const, updatedAt: t }));
     const delDaily = cur.daily.filter((d) => !d.deleted).map((d) => ({ ...d, deleted: true, updatedAt: t }));
     const nextSettings = { ...cur.settings, placementDone: false, updatedAt: t };
-    await repo.save({ words: resetWords, sessions: delSessions, daily: delDaily, settings: nextSettings });
+    await repo.save({ words: resetWords, sessions: delSessions, daily: delDaily, settings: nextSettings, practice: [] });
     setSettings(nextSettings);
+    setPractice([]);
     setWords((w) => upsert(w, resetWords));
     setSessions((s) => upsert(s, delSessions));
     setDaily((d) => upsert(d, delDaily));
@@ -553,6 +572,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
     updateSettings,
     applyImport,
     applyPlacement,
+    practice,
+    logPractice,
     resetAllProgress,
     syncNow,
     toast,

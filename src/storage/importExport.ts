@@ -1,5 +1,6 @@
 /** Export JSON / CSV et import JSON vérifié, avec gestion des doublons. */
 import { normalizeWord } from '../domain/normalize';
+import { addPractice, cleanPractice, type PracticeEntry } from '../domain/practice';
 import { newSrsState } from '../domain/srs';
 import { englishKey } from '../domain/text';
 import {
@@ -31,6 +32,7 @@ export interface ExportFile {
   sessions: ReviewSession[];
   daily: DailySnapshot[];
   settings: Settings;
+  practice?: PracticeEntry[];
 }
 
 export function buildExport(data: AppData, now: number): ExportFile {
@@ -47,6 +49,7 @@ export function buildExport(data: AppData, now: number): ExportFile {
     sessions: data.sessions,
     daily: data.daily,
     settings: data.settings,
+    practice: data.practice ?? [],
   };
 }
 
@@ -212,6 +215,7 @@ export interface ImportAnalysis {
   sessions: ReviewSession[];
   daily: DailySnapshot[];
   settings: Settings | null;
+  practice: PracticeEntry[];
   newWords: number;
   /** Même identifiant déjà présent. */
   sameId: number;
@@ -222,7 +226,7 @@ export interface ImportAnalysis {
 
 export function analyzeImport(text: string, current: AppData): ImportAnalysis {
   const empty: ImportAnalysis = {
-    ok: false, fatal: null, errors: [], words: [], sessions: [], daily: [], settings: null,
+    ok: false, fatal: null, errors: [], words: [], sessions: [], daily: [], settings: null, practice: [],
     newWords: 0, sameId: 0, sameEnglish: 0, newSessions: 0,
   };
   let parsed: unknown;
@@ -275,7 +279,7 @@ export function analyzeImport(text: string, current: AppData): ImportAnalysis {
   const localSessions = new Set(current.sessions.map((s) => s.id));
   const newSessions = sessions.filter((s) => !localSessions.has(s.id)).length;
   return {
-    ok: true, fatal: null, errors, words, sessions, daily, settings,
+    ok: true, fatal: null, errors, words, sessions, daily, settings, practice: cleanPractice(o.practice),
     newWords, sameId, sameEnglish, newSessions,
   };
 }
@@ -330,5 +334,6 @@ export function planImport(a: ImportAnalysis, current: AppData, strategy: Duplic
     (strategy === 'replace' || (strategy === 'newest' && a.settings.updatedAt > current.settings.updatedAt))
       ? { ...a.settings, updatedAt: now }
       : undefined;
-  return { words, sessions: closedSessions, daily, settings };
+  const practice = a.practice.length ? addPractice(current.practice ?? [], a.practice) : undefined;
+  return { words, sessions: closedSessions, daily, settings, practice };
 }

@@ -5,10 +5,14 @@ import { PageHeader } from '../components/ui';
 import { LETTERS, NONE_OPTION } from '../domain/placement';
 import { TENSES, TENSE_QUIZ, type TenseGuide, type TenseQuizItem } from '../data/tenses';
 
-export function ExpressPage() {
+export function TensesPage() {
   return (
     <div className="mx-auto flex max-w-3xl flex-col gap-6">
-      <PageHeader eyebrow="S’exprimer" title="Les 5 temps essentiels" />
+      <PageHeader eyebrow="S’exprimer" title="Les 5 temps essentiels">
+        <a href="#exprimer" className="btn btn-ghost min-h-11 text-sm">
+          <Icon name="chevronLeft" size={18} /> Exercices
+        </a>
+      </PageHeader>
       <p className="-mt-3 text-ink-2">
         À l’oral, le présent simple et le prétérit font l’essentiel du travail. Avec le présent progressif, le present perfect et le futur, tu peux dire
         presque tout ce dont tu as besoin, au quotidien comme au travail. Lis la fiche, écoute les exemples, puis fais les consignes « À toi » à voix
@@ -48,10 +52,6 @@ export function ExpressPage() {
 
       <TenseQuiz />
 
-      <p className="text-sm text-muted">
-        Prochaine étape de l’application : des exercices d’expression avec tes nouveaux mots (faire une phrase, reformuler, choisir le mot juste,
-        situations du quotidien et du travail, réponses rapides).
-      </p>
     </div>
   );
 }

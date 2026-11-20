@@ -6,7 +6,10 @@ import { AddWord } from './pages/AddWord';
 import { Dashboard } from './pages/Dashboard';
 import { CognatesPage } from './pages/Cognates';
 import { Explore } from './pages/Explore';
-import { ExpressPage } from './pages/Express';
+import { TensesPage } from './pages/Express';
+import { ExpressPage } from './pages/ExpressHub';
+import { ExNatural, ExPhrase, ExQuick, ExRephrase, ExRightWord, ExSituations, ExStory } from './pages/Exercises';
+import { PronunciationPage } from './pages/Pronunciation';
 import { PlacementPage } from './pages/Placement';
 import { ReviewPage } from './pages/Review';
 import { SettingsPage, SyncBadge } from './pages/Settings';
@@ -26,7 +29,20 @@ const NAV: { route: Route; icon: IconName; short: string }[] = [
 // barre du bas : 5 onglets atteignables au pouce ; les paramètres sont en haut à droite
 const TABS: Route[] = ['accueil', 'reviser', 'exprimer', 'explorer', 'stats'];
 // pages rattachées à un onglet (pour le surligner)
-const PARENT: Partial<Record<Route, Route>> = { apparentes: 'explorer', ajouter: 'explorer', placement: 'accueil' };
+const PARENT: Partial<Record<Route, Route>> = {
+  apparentes: 'explorer',
+  ajouter: 'explorer',
+  placement: 'accueil',
+  temps: 'exprimer',
+  prononciation: 'exprimer',
+  'ex-phrase': 'exprimer',
+  'ex-motjuste': 'exprimer',
+  'ex-naturel': 'exprimer',
+  'ex-reformuler': 'exprimer',
+  'ex-situations': 'exprimer',
+  'ex-rapide': 'exprimer',
+  'ex-histoire': 'exprimer',
+};
 
 function Brand() {
   return (
@@ -153,6 +169,15 @@ export function App() {
           {route === 'apparentes' && <CognatesPage />}
           {route === 'ajouter' && <AddWord />}
           {route === 'placement' && <PlacementPage />}
+          {route === 'temps' && <TensesPage />}
+          {route === 'prononciation' && <PronunciationPage />}
+          {route === 'ex-phrase' && <ExPhrase />}
+          {route === 'ex-motjuste' && <ExRightWord />}
+          {route === 'ex-naturel' && <ExNatural />}
+          {route === 'ex-reformuler' && <ExRephrase />}
+          {route === 'ex-situations' && <ExSituations />}
+          {route === 'ex-rapide' && <ExQuick />}
+          {route === 'ex-histoire' && <ExStory />}
           {route === 'stats' && <Stats />}
           {route === 'parametres' && <SettingsPage />}
         </main>

@@ -22,9 +22,19 @@ type Stage =
 
 const LANG_NAME: Record<Lang, string> = { en: 'anglais', fr: 'français' };
 
+/** Mot à chercher en arrivant sur la page (depuis « Mon histoire »). */
+let prefill: string | null = null;
+export function setAddPrefill(text: string) {
+  prefill = text;
+}
+
 export function AddWord() {
   const { words, langIndex, settings, addWord, startSession, toast, online, inClaude } = useApp();
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState(() => {
+    const p = prefill ?? '';
+    prefill = null;
+    return p;
+  });
   const [lang, setLang] = useState<LangChoice>('auto');
   const [stage, setStage] = useState<Stage>({ kind: 'idle' });
   const [status, setStatus] = useState<ProviderStatus | null>(null);

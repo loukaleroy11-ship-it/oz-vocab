@@ -6,12 +6,14 @@ import { wordOutcome } from '../domain/queue';
 import { computeOverview, dailyRows, levelBreakdown, sessionHistory } from '../domain/stats';
 import { parseCard } from '../domain/tracks';
 import { LevelBars } from '../components/LevelBars';
+import { StageProgressList } from '../components/StageProgress';
+import { stageProgress } from '../domain/practice';
 import { useApp } from '../state/AppContext';
 
 type Range = '14' | '30' | '90';
 
 export function Stats() {
-  const { words, sessions, daily, now, wordsById } = useApp();
+  const { words, sessions, daily, now, wordsById, practice } = useApp();
   const [range, setRange] = useState<Range>('30');
   const [open, setOpen] = useState<string | null>(null);
   const [shown, setShown] = useState(20);
@@ -20,6 +22,7 @@ export function Stats() {
   const history = useMemo(() => sessionHistory(sessions), [sessions]);
   const o = useMemo(() => computeOverview(words, sessions, now), [words, sessions, now]);
   const levels = useMemo(() => levelBreakdown(words), [words]);
+  const stages = useMemo(() => stageProgress(words, practice), [words, practice]);
   const totalTime = history.reduce((a, h) => a + h.durationMs, 0);
   const activeDays = rows.filter((r) => r.answers > 0);
 
@@ -48,6 +51,16 @@ export function Stats() {
           </p>
         </div>
         <LevelBars rows={levels} />
+      </section>
+
+      <section className="card mb-6 p-5" aria-labelledby="stage-title">
+        <h2 id="stage-title" className="mb-4 text-lg font-bold">
+          Progression A2 → C1
+        </h2>
+        <StageProgressList stages={stages} />
+        <p className="mt-3 text-xs text-muted">
+          Un niveau est validé avec 80 % de ses mots productibles et 5 situations réussies. Exercices faits : {practice.length}.
+        </p>
       </section>
 
       <dl className="card grid grid-cols-2 gap-4 p-5 sm:grid-cols-4">

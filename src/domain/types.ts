@@ -1,4 +1,5 @@
 /** Modèles de données partagés par toute l'application. */
+import type { PracticeLevel } from './practice';
 
 export type Pos =
   | 'noun'
@@ -202,6 +203,8 @@ export interface Settings {
   placementDone: boolean;
   /** Paquets désactivés : leurs mots ne sont pas proposés comme nouveaux. */
   disabledPacks: PackId[];
+  /** Niveau des exercices « S'exprimer ». */
+  practiceLevel: PracticeLevel;
   syncEnabled: boolean;
   /** Code d'accès facultatif pour la fonction serveur de traduction. */
   lookupAccessCode: string;
@@ -223,6 +226,7 @@ export const DEFAULT_SETTINGS: Settings = {
   prodMode: 'oral',
   placementDone: false,
   disabledPacks: [],
+  practiceLevel: 'B1',
   syncEnabled: true,
   lookupAccessCode: '',
   updatedAt: 0,
@@ -239,6 +243,7 @@ export function normalizeSettings(s: Partial<Settings> | null | undefined): Sett
   if ((s?.schema ?? 1) < 2 && merged.newPerDay === 20) merged.newPerDay = 0;
   if (merged.prodMode !== 'oral' && merged.prodMode !== 'written') merged.prodMode = 'oral';
   merged.placementDone = merged.placementDone === true;
+  if (!['A2', 'B1', 'B2', 'C1'].includes(merged.practiceLevel)) merged.practiceLevel = 'B1';
   merged.disabledPacks = Array.isArray(merged.disabledPacks) ? merged.disabledPacks.filter((p) => PACK_IDS.includes(p)) : [];
   merged.schema = SETTINGS_SCHEMA;
   return merged;

@@ -5,6 +5,7 @@
 import { CORE_ENTRIES, CORE_VERSION, coreContent, coreWord } from '../data/core';
 import { PACK_ENTRIES, PACK_VERSION, packContent, packMeta, packWord } from '../data/packs';
 import { normalizeWord } from '../domain/normalize';
+import { cleanPractice, type PracticeEntry } from '../domain/practice';
 import { normalizeSettings, type DailySnapshot, type ReviewSession, type Settings, type Word } from '../domain/types';
 import { SETTINGS_BUCKET, dailyBucket, sessionBucket, wordBucket } from './buckets';
 import type { Batch, Store } from './store';
@@ -14,6 +15,8 @@ export interface AppData {
   sessions: ReviewSession[];
   daily: DailySnapshot[];
   settings: Settings;
+  /** Journal des exercices « S'exprimer » (local, exporté avec la sauvegarde). */
+  practice?: PracticeEntry[];
 }
 
 export interface Changes {
@@ -21,6 +24,8 @@ export interface Changes {
   sessions?: ReviewSession[];
   daily?: DailySnapshot[];
   settings?: Settings;
+  /** Remplace le journal des exercices. */
+  practice?: PracticeEntry[];
 }
 
 export class Repo {
@@ -49,6 +54,7 @@ export class Repo {
       this.store.getMeta<string[]>('dirty'),
       this.store.getMeta<number>('packVersion'),
     ]);
+    const practice = cleanPractice(await this.store.getMeta<PracticeEntry[]>('practice'));
     (dirty ?? []).forEach((d) => this.mark(d));
 
     const toWrite: Word[] = [];
@@ -101,6 +107,7 @@ export class Repo {
       sessions,
       daily,
       settings: normalizeSettings(settings),
+      practice,
     };
   }
 
@@ -115,6 +122,7 @@ export class Repo {
         meta: {},
       };
       if (changes.settings) batch.meta!.settings = changes.settings;
+      if (changes.practice) batch.meta!.practice = changes.practice;
       if (markDirty) {
         changes.words?.forEach((w) => this.mark(wordBucket(w.id)));
         changes.sessions?.forEach((s) => this.mark(sessionBucket(s)));
